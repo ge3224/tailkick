@@ -1,1 +1,8 @@
+# ignore the heaviest object in the universe
 /node_modules/
+
+# ignore artifacts of WordPress docker container
+wp_docker/*
+!wp_docker/docker-compose.yaml
+# this is redundant, but I want to be clear
+wp_docker/.env 
