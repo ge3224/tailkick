@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./lib/js/index.ts",
+    tailkick1: "./lib/js/index.ts",
   },
   mode: "production",
   watch: true,

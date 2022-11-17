@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* navbar, responsive drop-down */
+  .nav {
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+
+  .nav-bg {
+    opacity: 0;
+  }
+
+  .nav-menu {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .nav-checkbox:checked ~ .nav {
+    transform: scale(1, 1);
+  }
+
+  .nav-checkbox:checked ~ .nav .nav-menu {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  @media screen and (min-width: 768px) {
+    .nav {
+      all: unset; /* TODO handle backwards compatibility */
+    }
+
+    .nav-menu {
+      opacity: 1;
+    }
+  }
+}
