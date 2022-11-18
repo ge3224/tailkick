@@ -5,74 +5,37 @@
 <body>
   <?php get_template_part('nav_primary', get_post_format()); ?>
 
-  <div class="pt-32">
-    <div class="blog-header">
-      <h1 class="blog-title">The Bootstrap Blog</h1>
-      <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+  <div class="mx-auto max-w-6xl pt-16">
+
+    <div class="my-12 bg-gray-200 pt-4 px-4 pb-16">
+      <h1 class="text-4xl font-bold">The Tailkick Blog</h1>
+      <p class="text-xl">The official example template of creating a blog with Tailkick 1.</p>
     </div>
 
-    <div class="row">
+    <div class="grid grid-cols-6">
 
-      <div class="col-sm-8 blog-main">
-
-        <div class="blog-post">
-          <h2 class="blog-post-title">Sample blog post</h2>
-          <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-          <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-          <hr>
-          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-          <blockquote>
-            <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </blockquote>
-          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          <h2>Heading</h2>
-          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          <h3>Sub-heading</h3>
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          <pre><code>Example code block</code></pre>
-          <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <h3>Sub-heading</h3>
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <ul>
-            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-            <li>Donec id elit non mi porta gravida at eget metus.</li>
-            <li>Nulla vitae elit libero, a pharetra augue.</li>
-          </ul>
-          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-          <ol>
-            <li>Vestibulum id ligula porta felis euismod semper.</li>
-            <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-            <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-          </ol>
-          <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-        </div><!-- /.blog-post -->
-
-        <div class="blog-post">
-          <h2 class="blog-post-title">Another blog post</h2>
-          <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-          <blockquote>
-            <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </blockquote>
-          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        </div><!-- /.blog-post -->
-
-        <div class="blog-post">
-          <h2 class="blog-post-title">New feature</h2>
-          <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <ul>
-            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-            <li>Donec id elit non mi porta gravida at eget metus.</li>
-            <li>Nulla vitae elit libero, a pharetra augue.</li>
-          </ul>
-          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-        </div><!-- /.blog-post -->
+      <div class="col-span-5 pr-24">
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <div class="mb-12">
+              <h2 class="mb-3 font-bold text-3xl"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <p class="text-sm text-gray-500">
+                <?php the_time('F j, Y g:i a'); ?>
+                <a class="text-teal-500 hover:text-teal-500/75 active:text-teal-500/50 underline" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                  <?php the_author(); ?>
+                </a>
+              </p>
+              <?php if (has_post_thumbnail()) : ?>
+                <div class="my-3 overflow-hidden h-96">
+                  <span class="object-center w-auto"><?php the_post_thumbnail(); ?></span>
+                </div>
+              <?php endif; ?>
+              <div class="my-3"><?php the_excerpt(); ?></div>
+            </div><!-- /.blog-post -->
+          <?php endwhile; ?>
+        <?php else : ?>
+          <p><?php __('No Posts Found'); ?></p>
+        <?php endif; ?>
 
         <nav>
           <ul class="pager">
