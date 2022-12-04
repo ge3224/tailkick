@@ -845,23 +845,18 @@ video {
       opacity: 1;
     }
   }
-
 .first\:border-0:first-child {
   border-width: 0px;
 }
-
 .last\:mb-0:last-child {
   margin-bottom: 0px;
 }
-
 .hover\:bg-blue-400\/75:hover {
   background-color: rgb(96 165 250 / 0.75);
 }
-
 .active\:bg-blue-400\/50:active {
   background-color: rgb(96 165 250 / 0.5);
 }
-
 @media (min-width: 768px) {
 
   .md\:absolute {
@@ -938,7 +933,6 @@ video {
     padding-bottom: 0px;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:py-5 {
@@ -946,7 +940,6 @@ video {
     padding-bottom: 1.25rem;
   }
 }
-
 @media (min-width: 1280px) {
 
   .xl\:px-0 {
