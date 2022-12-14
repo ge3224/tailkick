@@ -1,6 +1,6 @@
-# Tailkick 1
+# Tailkick
 
-*TailKick 1* is WordPress theme that utilizes Tailwind CSS.
+*TailKick* is WordPress theme that utilizes Tailwind CSS.
 
 ## Reference
 
