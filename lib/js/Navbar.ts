@@ -9,8 +9,8 @@ export const Navbar = () => {
 }
 
 // Tailwind styles
-const BG_HIDE = ["bg-pink-200/0", "shadow", "shadow-zinc-900/0", "transition", "ease-in-out", "delay-200", "duration-500"]
-const BG_SHOW = ["bg-pink-200/95", "shadow", "shadow-zinc-900/20"]
+const BG_HIDE = ["bg-gray-50/0", "shadow", "shadow-zinc-900/0", "transition", "ease-in-out", "delay-200", "duration-500"]
+const BG_SHOW = ["bg-gray-50/95", "shadow", "shadow-zinc-900/20"]
 const CHILD_MENU_HIDE = ["hidden"]
 
 // DOM attributes
