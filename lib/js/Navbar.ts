@@ -19,7 +19,7 @@ const NAV_CHECKBOX_ID = "nav-checkbox"
 const DATASET_PARENT = "data-ui='nav-parent'"
 const DATASET_CHILD = "data-ui='nav-child'"
 
-const PAGE_Y_OFFSET = 16
+const PAGE_Y_OFFSET = 100
 
 // Initializers ///////////////////////////////////////////////////////////////
 

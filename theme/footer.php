@@ -1,7 +1,40 @@
-<footer class="mt-4 py-10 bg-gray-100 text-center border-t border-gray-200 last:mb-0">
-  <p class="text-sm text-gray-500">&copy; <?php echo Date('Y'); ?> - <?php bloginfo('name'); ?></p>
-  <p class="text-sm text-gray-500">
-    <a href="#">Back to top</a>
-  </p>
+<footer class="mt-8 py-10 bg-gray-100 border-t border-gray-200 text-sm text-gray-500">
+  <div class="mx-auto max-w-6xl grid grid-cols-5">
+    <div>
+      <p><strong>Theme: <?php bloginfo('name'); ?></strong></p>
+      <p>Powered by WordPress</p>
+      <p>&copy; <?php echo Date('Y'); ?> &mdash; <a href="http://jacobbenison.com">Jacob Benison</a></p>
+      <p><a href="#">Sitemap</a></p>
+    </div>
+    <div>
+      <p><strong>Column Header</strong></p>
+      <p>Lorem ipsum </p>
+      <p>Dolor sit amet </p>
+      <p>Consectetur</p>
+      <p>Orci ipsum</p>
+      <p>Malesuada blandit</p>
+      <p>Eleifend non sem</p>
+    </div>
+    <div>
+      <p><strong>Column Header</strong></p>
+      <p>Lorem ipsum </p>
+      <p>Dolor sit amet </p>
+      <p>Consectetur</p>
+      <p>Orci ipsum</p>
+      <p>Malesuada blandit</p>
+      <p>Eleifend non sem</p>
+    </div>
+    <div>
+    </div>
+    <div>
+      <p><strong>Column Header</strong></p>
+      <p>Lorem ipsum </p>
+      <p>Dolor sit amet </p>
+      <p>Consectetur</p>
+      <p>Orci ipsum</p>
+      <p>Malesuada blandit</p>
+      <p><a href="#">Back to top</a></p>
+    </div>
+  </div>
 </footer>
 <?php wp_footer(); ?>
