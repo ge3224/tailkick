@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
-<body class="min-h-screen">
+<body class="m-0 min-h-full flex flex-col">
   <?php get_template_part('nav_primary', get_post_format()); ?>
   <main>
     <div class="mx-auto max-w-6xl pt-28">

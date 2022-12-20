@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
-<body>
+<body class="min-h-full flex flex-col">
   <?php get_template_part('nav_primary', get_post_format()); ?>
   <main>
     <section class="w-full bg-gray-100 bg-[url('/wp-content/themes/tailkick_1/images/tk-hero-blog.jpg')] bg-cover bg-center h-80 pt-16 pb-12">

@@ -1,4 +1,4 @@
-<div class="my-12">
+<div>
   <h2 class="font-bold text-4xl">
     <?php if (is_single()) : ?>
       <?php the_title(); ?>

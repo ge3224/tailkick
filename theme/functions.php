@@ -53,7 +53,7 @@ function tk_init_widgets($id) {
     'id' => 'sidebar',
     'name' => __( 'Sidebar' ),
     'description' => __( 'This is TailKick\'s standard sidebar.' ),
-    'before_widget' => '<div id="sidebar-%1$s" class="mt-3">',
+    'before_widget' => '<div id="sidebar-%1$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4>',
     'after_title' => '</h4>',

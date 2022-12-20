@@ -1,4 +1,4 @@
-<footer class="mt-auto py-10 bg-gray-100 border-t border-gray-200 text-sm text-gray-500">
+<footer class="mt-auto mb-0 py-10 bg-gray-100 border-t border-gray-200 text-sm text-gray-500">
   <div class="mx-auto max-w-6xl grid grid-cols-5">
     <div>
       <p><strong>Theme: <?php bloginfo('name'); ?></strong></p>
