@@ -17,6 +17,7 @@ const CHILD_MENU_HIDE = ["hidden"]
 const NAVBAR_ID = "nav-primary"
 const NAV_CHECKBOX_ID = "nav-checkbox"
 const DATASET_PARENT = "data-ui='nav-parent'"
+const DATASET_DROPDOWN = "data-ui='nav-dropdown'"
 const DATASET_CHILD = "data-ui='nav-child'"
 
 const PAGE_Y_OFFSET = 100
@@ -36,8 +37,10 @@ function initChildItems() {
 function initNavParentItems() {
   const parents = document.querySelectorAll(`[${DATASET_PARENT}]`)
   for (let i = 0; i < parents.length; i++) {
-    const parent = parents[i] as HTMLAnchorElement
-    parent.addEventListener("click", navParentClickHandler)
+    const dropIco = parents[i].querySelector(`[${DATASET_DROPDOWN}]`)
+    if (dropIco !== null && dropIco !== undefined && dropIco !== void 0) {
+      dropIco.addEventListener("click", dropdownClickHandler);
+    }
   }
 }
 
@@ -69,13 +72,13 @@ function checkboxHandler(e: PointerEvent) {
 
 function navChildClickHandler(e: PointerEvent) {
   if (!isEvent) {
-    throw(`Type Error: Argument is not an Event: ${e}`)
+    throw (`Type Error: Argument is not an Event: ${e}`)
   }
 
   e.stopPropagation()
 }
 
-function navParentClickHandler(e: PointerEvent) {
+function dropdownClickHandler(e: PointerEvent) {
   if (!isEvent(e)) {
     throw (`Type Error: Argument is not an Event: ${e}`)
   }
@@ -83,7 +86,8 @@ function navParentClickHandler(e: PointerEvent) {
   e.stopPropagation()
   e.preventDefault()
 
-  const parent = e.currentTarget as HTMLLIElement
+  const el = e.currentTarget as HTMLSpanElement
+  const parent = el.parentElement as HTMLLIElement
 
   if (childMenuIsVisible(parent)) {
     hideChildMenu(parent)
