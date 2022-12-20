@@ -41,7 +41,6 @@
     </section>
   </main>
   <?php get_footer(); ?>
-  <script src="<?php bloginfo('template_url'); ?>/js/tailkick1.js"></script>
 </body>
 
 </html>

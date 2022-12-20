@@ -9,7 +9,5 @@
     <?php bloginfo('name'); ?> | 
     <?php is_front_page() ? bloginfo('description') : wp_title(); ?>
   </title>
-  <link href="<?php bloginfo('template_url'); ?>/css/tailkick.css" rel="stylesheet">
-  <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
   <?php wp_head(); ?>
 </head>

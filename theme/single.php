@@ -15,15 +15,16 @@
           <p><?php __('No Posts Found'); ?></p>
         <?php endif; ?>
       </div>
-      <div>
+      <div class="pt-16">
         <?php if (is_active_sidebar('sidebar')) : ?>
           <?php dynamic_sidebar('sidebar'); ?>
+        <?php else : ?> 
+          <p><?php __('No Sidebar Widgets Found'); ?></p>
         <?php endif; ?>
       </div>
     </div>
   </div>
   <?php get_footer(); ?>
-  <script src="<?php bloginfo('template_url'); ?>/js/tailkick1.js"></script>
 </body>
 
 </html>

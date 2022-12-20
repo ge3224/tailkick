@@ -7,7 +7,7 @@
     <?php get_template_part('nav_primary', get_post_format()); ?>
   </header>
   <main>
-    <section id="hero" class="bg-gray-200 bg-[url('/wp-content/themes/tailkick_1/images/tailkick-hero-home-wide.jpg')] bg-cover bg-center xl:bg-[center_top_39%] bg-no-repeat lg:h-2/3 xl:h-[774px] w-full">
+    <section id="hero" class="bg-gray-200 bg-[url('/wp-content/themes/tailkick_1/images/tailkick-hero-home-wide.jpg')] bg-cover bg-center xl:bg-[center_top_38%] bg-no-repeat lg:h-2/3 xl:h-[774px] w-full">
       <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-center items-start">
         <div class="w-1/5 ml-auto mr-0">
           <h1 class="text-6xl font-bold">Buy. Sell. Discover.</h1>
@@ -131,7 +131,6 @@
   <footer>
     <?php get_footer(); ?>
   </footer>
-  <script src="<?php bloginfo('template_url'); ?>/js/tailkick1.js"></script>
 </body>
 
 </html>

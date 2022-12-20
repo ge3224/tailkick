@@ -510,17 +510,17 @@ video {
 .relative {
   position: relative;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .left-0 {
   left: 0px;
-}
-.top-0 {
-  top: 0px;
 }
 .right-0 {
   right: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
+.top-0 {
+  top: 0px;
 }
 .top-14 {
   top: 3.5rem;
@@ -574,8 +574,14 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mt-8 {
   margin-top: 2rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
 }
 .ml-auto {
   margin-left: auto;
@@ -589,8 +595,11 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mt-auto {
+  margin-top: auto;
+}
+.mb-0 {
+  margin-bottom: 0px;
 }
 .flex {
   display: flex;
@@ -628,8 +637,8 @@ video {
 .h-6 {
   height: 1.5rem;
 }
-.min-h-full {
-  min-height: 100%;
+.min-h-screen {
+  min-height: 100vh;
 }
 .w-72 {
   width: 18rem;
@@ -824,10 +833,6 @@ video {
   -o-object-fit: fill;
      object-fit: fill;
 }
-.object-bottom {
-  -o-object-position: bottom;
-     object-position: bottom;
-}
 .object-center {
   -o-object-position: center;
      object-position: center;
@@ -875,6 +880,14 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .pt-16 {
   padding-top: 4rem;
 }
@@ -884,8 +897,8 @@ video {
 .pr-24 {
   padding-right: 6rem;
 }
-.pl-1 {
-  padding-left: 0.25rem;
+.pt-28 {
+  padding-top: 7rem;
 }
 .text-center {
   text-align: center;
@@ -1030,12 +1043,31 @@ video {
   color: rgb(20 184 166 );
 }
 
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:bg-blue-400\/75:hover {
   background-color: rgb(96 165 250 / 0.75);
 }
 
+.hover\:bg-purple-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 180 254 / var(--tw-bg-opacity));
+}
+
+.hover\:text-teal-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}
+
 .active\:bg-blue-400\/50:active {
   background-color: rgb(96 165 250 / 0.5);
+}
+
+.active\:text-teal-300:active {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1133,8 +1165,8 @@ video {
     height: 774px;
   }
 
-  .xl\:bg-\[center_top_39\%\] {
-    background-position: center top 39%;
+  .xl\:bg-\[center_top_38\%\] {
+    background-position: center top 38%;
   }
 
   .xl\:px-0 {
