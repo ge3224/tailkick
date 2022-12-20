@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
+
+  p {
+    @apply max-w-prose mb-3;
+  }
+
   /* navbar, responsive drop-down */
   .nav {
     transform: scale(1, 0);

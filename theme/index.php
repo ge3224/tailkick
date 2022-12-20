@@ -4,15 +4,15 @@
 
 <body class="min-h-full flex flex-col">
   <?php get_template_part('nav_primary', get_post_format()); ?>
-  <main>
-    <section class="w-full bg-gray-100 bg-[url('/wp-content/themes/tailkick_1/images/tk-hero-blog.jpg')] bg-cover bg-center h-80 pt-16 pb-12">
-      <div class="mx-auto max-w-6xl h-full flex items-center">
-        <div class="w-80">
-          <h1 class="text-4xl font-bold">The Tailkick Blog</h1>
-          <p>The official example template of creating a blog with Tailkick.</p>
-        </div>
+  <section class="w-full bg-gray-100 bg-[url('/wp-content/themes/tailkick_1/images/tk-hero-blog.jpg')] bg-cover bg-center h-80 pt-16 pb-12">
+    <div class="mx-auto max-w-6xl h-full flex items-center">
+      <div class="w-80">
+        <h1 class="text-4xl font-bold">The Tailkick Blog</h1>
+        <p>The official example template of creating a blog with Tailkick.</p>
       </div>
-    </section>
+    </div>
+  </section>
+  <main class="my-8">
     <section class="mx-auto max-w-6xl pt-16">
       <div class="grid grid-cols-6">
 

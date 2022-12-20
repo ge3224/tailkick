@@ -1,4 +1,4 @@
-<div>
+<div class="mb-16">
   <h2 class="font-bold text-4xl">
     <?php if (is_single()) : ?>
       <?php the_title(); ?>
@@ -11,7 +11,7 @@
   </p>
   <?php if (has_post_thumbnail()) : ?>
     <?php if (!is_single()) : ?>
-      <figure class="overflow-hidden w-full h-[500px]">
+      <figure class="overflow-hidden w-full h-[500px] mb-3">
         <?php the_post_thumbnail('post-thumbnail', ['class' => 'object-fill object-center rounded-sm'] ); ?>
       </figure>
     <?php else : ?>
