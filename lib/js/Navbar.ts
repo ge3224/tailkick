@@ -9,8 +9,28 @@ export const Navbar = () => {
 }
 
 // Tailwind styles
-const BG_HIDE = ["bg-gray-50/0", "shadow", "shadow-zinc-900/0", "transition", "ease-in-out", "delay-200", "duration-500"]
-const BG_SHOW = ["bg-gray-50/95", "shadow", "shadow-zinc-900/20"]
+const BG_HIDE = [
+  "bg-gray-50/0",
+  "shadow",
+  "shadow-zinc-900/0",
+  "transition",
+  "ease-in-out",
+  "delay-200",
+  "duration-500"
+]
+
+const BG_SHOW = [
+  "bg-gray-50/95",
+  "shadow",
+  "shadow-zinc-900/20"
+]
+
+const BTN_ACTIVE = [
+  "outline",
+  "outline-offset-2",
+  "outline-4",
+]
+
 const CHILD_MENU_HIDE = ["hidden"]
 
 // DOM attributes
@@ -37,7 +57,8 @@ function initChildItems() {
 function initNavParentItems() {
   const parents = document.querySelectorAll(`[${DATASET_PARENT}]`)
   for (let i = 0; i < parents.length; i++) {
-    const dropIco = parents[i].querySelector(`[${DATASET_DROPDOWN}]`)
+    // const dropIco = parents[i].querySelector(`[${DATASET_DROPDOWN}]`)
+    const dropIco = getDropdownBtn(parents[i] as HTMLLIElement);
     if (dropIco !== null && dropIco !== undefined && dropIco !== void 0) {
       dropIco.addEventListener("click", dropdownClickHandler);
     }
@@ -175,6 +196,18 @@ function childMenuIsVisible(parent: HTMLLIElement): boolean {
   return true
 }
 
+function getDropdownBtn(parent: HTMLLIElement): HTMLSpanElement | null {
+  if (!isElement(parent)) {
+    throw (`Type Error: Argument is not an Element: "${parent}"`)
+  }
+  const span = parent.querySelector(`[${DATASET_DROPDOWN}]`) as HTMLSpanElement
+  if (span === null || span === undefined || span === void 0) {
+    console.error(`Error: A child elements could not be found for with the following dataset: ${DATASET_DROPDOWN}`)
+    return null
+  }
+  return span
+}
+
 function getChildMenu(parent: HTMLLIElement): HTMLUListElement | null {
   if (!isElement(parent)) {
     throw (`Type Error: Argument is not an Element: "${parent}"`)
@@ -217,6 +250,13 @@ function hideChildMenu(parent: HTMLLIElement) {
   for (let i = 0; i < CHILD_MENU_HIDE.length; i++) {
     cm.classList.add(CHILD_MENU_HIDE[i])
   }
+
+  const dd = getDropdownBtn(parent)
+  if(!dd) return
+
+  for (let i = 0; i < BTN_ACTIVE.length; i++) {
+    dd.classList.remove(BTN_ACTIVE[i])
+  }
 }
 
 function hideNavbarBg() {
@@ -250,6 +290,13 @@ function showChildMenu(parent: HTMLLIElement) {
 
   for (let i = 0; i < CHILD_MENU_HIDE.length; i++) {
     cm.classList.remove(CHILD_MENU_HIDE[i])
+  }
+
+  const dd = getDropdownBtn(parent)
+  if(!dd) return
+
+  for (let i = 0; i < BTN_ACTIVE.length; i++) {
+    dd.classList.add(BTN_ACTIVE[i])
   }
 }
 
