@@ -8,6 +8,26 @@
     @apply max-w-prose mb-3;
   }
 
+  h1 {
+    @apply font-bold text-3xl pb-3;
+  }
+
+  h2 {
+    @apply font-bold text-lg pb-3;
+  }
+
+  img {
+    @apply rounded-sm;
+  }
+
+  figure {
+    @apply pb-8;
+  }
+
+  figcaption {
+    @apply text-xs text-gray-600;
+  }
+
   /* navbar, responsive drop-down */
   .nav {
     transform: scale(1, 0);
