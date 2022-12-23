@@ -42,8 +42,6 @@ const DATASET_CHILD = "data-ui='nav-child'"
 
 const PAGE_Y_OFFSET = 100
 
-// Initializers ///////////////////////////////////////////////////////////////
-
 function initChildItems() {
   const children = document.querySelectorAll(`[${DATASET_CHILD}]`)
   for (let i = 0; i < children.length; i++) {
@@ -71,8 +69,6 @@ function initNavCheckbox() {
   const checkbox = document.querySelector("#nav-checkbox")
   checkbox.addEventListener("click", checkboxHandler)
 }
-
-// Handlers ///////////////////////////////////////////////////////////////////
 
 function checkboxHandler(e: PointerEvent) {
   if (!isEvent(e)) {
@@ -139,8 +135,6 @@ function pageScrollWatcher() {
     navbarBGToggle(e)
   }
 }
-
-// Helper Functions ///////////////////////////////////////////////////////////
 
 function bgIsInvisible(): boolean {
   let invisible = false

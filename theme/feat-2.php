@@ -11,7 +11,7 @@
       <a class="mt-3 px-4 py-2 bg-teal-300 font-bold border border-black shadow-[6px_6px_0_0_rgba(0,115,100,0.25)]" type="button" href="/?page_id=103">Learn More</a>
     </div>
     <div>
-      <img class="max-w-lg h-auto rounded-sm" src="/wp-content/themes/tailkick_1/images/tk-vignette-2.jpg" />
+      <img class="max-w-lg h-auto rounded-sm" src="/wp-content/themes/tailkick/images/tk-vignette-2.jpg" />
     </div>
   </div>
 </section>
