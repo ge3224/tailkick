@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <?php get_template_part('showcase_panel', get_post_format()); ?>
+    <?php get_template_part('showcase-panel', get_post_format()); ?>
     <?php get_template_part('bottom-banner', get_post_format()); ?>
   </main>
   <?php get_footer(); ?>

@@ -137,41 +137,13 @@ add_action('after_setup_theme', 'tk_theme_setup');
  */
 function tk_widgets_init($id) {
   register_sidebar(array(
-    'name' => esc_html__( 'Sidebar', 'tailkick' ),
-    'id' => 'sidebar',
+    'name' => esc_html__( 'Primary Sidebar', 'tailkick' ),
+    'id' => 'primary_sidebar',
     'description' => esc_html__( 'Add widgets here to appear in your sidebar', 'tailkick' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget' => '</section>',
     'before_title' => '<h2 class="widget-title">',
     'after_title' => '</h2>',
-  ));
-
-  register_sidebar(array(
-    'name' => esc_html__( 'Box1', 'tailkick' ),
-    'id' => 'box1',
-    'description' => esc_html__('Add widgets here to appear', 'tailkick' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-
-  register_sidebar(array(
-    'name' => esc_html__( 'Box2', 'tailkick' ),
-    'id' => 'box2',
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ));
-
-  register_sidebar(array(
-    'name' => esc_html__( 'Box3', 'tailkick' ),
-    'id' => 'box3',
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
   ));
 }
 add_action('widgets_init', 'tk_widgets_init');
@@ -247,11 +219,11 @@ function tk_filter_dynamic_sidebar_params( $sidebar_params ) {
 }
 add_filter( 'dynamic_sidebar_params', 'tk_filter_dynamic_sidebar_params' );
 
-function tk_widget_id_base_instance_filter( $instance, $args, $widget ){
-
-	// filter...
-	return $instance;
-}
+/* function tk_widget_id_base_instance_filter( $instance, $args, $widget ){ */
+/*  */
+/* 	// filter... */
+/* 	return $instance; */
+/* } */
 
 function tk_widget_output_filter( $widget_output, $widget_id_base, $widget_id ) {
 

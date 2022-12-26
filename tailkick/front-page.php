@@ -21,7 +21,7 @@
   </section>
   <main>
     <?php if (get_theme_mod('showcase_panel_include') == "true") : ?>
-    <?php get_template_part('showcase_panel', get_post_format()); ?>
+    <?php get_template_part('showcase-panel', get_post_format()); ?>
     <?php endif; ?>
     <?php get_template_part('feat-1', get_post_format()); ?>
     <?php get_template_part('feat-2', get_post_format()); ?>
