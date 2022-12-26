@@ -1,5 +1,9 @@
 <?php
 /**
+ * The primary navbar of TailKick
+ *
+ * @package WordPress
+ * @subpackage TailKick
  */
 ?>
 
