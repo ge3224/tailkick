@@ -132,8 +132,6 @@ add_action('after_setup_theme', 'tk_theme_setup');
  * @since Twenty Twenty-One 1.0
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- *
- * @return void
  */
 function tk_widgets_init($id) {
   register_sidebar(array(
@@ -197,9 +195,7 @@ function tk_custom_widget_callback_function() {
         $widget_output = ob_get_clean();
 
         echo apply_filters( 'widget_output', $widget_output, $widget_id_base, $widget_id );
-
     }
-
 }
 
 function tk_filter_dynamic_sidebar_params( $sidebar_params ) {
@@ -219,40 +215,33 @@ function tk_filter_dynamic_sidebar_params( $sidebar_params ) {
 }
 add_filter( 'dynamic_sidebar_params', 'tk_filter_dynamic_sidebar_params' );
 
-/* function tk_widget_id_base_instance_filter( $instance, $args, $widget ){ */
-/*  */
-/* 	// filter... */
-/* 	return $instance; */
-/* } */
-
 function tk_widget_output_filter( $widget_output, $widget_id_base, $widget_id ) {
-
-    /* To target a specific widget ID: */
-    if (preg_match('/block-\d/i', $widget_id)) {
-
-      global $wp_registered_widgets;
-      $w = $wp_registered_widgets[ $widget_id ]; 
-
-
-      $output = str_replace('<h2>', '<h2 class="font-bold">', $widget_output); 
-
-      $sidebar_links_classes = 'text-teal-500 visited:text-teal-500 hover:text-teal-400 active:text-teal-300';
-
-      if(preg_match_all('/<a.+?>/i', $output, $matches)) {
-          foreach ($matches[0] as $match) {
-            if(preg_match('/class="(.+?)"/', $match, $ms)) {
-              $merged = 'class="'. $sidebar_links_classes . ' ' . $ms[1] . '"';
-              $output = str_replace($ms[0], $merged, $output);
-            } else {
-              $output = str_replace('<a', '<a class="' . $sidebar_links_classes . '"', $output);
-            }
-          }
-      }
-      return $output;
   
+   /* To target a specific widget ID: */
+   if (preg_match('/block-\d/i', $widget_id)) {
+  
+     global $wp_registered_widgets;
+     $w = $wp_registered_widgets[ $widget_id ]; 
+  
+  
+     $output = str_replace('<h2>', '<h2 class="font-bold">', $widget_output); 
+  
+     $sidebar_links_classes = 'text-teal-500 visited:text-teal-500 hover:text-teal-400 active:text-teal-300';
+  
+    if(preg_match_all('/<a.+?>/i', $output, $matches)) {
+        foreach ($matches[0] as $match) {
+          if(preg_match('/class="(.+?)"/', $match, $ms)) {
+            $merged = 'class="'. $sidebar_links_classes . ' ' . $ms[1] . '"';
+            $output = str_replace($ms[0], $merged, $output);
+          } else {
+            $output = str_replace('<a', '<a class="' . $sidebar_links_classes . '"', $output);
+          }
+        }
     }
-
-    return $widget_output;
-
+    return $output;
+  
+  }
+  
+  return $widget_output;
 }
 add_filter( 'widget_output', 'tk_widget_output_filter', 10, 3 );
