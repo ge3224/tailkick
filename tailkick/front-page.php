@@ -6,10 +6,11 @@
   <header>
     <?php get_template_part('nav_primary', get_post_format()); ?>
   </header>
-    <!--
-  bg-[url('<?php echo get_theme_mod('hero_home_image', 'wp-content/themes/tailkick/images/tailkick-hero-home-wide.jpg'); ?>')] bg-cover bg-center xl:bg-[center_top_38%] bg-no-repeat 
-    -->
-    <section id="hero" class="bg-gray-200 lg:h-2/3 xl:h-[772px] w-full" style="background:url('<?php echo get_theme_mod('hero_home_image', get_bloginfo('template_url').'/images/tailkick-hero-home-wide.jpg'); ?>') no-repeat center center; background-size: cover;">
+    <section
+      id="hero"
+      style="background:url('<?php echo get_theme_mod('hero_home_image', get_bloginfo('template_url').'/images/tailkick-hero-home-wide.jpg'); ?>') no-repeat center center; background-size: cover;"
+      class="bg-gray-200 lg:h-2/3 xl:h-[772px] w-full"
+    >
     <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-center items-start">
       <div class="w-1/5 ml-auto mr-0">
         <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
@@ -19,7 +20,7 @@
     </div>
   </section>
   <main>
-    <?php get_template_part('callouts', get_post_format()); ?>
+    <?php get_template_part('showcase_panel', get_post_format()); ?>
     <?php get_template_part('feat-1', get_post_format()); ?>
     <?php get_template_part('feat-2', get_post_format()); ?>
     <?php get_template_part('feat-3', get_post_format()); ?>

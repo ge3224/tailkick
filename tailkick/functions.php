@@ -9,8 +9,6 @@
  * @subpackage TailKick
  */
 
-require_once('tk_navwalker.php');
-
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -185,9 +183,9 @@ add_action('widgets_init', 'tk_widgets_init');
 function tk_theme_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'tailkick_css', get_template_directory_uri() . '/css/tailkick.css', array(), '1.1', 'all' );
+	wp_enqueue_style( 'tailkick', get_template_directory_uri() . '/css/tailkick.css', array(), '1.1', 'all' );
 
-	wp_enqueue_script( 'tailkick_js', get_template_directory_uri() . '/js/tailkick1.js', array(), 1.1, true );
+	wp_enqueue_script( 'tailkick', get_template_directory_uri() . '/js/tailkick.js', array(), 1.1, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -197,6 +195,8 @@ add_action( 'wp_enqueue_scripts', 'tk_theme_scripts' );
 
 // Customizer additions.
 require get_template_directory() . '/inc/tk_customize.php';
+
+require_once('tk_navwalker.php');
 
 /**
  * set_excerpt_length handles excerpt length control
