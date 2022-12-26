@@ -18,6 +18,48 @@
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+    /**
+     * Component colors
+     */
+    $wp_customize->add_section('global_colors', array(
+      'title'       => esc_html__( 'Global Colors', 'tailkick'),
+      'description' => sprintf(esc_html__( 'Options for global colors', 'tailkick')),
+      'priority'    => 130 // before additional CSS
+    ));
+
+    $wp_customize->add_setting('global_color_primary', array(
+      'default' => esc_attr__('#5eead4', 'tailkick'), // `teal-300` from Tailwind CSS's default color palette
+      'type'    => 'theme_mod',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_color_primary', array(
+      'label' => esc_html__('Primary', 'tailkick'),
+      'section' => 'global_colors',
+      'priority' => 1
+    )));
+
+    $wp_customize->add_setting('global_colors_secondary', array(
+      'default' => esc_attr__( '#fcd34d', 'tailkick'), // `amber-300` from Tailwind CSS's default color palette
+      'type'    => 'theme_mod',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_secondary', array(
+      'label' => esc_html__('Secondary', 'tailkick'),
+      'section' => 'global_colors',
+      'priority' => 2
+    )));
+
+    $wp_customize->add_setting('global_colors_tertiary', array(
+      'default' => esc_attr__( '#e879f9', 'tailkick'), // `fuchsia-400` from Tailwind CSS's default color palette
+      'type'    => 'theme_mod',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_tertiary', array(
+      'label' => esc_html__('Tertiary', 'tailkick'),
+      'section' => 'global_colors',
+      'priority' => 3
+    )));
+
     /** 
     * Customize the homepage hero section
     */

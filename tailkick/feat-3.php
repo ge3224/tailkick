@@ -11,7 +11,12 @@
     <div class="px-16">
       <h3 class="font-bold text-3xl">Old But Gold</h3>
       <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque [ ... ]</p>
-      <a class="mt-3 px-4 py-2 bg-teal-300 font-bold border border-black shadow-[6px_6px_0_0_rgba(0,115,100,0.25)]" type="button" href="/?page_id=108">Learn More</a>
+      <a
+        type="button"
+        class="mt-3 px-4 py-2 font-bold border border-black shadow-[6px_6px_0_0_rgba(0,115,100,0.25)]"
+        style="background-color: <?php echo get_theme_mod('global_color_primary', '#5eead4'); ?> ;"
+        href="/?page_id=108"
+      >Learn More</a>
     </div>
   </div>
 </section>
