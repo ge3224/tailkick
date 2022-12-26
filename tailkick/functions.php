@@ -93,6 +93,16 @@ if ( ! function_exists( 'tk_theme_setup' ) ) {
 			)
 		);
 
+    $site_logo = array(
+      'heigth' => 31,
+      'width' => 113,
+      'flex-height' => true,
+      'flex-width' => true,
+      'header-text' => array( 'site-title', 'site-description' ),
+      'unlink-homepage-logo' => true,
+    );
+    add_theme_support('custom-logo', $site_logo);
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 

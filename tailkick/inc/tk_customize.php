@@ -7,7 +7,16 @@
    *
    * @param WP_Customize_Manager $wp_customize Theme Customizer object.
    */
+
+  /**
+   * Add postMessage support for site title and description for the Theme Customizer.
+   *
+   * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+   */
   function tk_customize_register( $wp_customize ){
+    $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     /** 
     * Customize the homepage hero section
@@ -16,6 +25,59 @@
       'title'       => esc_html__('Homepage Hero', 'tailkick'),
       'description' => sprintf(esc_html__('Options for the hero section of the homepage','tailkick')),
       'priority'    => 130 // before additional CSS
+    ));
+
+    /**
+     * Custom homepage hero heading
+     */
+    $wp_customize->add_setting('hero_home_heading', array(
+      'default'   => _x('Buy. Sell. Discover.', 'tailkick'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('hero_home_heading', array(
+      'label'     => esc_html__('Hero Heading', 'tailkick'),
+      'section'   => 'hero_home',
+      'priority'  => 1
+    ));
+
+    /**
+     * Custom homepage hero nutgraf
+     */
+    $wp_customize->add_setting('hero_home_text', array(
+      'default'   => _x('Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.', 'tailkick'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('hero_home_text', array(
+      'label'     => esc_html__('Text', 'tailkick'),
+      'section'   => 'hero_home',
+      'priority'  => 2
+    ));
+
+    $wp_customize->add_setting('btn_text', array(
+      'default'   => _x('Download', 'tailkick'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('btn_text', array(
+      'label'     => esc_html__('Button Text', 'tailkick'),
+      'section'   => 'hero_home',
+      'priority'  => 3
+    ));
+
+    /**
+     * Custom hompage hero button actions
+     */
+    $wp_customize->add_setting('btn_url', array(
+      'default'   => _x('https://github.com/ge3224/tailkick', 'tailkick'),
+      'type'      => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('btn_url', array(
+      'label'     => esc_html__('Button URL', 'tailkick'),
+      'section'   => 'hero_home',
+      'priority'  => 4
     ));
 
     /** 
@@ -30,64 +92,55 @@
       'label'     => esc_html__('Hero Image', 'tailkick'),
       'section'   => 'hero_home',
       'settings'  => 'hero_home_image',
-      'priority'  => 1
+      'priority'  => 5
     )));
 
-    /**
-     * Custom homepage hero heading
+    /** 
+     * Custom background-position x value
      */
-    $wp_customize->add_setting('hero_home_heading', array(
-      'default'   => _x('Buy. Sell. Discover.', 'tailkick'),
-      'type'      => 'theme_mod'
+    $wp_customize->add_setting('hero_home_image_position_x', array(
+      'default' => _x('35%', 'tailkick'),
+      'type'    => 'theme_mod'
     ));
 
-    $wp_customize->add_control('hero_home_heading', array(
-      'label'     => esc_html__('Heading', 'tailkick'),
-      'section'   => 'hero_home',
-      'priority'  => 2
-    ));
-
-    /**
-     * Custom homepage hero nutgraf
-     */
-    $wp_customize->add_setting('hero_home_text', array(
-      'default'   => _x('Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.', 'tailkick'),
-      'type'      => 'theme_mod'
-    ));
-
-    $wp_customize->add_control('hero_home_text', array(
-      'label'     => esc_html__('Text', 'tailkick'),
-      'section'   => 'hero_home',
-      'priority'  => 3
-    ));
-
-    /**
-     * Custom button actions
-     */
-    $wp_customize->add_setting('btn_url', array(
-      'default'   => _x('https://github.com/ge3224/tailkick', 'tailkick'),
-      'type'      => 'theme_mod'
-    ));
-
-    $wp_customize->add_control('btn_url', array(
-      'label'     => esc_html__('Button URL', 'tailkick'),
-      'section'   => 'hero_home',
-      'priority'  => 4
-    ));
-
-    $wp_customize->add_setting('btn_text', array(
-      'default'   => _x('Download', 'tailkick'),
-      'type'      => 'theme_mod'
-    ));
-
-    $wp_customize->add_control('btn_text', array(
-      'label'     => esc_html__('Button Text', 'tailkick'),
-      'section'   => 'hero_home',
-      'priority'  => 5
+    $wp_customize->add_control('hero_home_image_position_x', array(
+      'label'    => esc_html__('Image Position: X', 'tailkick'),
+      'description' => 'Options for the horizontal position of the homepage hero section\'s background image',
+      'section'  => 'hero_home',
+      'priority' => 6
     ));
 
     /** 
-    * Customize the showcase panel
+     * Custom background-position y value
+     */
+    $wp_customize->add_setting('hero_home_image_position_y', array(
+      'default' => _x('center', 'tailkick'),
+      'type'    => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('hero_home_image_position_y', array(
+      'label'    => esc_html__('Image Position: Y', 'tailkick'),
+      'description' => 'The vertical position of the homepage hero section\'s background image',
+      'section'  => 'hero_home',
+      'priority' => 7
+    ));
+
+    /**
+     * Custom homepage hero height
+     */
+    $wp_customize->add_setting('home_hero_height', array(
+      'default' => esc_html__('48.5rem', 'tailkick'),
+      'type'    => 'theme_mod'
+    ));
+
+    $wp_customize->add_control('home_hero_height', array(
+      'label' => esc_html__('Hero Height', 'tailkick'),
+      'section' => 'hero_home',
+      'priority' => 8
+    ));
+
+    /** 
+    * Showcase Panel section
     */
     $wp_customize->add_section('showcase_panel', array(
       'title'       => esc_html__('Showcase Panel', 'tailkick'),
