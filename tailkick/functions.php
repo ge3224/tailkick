@@ -14,6 +14,8 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+require_once('tk_navwalker.php');
+
 /**
  * tk_register_menus is fired via the init hook, after WordPress has finished 
  * loading but before any headers are sent.
@@ -71,8 +73,7 @@ if ( ! function_exists( 'tk_theme_setup' ) ) {
 
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary menu', 'tailkick' ),
-				'footer'  => esc_html__( 'Secondary menu', 'tailkick' ),
+				'primary' => esc_html__( 'Primary Menu', 'tailkick' ),
 			)
 		);
 
@@ -176,8 +177,6 @@ add_action( 'wp_enqueue_scripts', 'tk_theme_scripts' );
 // Customizer additions.
 require get_template_directory() . '/inc/tk_customize.php';
 
-require_once('tk_navwalker.php');
-
 /**
  * set_excerpt_length handles excerpt length control
  */
@@ -255,3 +254,12 @@ function tk_widget_output_filter( $widget_output, $widget_id_base, $widget_id ) 
   return $widget_output;
 }
 add_filter( 'widget_output', 'tk_widget_output_filter', 10, 3 );
+
+/**
+ * Reset theme settings
+ */
+function reset_tktheme_options() {
+  remove_theme_mods();
+}
+
+// add_action( 'after_switch_theme', 'reset_tktheme_options' );

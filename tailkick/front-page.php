@@ -25,8 +25,8 @@
         <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
         <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
         <button
-          class="mt-3 px-4 py-2 font-bold border border-black shadow-[6px_6px_0_0_rgba(0,115,100,0.25)]"
-          style="background-color: <?php echo get_theme_mod('global_color_primary', '#5eead4'); ?> ;"
+          class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0] shadow-teal-700/30"
+          style="background-color: <?php echo get_theme_mod('global_color_primary'); ?>;"
         >
           <?php echo get_theme_mod('btn_text', 'Download'); ?>
         </button>

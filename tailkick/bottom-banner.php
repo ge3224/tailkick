@@ -3,7 +3,12 @@
     <div class="max-w-xs">
       <h3 class="font-bold text-3xl text-white">Dare to be Different</h3>
       <p class="text-white">Lorem ipsum dolor sit amet consectetur. Interdum turpis enim sodales orci nullam turpis.</p>
-      <button class="mt-3 px-4 py-2 w-32 bg-teal-300 font-bold border border-black shadow-[6px_6px_0_0_rgba(0,115,100,0.25)]">Download</button>
+      <a
+        type="button"
+        class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0] shadow-teal-700/30"
+        style="background-color: <?php echo get_theme_mod('global_color_primary'); ?> ;"
+        href="https://github.com/ge3224/tailkick"
+      >Download</a>
     </div>
   </div>
 </section>

@@ -27,6 +27,28 @@
       'priority'    => 130 // before additional CSS
     ));
 
+    $wp_customize->add_setting('global_background', array(
+      'default' => esc_attr__( '#f9fafb', 'tailkick' ), // `gray-50` from Tailwind CSS's default color palette
+      'type'    => 'theme_mod'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_background', array(
+      'label' => esc_html__('Background', 'tailkick'),
+      'section' => 'global_colors',
+      'priority' => 1
+    )));
+
+    $wp_customize->add_setting('global_foreground', array(
+      'default' => esc_attr__( '#111827', 'tailkick' ), // `gray-900` from Tailwind CSS's default color palette
+      'type'    => 'theme_mod'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_foreground', array(
+      'label' => esc_html__('Foreground', 'tailkick'),
+      'section' => 'global_colors',
+      'priority' => 1
+    )));
+
     $wp_customize->add_setting('global_color_primary', array(
       'default' => esc_attr__('#5eead4', 'tailkick'), // `teal-300` from Tailwind CSS's default color palette
       'type'    => 'theme_mod',

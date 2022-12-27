@@ -49,8 +49,7 @@
         'theme_location' => 'primary',
         'container' => 'div',
         'container_class' => 'absolute top-14 left-0 w-full bg-slate-700/95 shadow shadow-zinc-900/10 nav',
-        'walker' => new Tailkick_Menu_Navwalker(),
-        /*The following custome arguments will recognized by Tailkick_Menu_Navwalker*/
+        'walker' => new Tailkick_Menu_Navwalker(), // The following custome arguments will recognized by Tailkick_Menu_Navwalker
         'menu_class' => 'm-0 md:flex md:justify-end px-0 nav-menu',
         'item_class' => 'relative flex-shrink-0 flex items-center py-6 md:py-0 mx-4 md:ml-7 md:mr-0 md:my-0 border-t md:border-0 border-white/30 first:border-0',
         'submenu_class' => 'relative w-28 md:absolute md:top-8 md:left-0 mt-4 md:mt-0 p-3 bg-none border-l-2 border-white/30 md:border-none md:bg-white/80 rounded-sm shadow shadow-zinc-900/20 hidden',
