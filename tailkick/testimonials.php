@@ -1,3 +1,8 @@
+<?php
+/**
+ * a template for displaying a panel of testimonials
+ */
+?>
 <section id="testimonials">
   <div class="my-20 mx-auto max-w-6xl flex justify-evenly space-x-12">
     <div class="flex space-x-6">
