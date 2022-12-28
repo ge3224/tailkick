@@ -46,11 +46,7 @@
             <p><?php __('No Page Found'); ?></p>
           <?php endif; ?>
         </div>
-        <div>
-          <?php if (is_active_sidebar('primary_sidebar')) : ?>
-            <?php dynamic_sidebar('primary_sidebar'); ?>
-          <?php endif; ?>
-        </div>
+        <?php get_sidebar(); ?>
       </div>
     </div>
     <?php get_template_part('showcase-panel', get_post_format()); ?>

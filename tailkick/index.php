@@ -32,7 +32,6 @@
   <main class="my-8">
     <section class="mx-auto max-w-6xl pt-16">
       <div class="grid grid-cols-6">
-
         <div class="col-span-5 pr-24">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -48,12 +47,7 @@
             </ul>
           </nav>
         </div>
-
-        <div>
-          <?php if (is_active_sidebar('primary_sidebar')) : ?>
-            <?php dynamic_sidebar('primary_sidebar'); ?>
-          <?php endif; ?>
-        </div>
+        <?php get_sidebar(); ?>
       </div>
     </section>
   </main>
