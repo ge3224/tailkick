@@ -6,7 +6,7 @@
   </div>
   <div class="w-full max-w-6xl mx-auto relative h-[391px] flex space-x-16 justify-between items-center">
     <div>
-      <img class="max-w-lg rounded-sm" src="/wp-content/themes/tailkick/images/tk-vignette-3.jpg" />
+      <img class="max-w-lg rounded-sm" src="/wp-content/themes/tailkick/assets/images/tk-vignette-3.jpg" />
     </div class="max-w-lg">
     <div class="px-16">
       <h3 class="font-bold text-3xl">Old But Gold</h3>

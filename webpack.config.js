@@ -22,6 +22,6 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "tailkick/js/"),
+    path: path.resolve(__dirname, "tailkick/assets/js/"),
   },
 };

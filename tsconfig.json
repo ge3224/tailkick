@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./tailkick/",
+    "outDir": "./tailkick/assets/js/",
     "noImplicitAny": false,
     "module": "es6",
     "target": "es5",

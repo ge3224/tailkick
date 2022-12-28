@@ -11,7 +11,7 @@
       <a <?php echo get_tailwind_btn(); ?> href="/?page_id=103"type="button"<?php echo get_custom_styles_btn(); ?>>Read More</a>
     </div>
     <div>
-      <img class="max-w-lg h-auto rounded-sm" src="/wp-content/themes/tailkick/images/tk-vignette-2.jpg" />
+      <img class="max-w-lg h-auto rounded-sm" src="/wp-content/themes/tailkick/assets/images/tk-vignette-2.jpg" />
     </div>
   </div>
 </section>

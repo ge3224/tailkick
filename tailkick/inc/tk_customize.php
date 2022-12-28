@@ -162,7 +162,7 @@
      * Custom background image for the homepage hero section
      */
     $wp_customize->add_setting('hero_home_image', array(
-      'default'   => get_bloginfo('template_directory').'/images/tailkick-hero-home-wide.jpg',
+      'default'   => get_bloginfo('template_directory').'/assets/images/tailkick-hero-home-wide.jpg',
       'type'      => 'theme_mod'
     ));
 
@@ -245,7 +245,7 @@
     * Custom feature image in showcase box one
     */
     $wp_customize->add_setting('showcase_box1_img', array(
-      'default' => get_bloginfo('template_directory').'/images/tk-heart-ico.png',
+      'default' => get_bloginfo('template_directory').'/assets/images/tk-heart-ico.png',
       'type'    => 'theme_mod'
     ));
 
@@ -288,7 +288,7 @@
     * Custom feature image in showcase box two
     */
     $wp_customize->add_setting('showcase_box2_img', array(
-      'default' => get_bloginfo('template_directory').'/images/tk-boombox-ico.png',
+      'default' => get_bloginfo('template_directory').'/assets/images/tk-boombox-ico.png',
       'type'    => 'theme_mod'
     ));
 
@@ -331,7 +331,7 @@
     * Custom feature image in showcase box three
     */
     $wp_customize->add_setting('showcase_box3_img', array(
-      'default' => get_bloginfo('template_directory').'/images/tk-check-ico.png',
+      'default' => get_bloginfo('template_directory').'/assets/images/tk-check-ico.png',
       'type'    => 'theme_mod'
     ));
 
