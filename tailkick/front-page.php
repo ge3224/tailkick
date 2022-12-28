@@ -19,7 +19,7 @@
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
   <header>
-    <?php get_template_part('nav_primary', get_post_format()); ?>
+  <?php get_template_part('template-parts/nav-primary', get_post_format()); ?>
   </header>
   <section
     id="hero"
@@ -36,13 +36,13 @@
   </section>
   <main>
     <?php if (get_theme_mod('showcase_panel_include') == "true") : ?>
-    <?php get_template_part('showcase-panel', get_post_format()); ?>
+    <?php get_template_part('template-parts/showcase-panel', get_post_format()); ?>
     <?php endif; ?>
-    <?php get_template_part('feat-1', get_post_format()); ?>
-    <?php get_template_part('feat-2', get_post_format()); ?>
-    <?php get_template_part('feat-3', get_post_format()); ?>
-    <?php get_template_part('testimonials', get_post_format()); ?>
-    <?php get_template_part('banner-1', get_post_format()); ?>
+    <?php get_template_part('template-parts/feat-1', get_post_format()); ?>
+    <?php get_template_part('template-parts/feat-2', get_post_format()); ?>
+    <?php get_template_part('template-parts/feat-3', get_post_format()); ?>
+    <?php get_template_part('template-parts/testimonials', get_post_format()); ?>
+    <?php get_template_part('template-parts/banner-1', get_post_format()); ?>
   </main>
   <footer>
     <?php get_footer(); ?>

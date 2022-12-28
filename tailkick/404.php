@@ -16,7 +16,7 @@
 <?php get_header(); ?>
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
-  <?php get_template_part('nav_primary', get_post_format()); ?>
+  <?php get_template_part('template-parts/nav-primary', get_post_format()); ?>
   <main class="m-auto max-w-6xl ">
      <section>
       <header>

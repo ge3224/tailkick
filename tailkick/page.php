@@ -19,7 +19,7 @@
 <?php get_header(); ?>
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
-  <?php get_template_part('nav_primary', get_post_format()); ?>
+  <?php get_template_part('template-parts/nav-primary', get_post_format()); ?>
   <?php if ( has_post_thumbnail() ) : ?>
   <section>
     <figure class="overflow-hidden w-full h-72">
@@ -49,8 +49,8 @@
         <?php get_sidebar(); ?>
       </div>
     </div>
-    <?php get_template_part('showcase-panel', get_post_format()); ?>
-    <?php get_template_part('banner-1', get_post_format()); ?>
+    <?php get_template_part('template-parts/showcase-panel', get_post_format()); ?>
+    <?php get_template_part('template-parts/banner-1', get_post_format()); ?>
   </main>
   <?php get_footer(); ?>
 </body>

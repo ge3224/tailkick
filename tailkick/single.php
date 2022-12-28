@@ -15,13 +15,13 @@
 <?php get_header(); ?>
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
-  <?php get_template_part('nav_primary', get_post_format()); ?>
+  <?php get_template_part('template-parts/nav-primary', get_post_format()); ?>
   <div class="mx-auto max-w-6xl pt-24">
     <div class="grid grid-cols-6">
       <div class="col-span-5 pr-24">
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('content', get_post_format()); ?>
+            <?php get_template_part('template-parts/content', get_post_format()); ?>
           <?php endwhile; ?>
         <?php else : ?>
           <p><?php __('No Posts Found'); ?></p>
