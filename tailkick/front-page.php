@@ -17,7 +17,7 @@
 <html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
-<body class="min-h-full flex flex-col">
+<body <?php body_class('min-h-full', 'flex', 'flex-col'); ?>>
   <header>
     <?php get_template_part('nav_primary', get_post_format()); ?>
   </header>
