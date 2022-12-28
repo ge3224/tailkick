@@ -23,8 +23,28 @@ if ( post_password_required() ) {
 }
 
 ?>
-<div class="my-12">
-  <h2 class="font-bold text-lg">Comments</h2>
+<section class="my-12">
+  <?php if ( have_comments() ) : ?>
+  <h2 class="font-bold text-lg">
+    <?php
+      $comments_number = get_comments_number();
+      if ( '1' === $comments_number ) {
+        printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'tailkick'), get_the_title() );
+      } else {
+        printf(
+          _nx(
+						'%1$s Reply to &ldquo;%2$s&rdquo;',
+						'%1$s Replies to &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'tailkick'
+          ),
+          number_format_i18n( $comments_number ),
+          get_the_title()
+        );
+      }
+    ?>
+  </h2>
 
   <?php $args = array(
     'walker'            => null,
@@ -44,17 +64,34 @@ if ( post_password_required() ) {
     'echo'              => true     // boolean, default is true
   ); ?>
 
-  <?php
-    wp_list_comments($args, $comments);
+  <ol>
+    <?php wp_list_comments($args, $comments); ?>
+  </ol>
 
+  <?php
+    the_comments_pagination(
+      array(
+        'prev_text' => '<span>' . esc_html__( 'Previous', 'tailkick' ) . '</span>',
+        'next_text' => '<span>' . esc_html__( 'Next', 'tailkick' ) . '</span>',
+      )
+    );
+  ?>
+
+  <?php endif; // have_comments() ?>
+
+  <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+    <p><?php esc_html__( 'Comments are closed', 'tailkick' ); ?></p>
+  <?php endif; ?>
+
+  <?php 
     $comments_args = array(
-            'label_submit'=>'Send',
-            'title_reply'=>'Write a Reply or Comment',
-            'comment_notes_after' => '',
-            'comment_field' => '<p><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br /><textarea class="border border-gray-400 bg-gray-100 w-72 h-32" id="comment" name="comment" aria-required="true"></textarea></p>',
-            'class_submit' => 'cursor-pointer bg-blue-400 hover:bg-blue-400/75 active:bg-blue-400/50 px-6 py-3 font-bold text-white drop-shadow',
+      'label_submit'=>'Send',
+      'title_reply'=>'Write a Reply or Comment',
+      'comment_notes_after' => '',
+      'comment_field' => '<p><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br /><textarea class="border border-gray-400 bg-gray-100 w-72 h-32" id="comment" name="comment" aria-required="true"></textarea></p>',
+      'class_submit' => 'cursor-pointer bg-blue-400 hover:bg-blue-400/75 active:bg-blue-400/50 px-6 py-3 font-bold text-white drop-shadow',
     );
 
     comment_form($comments_args);
   ?>
-</div>
+</section>
