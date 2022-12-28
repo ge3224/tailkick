@@ -177,7 +177,7 @@
      * Custom background-position x value
      */
     $wp_customize->add_setting('hero_home_image_position_x', array(
-      'default' => _x('35%', 'tailkick'),
+      'default' => _x('center', 'tailkick'),
       'type'    => 'theme_mod'
     ));
 
@@ -192,7 +192,7 @@
      * Custom background-position y value
      */
     $wp_customize->add_setting('hero_home_image_position_y', array(
-      'default' => _x('center', 'tailkick'),
+      'default' => _x('35%', 'tailkick'),
       'type'    => 'theme_mod'
     ));
 
