@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package WordPress
+ * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
+ */
+?>
 <!DOCTYPE html>
 <html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>

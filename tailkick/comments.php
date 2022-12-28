@@ -1,3 +1,28 @@
+<?php
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+
+?>
 <div class="my-12">
   <h2 class="font-bold text-lg">Comments</h2>
 

@@ -14,8 +14,6 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-require_once('tk_navwalker.php');
-
 /**
  * tk_register_menus is fired via the init hook, after WordPress has finished 
  * loading but before any headers are sent.
@@ -173,6 +171,8 @@ function tk_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tk_theme_scripts' );
+
+require_once('tk_navwalker.php');
 
 // Customizer additions.
 require get_template_directory() . '/inc/tk_customize.php';

@@ -1,3 +1,20 @@
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme and one of the
+ * two required files for a theme (the other being style.css). It is used to
+ * dipslay a page when nothing more specific matches a query. E.g., it puts
+ * together the homepage when no home.php file exists. 
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
+ */
+?>
 <!DOCTYPE html>
 <html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>

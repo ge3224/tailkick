@@ -2,6 +2,18 @@
   /** 
    * TailKick: customize_register
    *
+   * GUI options for modifying TailKick — using the WordPress Customizer — are
+   * intended for end users. For developers, we recommend using Tailwind
+   * utility classes in the theme's markup and recompiling the CSS. (More
+   * information about using Tailwind is available in the README.) 
+   *
+   * NOTE: Modifications set in the Customizer are implemented by appending
+   * inline style attributes to targeted HTML elements. Because inline styles
+   * have greater specificity than CSS classes, changes made in the customizer
+   * will always override Tailwind styles. To fallback to Tailwind styling, GUI
+   * mods must be 'cleared.' This is why the certain settings in the following
+   * customize_register have defaults set to `null` (e.g. color settings).
+   *
    * @package WordPress
    * @subpackage TailKick
    *
@@ -19,7 +31,9 @@
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     /**
-     * Component colors
+     * Component colors 
+     *
+     * Customizer defaults are `null`, since color defaults are defined using a precompiled palletwhich allows Tailwind 
      */
     $wp_customize->add_section('global_colors', array(
       'title'       => esc_html__( 'Global Colors', 'tailkick'),
@@ -28,7 +42,7 @@
     ));
 
     $wp_customize->add_setting('global_background', array(
-      'default' => esc_attr__( '#f9fafb', 'tailkick' ), // `gray-50` from Tailwind CSS's default color palette
+      'default' => esc_attr__( null, 'tailkick' ),
       'type'    => 'theme_mod'
     ));
 
@@ -39,18 +53,18 @@
     )));
 
     $wp_customize->add_setting('global_foreground', array(
-      'default' => esc_attr__( '#111827', 'tailkick' ), // `gray-900` from Tailwind CSS's default color palette
+      'default' => esc_attr__( null , 'tailkick' ),
       'type'    => 'theme_mod'
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_foreground', array(
-      'label' => esc_html__('Foreground', 'tailkick'),
+      'label' => esc_html__('Foreground (Text)', 'tailkick'),
       'section' => 'global_colors',
       'priority' => 1
     )));
 
     $wp_customize->add_setting('global_color_primary', array(
-      'default' => esc_attr__('#5eead4', 'tailkick'), // `teal-300` from Tailwind CSS's default color palette
+      'default' => esc_attr__(null, 'tailkick'),
       'type'    => 'theme_mod',
     ));
 
@@ -61,7 +75,7 @@
     )));
 
     $wp_customize->add_setting('global_colors_secondary', array(
-      'default' => esc_attr__( '#fcd34d', 'tailkick'), // `amber-300` from Tailwind CSS's default color palette
+      'default' => esc_attr__( null , 'tailkick'),
       'type'    => 'theme_mod',
     ));
 
@@ -72,7 +86,7 @@
     )));
 
     $wp_customize->add_setting('global_colors_tertiary', array(
-      'default' => esc_attr__( '#e879f9', 'tailkick'), // `fuchsia-400` from Tailwind CSS's default color palette
+      'default' => esc_attr__( null, 'tailkick'),
       'type'    => 'theme_mod',
     ));
 
