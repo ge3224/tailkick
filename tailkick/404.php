@@ -17,7 +17,7 @@
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
   <?php get_template_part('nav_primary', get_post_format()); ?>
-  <main class="my-8">
+  <main class="m-auto max-w-6xl ">
      <section>
       <header>
         <h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'tailkick' ); ?></h1>

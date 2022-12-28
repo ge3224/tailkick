@@ -546,6 +546,9 @@ video {
 .m-0 {
   margin: 0px;
 }
+.m-auto {
+  margin: auto;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -578,6 +581,10 @@ video {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -607,6 +614,9 @@ video {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+.mt-12 {
+  margin-top: 3rem;
 }
 .block {
   display: block;
