@@ -18,7 +18,7 @@
 <html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
-<body <?php body_class('min-h-full', 'flex', 'flex-col'); ?>>
+<body <?php body_class('min-h-full flex flex-col'); ?>>
   <?php get_template_part('nav_primary', get_post_format()); ?>
   <?php if ( has_post_thumbnail() ) : ?>
   <section>

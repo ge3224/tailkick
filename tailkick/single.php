@@ -14,7 +14,7 @@
 <html class="h-full" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
-<body <?php body_class('min-h-full', 'flex', 'flex-col'); ?>>
+<body <?php body_class('min-h-full flex flex-col'); ?>>
   <?php get_template_part('nav_primary', get_post_format()); ?>
   <div class="mx-auto max-w-6xl pt-24">
     <div class="grid grid-cols-6">
