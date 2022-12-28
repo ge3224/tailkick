@@ -86,8 +86,8 @@ if ( ! function_exists( 'tk_theme_setup' ) ) {
 				'comment-list',
 				'gallery',
 				'caption',
-				'style',
 				'script',
+				'style',
 				'navigation-widgets',
 			)
 		);
@@ -130,7 +130,25 @@ if ( ! function_exists( 'tk_theme_setup' ) ) {
 		// Remove feed icon link from legacy RSS widget.
 		add_filter( 'rss_widget_feed_link', '__return_false' );
 
-    add_theme_support('post-formats', array('aside', 'gallery'));
+    /*
+     * Enable support for Post Formats.
+     *
+     * See: https://wordpress.org/support/article/post-formats/
+     */
+    add_theme_support(
+      'post-formats',
+      array(
+        'aside',
+        'gallery',
+        'link',
+        'image',
+        'quote',
+        'status',
+        'video',
+        'audio',
+        'chat',
+      )
+    );
   }
 }
 add_action('after_setup_theme', 'tk_theme_setup');

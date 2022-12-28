@@ -1,4 +1,16 @@
-<div class="mb-16">
+<?php
+/**
+ * The default template for displaying content
+ *
+ * Used for both single and index/archive/search.
+ *
+ * @package WordPress
+ * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
+ */
+?>
+<div id="<?php the_ID(); ?>" <?php post_class('mb-16'); ?>>
   <h2 class="font-bold text-4xl">
     <?php if (is_single()) : ?>
       <?php the_title(); ?>
