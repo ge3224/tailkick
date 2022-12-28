@@ -12,7 +12,7 @@
     <div class="max-w-xs">
       <h3 class="font-bold text-3xl text-white">Dare to be Different</h3>
       <p class="text-white">Lorem ipsum dolor sit amet consectetur. Interdum turpis enim sodales orci nullam turpis.</p>
-      <?php get_template_part('button', null, array('text' => 'Get Started', 'link' => 'https://github.com/ge3224/tailkick', 'target' => '_blank')); ?>
+      <a <?php echo get_tailwind_btn(); ?> href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Get Started</a>
     </div>
   </div>
 </section>

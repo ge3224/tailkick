@@ -10,11 +10,14 @@
  * @version 0.1
  */
 ?>
+
 <!DOCTYPE html>
-<html>
-  <?php get_header(); ?>
-  <body <?php body_class('min-h-full flex flex-col'); ?>>
-    <main class="my-8">
+<html class="h-full" <?php language_attributes(); ?>>
+<?php get_header(); ?>
+
+<body <?php body_class('min-h-full flex flex-col'); ?>>
+  <?php get_template_part('nav_primary', get_post_format()); ?>
+  <main class="my-8">
      <section>
       <header>
         <h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'tailkick' ); ?></h1>
@@ -26,7 +29,6 @@
         <?php get_search_form(); ?>
       </div>
      </section> 
-    </main>
-    <?php get_footer(); ?>
-  </body>
-</html>
+  </main>
+  <?php get_footer(); ?>
+</body>

@@ -33,11 +33,11 @@ if ( post_password_required() ) {
       } else {
         printf(
           _nx(
-						'%1$s Reply to &ldquo;%2$s&rdquo;',
-						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'tailkick'
+            '%1$s Reply to &ldquo;%2$s&rdquo;',
+            '%1$s Replies to &ldquo;%2$s&rdquo;',
+            $comments_number,
+            'comments title',
+            'tailkick'
           ),
           number_format_i18n( $comments_number ),
           get_the_title()

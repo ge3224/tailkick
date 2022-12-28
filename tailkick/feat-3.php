@@ -11,12 +11,7 @@
     <div class="px-16">
       <h3 class="font-bold text-3xl">Old But Gold</h3>
       <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque [ ... ]</p>
-      <a
-        type="button"
-        class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0] shadow-teal-700/30"
-        style="background-color: <?php echo get_theme_mod('global_color_primary'); ?> ;"
-        href="/?page_id=108"
-      >Learn More</a>
+      <a <?php echo get_tailwind_btn(); ?> href="/?page_id=108"type="button"<?php echo get_custom_styles_btn(); ?>>Read More</a>
     </div>
   </div>
 </section>

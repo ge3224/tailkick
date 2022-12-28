@@ -261,5 +261,28 @@ add_filter( 'widget_output', 'tk_widget_output_filter', 10, 3 );
 function reset_tktheme_options() {
   remove_theme_mods();
 }
-
 // add_action( 'after_switch_theme', 'reset_tktheme_options' );
+
+/** 
+ * Button related styles
+ */
+function get_tailwind_btn() {
+  return 'class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]"';
+}
+
+function get_custom_styles_btn() {
+  //  see tk_customize
+  $bg = get_theme_mod('global_color_primary');
+  $fg = get_theme_mod('global_foreground');
+
+  $output = '';
+  if ($bg != "" || $fg != "") {
+    $output .= ' style="';
+    // background of the button is customizable
+    if ($bg != '') $output .= 'background-color: ' . $bg . ';';
+    // border color and text color are customizable
+    if ($fg != '') $output .= 'color: ' . $fg . ';border-color: ' . $fg . ';';
+    $output .= '"';
+  }
+  return $output;
+}
