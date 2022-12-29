@@ -825,20 +825,14 @@ video {
 .bg-gray-50\/95 {
   background-color: rgb(249 250 251 / 0.95);
 }
-.bg-\[url\(\'\/wp-content\/themes\/tailkick\/images\/tk-hero-blog\.jpg\'\)\] {
-  background-image: url('/wp-content/themes/tailkick/images/tk-hero-blog.jpg');
-}
-.bg-\[url\(\'\/wp-content\/themes\/tailkick\/images\/tk-cta-1\.jpg\'\)\] {
-  background-image: url('/wp-content/themes/tailkick/images/tk-cta-1.jpg');
-}
-.bg-none {
-  background-image: none;
-}
 .bg-\[url\(\'\/wp-content\/themes\/tailkick\/assets\/images\/tk-hero-blog\.jpg\'\)\] {
   background-image: url('/wp-content/themes/tailkick/assets/images/tk-hero-blog.jpg');
 }
 .bg-\[url\(\'\/wp-content\/themes\/tailkick\/assets\/images\/tk-cta-1\.jpg\'\)\] {
   background-image: url('/wp-content/themes/tailkick/assets/images/tk-cta-1.jpg');
+}
+.bg-none {
+  background-image: none;
 }
 .bg-cover {
   background-size: cover;

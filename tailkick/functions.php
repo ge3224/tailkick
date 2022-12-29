@@ -1,12 +1,17 @@
 <?php
-
 /**
- * Functions and definitions
+ * TailKick functions and definitions
+ *
+ * This file sets up the theme and provides some helper functions, which are
+ * used in the them as custom template tags. Others are attached t oaction and
+ * filter hooks in WordPress to change core functionality.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
  * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
  */
 
 // This theme requires WordPress 5.3 or later.
@@ -153,23 +158,38 @@ if ( ! function_exists( 'tk_theme_setup' ) ) {
 }
 add_action('after_setup_theme', 'tk_theme_setup');
 
+require_once('tk_navwalker.php');
+
 /**
  * Register widget area.
- *
- * @since Twenty Twenty-One 1.0
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function tk_widgets_init($id) {
-  register_sidebar(array(
-    'name' => esc_html__( 'Primary Sidebar', 'tailkick' ),
-    'id' => 'primary_sidebar',
-    'description' => esc_html__( 'Add widgets here to appear in your sidebar', 'tailkick' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>',
-  ));
+
+  register_sidebar(
+    array(
+      'name' => esc_html__( 'Primary Sidebar', 'tailkick' ),
+      'id' => 'primary_sidebar',
+      'description' => esc_html__( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'tailkick' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget' => '</section>',
+      'before_title' => '<h2 class="widget-title">',
+      'after_title' => '</h2>',
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name' => esc_html__('Footer Sidebar', 'tailkick'),
+      'id'   => 'footer_sidebar',
+      'description' => __( 'Add widgets here to appear in your footer.', 'tailkick' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget' => '</section>',
+      'before_title' => '<h2 class="widget-title">',
+      'after_title' => '</h2>',
+    )
+  );
 }
 add_action('widgets_init', 'tk_widgets_init');
 
@@ -190,8 +210,6 @@ function tk_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'tk_theme_scripts' );
 
-require_once('tk_navwalker.php');
-
 // Customizer additions.
 require get_template_directory() . '/inc/tk_customize.php';
 
@@ -201,7 +219,6 @@ require get_template_directory() . '/inc/tk_customize.php';
 function set_excerpt_length() {
   return 45;
 }
-
 add_filter('excerpt_length', 'set_excerpt_length');
 
 function tk_custom_widget_callback_function() {
@@ -210,13 +227,12 @@ function tk_custom_widget_callback_function() {
     $original_callback_params = func_get_args();
     $widget_id = $original_callback_params[0]['widget_id'];
 
+    // retore original callback
     $original_callback = $wp_registered_widgets[ $widget_id ]['original_callback'];
     $wp_registered_widgets[ $widget_id ]['callback'] = $original_callback;
-
     $widget_id_base = $wp_registered_widgets[ $widget_id ]['callback'][0]->id_base;
 
     if ( is_callable( $original_callback ) ) {
-
         ob_start();
         call_user_func_array( $original_callback, $original_callback_params );
         $widget_output = ob_get_clean();
@@ -231,47 +247,63 @@ function tk_filter_dynamic_sidebar_params( $sidebar_params ) {
         return $sidebar_params;
     }
 
-    global $wp_registered_widgets;
-    $widget_id = $sidebar_params[0]['widget_id'];
+    if ( $sidebar_params[0]['id'] == 'primary_sidebar' ) {
+      $widget_id = $sidebar_params[0]['widget_id'];
 
-    $wp_registered_widgets[ $widget_id ]['original_callback'] = $wp_registered_widgets[ $widget_id ]['callback'];
-    $wp_registered_widgets[ $widget_id ]['callback'] = 'tk_custom_widget_callback_function';
+      global $wp_registered_widgets;
+
+      $wp_registered_widgets[ $widget_id ]['original_callback'] = $wp_registered_widgets[ $widget_id ]['callback'];
+      $wp_registered_widgets[ $widget_id ]['callback'] = 'tk_custom_widget_callback_function';
+    }
 
     return $sidebar_params;
 
 }
 add_filter( 'dynamic_sidebar_params', 'tk_filter_dynamic_sidebar_params' );
 
-function tk_widget_output_filter( $widget_output, $widget_id_base, $widget_id ) {
+function tk_primary_sidebar_widget_output_filter( $widget_output, $widget_id_base, $widget_id) {
+
+  $tailwind_styling_h2 = 'font-bold';
+  $tailwind_styling_a = 'text-teal-500 visited:text-teal-500 hover:text-teal-400 active:text-teal-300';
   
-   /* To target a specific widget ID: */
-   if (preg_match('/block-\d/i', $widget_id)) {
+  if ( $widget_id_base == 'block') {
+    global $wp_registered_widgets;
+    $widget = $wp_registered_widgets[ $widget_id ]; 
+
+
+    $output = '';
+    $class_regex = '/class="(.+?)"/i';
+
+    /* $output = str_replace('<h2>', '<h2 class="' . $tailwind_styling_h2 . ' ' . $widget_id_base . '">', $widget_output);  */
   
-     global $wp_registered_widgets;
-     $w = $wp_registered_widgets[ $widget_id ]; 
-  
-  
-     $output = str_replace('<h2>', '<h2 class="font-bold">', $widget_output); 
-  
-     $sidebar_links_classes = 'text-teal-500 visited:text-teal-500 hover:text-teal-400 active:text-teal-300';
-  
+    // modify h2 elements
+    if(preg_match_all('/<h2.+?>/i', $widget_output, $matches)) {
+      foreach($matches[0] as $match) {
+        if(preg_match($class_regex, $match, $result)) {
+          $output = str_replace($result[0], 'class="' . $tailwind_styling_h2 . ' ' . $result[1] . '"', $widget_output);
+        } else {
+          $output = str_replace('<h2', '<h2 class="' . $tailwind_styling_h2 . '"', $widget_output);
+        }
+      }      
+    }
+
+    // modify anchor elements
     if(preg_match_all('/<a.+?>/i', $output, $matches)) {
         foreach ($matches[0] as $match) {
           if(preg_match('/class="(.+?)"/', $match, $ms)) {
-            $merged = 'class="'. $sidebar_links_classes . ' ' . $ms[1] . '"';
+            $merged = 'class="' . $tailwind_styling_a . ' ' . $ms[1] . '"';
             $output = str_replace($ms[0], $merged, $output);
           } else {
-            $output = str_replace('<a', '<a class="' . $sidebar_links_classes . '"', $output);
+            $output = str_replace('<a', '<a class="' . $tailwind_styling_a . '"', $output);
           }
         }
     }
     return $output;
-  
   }
   
   return $widget_output;
 }
-add_filter( 'widget_output', 'tk_widget_output_filter', 10, 3 );
+add_filter( 'widget_output', 'tk_primary_sidebar_widget_output_filter', 10, 3 );
 
 /**
  * Reset theme settings

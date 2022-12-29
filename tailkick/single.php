@@ -27,7 +27,7 @@
           <p><?php __('No Posts Found'); ?></p>
         <?php endif; ?>
       </div>
-      <?php get_sidebar(); ?>
+      <?php get_sidebar('footer'); ?>
     </div>
   </div>
   <?php get_footer(); ?>

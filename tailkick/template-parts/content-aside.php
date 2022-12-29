@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template part for displaying aside post formats 
+ *
+ * @package WordPress
+ * @subpackage TailKick
+ * @since TailKick 0.1
+ * @version 0.1
+ */
+?>
 <div id="<?php the_ID(); ?>" <?php post_class('mb-12'); ?>>
   <div class="bg-gray-200 p-3">
     <small><a class="text-teal-700 visited:text-teal-700 underline" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a>@<?php the_date(); ?></small>
