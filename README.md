@@ -1,4 +1,4 @@
-![tailkick-logo-large](https://user-images.githubusercontent.com/75739874/210014866-63131bbc-2d61-4efe-a143-002c8783d4c5.svg)
+![tailkick-logo-large](https://user-images.githubusercontent.com/75739874/210015003-1e8611fb-fbbf-4a23-882d-bec14825ee09.svg)
 
 # Tailkick
 
