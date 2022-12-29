@@ -1041,6 +1041,14 @@ video {
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+/**
+   * Accessing and modifying some HTML Elements rendered internally by
+   * WordPress, e.g. block widgets, can be more trouble than it's likely worth.
+   * In such cases, we can make use of the WP generated class names but
+   * incorporate Tailwind using `@apply`. 
+   *
+   * @link https://tailwindcss.com/docs/reusing-styles
+   */
 p {
   margin-bottom: 0.75rem;
   max-width: 65ch;
@@ -1053,9 +1061,34 @@ h1 {
 }
 h2 {
   padding-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+h3 {
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+h4 {
+  padding-bottom: 0.75rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
+}
+h5 {
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+h6 {
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 img {
   border-radius: 0.125rem;
@@ -1068,6 +1101,19 @@ figcaption {
   line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+/* widget default styles */
+.widget a {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
+}
+.widget a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}
+.widget a:active {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity));
 }
 /* navbar, responsive drop-down */
 .nav {

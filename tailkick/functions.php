@@ -178,18 +178,6 @@ function tk_widgets_init($id) {
       'after_title' => '</h2>',
     )
   );
-
-  register_sidebar(
-    array(
-      'name' => esc_html__('Footer Sidebar', 'tailkick'),
-      'id'   => 'footer_sidebar',
-      'description' => __( 'Add widgets here to appear in your footer.', 'tailkick' ),
-      'before_widget' => '<section id="%1$s" class="widget %2$s">',
-      'after_widget' => '</section>',
-      'before_title' => '<h2 class="widget-title">',
-      'after_title' => '</h2>',
-    )
-  );
 }
 add_action('widgets_init', 'tk_widgets_init');
 
@@ -259,7 +247,7 @@ function tk_filter_dynamic_sidebar_params( $sidebar_params ) {
     return $sidebar_params;
 
 }
-add_filter( 'dynamic_sidebar_params', 'tk_filter_dynamic_sidebar_params' );
+/* add_filter( 'dynamic_sidebar_params', 'tk_filter_dynamic_sidebar_params' ); */
 
 function tk_primary_sidebar_widget_output_filter( $widget_output, $widget_id_base, $widget_id) {
 
@@ -274,8 +262,6 @@ function tk_primary_sidebar_widget_output_filter( $widget_output, $widget_id_bas
     $output = '';
     $class_regex = '/class="(.+?)"/i';
 
-    /* $output = str_replace('<h2>', '<h2 class="' . $tailwind_styling_h2 . ' ' . $widget_id_base . '">', $widget_output);  */
-  
     // modify h2 elements
     if(preg_match_all('/<h2.+?>/i', $widget_output, $matches)) {
       foreach($matches[0] as $match) {
@@ -303,7 +289,7 @@ function tk_primary_sidebar_widget_output_filter( $widget_output, $widget_id_bas
   
   return $widget_output;
 }
-add_filter( 'widget_output', 'tk_primary_sidebar_widget_output_filter', 10, 3 );
+/* add_filter( 'widget_output', 'tk_primary_sidebar_widget_output_filter', 10, 3 ); */
 
 /**
  * Reset theme settings

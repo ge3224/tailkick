@@ -23,9 +23,13 @@
         <a class="hover:text-teal-500 active:text-teal-400" href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></div>
     </div>
     <div>
-      <?php if (is_active_sidebar('footer_sidebar')) : ?>
-        <?php dynamic_sidebar('footer_sidebar'); ?>
-      <?php endif; ?>
+      <div><strong>Column Header</strong></div>
+      <div>Lorem ipsum </div>
+      <div>Dolor sit amet </div>
+      <div>Consectetur</div>
+      <div>Orci ipsum</div>
+      <div>Malesuada blandit</div>
+      <div>Eleifend non sem</div>
     </div>
     <div>
       <div><strong>Column Header</strong></div>
