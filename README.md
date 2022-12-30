@@ -97,7 +97,8 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 
 ## TODO
 
-- [ ] Compile CSS to style.css including obligatory WordPress metadata
-- [ ] Transition to a block theme
+- [x] Add a favicon 
+- [ ] Use PostCSS minifier
 - [ ] Test legacy widgets
 - [ ] Address post formats
+- [ ] Accommodate block theme development

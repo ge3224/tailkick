@@ -16,7 +16,7 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link rel="icon" href="../../favicon.ico">-->
+  <link rel="icon" href="<?php echo get_bloginfo('template_url').'assets/images/tailkick-favicon.ico'; ?>" />
   <title>
     <?php bloginfo('name'); ?> | 
     <?php is_front_page() ? bloginfo('description') : wp_title(); ?>
