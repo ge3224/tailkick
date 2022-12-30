@@ -8,8 +8,11 @@
   </a>
 </p>
 
+<p align="center">
+  A WordPress Theme Utilizing <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
+</p>
 
-# Tailkick — A WordPress Theme Utilizing <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>.
+------
 
 TailKick offers WordPress site owners a fresh look and theme builders an
 alternative developer experience.
