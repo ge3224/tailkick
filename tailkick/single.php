@@ -20,12 +20,22 @@
     <div class="grid grid-cols-6">
       <div class="col-span-5 pr-24">
         <?php if (have_posts()) : ?>
-          <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/content', get_post_format()); ?>
-          <?php endwhile; ?>
+          <?php
+            // Start the Loop
+            while ( have_posts() ) :
+              the_post(); 
+
+              get_template_part( 'template-parts/content', get_post_format() );
+            endwhile;
+          ?>
         <?php else : ?>
           <p><?php __('No Posts Found'); ?></p>
         <?php endif; ?>
+        <div class="py-3 flex">
+          <div><?php previous_post_link(); ?></div>
+          <div class="px-4">|</div>
+          <div><?php next_post_link(); ?></div>
+        </div>
       </div>
       <?php get_sidebar('footer'); ?>
     </div>

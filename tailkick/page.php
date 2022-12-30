@@ -45,6 +45,11 @@
           <?php else : ?>
             <p><?php __('No Page Found'); ?></p>
           <?php endif; ?>
+          <div class="py-3 flex">
+            <div><?php previous_post_link(); ?></div>
+            <div class="px-4">|</div>
+            <div><?php next_post_link(); ?></div>
+          </div>
         </div>
         <?php get_sidebar(); ?>
       </div>

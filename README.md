@@ -102,3 +102,6 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [ ] Test legacy widgets
 - [ ] Address post formats
 - [ ] Accommodate block theme development
+- [ ] Handle pagination
+- [ ] Handle localization
+- [ ] Handle accessibility

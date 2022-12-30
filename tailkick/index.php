@@ -40,12 +40,6 @@
           <?php else : ?>
             <p><?php __('No Posts Found'); ?></p>
           <?php endif; ?>
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
         </div>
         <?php get_sidebar(); ?>
       </div>
