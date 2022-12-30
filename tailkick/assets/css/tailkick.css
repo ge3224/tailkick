@@ -1141,64 +1141,50 @@ figcaption {
       opacity: 1;
     }
   }
-
 .first\:border-0:first-child {
   border-width: 0px;
 }
-
 .visited\:text-teal-500:visited {
   color: rgb(20 184 166 );
 }
-
 .visited\:text-teal-700:visited {
   color: rgb(15 118 110 );
 }
-
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
-
 .hover\:border-gray-700\/50:hover {
   border-color: rgb(55 65 81 / 0.5);
 }
-
 .hover\:bg-blue-400\/75:hover {
   background-color: rgb(96 165 250 / 0.75);
 }
-
 .hover\:bg-purple-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(216 180 254 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-white\/80:hover {
   background-color: rgb(255 255 255 / 0.8);
 }
-
 .hover\:text-teal-500:hover {
   --tw-text-opacity: 1;
   color: rgb(20 184 166 / var(--tw-text-opacity));
 }
-
 .hover\:text-teal-400:hover {
   --tw-text-opacity: 1;
   color: rgb(45 212 191 / var(--tw-text-opacity));
 }
-
 .active\:bg-blue-400\/50:active {
   background-color: rgb(96 165 250 / 0.5);
 }
-
 .active\:text-teal-400:active {
   --tw-text-opacity: 1;
   color: rgb(45 212 191 / var(--tw-text-opacity));
 }
-
 .active\:text-teal-300:active {
   --tw-text-opacity: 1;
   color: rgb(94 234 212 / var(--tw-text-opacity));
 }
-
 @media (min-width: 768px) {
 
   .md\:absolute {
@@ -1275,7 +1261,6 @@ figcaption {
     padding-bottom: 0px;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:h-2\/3 {
@@ -1287,7 +1272,6 @@ figcaption {
     padding-bottom: 1.25rem;
   }
 }
-
 @media (min-width: 1280px) {
 
   .xl\:px-0 {
