@@ -16,22 +16,47 @@
 
 WordPress users can switch their websites to the *TailKick* theme in the [usual way](#gs-site-owners). Without editing template files, CSS, or PHP, they can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
 
-For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick*, or folks interested in contributing to this project, I recommend the Tailwind CSS framework and its challenge of traditional CSS 'best practices.'
+For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick*, or folks interested in contributing to this project :smile:, I recommend the Tailwind CSS framework and its challenge of traditional CSS 'best practices.'
+
+**The traditional approach: write custom CSS for a custom design.**
+
+```html
+<a class="btn-variant-37" href="#" type="button">Download</a>
+
+<style>
+  .btn-variant-37 {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    background-color: rgb(94,234,212);
+    border: 1px solid rgb(0,0,0);
+    box-shadow: 5px 5px 0 0 rgba(0,0,0,0.20);
+  }
+</style>
+```
+
+**The Tailwind approach: create a custom design without writing additional CSS.**
+
+```html
+<a class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.20)]" href="#" type="button">Download</a>
+
+<!-- No new CSS needs to be written -->
+```
 
 Tailwind CSS describes itself as a "utility-first CSS framework." It is an extensive collection of class selectors mapped to carefully constrained rulesets — "primitive utilities." You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity, and it is easier to manage as their projects grow in complexity.
 
 ## Getting Started 
 
-- [For Site Owners](#gs-site-owners)
-- [For Theme Developers](#gs-theme-developers)
+- [Installing TailKick in WordPress](#gs-site-owners)
+- [Developing with Tailwind CSS](#gs-theme-developers)
 
-### <a name="gs-site-owners"></a>WordPress Site Owners
+### <a name="gs-site-owners"></a>Installing the theme in WordPress
 
 - Download the `tailkick` folder in this repository. (Here's a DownGit link: [tailkick](https://downgit.github.io/#/home?url=https://github.com/ge3224/tailkick/tree/main/tailkick).) 
 - Upload the `tailkick.zip` file through your WordPress dashboard. (See [WP help docs](https://wordpress.org/support/article/appearance-themes-screen/#using-the-upload-method).)
 - Click the **Activate** link.
 
-### <a name="gs-theme-developers"></a>WordPress Theme Developers
+### <a name="gs-theme-developers"></a>Developing the theme with Tailwind CSS
 
 ```bash
 git clone https://github.com/ge3224/tailkick
