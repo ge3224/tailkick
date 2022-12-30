@@ -98,7 +98,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 ## TODO
 
 - [x] Add a favicon 
-- [ ] Use PostCSS minifier
+- [x] Use PostCSS minifier
 - [ ] Test legacy widgets
 - [ ] Address post formats
 - [ ] Accommodate block theme development
