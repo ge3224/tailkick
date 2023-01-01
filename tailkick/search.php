@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying search results pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package WordPress
  * @subpackage TailKick
@@ -54,30 +54,55 @@
 <!---------------------------------------------------------------------------->
 
 <div class="wrap">
+
+	<header class="page-header">
+		<?php if ( have_posts() ) : ?>
+			<h1 class="page-title">
+			<?php
+			/* translators: Search query. */
+			printf( __( 'Search Results for: %s', 'tailkick' ), '<span>' . get_search_query() . '</span>' );
+			?>
+			</h1>
+		<?php else : ?>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'tailkick' ); ?></h1>
+		<?php endif; ?>
+	</header><!-- .page-header -->
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
+		<?php
+		if ( have_posts() ) :
 			// Start the Loop.
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-				the_post_navigation(
-					array(
-						'prev_text' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous Post', 'tailkick' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'tailkick' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-						'next_text' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next Post', 'tailkick' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'tailkick' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-					)
-				);
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/post/content', 'excerpt' );
 
 			endwhile; // End the loop.
+
+			the_posts_pagination(
+				array(
+					'prev_text'          => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous page', 'tailkick' ) . '</span>',
+					'next_text'          => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next page', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
+					'before_page_number' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] meta-nav screen-reader-text">' . __( 'Page', 'tailkick' ) . ' </span>',
+				)
+			);
+
+		else :
 			?>
+
+			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'tailkick' ); ?></p>
+			<?php
+				get_search_form();
+
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

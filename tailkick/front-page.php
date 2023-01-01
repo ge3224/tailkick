@@ -2,51 +2,107 @@
 /**
  * The front page template file
  *
- * If the user has selected a static page for their homepage, this is what will appear. 
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * If the user has selected a static page for their homepage, this is what will
+ * appear.
+ * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage TailKick
  * @since TailKick 0.1
  * @version 0.1
  */
-?>
+
+?> 
 
 <!DOCTYPE html>
-<html class="h-full" <?php language_attributes(); ?>>
+<html class="h-full no-js no-svg" <?php language_attributes(); ?>>
 <?php get_header(); ?>
 
 <body <?php body_class('min-h-full flex flex-col'); ?>>
-  <header>
-  <?php get_template_part('template-parts/nav-primary', get_post_format()); ?>
-  </header>
-  <section
-    id="hero"
-    style="background:url('<?php echo get_theme_mod('hero_home_image', get_bloginfo('template_url').'/assets/images/tailkick-hero-home-wide.jpg'); ?>') no-repeat <?php echo get_theme_mod('hero_home_image_position_x', 'center'); ?> <?php echo get_theme_mod('hero_home_image_position_y', 'center'); ?>; background-size: cover;"
-    class="bg-gray-200 lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>] w-full"
-  >
-    <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-center items-start">
-      <div class="w-1/5 ml-auto mr-0">
-        <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
-        <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
-        <a <?php echo get_tailwind_btn(); ?> href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Download</a>
-      </div>
-    </div>
-  </section>
-  <main>
-    <?php if (get_theme_mod('showcase_panel_include') == "true") : ?>
-      <?php get_template_part('template-parts/showcase-panel', get_post_format()); ?>
-    <?php endif; ?>
-    <?php get_template_part('template-parts/feat-1', get_post_format()); ?>
-    <?php get_template_part('template-parts/feat-2', get_post_format()); ?>
-    <?php get_template_part('template-parts/feat-3', get_post_format()); ?>
-    <?php get_template_part('template-parts/testimonials', get_post_format()); ?>
-    <?php get_template_part('template-parts/banner-1', get_post_format()); ?>
-  </main>
-  <footer>
-    <?php get_footer(); ?>
-  </footer>
-</body>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tailkick' ); ?></a>
 
+	<header id="masthead" class="site-header">
+
+		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+
+		<?php if ( has_nav_menu( 'top' ) ) : ?>
+			<div class="navigation-top">
+				<div class="wrap">
+					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+				</div><!-- .wrap -->
+			</div><!-- .navigation-top -->
+		<?php endif; ?>
+
+	</header><!-- #masthead -->
+
+	<?php
+
+	/*
+	 * If a regular post or page, and not the front page, show the featured image.
+	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
+	 */
+	if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
+		echo '<div class="single-featured-image-header">';
+		echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image' );
+		echo '</div><!-- .single-featured-image-header -->';
+	endif;
+	?>
+
+	<div class="site-content-contain">
+		<div id="content" class="site-content">
+
+      <!---------------------------------------------------------------------------->
+
+      <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+
+          <?php
+          // Show the selected front page content.
+          if ( have_posts() ) :
+            while ( have_posts() ) :
+              the_post();
+              get_template_part( 'template-parts/page/content', 'front-page' );
+            endwhile;
+          else :
+            get_template_part( 'template-parts/post/content', 'none' );
+          endif;
+          ?>
+
+          <?php
+          // Get each of our panels and show the post data.
+          if ( 0 !== tailkick_panel_count() || is_customize_preview() ) : // If we have pages to show.
+
+            /**
+             * Filters the number of front page sections in TailKick.
+             *
+             * @since TailKick 0.1
+             *
+             * @param int $num_sections Number of front page sections.
+             */
+            $num_sections = apply_filters( 'tailkick_front_page_sections', 4 );
+            global $tailkickcounter;
+
+            // Create a setting and control for each of the sections available in the theme.
+            for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+              $tailkickcounter = $i;
+              tailkick_front_page_section( null, $i );
+            }
+
+        endif; // The if ( 0 !== tailkick_panel_count() ) ends here.
+          ?>
+
+        </main><!-- #main -->
+      </div><!-- #primary -->
+
+<!---------------------------------------------------------------------------->
+
+		</div><!-- #content -->
+
+    <?php get_footer(); ?>
+	</div><!-- .site-content-contain -->
+</div><!-- #page -->
+
+</body>
 </html>

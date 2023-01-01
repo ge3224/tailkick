@@ -6,3 +6,6 @@ wp_docker/*
 !wp_docker/docker-compose.yaml
 # this is redundant, but I want to be clear
 wp_docker/.env 
+
+# TODO remove this before push
+temp

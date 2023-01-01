@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for the TailKick theme
+ * The header for our theme
  *
  * This is the template that displays all fo the <head> section.
  *
@@ -11,17 +11,13 @@
  * @since TailKick 0.1
  * @version 0.1
  */
+
 ?>
 <head>
-  <meta charset="<?php bloginfo('charset'); ?>">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="<?php echo get_bloginfo('template_url').'assets/images/tailkick-favicon.ico'; ?>" />
-  <title>
-    <?php bloginfo('name'); ?> | 
-    <?php is_front_page() ? bloginfo('description') : wp_title(); ?>
-  </title>
-  <meta name="author" content="TailKick by Jacob Benison">
-  <meta name="description" content="<?php bloginfo('description'); ?>">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name="author" content="Jacob Benison - https://jacobbenison.com">
+
   <?php wp_head(); ?>
 </head>

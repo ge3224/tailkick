@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -59,25 +54,55 @@
 <!---------------------------------------------------------------------------->
 
 <div class="wrap">
+
+	<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
+	<?php endif; ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+		<?php
+		if ( have_posts() ) :
+			?>
 			<?php
+			// Start the Loop.
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/page/content', 'page' );
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that
+				 * will be used instead.
+				 */
+				get_template_part( 'template-parts/post/content', get_post_format() );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			endwhile;
 
-			endwhile; // End the loop.
-			?>
+			the_posts_pagination(
+				array(
+					'prev_text'          => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous page', 'tailkick' ) . '</span>',
+					'next_text'          => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next page', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
+					'before_page_number' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] meta-nav screen-reader-text">' . __( 'Page', 'tailkick' ) . ' </span>',
+				)
+			);
+
+		else :
+
+			get_template_part( 'template-parts/post/content', 'none' );
+
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 
 <!---------------------------------------------------------------------------->

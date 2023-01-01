@@ -2,55 +2,44 @@
 /**
  * The template for displaying the footer
  *
- * Contains the <footer> element only.
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
  * @subpackage TailKick
  * @since TailKick 0.1
  * @version 0.1
  */
+
 ?>
 
-<footer class="mt-auto mb-0 py-10 bg-gray-100 border-t border-gray-200 text-sm text-gray-500">
-  <div class="mx-auto max-w-6xl grid grid-cols-5">
-    <div>
-      <div><strong>Theme: <?php bloginfo('name'); ?></strong></div>
-      <div>&copy; <?php echo Date('Y'); ?> &mdash; <a href="http://jacobbenison.com">Jacob Benison</a></div>
-      <div>&nbsp;</div>
-      <div>
-        <span>Powered by </span><br>
-        <a class="hover:text-teal-500 active:text-teal-400" href="https://wordpress.org/" target="_blank">WordPress</a><span> & </span>
-        <a class="hover:text-teal-500 active:text-teal-400" href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></div>
-    </div>
-    <div>
-      <div><strong>Column Header</strong></div>
-      <div>Lorem ipsum </div>
-      <div>Dolor sit amet </div>
-      <div>Consectetur</div>
-      <div>Orci ipsum</div>
-      <div>Malesuada blandit</div>
-      <div>Eleifend non sem</div>
-    </div>
-    <div>
-      <div><strong>Column Header</strong></div>
-      <div>Lorem ipsum </div>
-      <div>Dolor sit amet </div>
-      <div>Consectetur</div>
-      <div>Orci ipsum</div>
-      <div>Malesuada blandit</div>
-      <div>Eleifend non sem</div>
-    </div>
-    <div>
-    </div>
-    <div>
-      <div><strong>Column Header</strong></div>
-      <div>Lorem ipsum </div>
-      <div>Dolor sit amet </div>
-      <div>Consectetur</div>
-      <div>Orci ipsum</div>
-      <div><a href="#">Sitemap</a></div>
-      <div><a href="#">Back to top</a></div>
-    </div>
+<footer id="colophon" class="site-footer">
+  <div class="wrap">
+    <?php
+      get_template_part( 'template-parts/footer/footer', 'widgets' );
+
+      if ( has_nav_menu( 'social' ) ) :
+    ?>
+    <nav class="social-navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'tailkick' ); ?>">
+      <?php
+        wp_nav_menu(
+          array(
+            'theme_location' => 'social',
+            'menu_class'     => 'social-links-menu',
+            'depth'          => 1,
+            'link_before'    => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">',
+            'link_after'     => '</span>' . tailkick_get_svg( array( 'icon' => 'chain' ) ),
+          )
+        );
+      ?>
+    </nav>
+    <?php
+      endif;
+
+      get_template_part( 'template-parts/footer/site', 'info' );
+    ?>
   </div>
 </footer>
 <?php wp_footer(); ?>
+

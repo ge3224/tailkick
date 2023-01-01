@@ -21,77 +21,69 @@
 if ( post_password_required() ) {
 	return;
 }
-
 ?>
-<section class="my-12">
-  <?php if ( have_comments() ) : ?>
-  <h2 class="font-bold text-lg">
-    <?php
-      $comments_number = get_comments_number();
-      if ( '1' === $comments_number ) {
-        printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'tailkick'), get_the_title() );
-      } else {
-        printf(
-          _nx(
-            '%1$s Reply to &ldquo;%2$s&rdquo;',
-            '%1$s Replies to &ldquo;%2$s&rdquo;',
-            $comments_number,
-            'comments title',
-            'tailkick'
-          ),
-          number_format_i18n( $comments_number ),
-          get_the_title()
-        );
-      }
-    ?>
-  </h2>
 
-  <?php $args = array(
-    'walker'            => null,
-    'max_depth'         => '',
-    'style'             => 'ul',
-    'callback'          => null,
-    'end-callback'      => null,
-    'type'              => 'all',
-    'reply_text'        => 'Reply',
-    'page'              => '',
-    'per_page'          => '',
-    'avatar_size'       => 80,
-    'reverse_top_level' => null,
-    'reverse_children'  => '',
-    'format'            => 'html5', // or 'xhtml' if no 'HTML5' theme support
-    'short_ping'        => false,   // @since 3.6
-    'echo'              => true     // boolean, default is true
-  ); ?>
+<div id="comments" class="comments-area">
 
-  <ol>
-    <?php wp_list_comments($args, $comments); ?>
-  </ol>
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) :
+		?>
+		<h2 class="comments-title">
+			<?php
+			$comments_number = get_comments_number();
+			if ( '1' === $comments_number ) {
+				/* translators: %s: Post title. */
+				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'tailkick' ), get_the_title() );
+			} else {
+				printf(
+					/* translators: 1: Number of comments, 2: Post title. */
+					_nx(
+						'%1$s Reply to &ldquo;%2$s&rdquo;',
+						'%1$s Replies to &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'tailkick'
+					),
+					number_format_i18n( $comments_number ),
+					get_the_title()
+				);
+			}
+			?>
+		</h2>
 
-  <?php
-    the_comments_pagination(
-      array(
-        'prev_text' => '<span>' . esc_html__( 'Previous', 'tailkick' ) . '</span>',
-        'next_text' => '<span>' . esc_html__( 'Next', 'tailkick' ) . '</span>',
-      )
-    );
-  ?>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments(
+					array(
+						'avatar_size' => 100,
+						'style'       => 'ol',
+						'short_ping'  => true,
+						'reply_text'  => tailkick_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'tailkick' ),
+					)
+				);
+			?>
+		</ol>
 
-  <?php endif; // have_comments() ?>
+		<?php
+		the_comments_pagination(
+			array(
+				'prev_text' => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous', 'tailkick' ) . '</span>',
+				'next_text' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
+			)
+		);
 
-  <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-    <p><?php esc_html__( 'Comments are closed', 'tailkick' ); ?></p>
-  <?php endif; ?>
+	endif; // Check for have_comments().
 
-  <?php 
-    $comments_args = array(
-      'label_submit'=>'Send',
-      'title_reply'=>'Write a Reply or Comment',
-      'comment_notes_after' => '',
-      'comment_field' => '<p><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br /><textarea class="border border-gray-400 bg-gray-100 w-72 h-32" id="comment" name="comment" aria-required="true"></textarea></p>',
-      'class_submit' => 'cursor-pointer bg-blue-400 hover:bg-blue-400/75 active:bg-blue-400/50 px-6 py-3 font-bold text-white drop-shadow',
-    );
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
 
-    comment_form($comments_args);
-  ?>
-</section>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'tailkick' ); ?></p>
+		<?php
+	endif;
+
+	comment_form();
+	?>
+
+</div><!-- #comments -->
