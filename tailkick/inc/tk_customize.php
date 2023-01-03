@@ -9,10 +9,11 @@
    *
    * NOTE: Modifications set in the Customizer are implemented by appending
    * inline style attributes to targeted HTML elements. Because inline styles
-   * have greater specificity than CSS classes, changes made in the customizer
-   * will always override Tailwind styles. To fallback to Tailwind styling, GUI
-   * mods must be 'cleared.' This is why the certain settings in the following
-   * customize_register have defaults set to `null` (e.g. color settings).
+   * have greater specificity than CSS class selectors, changes made in the
+   * customizer will always override Tailwind styles. To fallback to Tailwind
+   * styling, GUI mods must be 'cleared.' This is why the certain settings in
+   * the following customize_register have defaults set to `null` (e.g. color
+   * settings).
    *
    * @package WordPress
    * @subpackage TailKick

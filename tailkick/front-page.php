@@ -85,7 +85,7 @@ function get_hero_bg_image_mods() {
 
           <?php
 
-            // Showcase panel
+            // Display the showcase panel unless disabled in the Customize API
             if (get_theme_mod('showcase_panel_include') == "true") : 
               get_template_part('template-parts/page/content', 'front-page-showcase'); 
             endif; 
