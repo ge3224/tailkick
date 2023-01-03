@@ -87,7 +87,6 @@
   input,
   select,
   textarea {
-
     @apply text-gray-800 font-sans text-base leading-relaxed;
   }
 
@@ -97,7 +96,6 @@
   h4,
   h5,
   h6 {
-
     @apply clear-both leading-snug mb-3 pt-6 px-0 pb-0;
   }
 
@@ -107,43 +105,35 @@
   h4:first-child,
   h5:first-child,
   h6:first-child {
-
     @apply pt-0;
   }
 
   h1 {
-
     @apply text-2xl font-normal;
   }
 
   h2,
   .home.blog .entry-title {
-
     @apply text-gray-600 text-xl font-normal;
   }
 
   h3 {
-
     @apply text-gray-800 text-lg font-normal;
   }
 
   h4 {
-
     @apply text-gray-800 text-base font-bold;
   }
 
   h5 {
-
     @apply text-gray-500 text-sm font-bold tracking-widest uppercase;
   }
 
   h6 {
-
     @apply text-gray-800 text-base font-bold;
   }
 
   p {
-
     @apply mt-0 mx-0 mb-6 p-0;
   }
 
@@ -151,27 +141,22 @@
   cite,
   em,
   i {
-
     @apply italic;
   }
 
   blockquote {
-
     @apply text-gray-600 text-base italic leading-relaxed m-0 overflow-hidden p-0;
   }
 
   blockquote cite {
-
     @apply block font-medium mt-2;
   }
 
   address {
-
     @apply mt-0 mx-0 mb-6;
   }
 
   pre {
-
     @apply bg-gray-100 font-mono text-base leading-relaxed mb-7 max-w-full overflow-auto p-7;
   }
 
@@ -179,19 +164,16 @@
   kbd,
   tt,
   var {
-
     @apply font-mono text-base;
   }
 
   abbr,
   acronym {
-
     @apply border-b border-dotted border-gray-600 cursor-help;
   }
 
   mark,
   ins {
-
     @apply bg-gray-50 no-underline;
   }
 
@@ -200,21 +182,19 @@
   }
 
   blockquote {
-    quotes: "" ""; /* You got me; currently there is no Tailwind CSS class handling `quotes` */
+    quotes: "" ""; /* You got me. Currently there is no Tailwind CSS class handling `quotes` */
   }
 
   q {
-    quotes: "“" "”" "‘" "’"; /* You got me; currently there is no Tailwind CSS class handling `quotes` */
+    quotes: "“" "”" "‘" "’"; /* You got me. Currently there is no Tailwind CSS class handling `quotes` */
   }
 
   blockquote:before,
   blockquote:after {
-
     @apply content-[''];
   }
 
   :focus {
-
     @apply outline-none;
   }
 
@@ -302,7 +282,6 @@
   html[lang="ur"] h4,
   html[lang="ur"] h5,
   html[lang="ur"] h6 {
-
     @apply font-bold;
   }
 
@@ -377,7 +356,6 @@
   html[lang="uk"] h4,
   html[lang="uk"] h5,
   html[lang="uk"] h6 {
-
     @apply font-bold leading-tight;
   }
 
@@ -421,7 +399,6 @@
   html[lang="mr-IN"] h4,
   html[lang="mr-IN"] h5,
   html[lang="mr-IN"] h6 {
-
     @apply font-bold;
   }
 
@@ -443,7 +420,6 @@
   html[lang="el"] h4,
   html[lang="el"] h5,
   html[lang="el"] h6 {
-
     @apply font-bold leading-tight;
   }
 
@@ -465,7 +441,6 @@
   html[lang="gu-IN"] h4,
   html[lang="gu-IN"] h5,
   html[lang="gu-IN"] h6 {
-
     @apply font-bold;
   }
 
@@ -487,7 +462,6 @@
   html[lang="he-IL"] h4,
   html[lang="he-IL"] h5,
   html[lang="he-IL"] h6 {
-
     @apply font-bold;
   }
 
@@ -509,7 +483,6 @@
   html[lang="ja"] h4,
   html[lang="ja"] h5,
   html[lang="ja"] h6 {
-
     @apply font-bold;
   }
 
@@ -531,7 +504,6 @@
   html[lang="ko-KR"] h4,
   html[lang="ko-KR"] h5,
   html[lang="ko-KR"] h6 {
-
     @apply font-semibold;
   }
 
@@ -578,7 +550,6 @@
   html[lang="ja"] *,
   html[lang="ko-KR"] *,
   html[lang="th"] * {
-
     @apply tracking-normal;
   }
 
@@ -587,12 +558,10 @@
   --------------------------------------------------------------*/
 
   label {
-
     @apply text-gray-800 block font-extrabold mb-2;
   }
 
   fieldset {
-
     @apply mb-4;
   }
 
@@ -612,7 +581,6 @@
   input[type="datetime-local"],
   input[type="color"],
   textarea {
-
     @apply text-gray-600 bg-white bg-gradient-to-b from-white to-white border border-gray-500 rounded block p-3 w-full;
   }
 
@@ -632,44 +600,37 @@
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-
     @apply text-gray-900 border border-gray-800;
   }
 
   select {
-
     @apply border border-gray-500 rounded h-12 max-w-full;
   }
 
   input[type="radio"]:focus,
   input[type="checkbox"]:focus {
-
     @apply outline-dotted outline-gray-800;
   }
 
   input[type="radio"],
   input[type="checkbox"] {
-
     @apply mr-2;
   }
 
   input[type="radio"] + label,
   input[type="checkbox"] + label {
-
     @apply font-normal;
   }
 
   button,
   input[type="button"],
   input[type="submit"] {
-
     @apply bg-gray-900 border-none rounded shadow-none text-white inline-block text-sm font-extrabold leading-4 py-4 px-8 transition duration-1000;
   }
 
   input + button,
   input + input[type="button"],
   input + input[type="submit"] {
-
     @apply py-3 px-8;
   }
 
@@ -678,7 +639,6 @@
   input[type="button"].secondary,
   input[type="reset"].secondary,
   input[type="submit"].secondary {
-
     @apply bg-gray-300 text-gray-900;
   }
 
@@ -688,7 +648,6 @@
   input[type="button"]:focus,
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-
     @apply bg-gray-500;
   }
 
@@ -702,35 +661,29 @@
   input[type="reset"].secondary:focus,
   input[type="submit"].secondary:hover,
   input[type="submit"].secondary:focus {
-
     @apply bg-gray-200;
   }
 
   /* Placeholder text color -- selectors need to be separate to work. */
   ::-webkit-input-placeholder {
     /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
-
     @apply text-gray-800 font-sans;
   }
 
   :-moz-placeholder {
     /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
-
     @apply text-gray-800 font-sans;
   }
 
   ::-moz-placeholder {
     /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
     /* Since FF19 lowers the opacity of the placeholder by default */
-
     @apply text-gray-800 font-sans opacity-100;
   }
 
   :-ms-input-placeholder {
     /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
-
     @apply text-gray-800 font-sans;
   }
 
 }
-

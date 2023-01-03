@@ -6,15 +6,15 @@ Description: IE9 specific styles.
 .has-header-image.tailkick-front-page .custom-header,
 .has-header-video.tailkick-front-page .custom-header,
 .has-header-image.home.blog .custom-header,
-.has-header-video.home.blog .custom-header {
+.has-header-video.home.blog .custom-header {/*
 	height: 300px;
-}
+*/}
 
 .has-header-image .custom-header-media img,
 .has-header-video .custom-header-media video,
-.has-header-video .custom-header-media iframe {
+.has-header-video .custom-header-media iframe {/*
 	min-width: 100%;
-}
+*/}
 
 @media screen and (min-width: 30em) {
 
@@ -24,9 +24,9 @@ Description: IE9 specific styles.
 	.has-header-video.home.blog .custom-header,
 	.tailkick-front-page.has-header-image .custom-header-media,
 	.home.blog.has-header-image .custom-header-media,
-	.panel-image {
+	.panel-image {/*
 		height: 700px;
-	}
+	*/}
 }
 
 @media screen and (min-width: 48em) {
@@ -37,7 +37,7 @@ Description: IE9 specific styles.
 	.has-header-video.home.blog .custom-header,
 	.tailkick-front-page.has-header-image .custom-header-media,
 	.home.blog.has-header-image .custom-header-media,
-	.panel-image {
+	.panel-image {/*
 		height: 1000px;
-	}
+	*/}
 }
