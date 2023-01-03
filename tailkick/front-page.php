@@ -3,14 +3,52 @@
  * The front page template file
  *
  * If the user has selected a static page for their homepage, this is what will
- * appear.
- * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * appear. Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage TailKick
  * @since TailKick 0.1
  * @version 0.1
  */
+
+/**
+ * Check for theme modifications pertaining to the hero background image
+ *
+ * A user may have made modifications to the theme using WordPress's Customize
+ * API. If so, these will be implemented by appending inline style attributes
+ * to the targeted HTML elements. Because inline styles have greater
+ * specificity than CSS class selectors, changes made in the customizer will
+ * override Tailwind styles. To fallback to Tailwind styling, modifications
+ * made in the Customize API must be be 'cleared.'
+ */
+function get_hero_bg_image_mods() {
+  // See ./inc/tk_customize.php
+  $img = get_theme_mod('hero_home_image');
+  $x = get_theme_mod('hero_home_image_position_x');
+  $y = get_theme_mod('hero_home_image_position_y');
+
+  $output = '';
+  if ($img != "") {
+    $output .= ' style="';
+    if ($img != '') {
+      $output .= 'background: url(\'' . $img . '\') no-repeat';
+
+      if ( $x != "" ) {
+        $output .= ' '. $x;
+      } else {
+        $output .= ' center';
+      }
+
+      if ( $y != "" ) {
+        $output .= ' ' . $y . ';';
+      } else {
+        $output .= ' center;';
+      }
+      $output .= ' background-size: cover;"';
+    }
+  }
+  return $output;
+}
 
 ?> 
 
@@ -30,7 +68,15 @@
 				</div>
 			</div>
 		<?php endif; ?>
-    <?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+    <div id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center lg:bg-[center_top_35%] bg-no-repeat lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>] w-full" <?php echo get_hero_bg_image_mods(); ?>>
+      <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-center items-start">
+        <div class="w-1/5 ml-auto mr-0">
+          <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
+          <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
+          <a <?php echo get_tailwind_btn(); ?> href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Download</a>
+        </div>
+      </div>
+    </div>
 	</header>
 
 	<?php

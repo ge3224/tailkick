@@ -19,7 +19,7 @@
 
 *TailKick* offers WordPress site owners a fresh look and theme builders an alternative developer experience.
 
-WordPress users can switch their websites to the *TailKick* theme in the [usual way](#gs-site-owners). Without editing template files, CSS, or PHP, they can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
+WordPress users can switch their websites to the *TailKick* theme and make customizations in the [usual way](#gs-site-owners).
 
 For folks interested in working with *TailKick*'s codebase — those who may create a new theme based on *TailKick* or others interested in [contributing to this project](#contributing) :smile: — I recommend the Tailwind CSS framework and its challenge of traditional CSS 'best practices.'
 

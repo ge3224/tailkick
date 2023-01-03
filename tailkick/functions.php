@@ -701,6 +701,32 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
 require get_template_directory() . '/inc/block-patterns.php';
 
 /**
- * Custom nav walker for tailkick
+ * Custom nav walker for Tailkick
  */
 require_once('tk_navwalker.php');
+
+require get_template_directory() . '/inc/tk_customize.php';
+
+/** 
+ * Custom button styles for TailKick
+ */
+function get_tailwind_btn() {
+  return 'class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]"';
+}
+
+function get_custom_styles_btn() {
+  //  see tk_customize
+  $bg = get_theme_mod('global_color_primary');
+  $fg = get_theme_mod('global_foreground');
+
+  $output = '';
+  if ($bg != "" || $fg != "") {
+    $output .= ' style="';
+    // background of the button is customizable
+    if ($bg != '') $output .= 'background-color: ' . $bg . ';';
+    // border color and text color are customizable
+    if ($fg != '') $output .= 'color: ' . $fg . ';border-color: ' . $fg . ';';
+    $output .= '"';
+  }
+  return $output;
+}
