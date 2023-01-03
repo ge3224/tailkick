@@ -68,7 +68,7 @@ function get_hero_bg_image_mods() {
 				</div>
 			</div>
 		<?php endif; ?>
-    <div id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center lg:bg-[center_top_35%] bg-no-repeat lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>] w-full" <?php echo get_hero_bg_image_mods(); ?>>
+    <section id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center lg:bg-[center_top_35%] bg-no-repeat lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>] w-full" <?php echo get_hero_bg_image_mods(); ?>>
       <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-center items-start">
         <div class="w-1/5 ml-auto mr-0">
           <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
@@ -76,75 +76,63 @@ function get_hero_bg_image_mods() {
           <a <?php echo get_tailwind_btn(); ?> href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Download</a>
         </div>
       </div>
-    </div>
+    </section>
 	</header>
-
-	<?php
-
-	/*
-	 * If a regular post or page, and not the front page, show the featured image.
-	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
-	 */
-	if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-		echo '<div class="single-featured-image-header">';
-		echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
-
-	<div class="site-content-contain">
+	<div class="py-6 max-w-6xl mx-auto site-content-contain">
 		<div id="content" class="site-content">
-
-      <!---------------------------------------------------------------------------->
-
       <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
           <?php
-          // Show the selected front page content.
-          if ( have_posts() ) :
-            while ( have_posts() ) :
-              the_post();
-              get_template_part( 'template-parts/page/content', 'front-page' );
-            endwhile;
-          else :
-            get_template_part( 'template-parts/post/content', 'none' );
-          endif;
+
+            // Showcase panel
+            if (get_theme_mod('showcase_panel_include') == "true") : 
+              get_template_part('template-parts/page/content', 'front-page-showcase'); 
+            endif; 
+
+            // Show the selected front page content.
+            if ( have_posts() ) :
+              while ( have_posts() ) :
+                the_post();
+                get_template_part( 'template-parts/page/content', 'front-page' );
+              endwhile;
+            else :
+              get_template_part( 'template-parts/post/content', 'none' );
+            endif;
+
           ?>
 
           <?php
-          // Get each of our panels and show the post data.
-          if ( 0 !== tailkick_panel_count() || is_customize_preview() ) : // If we have pages to show.
+            
+            // Get each of our panels and show the post data.
+            if ( 0 !== tailkick_panel_count() || is_customize_preview() ) : // If we have pages to show.
 
-            /**
-             * Filters the number of front page sections in TailKick.
-             *
-             * @since TailKick 0.1
-             *
-             * @param int $num_sections Number of front page sections.
-             */
-            $num_sections = apply_filters( 'tailkick_front_page_sections', 4 );
-            global $tailkickcounter;
+              /**
+               * Filters the number of front page sections in TailKick.
+               *
+               * @since TailKick 0.1
+               *
+               * @param int $num_sections Number of front page sections.
+               */
+              $num_sections = apply_filters( 'tailkick_front_page_sections', 4 );
+              global $tailkickcounter;
 
-            // Create a setting and control for each of the sections available in the theme.
-            for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
-              $tailkickcounter = $i;
-              tailkick_front_page_section( null, $i );
-            }
+              // Create a setting and control for each of the sections available in the theme.
+              for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+                $tailkickcounter = $i;
+                tailkick_front_page_section( null, $i );
+              }
 
-        endif; // The if ( 0 !== tailkick_panel_count() ) ends here.
+            endif;
+
           ?>
 
-        </main><!-- #main -->
-      </div><!-- #primary -->
-
-<!---------------------------------------------------------------------------->
-
-		</div><!-- #content -->
-
-    <?php get_footer(); ?>
-	</div><!-- .site-content-contain -->
-</div><!-- #page -->
+        </main>
+      </div>
+		</div>
+	</div>
+  <?php get_footer(); ?>
+</div>
 
 </body>
 </html>

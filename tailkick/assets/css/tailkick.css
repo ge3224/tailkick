@@ -598,8 +598,23 @@ video {
 .h-6 {
   height: 1.5rem;
 }
+.h-auto {
+  height: auto;
+}
 .max-h-\[31px\] {
   max-height: 31px;
+}
+.max-h-20 {
+  max-height: 5rem;
+}
+.max-h-36 {
+  max-height: 9rem;
+}
+.max-h-44 {
+  max-height: 11rem;
+}
+.max-h-96 {
+  max-height: 24rem;
 }
 .min-h-full {
   min-height: 100%;
@@ -646,8 +661,19 @@ video {
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .justify-items-center {
   justify-items: center;
+}
+.space-x-16 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(4rem * var(--tw-space-x-reverse));
+  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .rounded-sm {
   border-radius: 0.125rem;
@@ -715,6 +741,22 @@ video {
 .stroke-white\/90 {
   stroke: rgb(255 255 255 / 0.9);
 }
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-none {
+  -o-object-fit: none;
+     object-fit: none;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
+}
+.object-bottom {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
 .p-3 {
   padding: 0.75rem;
 }
@@ -746,9 +788,35 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.text-center {
+  text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
+}
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;

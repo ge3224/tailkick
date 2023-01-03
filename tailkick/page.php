@@ -34,56 +34,51 @@
 				</div>
 			</div>
 		<?php endif; ?>
-    <?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 	</header>
 
 	<?php
 
-	/*
-	 * If a regular post or page, and not the front page, show the featured image.
-	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
-	 */
-	if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-		echo '<div class="single-featured-image-header">';
-		echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
+    /*
+     * If a regular post or page, and not the front page, show the featured image.
+     * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
+     */
+    if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
+      echo '<div class="overflow-hidden max-h-96 single-featured-image-header">';
+      echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image', array('class' => 'object-cover object-center') );
+      echo '</div>';
+    endif;
+
 	?>
 
-	<div class="site-content-contain">
+	<div class="py-6 max-w-6xl mx-auto site-content-contain">
 		<div id="content" class="site-content">
+      <div class="wrap">
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main">
 
-<!---------------------------------------------------------------------------->
+            <?php
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+              while ( have_posts() ) :
+                the_post();
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
+                get_template_part( 'template-parts/page/content', 'page' );
 
-				get_template_part( 'template-parts/page/content', 'page' );
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                  comments_template();
+                endif;
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+              endwhile; // End the loop.
 
-			endwhile; // End the loop.
-			?>
+            ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
-
-<!---------------------------------------------------------------------------->
-
-		</div><!-- #content -->
-
-    <?php get_footer(); ?>
-	</div><!-- .site-content-contain -->
-</div><!-- #page -->
+          </main>
+        </div>
+      </div>
+		</div>
+	</div>
+  <?php get_footer(); ?>
+</div>
 
 </body>
 </html>
