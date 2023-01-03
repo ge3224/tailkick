@@ -22,18 +22,15 @@
 	<a class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tailkick' ); ?></a>
 
 	<header id="masthead" class="site-header">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
+				<div class="relative wrap">
+					<?php get_template_part( 'template-parts/navigation/navigation', 'primary' ); ?>
+				</div>
+			</div>
 		<?php endif; ?>
-
-	</header><!-- #masthead -->
+    <?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+	</header>
 
 	<?php
 

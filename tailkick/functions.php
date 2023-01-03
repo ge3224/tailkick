@@ -66,6 +66,7 @@ function tailkick_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(
 		array(
+      'primary' => __( 'Primary Menu', 'tailkick' ),
 			'top'    => __( 'Top Menu', 'tailkick' ),
 			'social' => __( 'Social Links Menu', 'tailkick' ),
 		)
@@ -698,3 +699,8 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
+
+/**
+ * Custom nav walker for tailkick
+ */
+require_once('tk_navwalker.php');
