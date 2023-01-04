@@ -852,6 +852,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
 .pt-2\.5 {
   padding-top: 0.625rem;
 }

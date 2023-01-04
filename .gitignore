@@ -7,13 +7,10 @@ wp_docker/*
 # this is redundant, but I want to be clear
 wp_docker/.env 
 
-# TODO remove this before push
+# TODO remove the following
 temp
-
 tailkick/assets/css/*
 !tailkick/assets/css/tailkick.css
-
 tailkick/rtl.css
-
 tailkick/assets/js/*
 !tailkick/assets/js/tailkick.js
