@@ -12,3 +12,8 @@ temp
 
 tailkick/assets/css/*
 !tailkick/assets/css/tailkick.css
+
+tailkick/rtl.css
+
+tailkick/assets/js/*
+!tailkick/assets/js/tailkick.js
