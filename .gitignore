@@ -9,3 +9,6 @@ wp_docker/.env
 
 # TODO remove this before push
 temp
+
+tailkick/assets/css/*
+!tailkick/assets/css/tailkick.css
