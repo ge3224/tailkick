@@ -551,6 +551,12 @@ video {
 .z-20 {
   z-index: 20;
 }
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
 .m-0 {
   margin: 0px;
 }
@@ -585,6 +591,9 @@ video {
 }
 .table {
   display: table;
+}
+.grid {
+  display: grid;
 }
 .hidden {
   display: none;
@@ -625,11 +634,41 @@ video {
 .w-6 {
   width: 1.5rem;
 }
+.w-96 {
+  width: 24rem;
+}
+.w-7\/12 {
+  width: 58.333333%;
+}
+.w-5\/12 {
+  width: 41.666667%;
+}
+.min-w-min {
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
 .max-w-\[114px\] {
   max-width: 114px;
+}
+.max-w-fit {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.max-w-prose {
+  max-width: 65ch;
+}
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.max-w-sm {
+  max-width: 24rem;
+}
+.max-w-xs {
+  max-width: 20rem;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -640,6 +679,9 @@ video {
 .resize {
   resize: both;
 }
+.auto-cols-min {
+  grid-auto-columns: min-content;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -649,29 +691,20 @@ video {
 .items-center {
   align-items: center;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-center {
   justify-content: center;
 }
 .justify-between {
   justify-content: space-between;
 }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 .justify-items-center {
   justify-items: center;
-}
-.space-x-16 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(4rem * var(--tw-space-x-reverse));
-  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -682,6 +715,26 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0px * var(--tw-space-y-reverse));
+}
+.space-x-16 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(4rem * var(--tw-space-x-reverse));
+  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(3rem * var(--tw-space-x-reverse));
+  margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -708,6 +761,10 @@ video {
 .border-gray-700\/0 {
   border-color: rgb(55 65 81 / 0);
 }
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -725,9 +782,9 @@ video {
 .bg-slate-700\/95 {
   background-color: rgb(51 65 85 / 0.95);
 }
-.bg-gray-100 {
+.bg-pink-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 .bg-hero-home {
   background-image: url('../images/tailkick-hero-home-wide.jpg');
@@ -761,6 +818,16 @@ video {
 .p-3 {
   padding: 0.75rem;
 }
+.p-2\.5 {
+  padding: 0.625rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -793,15 +860,21 @@ video {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.pt-2\.5 {
+  padding-top: 0.625rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
 }
 .text-center {
   text-align: center;
 }
 .align-middle {
   vertical-align: middle;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-6xl {
   font-size: 3.75rem;
@@ -810,10 +883,6 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1871,6 +1940,10 @@ button.secondary:hover,
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:shadow-none {

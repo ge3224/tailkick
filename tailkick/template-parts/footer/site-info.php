@@ -9,7 +9,7 @@
  */
 
 ?>
-<div class="flex flex-col space-y-0.5 site-info">
+<div class="w-full max-w-xs flex flex-col site-info">
   <span><strong>Theme: <?php bloginfo('name'); ?></strong> &copy; <?php echo Date('Y'); ?></span>
   <span>Powered by
     <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tailkick' ) ); ?>" class="imprint">

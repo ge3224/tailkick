@@ -96,6 +96,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Use PostCSS minifier
 - [ ] Rebuild theme from WordPress's Twenty_Seventeen
 - [ ] Test legacy widgets
+- [ ] Social Icons
 - [ ] Address post formats
 - [ ] Customize pagination
 - [ ] Customize localization
