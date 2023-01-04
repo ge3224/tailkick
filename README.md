@@ -21,10 +21,10 @@ For folks interested in working with *TailKick*'s codebase, those who may create
 #### The traditional approach: write custom CSS for a custom design
 
 ```html
-<a class="btn-variant-37" href="#" type="button">Download</a>
+<a class="nav__btn--teal3" href="#" type="button">Download</a>
 
 <style>
-  .btn-variant-37 {
+  .nav__btn--teal3 {
     margin-top: 0.75rem;
     padding: 0.5rem 1rem;
     font-weight: 700;
@@ -49,13 +49,13 @@ For folks interested in working with *TailKick*'s codebase, those who may create
 
 #### <a name="gs-site-owners"></a>Install TailKick in WordPress
 
-Without editing template files, CSS, or PHP, they can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
-
 - Download the `tailkick` folder in this repository. (Here's a DownGit link: [tailkick](https://downgit.github.io/#/home?url=https://github.com/ge3224/tailkick/tree/main/tailkick).) 
 - Upload the `tailkick.zip` file through your WordPress dashboard. (See [WP help docs](https://wordpress.org/support/article/appearance-themes-screen/#using-the-upload-method).)
 - Click the **Activate** link.
 
-#### <a name="gs-theme-developers"></a>Develop TailKick with Tailwind CSS
+Without editing template files, CSS, or PHP, you can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
+
+#### <a name="gs-theme-developers"></a>Develop a Theme Based on TailKick with Tailwind CSS
 
 ```bash
 git clone https://github.com/ge3224/tailkick
@@ -66,16 +66,14 @@ npm run start:css
 
 ## <a name="more-about-tailwind"></a>More About Tailwind CSS
 
-Tailwind CSS describes itself as a "utility-first CSS framework." It is an extensive collection of class selectors mapped to carefully constrained rulesets — "primitive utilities." You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity.
-
-The Tailwind framework is a descendant of Atomic CSS, which achieved notarity with Thierry Koblentz's 2013 essay [*Challenging CSS Best Practices*](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/). In his article, Koblentz introduces the concept of breaking down styles into irreducible units to make them more reusable.
-
+Tailwind CSS describes itself as a "utility-first CSS framework." It is an extensive library of class selectors mapped to carefully constrained rulesets called &ldquo;primitive utilities.&rdquo; You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity.
 Fans love Tailwind because it addresses well-known pain points associated with CSS development:
 
-- No more need to come up with silly class names for new styles
+- No more need to come up with silly class names for new styles (e.g. `card4__subttl--lightorange3`)
 - An end to sprawling additions in the CSS as a website grows with new features and designs
 - Dead code is eliminated; refactoring feels safer
 
+The Tailwind framework is a descendant of Atomic CSS, which achieved notarity with Thierry Koblentz's 2013 essay [*Challenging CSS Best Practices*](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/).
 Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-first) on its website. (See also [The Evolution of Scalable CSS](https://frontendmastery.com/posts/the-evolution-of-scalable-css/).)
 
 ## <a name="contributing"></a>Contributing to TailKick
