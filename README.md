@@ -10,18 +10,13 @@
 
 <p align="center">A WordPress Theme Utilizing Tailwind CSS</p>
 
-------
 
-- [Getting Started](#getting-started)
-- [More about Tailwind CSS](#more-about-tailwind)
-
-------
 
 *TailKick* offers WordPress site owners a fresh look and theme builders an alternative developer experience.
 
 WordPress users can switch their websites to the *TailKick* theme and make customizations in the [usual way](#gs-site-owners).
 
-For folks interested in working with *TailKick*'s codebase — those who may create a new theme based on *TailKick* or others interested in [contributing to this project](#contributing) :smile: — I recommend the Tailwind CSS framework and its challenge of traditional CSS 'best practices.'
+For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick* or others interested in [contributing to this project](#contributing) :smile:, I recommend the [Tailwind CSS](#more-about-tailwind) framework and its challenge of traditional CSS best practices.
 
 #### The traditional approach: write custom CSS for a custom design
 
@@ -48,11 +43,13 @@ For folks interested in working with *TailKick*'s codebase — those who may cre
 <!-- No new CSS needs to be written -->
 ```
 
-Read [more about Tailwind](#more-about-tailwind)
+[More about Tailwind](#more-about-tailwind)
 
 ## <a name="getting-started"></a> Getting Started 
 
 #### <a name="gs-site-owners"></a>Install TailKick in WordPress
+
+Without editing template files, CSS, or PHP, they can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
 
 - Download the `tailkick` folder in this repository. (Here's a DownGit link: [tailkick](https://downgit.github.io/#/home?url=https://github.com/ge3224/tailkick/tree/main/tailkick).) 
 - Upload the `tailkick.zip` file through your WordPress dashboard. (See [WP help docs](https://wordpress.org/support/article/appearance-themes-screen/#using-the-upload-method).)
@@ -79,7 +76,7 @@ Fans love Tailwind because it addresses well-known pain points associated with C
 - An end to sprawling additions in the CSS as a website grows with new features and designs
 - Dead code is eliminated; refactoring feels safer
 
-Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-first) on its website. See also [The evolution of scalable CSS](https://frontendmastery.com/posts/the-evolution-of-scalable-css/).
+Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-first) on its website. (See also [The Evolution of Scalable CSS](https://frontendmastery.com/posts/the-evolution-of-scalable-css/).)
 
 ## <a name="contributing"></a>Contributing to TailKick
 
