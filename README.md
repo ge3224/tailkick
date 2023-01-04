@@ -10,10 +10,6 @@
 
 <p align="center">A WordPress Theme Utilizing Tailwind CSS</p>
 
-<p align="left"> 
-<img src="https://komarev.com/ghpvc/?username=USERNAME&label=Views&color=blue&style=plastic" alt="digvijay173" />
- </p>
-
 <div align="center">
 
 [![GitHub](https://img.shields.io/github/license/ge3224/tailkick)](https://github.com/ge3224/tailkick/blob/main/LICENSE.md)
