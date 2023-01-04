@@ -57,7 +57,7 @@
 			// If not a single post, highlight the gallery.
 			if ( get_post_gallery() ) {
 				echo '<div class="entry-gallery">';
-					echo get_post_gallery();
+          echo the_content();
 				echo '</div>';
 			}
 		}

@@ -28,7 +28,7 @@
 				echo tailkick_time_link();
 				tailkick_edit_link();
 			}
-			echo '</div><!-- .entry-meta -->';
+			echo '</div>';
 		}
 
 		if ( is_single() ) {
@@ -39,14 +39,14 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 		?>
-	</header><!-- .entry-header -->
+	</header>
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'tailkick-featured-image' ); ?>
 			</a>
-		</div><!-- .post-thumbnail -->
+		</div>
 	<?php endif; ?>
 
 	<div class="entry-content">
@@ -68,7 +68,7 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<?php
 	if ( is_single() ) {
@@ -76,4 +76,4 @@
 	}
 	?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
