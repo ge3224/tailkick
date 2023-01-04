@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-home' : "url('../images/tailkick-hero-home-wide.jpg')"
+        "hero-home" : "url('../images/tailkick-hero-home-wide.jpg')"
       }
     }
   },
