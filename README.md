@@ -66,8 +66,7 @@ npm run start:css
 
 ## <a name="more-about-tailwind"></a>More About Tailwind CSS
 
-Tailwind CSS describes itself as a &ldquo;utility-first CSS framework.&rdquo; It is an extensive library of class selectors mapped to carefully constrained rulesets called &ldquo;primitive utilities.&rdquo; You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity.
-They love Tailwind because it addresses well-known pain points associated with CSS development:
+Tailwind CSS describes itself as a &ldquo;utility-first CSS framework.&rdquo; It is an extensive library of class selectors mapped to carefully constrained rulesets called &ldquo;primitive utilities.&rdquo; You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity. The framework addresses well-known pain points associated with CSS development:
 
 - No more need to come up with silly class names for new styles (e.g. `card-4__subttl--lightorange-3`)
 - An end to sprawling additions in the CSS as a website grows with new features and designs
