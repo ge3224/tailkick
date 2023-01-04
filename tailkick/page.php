@@ -55,40 +55,34 @@
 /*    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?> */
 	?>
 
-  <?php if ( has_post_thumbnail() ) : ?>
-    <div class="py-8 site-content-contain">
-  <?php else : ?>
-      <div class="pt-32 pb-8 site-content-contain">
-  <?php endif; ?>
-		<div id="content" class="site-content">
+  <div class="w-full max-w-6xl mx-auto site-content-contain">
+		<div id="content" class="<?php echo ( has_post_thumbnail() ) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
       <div class="wrap">
         <div id="primary" class="content-area">
           <main id="main" class="site-main">
-            <div class="w-full max-w-6xl mx-auto">
-              <?php if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && ! has_post_thumbnail( get_queried_object_id() ) ) : ?>
-                <?php the_title('<h1 class="font-bold text-4xl">', '</h2>'); ?>
-              <?php endif; ?>
-              <div class="grid grid-cols-6">
-                <div class="col-span-5 pr-24">
-                  <?php
+            <?php if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && ! has_post_thumbnail( get_queried_object_id() ) ) : ?>
+              <?php the_title('<h1 class="font-bold text-4xl">', '</h2>'); ?>
+            <?php endif; ?>
+            <div class="grid grid-cols-6">
+              <div class="col-span-5 pr-24">
+                <?php
 
-                    while ( have_posts() ) :
-                      the_post();
+                  while ( have_posts() ) :
+                    the_post();
 
-                    get_template_part( 'template-parts/page/content', 'page' );
+                  get_template_part( 'template-parts/page/content', 'page' );
 
-                    // If comments are open or we have at least one comment, load up the comment template.
-                    if ( comments_open() || get_comments_number() ) :
-                      comments_template();
-                    endif;
+                  // If comments are open or we have at least one comment, load up the comment template.
+                  if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                  endif;
 
-                    endwhile; // End the loop.
+                  endwhile; // End the loop.
 
-                  ?>
-                </div>
-                <div>
-                  <?php get_sidebar(); ?>
-                </div>
+                ?>
+              </div>
+              <div>
+                <?php get_sidebar(); ?>
               </div>
             </div>
           </main>
