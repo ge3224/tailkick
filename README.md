@@ -16,15 +16,15 @@
 
 WordPress users can switch their websites to the *TailKick* theme and make customizations in the [usual way](#gs-site-owners).
 
-For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick* or others interested in [contributing to this project](#contributing) :smile:, I recommend the [Tailwind CSS](#more-about-tailwind) framework and its challenge of traditional CSS best practices.
+For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick* or those interested in [contributing to this project](#contributing) :smile:, I recommend the [Tailwind CSS](#more-about-tailwind) framework and its challenge of traditional CSS best practices.
 
 #### The traditional approach: write custom CSS for a custom design
 
 ```html
-<a class="nav__btn--teal3" href="#" type="button">Download</a>
+<a class="nav__btn--teal-3" href="#" type="button">Download</a>
 
 <style>
-  .nav__btn--teal3 {
+  .nav__btn--teal-3 {
     margin-top: 0.75rem;
     padding: 0.5rem 1rem;
     font-weight: 700;
@@ -53,7 +53,7 @@ For folks interested in working with *TailKick*'s codebase, those who may create
 - Upload the `tailkick.zip` file through your WordPress dashboard. (See [WP help docs](https://wordpress.org/support/article/appearance-themes-screen/#using-the-upload-method).)
 - Click the **Activate** link.
 
-Without editing template files, CSS, or PHP, you can personalize *TailKick*'s look using their unique content and WordPress's Customize API (Customizer).
+Without editing template files, CSS, or PHP, you can personalize *TailKick*'s look using your unique content and WordPress's Customize API (Customizer).
 
 #### <a name="gs-theme-developers"></a>Develop a Theme Based on TailKick with Tailwind CSS
 
@@ -66,10 +66,10 @@ npm run start:css
 
 ## <a name="more-about-tailwind"></a>More About Tailwind CSS
 
-Tailwind CSS describes itself as a "utility-first CSS framework." It is an extensive library of class selectors mapped to carefully constrained rulesets called &ldquo;primitive utilities.&rdquo; You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity.
-Fans love Tailwind because it addresses well-known pain points associated with CSS development:
+Tailwind CSS describes itself as a &ldquo;utility-first CSS framework.&rdquo; It is an extensive library of class selectors mapped to carefully constrained rulesets called &ldquo;primitive utilities.&rdquo; You style HTML elements by adding and removing Tailwind classes in your markup. Tailwind users often say it increases their productivity and is easier to manage as their projects grow in complexity.
+They love Tailwind because it addresses well-known pain points associated with CSS development:
 
-- No more need to come up with silly class names for new styles (e.g. `card4__subttl--lightorange3`)
+- No more need to come up with silly class names for new styles (e.g. `card-4__subttl--lightorange-3`)
 - An end to sprawling additions in the CSS as a website grows with new features and designs
 - Dead code is eliminated; refactoring feels safer
 

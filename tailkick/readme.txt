@@ -1,5 +1,5 @@
 === TailKick ===
-Contributors: wordpressdotorg
+Contributors: jacobbenison.com
 Tested up to: 6.1
 Version: 3.1
 License: GPLv2 or later
@@ -22,7 +22,7 @@ For more information about TailKick please go to https://wordpress.org/support/a
 
 == Copyright ==
 
-TailKick WordPress Theme, Copyright 2016-2022 WordPress.org
+TailKick WordPress Theme, Copyright 2022-2023 Jacob Benison
 TailKick is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -36,22 +36,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 TailKick bundles the following third-party resources:
-
-HTML5 Shiv, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
-
-jQuery scrollTo, Copyright 2007-2015 Ariel Flesler
-License: MIT
-Source: https://github.com/flesler/jquery.scrollTo
-
-normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
-License: MIT
-Source: https://necolas.github.io/normalize.css/
-
-Font Awesome icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
 
 Bundled header image, Copyright Alvin Engler
 License: CC0 1.0 Universal (CC0 1.0)
@@ -68,112 +52,7 @@ Source: https://stocksnap.io/photo/striped-fabric-9CBVWF2CDU
 
 == Changelog ==
 
-= 3.1 =
-* Released: November 1, 2022
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_3.1
-
-= 3.0 =
-* Released: May 24, 2022
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_3.0
-
-= 2.9 =
-* Released: January 25, 2022
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.9
-
-= 2.8 =
-* Released: July 20, 2021
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.8
-
-= 2.7 =
-* Released: April 14, 2021
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.7
-
-= 2.6 =
-* Released: March 9, 2021
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.6
-
-= 2.5 =
-* Released: December 8, 2020
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.5
-
-= 2.4 =
-* Released: August 11, 2020
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.4
-
-= 2.3 =
-* Released: March 31, 2020
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.3
-
-= 2.2 =
-* Released: May 7, 2019
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.2
-
-= 2.1 =
-* Released: February 21, 2019
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.1
-
-= 2.0 =
-* Released: January 9, 2019
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_2.0
-
-= 1.9 =
-* Released: December 19, 2018
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.9
-
-= 1.8 =
-* Released: December 6, 2018
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.8
-
-= 1.7 =
-* Released: August 2, 2018
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.7
-
-= 1.6 =
-* Released: May 17, 2018
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.6
-
-= 1.5 =
-* Released: April 4, 2018
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.5
-
-= 1.4 =
-* Released: November 14, 2017
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.4
-
-= 1.3 =
-* Released: June 8, 2017
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.3
-
-= 1.2 =
-* Released: April 18, 2017
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.2
-
-= 1.1 =
-* Released: January 6, 2017
-
-https://codex.wordpress.org/TailKick_Theme_Changelog#Version_1.1
-
-= 1.0 =
-* Released: December 6, 2016
+= 0.1 =
+* Released: January 15, 2023
 
 Initial release

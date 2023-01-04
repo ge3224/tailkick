@@ -14,8 +14,8 @@
 
 ?>
 
-<footer id="colophon" class="site-footer">
-  <div class="wrap">
+<footer id="colophon" class="py-12 bg-gray-100 site-footer">
+  <div class="max-w-6xl mx-auto text-sm text-gray-600 wrap">
     <?php
       get_template_part( 'template-parts/footer/footer', 'widgets' );
 
