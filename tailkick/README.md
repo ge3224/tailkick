@@ -1,17 +1,14 @@
 # TailKick
 
-Contributors: jacobbenison.com
-Tested up to: 6.1
-Version: 3.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-patterns
+- Contributors: jacobbenison.com
+- Tested up to: 6.1
+- Version: 0.1
+- License: GPLv2 or later
+- License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
 WordPress users can switch their websites to the *TailKick* theme and make customizations in the [usual way](#gs-site-owners).
-
-For folks interested in working with *TailKick*'s codebase, those who may create a new theme based on *TailKick* or those interested in [contributing to this project](#contributing) :smile:, I recommend the [Tailwind CSS](#more-about-tailwind) framework and its challenge of traditional CSS best practices.
 
 For more information about TailKick please go to https://wordpress.org/support/article/tailkick/.
 
@@ -37,26 +34,3 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
-TailKick bundles the following third-party resources:
-
-Bundled header image, Copyright Alvin Engler
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/@englr?photo=bIhpiQA009k
-
-Bundled block pattern images, Copyright Solo Shutter
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/striped-lines-BTNYMDDCBW
-        https://stocksnap.io/photo/striped-lines-5XWOPSWPWX
-
-Bundled block pattern image, Copyright Seacoast Sage
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/striped-fabric-9CBVWF2CDU
-
-## Changelog
-
-### 0.1
-
-* Released: January 15, 2023
-
-Initial release
