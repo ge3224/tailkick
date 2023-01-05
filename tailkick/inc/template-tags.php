@@ -116,7 +116,7 @@ if ( ! function_exists( 'tailkick_edit_link' ) ) :
 				__( 'Edit<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text"> "%s"</span>', 'tailkick' ),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<span class="text-sm text-gray-600 hover:text-gray-600/75 active:text-gray-600/50 edit-link">',
 			'</span>'
 		);
 	}
