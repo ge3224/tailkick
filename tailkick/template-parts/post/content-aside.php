@@ -24,7 +24,7 @@
     <?php if ( '' !== get_the_post_thumbnail() ) : ?>
       <div class="mb-3 w-full max-h-96 overflow-hidden post-thumbnail">
         <a href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail( 'tailkick-featured-image', array ( 'class' => 'w-full h-auto object-cover object-center') ); ?>
+          <?php the_post_thumbnail( 'tailkick-featured-image', array ( 'class' => 'object-cover object-center') ); ?>
         </a>
       </div>
     <?php endif; ?>
@@ -33,13 +33,13 @@
 
     <div class="w-full flex items-center mb-2">
       <div class="mr-2 w-10 h-10 rounded-full overflow-hidden bg-gray-300">
-        <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>">
+        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
           <?php echo get_avatar(get_the_author_meta('ID'), 40, 'mm', 'Author Avatar'); ?>
         </a>
       </div>
       <div>
         <div class="text-base my-0 py-0">
-          <a class="font-bold text-black hover:text-gray-600 active:text-gray-500" href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>">
+          <a class="font-bold text-black hover:text-gray-600 active:text-gray-500" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
             <?php the_author(); ?>
           </a>
         </div>
