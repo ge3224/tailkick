@@ -11,7 +11,8 @@
 <p align="center">A WordPress Theme Utilizing Tailwind CSS</p>
 
 <div align="center">
-
+  
+[![TailKick License](https://img.shields.io/github/license/ge3224/tailkick)](https://github.com/ge3224/tailkick/blob/main/LICENSE.md)
 ![TailKick Views](https://komarev.com/ghpvc/?username=ge3224&label=Views&color=blue&style=flat)
 
 </div>
