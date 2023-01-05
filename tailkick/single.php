@@ -36,15 +36,15 @@
      * If a regular post or page, and not the front page, show the featured image.
      * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
      */
-    if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-      echo '<div class="mt-28 w-full max-w-6xl mx-auto single-featured-image-header">';
-      echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image', array( 'class' => 'rounded-sm') );
-      echo '</div>';
+    if ( ( is_single() || ( is_page() && ! tailkick_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) &&  get_post_format() !== 'aside' ) :
+        echo '<div class="mt-28 w-full max-w-6xl mx-auto single-featured-image-header">';
+        echo get_the_post_thumbnail( get_queried_object_id(), 'tailkick-featured-image', array( 'class' => 'rounded-sm') );
+        echo '</div>';
     endif;
     ?>
 
     <div class="w-full max-w-6xl mx-auto site-content-contain">
-      <div id="content" class="<?php echo ( has_post_thumbnail() ) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
+      <div id="content" class="<?php echo ( has_post_thumbnail() && get_post_format() !== 'aside' ) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
