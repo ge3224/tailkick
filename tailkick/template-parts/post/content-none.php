@@ -12,7 +12,7 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="mb-8 no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'tailkick' ); ?></h1>
 	</header>

@@ -12,7 +12,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('mb-8'); ?>>
 	<?php
 	if ( is_sticky() && is_home() ) {
 		echo tailkick_get_svg( array( 'icon' => 'thumb-tack' ) );
