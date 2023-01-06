@@ -36,7 +36,7 @@
 			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
 			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 		} else {
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			the_title( '<h2 class="pt-3 pb-0 font-bold text-black text-2xl entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 		?>
 	</header><!-- .entry-header -->

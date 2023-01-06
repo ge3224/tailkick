@@ -33,24 +33,24 @@ if ( ! function_exists( 'tailkick_time_link' ) ) :
 	 * Gets a nicely formatted string for the published date.
 	 */
 	function tailkick_time_link() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="text-xs text-gray-600 entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> (edited: <time class="updated" datetime="%3$s">%4$s</time>)';
+			$time_string = 'Last Updated: <time class="text-xs text-gray-600 updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
 			$time_string,
 			get_the_date( DATE_W3C ),
-			get_the_date(),
+			get_the_date( 'M d, Y' ),
 			get_the_modified_date( DATE_W3C ),
-			get_the_modified_date()
+			get_the_modified_date( 'M d, Y' )
 		);
 
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		return sprintf(
 			/* translators: %s: Post date. */
 			__( '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">Posted on</span> %s', 'tailkick' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a class="text-xs text-gray-600" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 	}
 endif;
@@ -116,7 +116,7 @@ if ( ! function_exists( 'tailkick_edit_link' ) ) :
 				__( 'Edit<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text"> "%s"</span>', 'tailkick' ),
 				get_the_title()
 			),
-			'<span class="text-sm text-gray-600 hover:text-gray-600/75 active:text-gray-600/50 edit-link">',
+			'<span class="text-xs text-gray-600 hover:text-gray-600/75 active:text-gray-600/50 edit-link">',
 			'</span>'
 		);
 	}
