@@ -17,7 +17,7 @@
   
 </div>
 
-*TailKick* offers WordPress site owners a fresh look and theme builders an alternative developer experience.
+*TailKick* offers WordPress site owners a fresh look and theme builders a surprisingly pleasant developer experience.
 
 WordPress users can switch their websites to the *TailKick* theme and make customizations in the [usual way](#gs-site-owners).
 
