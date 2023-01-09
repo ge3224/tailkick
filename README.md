@@ -99,7 +99,10 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Add a favicon 
 - [x] Use PostCSS minifier
 - [ ] Rebuild theme from WordPress's Twenty_Seventeen
-    - [ ] Comments
+    - [x] Single Comments
+    - [ ] Single Tags
+    - [ ] Single Categories
+    - [ ] Single Prev/Next links
     - [ ] Social Icons
     - [ ] Block Widget CSS Defaults
     - [ ] Handle post formats
