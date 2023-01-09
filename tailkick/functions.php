@@ -703,7 +703,8 @@ require get_template_directory() . '/inc/block-patterns.php';
 /**
  * Custom nav walker for Tailkick
  */
-require_once('tk_navwalker.php');
+require_once('tk_walker_nav.php');
+require_once('tk_walker_comment.php');
 
 require get_template_directory() . '/inc/tk_customize.php';
 

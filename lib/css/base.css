@@ -558,7 +558,7 @@
   --------------------------------------------------------------*/
 
   label {
-    @apply text-gray-800 block font-extrabold mb-2;
+    @apply text-gray-800 block font-bold mb-2;
   }
 
   fieldset {
@@ -581,7 +581,7 @@
   input[type="datetime-local"],
   input[type="color"],
   textarea {
-    @apply text-gray-600 bg-white bg-gradient-to-b from-white to-white border border-gray-500 rounded block p-3 w-full;
+    @apply text-gray-600 bg-gray-50 bg-gradient-to-b from-gray-50 to-gray-50/75 border border-gray-300 rounded block p-3 w-full;
   }
 
   input[type="text"]:focus,
@@ -625,7 +625,7 @@
   button,
   input[type="button"],
   input[type="submit"] {
-    @apply bg-gray-900 border-none rounded shadow-none text-white inline-block text-sm font-extrabold leading-4 py-4 px-8 transition duration-1000;
+    @apply cursor-pointer bg-gray-200 border border-black rounded-sm shadow-[5px_5px_0_0_rgba(0,0,0,0.20)] text-black inline-block text-sm font-extrabold leading-4 py-3 px-8 transition duration-1000;
   }
 
   input + button,
@@ -648,7 +648,7 @@
   input[type="button"]:focus,
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-    @apply bg-gray-500;
+    @apply bg-gray-500 text-white;
   }
 
   button.secondary:hover,

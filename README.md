@@ -99,10 +99,12 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Add a favicon 
 - [x] Use PostCSS minifier
 - [ ] Rebuild theme from WordPress's Twenty_Seventeen
-- [ ] Test legacy widgets
-- [ ] Social Icons
-- [ ] Address post formats
-- [ ] Customize pagination
-- [ ] Customize localization
-- [ ] Check accessibility
+    - [ ] Comments
+    - [ ] Social Icons
+    - [ ] Block Widget CSS Defaults
+    - [ ] Handle post formats
+        - [x] Aside post format
+        - [ ] Featured image for gallery post format
 - [ ] Accommodate block theme development
+- [ ] Test legacy widgets
+- [ ] Check accessibility

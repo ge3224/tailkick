@@ -29,7 +29,7 @@ add_action( 'wp_footer', 'tailkick_include_svg_icons', 9999 );
  *
  *     @type string $icon  Required SVG icon filename.
  *     @type string $title Optional SVG title.
- *     @type string $desc  Optional SVG description.
+ *    @type string $desc  Optional SVG description.
  * }
  * @return string SVG markup.
  */
@@ -83,7 +83,7 @@ function tailkick_get_svg( $args = array() ) {
 	}
 
 	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="w-5 h-5 icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Display the title.
 	if ( $args['title'] ) {
