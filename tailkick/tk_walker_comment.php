@@ -428,7 +428,7 @@ class Tailkick_Walker_Comment extends Walker {
             }
           ?>
         </div>
-        <div class="w-full border rounded-sm">
+        <div class="mb-3 w-full border rounded-sm">
           <div class="border-b py-1 px-3 bg-gray-100 comment-meta">
             <div class="flex items-center text-sm vcard">
               <div class="comment-author">
@@ -483,11 +483,11 @@ class Tailkick_Walker_Comment extends Walker {
             </div>
 
             <?php if ( '0' == $comment->comment_approved ) : ?>
-            <em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+            <p class="my-1 mx-0 leading-3"><em class="text-gray-600 text-sm py-1 comment-awaiting-moderation"><?php echo $moderation_note; ?></em></p>
             <?php endif; ?>
           </div>
 
-          <div class="pt-3 px-3 comment-content">
+          <div class="m-0 p-3 comment-content">
             <?php comment_text(); ?>
           </div>
       </div>

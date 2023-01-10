@@ -104,10 +104,10 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [ ] Single Categories
     - [ ] Single Prev/Next links
     - [ ] Social Icons
-    - [ ] Block Widget CSS Defaults
     - [ ] Handle post formats
         - [x] Aside post format
         - [ ] Featured image for gallery post format
 - [ ] Accommodate block theme development
+    - [ ] Block Widget CSS Defaults
 - [ ] Test legacy widgets
 - [ ] Check accessibility
