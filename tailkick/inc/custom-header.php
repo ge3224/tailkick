@@ -124,8 +124,8 @@ endif; // End of tailkick_header_style().
  * @return array The filtered video settings.
  */
 function tailkick_video_controls( $settings ) {
-	$settings['l10n']['play']  = '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Play background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'play' ) );
-	$settings['l10n']['pause'] = '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Pause background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'pause' ) );
+	$settings['l10n']['play']  = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Play background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'play' ) );
+	$settings['l10n']['pause'] = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Pause background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'pause' ) );
 	return $settings;
 }
 add_filter( 'header_video_settings', 'tailkick_video_controls' );

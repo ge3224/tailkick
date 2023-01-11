@@ -42,7 +42,7 @@ global $tailkickcounter;
 					the_content(
 						sprintf(
 							/* translators: %s: Post title. Only visible to screen readers. */
-							__( 'Continue reading<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text"> "%s"</span>', 'tailkick' ),
+							__( 'Continue reading<span class="' . sr_only_classes( array('screen-reader-text') ) . '"> "%s"</span>', 'tailkick' ),
 							get_the_title()
 						)
 					);

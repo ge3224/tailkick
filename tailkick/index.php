@@ -24,7 +24,7 @@
 <body <?php body_class('min-h-full flex flex-col'); ?>>
 <?php wp_body_open(); ?>
   <div id="page" class="site">
-    <a class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'tailkick' ); ?></a>
+    <a class="<?php echo sr_only_classes( array('skip-link', 'screen-reader-text') ); ?>" href="#content"><?php _e( 'Skip to content', 'tailkick' ); ?></a>
 
     <header id="masthead" class="site-header">
       <?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -85,9 +85,9 @@
 
                       the_posts_pagination(
                         array(
-                          'prev_text'          => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous page', 'tailkick' ) . '</span>',
-                          'next_text'          => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next page', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
-                          'before_page_number' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] meta-nav screen-reader-text">' . __( 'Page', 'tailkick' ) . ' </span>',
+                          'prev_text'          => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Previous page', 'tailkick' ) . '</span>',
+                          'next_text'          => '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Next page', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
+                          'before_page_number' => '<span class="' . sr_only_classes( array('meta-nav', 'screen-reader-text') ) . '">' . __( 'Page', 'tailkick' ) . ' </span>',
                         )
                       );
 

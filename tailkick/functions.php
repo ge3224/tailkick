@@ -396,7 +396,7 @@ function tailkick_excerpt_more( $link ) {
 		'<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Post title. Only visible to screen readers. */
-		sprintf( __( 'Continue reading<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text"> "%s"</span>', 'tailkick' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continue reading<span class="' . sr_only_classes( array('screen-reader-text') ) . '"> "%s"</span>', 'tailkick' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 }
@@ -731,3 +731,74 @@ function get_custom_styles_btn() {
   }
   return $output;
 }
+
+/**
+ * Function for styling screen reader only elements.
+ *
+ * @param array $append add more class names to be returned in the string.
+ *
+ * @return string
+ */
+function sr_only_classes( array $append ): string {
+  $default = array(
+    'sr-only',
+    'focus:not-sr-only',
+    'focus:bg-gray-50',
+    'focus:rounded',
+    'focus:shadow',
+    'focus:text-sky-800',
+    'focus:text-sm',
+    'focus:font-bold',
+    'focus:left-1.5',
+    'focus:leading:normal',
+    'focus:py-3.5',
+    'focus:pr-6',
+    'focus:no-underline',
+    'focus:top-1.5',
+    'focus:z-[100000]',
+  );
+  
+  if ( $append !== null ) {
+    $default = array_merge(
+      $default,
+      $append,
+    );
+  }
+
+  return implode( ' ', $default );
+}
+
+/**
+ * Function for `navigation_markup_template` filter-hook.
+ * 
+ * @param string $template The default template.
+ * @param string $class    The class passed by the calling function.
+ *
+ * @return string
+ */
+function tailkick_navigation_markup_template_filter( $template, $class ){
+  $stage_1 = str_replace('navigation', 'mt-8 navigation', $template);
+  $stage_2 = str_replace('nav-links', 'flex items-center justify-between nav-links', $stage_1);
+  return $stage_2;
+}
+add_filter( 'navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2 );
+
+/**
+ * Function for `next_post_link` filter-hook.
+ * 
+ * @param string  $output   The adjacent post link.
+ * @param string  $format   Link anchor format.
+ * @param string  $link     Link permalink format.
+ * @param WP_Post $post     The adjacent post.
+ * @param string  $adjacent Whether the post is previous or next.
+ *
+ * @return string
+ */
+function tailkick_next_post_link_filter( $output, $format, $link, $post, $adjacent ){
+
+	$stage_1 = str_replace('nav-next', 'ml-auto mr-0 nav-next', $output);
+	return $stage_1;
+}
+
+add_filter( 'next_post_link', 'tailkick_next_post_link_filter', 10, 5 );
+

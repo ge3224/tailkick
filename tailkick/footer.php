@@ -28,7 +28,7 @@
             'theme_location' => 'social',
             'menu_class'     => 'social-links-menu',
             'depth'          => 1,
-            'link_before'    => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">',
+            'link_before'    => '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">',
             'link_after'     => '</span>' . tailkick_get_svg( array( 'icon' => 'chain' ) ),
           )
         );

@@ -72,8 +72,8 @@ if ( post_password_required() ) {
 
       the_comments_pagination(
         array(
-          'prev_text' => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Previous', 'tailkick' ) . '</span>',
-          'next_text' => '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Next', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
+          'prev_text' => tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Previous', 'tailkick' ) . '</span>',
+          'next_text' => '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Next', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ),
         )
       );
 

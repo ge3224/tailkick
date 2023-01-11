@@ -49,7 +49,7 @@ if ( ! function_exists( 'tailkick_time_link' ) ) :
 		// Wrap the time string in a link, and preface it with 'Posted on'.
 		return sprintf(
 			/* translators: %s: Post date. */
-			__( '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">Posted on</span> %s', 'tailkick' ),
+			__( '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">Posted on</span> %s', 'tailkick' ),
 			'<a class="text-xs text-gray-600" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 	}
@@ -81,11 +81,11 @@ if ( ! function_exists( 'tailkick_entry_footer' ) ) :
 
 					// Make sure there's more than one category before displaying.
 					if ( $categories_list && tailkick_categorized_blog() ) {
-						echo '<span class="cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
+						echo '<span class="cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
 					}
 
 					if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-						echo '<span class="tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
+						echo '<span class="tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
 					}
 
 					echo '</span>';
@@ -113,7 +113,7 @@ if ( ! function_exists( 'tailkick_edit_link' ) ) :
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Post title. Only visible to screen readers. */
-				__( 'Edit<span class="sr-only focus:not-sr-only focus:bg-gray-50 focus:rounded focus:shadow focus:text-sky-800 focus:text-sm focus:font-bold focus:left-1.5 focus:leading:normal focus:py-3.5 focus:pr-6 focus:no-underline focus:top-1.5 focus:z-[100000] screen-reader-text"> "%s"</span>', 'tailkick' ),
+				__( 'Edit<span class="' . sr_only_classes( array('screen-reader-text') ) . '"> "%s"</span>', 'tailkick' ),
 				get_the_title()
 			),
 			'<span class="text-xs text-gray-600 hover:text-gray-600/75 active:text-gray-600/50 edit-link">',
