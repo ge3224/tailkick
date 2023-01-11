@@ -322,7 +322,7 @@ class Tailkick_Walker_Comment extends Walker {
 		<div class="comment-author vcard">
 			<?php
 			if ( 0 != $args['avatar_size'] ) {
-				echo get_avatar( $comment, $args['avatar_size'] );
+        echo get_avatar( $comment, $args['avatar_size'], '', get_comment_author() . '\'s avatar' , array('class' => 'rounded-full') );
 			}
 			?>
 			<?php
@@ -421,17 +421,17 @@ class Tailkick_Walker_Comment extends Walker {
 
     global $comment_depth;
 		?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
-    <article id="div-comment-<?php comment_ID(); ?>" class="mb-3 flex comment-body">
-      <div class="mr-2 <?php echo ( $comment_depth > 1 ) ? 'pl-11' : 'mr-2'; ?>">
+		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( array( $this->has_children ? 'parent' : '', ( $comment_depth > 1 && $comment_depth < 3 ) ? 'pl-[45px]' : '' ), $comment ); ?>>
+    <article id="div-comment-<?php comment_ID(); ?>" class="<?php echo ( $comment_depth > 1 ) ? 'border border-gray-200 pl-3 py-2 pr-0 rounded-sm' : ''; ?> mb-3 flex comment-body">
+      <div class="<?php echo ( $comment_depth > 1 ) ? '' : 'mr-2'; ?>">
           <?php
             if ( 0 != $args['avatar_size'] ) {
-              echo get_avatar( $comment, $args['avatar_size'] );
+              echo get_avatar( $comment, $args['avatar_size'], '', get_comment_author() . '\'s avatar' , array('class' => 'mt-1 rounded-full') );
             }
           ?>
         </div>
-        <div class="w-full border rounded-sm">
-        <div class="py-1 px-3 border-b <?php echo ( $comment_depth > 1 ) ? '' : 'bg-gray-100 '; ?>comment-meta">
+        <div class="w-full <?php echo ( $comment_depth > 1 ) ? '' : 'border rounded-sm'; ?>">
+        <div class="py-1 px-3 <?php echo ( $comment_depth > 1 ) ? 'pt-0 pb-1 border-none' : 'border-b bg-gray-100 '; ?>comment-meta">
             <div class="flex items-center text-sm vcard">
               <div class="comment-author">
                 <?php
@@ -475,7 +475,7 @@ class Tailkick_Walker_Comment extends Walker {
                       'add_below' => 'div-comment',
                       'depth'     => $depth,
                       'max_depth' => $args['max_depth'],
-                      'before'    => '<div class="ml-auto mr-0 reply">',
+                      'before'    => '<div class="ml-auto mr-0 text-xs reply">',
                       'after'     => '</div>',
                     )
                   )
@@ -489,7 +489,7 @@ class Tailkick_Walker_Comment extends Walker {
             <?php endif; ?>
           </div>
 
-          <div class="m-0 p-3 text-sm comment-content">
+            <div class="m-0 <?php echo ( $comment_depth > 1 ) ? 'pt-0 pb-1 pl-3 pr-24' : 'p-3'; ?> text-sm comment-content">
             <?php
               comment_text();
             ?>

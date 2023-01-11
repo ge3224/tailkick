@@ -23,13 +23,13 @@ if ( post_password_required() ) {
 }
 ?>
 
-  <div id="comments" class="border-b border-gray-300 pb-6<?php echo (have_comments()) ? ' border-t pt-4' : ''; ?> comments-area">
+  <div id="comments" class="mb-8 comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="font-bold text-xl text-gray-900 comments-title">
+		<h2 class="font-bold text-xl text-gray-900 mb-6 comments-title">
 			<?php
 			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
@@ -90,10 +90,10 @@ if ( post_password_required() ) {
 
       $comments_args = array(
         'label_submit'        => 'Send',
-        'title_reply_before'  => '<div class="font-bold text-xl text-gray-900 border-t border-gray-300 pt-4">',
+        'title_reply_before'  => '<div class="font-bold text-xl text-gray-900">',
         'title_reply'         => 'Write a Reply or Comment',
         'title_reply_after'   => '</div>',
-        'class_container'     => '',
+        'class_container'     => 'border border-gray-200 rounded-sm p-4',
         'comment_notes_after' => '',
       );
 
