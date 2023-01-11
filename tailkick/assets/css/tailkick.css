@@ -605,6 +605,9 @@ video {
 .ml-2 {
   margin-left: 0.5rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .ml-auto {
   margin-left: auto;
 }
@@ -628,9 +631,6 @@ video {
 }
 .mt-1 {
   margin-top: 0.25rem;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
 }
 .mt-4 {
   margin-top: 1rem;

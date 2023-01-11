@@ -90,10 +90,11 @@ if ( post_password_required() ) {
 
       $comments_args = array(
         'label_submit'        => 'Send',
-        'title_reply_before'  => '<div class="font-bold text-xl text-gray-900">',
+        'title_reply_before'  => '<div class="font-bold text-xl text-gray-900 mb-1">',
         'title_reply'         => 'Write a Reply or Comment',
         'title_reply_after'   => '</div>',
         'class_container'     => 'border border-gray-200 rounded-sm p-4',
+        'class_form' => 'text-sm',
         'comment_notes_after' => '',
       );
 
