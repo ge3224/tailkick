@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 						'avatar_size' => 40,
 						'style'       => 'div',
 						'short_ping'  => true,
-            'reply_text'  => '<div class="flex items-center">' . tailkick_get_svg( array( 'icon' => 'mail-reply' ) ) . '<span class="ml-2">' . esc_html__( 'Reply', 'tailkick' ) . '</span></div>',
+            'reply_text'  => '<div class="flex items-center">' . tailkick_get_svg( array( 'icon' => 'mail-reply' ) ) . '<span class="ml-1.5">' . esc_html__( 'Reply', 'tailkick' ) . '</span></div>',
             'format'      => 'html5',
             'echo'        => true,
 					)
@@ -94,7 +94,7 @@ if ( post_password_required() ) {
         'title_reply'         => 'Write a Reply or Comment',
         'title_reply_after'   => '</div>',
         'class_container'     => 'border border-gray-200 rounded-sm p-4',
-        'class_form' => 'text-sm',
+        'class_form'          => 'text-sm',
         'comment_notes_after' => '',
       );
 

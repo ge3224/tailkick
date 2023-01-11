@@ -89,7 +89,7 @@
                       array(
                         'prev_text' => implode( '', array(
                             '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __( 'Previous Post', 'tailkick' ) . '</span>',
-                            '<span aria-hidden="true" class="' . implode( ' ', $nav_subtitle_classes ) . ' pl-6">' . __( 'Previous' , 'tailkick' ) . '</span>',
+                            '<span aria-hidden="true" class="' . implode( ' ', $nav_subtitle_classes ) . ' pl-4">' . __( 'Previous' , 'tailkick' ) . '</span>',
                             '<span class="'. implode( ' ', $nav_title_classes ) . '">',
                             '<span class="' . implode( ' ', $nav_title_icon_wrapper_classes ) . '">' . tailkick_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>' . '%title',
                             '</span>',
@@ -97,7 +97,7 @@
                         ),
                         'next_text' => implode( '', array(
                             '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __( 'Next Post', 'tailkick' ) . '</span>',
-                            '<span aria-hidden="true" class="' . implode( ' ', $nav_subtitle_classes ) . ' pr-6 text-right">' . __( 'Next' , 'tailkick' ) . '</span>',
+                            '<span aria-hidden="true" class="' . implode( ' ', $nav_subtitle_classes ) . ' pr-4 text-right">' . __( 'Next' , 'tailkick' ) . '</span>',
                             '<span class="'. implode( ' ', $nav_title_classes ) . '">',
                             '%title' . '<span class="' . implode( ' ', $nav_title_icon_wrapper_classes ) . '">' . tailkick_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span>',
                             '</span>',

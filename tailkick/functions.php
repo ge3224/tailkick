@@ -801,4 +801,3 @@ function tailkick_next_post_link_filter( $output, $format, $link, $post, $adjace
 }
 
 add_filter( 'next_post_link', 'tailkick_next_post_link_filter', 10, 5 );
-
