@@ -253,7 +253,7 @@ class Tailkick_Walker_Comment extends Walker {
 	 * @param int        $depth   Depth of the current comment.
 	 * @param array      $args    An array of arguments.
 	 */
-	protected function ping( $comment, $depth, $args ) {
+	protected function ping( $comment, $depth, $args ) : void {
 		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 		?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
@@ -275,7 +275,7 @@ class Tailkick_Walker_Comment extends Walker {
 	 * @param WP_Comment|null $comment      The comment object. Null if not found.
 	 * @return string Filtered text of the current comment.
 	 */
-	public function filter_comment_text( $comment_text, $comment ) {
+	public function filter_comment_text( $comment_text, $comment ): string {
 		$commenter          = wp_get_current_commenter();
 		$show_pending_links = ! empty( $commenter['comment_author'] );
 
@@ -297,7 +297,7 @@ class Tailkick_Walker_Comment extends Walker {
 	 * @param int        $depth   Depth of the current comment.
 	 * @param array      $args    An array of arguments.
 	 */
-	protected function comment( $comment, $depth, $args ) {
+	protected function comment( $comment, $depth, $args ) :void {
 		if ( 'div' === $args['style'] ) {
 			$tag       = 'div';
 			$add_below = 'comment';
@@ -340,7 +340,7 @@ class Tailkick_Walker_Comment extends Walker {
 			?>
 		</div>
 		<?php if ( '0' == $comment->comment_approved ) : ?>
-		<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+		<p class="m-0 p-0"><em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em></p>
 		<br />
 		<?php endif; ?>
 
@@ -418,18 +418,20 @@ class Tailkick_Walker_Comment extends Walker {
 		} else {
 			$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' );
 		}
+
+    global $comment_depth;
 		?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
-			<article id="div-comment-<?php comment_ID(); ?>" class="flex comment-body">
-        <div class="mr-2">
+    <article id="div-comment-<?php comment_ID(); ?>" class="mb-3 flex comment-body">
+      <div class="mr-2 <?php echo ( $comment_depth > 1 ) ? 'pl-11' : 'mr-2'; ?>">
           <?php
             if ( 0 != $args['avatar_size'] ) {
               echo get_avatar( $comment, $args['avatar_size'] );
             }
           ?>
         </div>
-        <div class="mb-3 w-full border rounded-sm">
-          <div class="border-b py-1 px-3 bg-gray-100 comment-meta">
+        <div class="w-full border rounded-sm">
+        <div class="py-1 px-3 border-b <?php echo ( $comment_depth > 1 ) ? '' : 'bg-gray-100 '; ?>comment-meta">
             <div class="flex items-center text-sm vcard">
               <div class="comment-author">
                 <?php
@@ -487,8 +489,10 @@ class Tailkick_Walker_Comment extends Walker {
             <?php endif; ?>
           </div>
 
-          <div class="m-0 p-3 comment-content">
-            <?php comment_text(); ?>
+          <div class="m-0 p-3 text-sm comment-content">
+            <?php
+              comment_text();
+            ?>
           </div>
       </div>
 			</article>

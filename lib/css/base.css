@@ -134,7 +134,11 @@
   }
 
   p {
-    @apply mt-0 mx-0 mb-6 p-0;
+    @apply m-0 p-0;
+  }
+
+  p~p {
+    @apply mt-3;
   }
 
   dfn,

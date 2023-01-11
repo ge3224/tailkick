@@ -57,7 +57,7 @@ if ( post_password_required() ) {
 				wp_list_comments(
 					array(
             'walker'      => new Tailkick_Walker_Comment(),
-						'avatar_size' => 60,
+						'avatar_size' => 40,
 						'style'       => 'div',
 						'short_ping'  => true,
             'reply_text'  => '<div class="flex items-center">' . tailkick_get_svg( array( 'icon' => 'mail-reply' ) ) . '<span class="ml-2">' . esc_html__( 'Reply', 'tailkick' ) . '</span></div>',
