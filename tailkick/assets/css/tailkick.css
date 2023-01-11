@@ -607,8 +607,8 @@ video {
 .mt-3 {
   margin-top: 0.75rem;
 }
-.mt-8 {
-  margin-top: 2rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mt-28 {
   margin-top: 7rem;
@@ -779,11 +779,11 @@ video {
 .border {
   border-width: 1px;
 }
-.border-t {
-  border-top-width: 1px;
-}
 .border-b {
   border-bottom-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
 }
 .border-l-2 {
   border-left-width: 2px;
@@ -909,6 +909,9 @@ video {
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 .pt-4 {
   padding-top: 1rem;

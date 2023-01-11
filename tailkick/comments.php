@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-  <div id="comments" class="<?php echo (have_comments()) ? 'border-t border-gray-300 pt-4' : ''; ?> comments-area">
+  <div id="comments" class="border-b border-gray-300 pb-6<?php echo (have_comments()) ? ' border-t pt-4' : ''; ?> comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!

@@ -777,7 +777,7 @@ function sr_only_classes( array $append ): string {
  * @return string
  */
 function tailkick_navigation_markup_template_filter( $template, $class ){
-  $stage_1 = str_replace('navigation', 'mt-8 navigation', $template);
+  $stage_1 = str_replace('navigation', 'mt-6 navigation', $template);
   $stage_2 = str_replace('nav-links', 'flex items-center justify-between nav-links', $stage_1);
   return $stage_2;
 }
