@@ -93,9 +93,13 @@ if ( post_password_required() ) {
         'title_reply_before'  => '<div class="font-bold text-xl text-gray-900 mb-1">',
         'title_reply'         => 'Write a Reply or Comment',
         'title_reply_after'   => '</div>',
-        'class_container'     => 'border border-gray-200 rounded-sm p-4',
+        'class_container'     => 'border border-gray-200 rounded-sm pt-4 px-4 pb-5',
         'class_form'          => 'text-sm',
         'comment_notes_after' => '',
+        'comment_field'        => '<p class="comment-form-comment">
+           <label for="comment">' . _x( 'Comment', 'noun' ) . '</label>
+           <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true" required="required"></textarea>
+         </p>'
       );
 
       comment_form($comments_args);

@@ -585,7 +585,7 @@
   input[type="datetime-local"],
   input[type="color"],
   textarea {
-    @apply text-gray-600 bg-gray-50 bg-gradient-to-b from-gray-50 to-gray-50/75 border border-gray-300 rounded block p-3 w-full;
+    @apply text-gray-600 bg-gray-50 bg-gradient-to-b from-gray-50 to-gray-50/75 border border-gray-300 rounded-sm block py-1 px-2 w-full;
   }
 
   input[type="text"]:focus,

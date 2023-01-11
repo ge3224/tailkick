@@ -81,11 +81,11 @@ if ( ! function_exists( 'tailkick_entry_footer' ) ) :
 
 					// Make sure there's more than one category before displaying.
 					if ( $categories_list && tailkick_categorized_blog() ) {
-						echo '<span class="flex mb-3 items-center space-x-2 text-xs uppercase font-bold cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
+						echo '<span class="flex items-center space-x-2 text-xs uppercase font-bold cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
 					}
 
 					if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-						echo '<span class="flex items-center space-x-2 text-xs uppercase font-bold tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
+						echo '<span class="mt-3 flex items-center space-x-2 text-xs uppercase font-bold tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
 					}
 
 					echo '</span>';

@@ -799,5 +799,19 @@ function tailkick_next_post_link_filter( $output, $format, $link, $post, $adjace
 	$stage_1 = str_replace('nav-next', 'ml-auto mr-0 nav-next', $output);
 	return $stage_1;
 }
-
 add_filter( 'next_post_link', 'tailkick_next_post_link_filter', 10, 5 );
+
+/**
+ * Function for `comment_form_field_cookies` filter-hook.
+ * 
+ * @param string $field The HTML-formatted output of the comment form field.
+ *
+ * @return string
+ */
+function tailkick_comment_form_field_cookies_filter( $field ){
+  $stage_1 = str_replace('comment-form-cookies-consent', 'flex items-center comment-form-cookies-consent', $field);
+  $stage_2 = str_replace('label', 'label class="m-0 p-0"', $stage_1);
+
+	return $stage_2;
+}
+add_filter( 'comment_form_field_cookies', 'tailkick_comment_form_field_cookies_filter' );
