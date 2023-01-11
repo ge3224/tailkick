@@ -100,9 +100,9 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Use PostCSS minifier
 - [ ] Rebuild theme from WordPress's Twenty_Seventeen
     - [x] Single Comments
-    - [ ] Single Tags
-    - [ ] Single Categories
-    - [ ] Single Prev/Next links
+    - [x] Single Tags
+    - [x] Single Categories
+    - [x] Single Prev/Next links
     - [ ] Social Icons
     - [ ] Handle post formats
         - [x] Aside post format

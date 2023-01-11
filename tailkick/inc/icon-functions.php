@@ -83,7 +83,7 @@ function tailkick_get_svg( $args = array() ) {
 	}
 
 	// Begin SVG markup.
-	$svg = '<svg class="w-5 h-5 icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="w-4 h-4 icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Display the title.
 	if ( $args['title'] ) {

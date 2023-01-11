@@ -73,7 +73,7 @@ if ( ! function_exists( 'tailkick_entry_footer' ) ) :
 		// We don't want to output .entry-footer if it will be empty, so make sure its not.
 		if ( ( ( tailkick_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
 
-			echo '<footer class="entry-footer">';
+			echo '<footer class="my-3 border-y border-gray-300 py-3 entry-footer">';
 
 			if ( 'post' === get_post_type() ) {
 				if ( ( $categories_list && tailkick_categorized_blog() ) || $tags_list ) {
@@ -81,11 +81,11 @@ if ( ! function_exists( 'tailkick_entry_footer' ) ) :
 
 					// Make sure there's more than one category before displaying.
 					if ( $categories_list && tailkick_categorized_blog() ) {
-						echo '<span class="cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
+						echo '<span class="flex items-center space-x-1 text-sm font-bold cat-links">' . tailkick_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Categories', 'tailkick' ) . '</span>' . $categories_list . '</span>';
 					}
 
 					if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-						echo '<span class="tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
+						echo '<span class="flex items-center space-x-1 text-sm font-bold tags-links">' . tailkick_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Tags', 'tailkick' ) . '</span>' . $tags_list . '</span>';
 					}
 
 					echo '</span>';
