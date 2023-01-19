@@ -12,14 +12,14 @@
 <div class="w-full max-w-xs flex flex-col site-info">
   <span><strong>Theme: <?php bloginfo('name'); ?></strong> &copy; <?php echo Date('Y'); ?></span>
   <span>Powered by
-    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tailkick' ) ); ?>" class="imprint">
+    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tailkick' ) ); ?>" target="_blank" class="imprint">
       <?php
         /* translators: %s: WordPress */
       printf( esc_html__( '%s', 'tailkick' ), 'WordPress' );
       ?>
     </a>
     &nbsp;&&nbsp;
-    <a href="<?php echo esc_url( __( 'https://tailwindcss.com/', 'tailkick' ) ); ?>" class="imprint">
+    <a href="<?php echo esc_url( __( 'https://tailwindcss.com/', 'tailkick' ) ); ?>" target="_blank" class="imprint">
       <?php
       /* translators: %s: Tailwind CSS */
       printf( esc_html__( '%s', 'tailkick' ), 'Tailwind CSS' );
