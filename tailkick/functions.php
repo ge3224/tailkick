@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TailKick functions and definitions
  *
@@ -12,9 +13,9 @@
 /**
  * TailKick only works in WordPress 4.7 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
+if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
+  require get_template_directory() . '/inc/back-compat.php';
+  return;
 }
 
 /**
@@ -24,226 +25,227 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function tailkick_setup() {
-	/*
+function tailkick_setup()
+{
+  /*
 	 * Make theme available for translation.
 	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/tailkick
 	 * If you're building a theme based on TailKick, use a find and replace
 	 * to change 'tailkick' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'tailkick' );
+  load_theme_textdomain('tailkick');
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+  // Add default posts and comments RSS feed links to head.
+  add_theme_support('automatic-feed-links');
 
-	/*
+  /*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
 	 */
-	add_theme_support( 'title-tag' );
+  add_theme_support('title-tag');
 
-	/*
+  /*
 	 * Enables custom line height for blocks
 	 */
-	add_theme_support( 'custom-line-height' );
+  add_theme_support('custom-line-height');
 
-	/*
+  /*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-	add_theme_support( 'post-thumbnails' );
+  add_theme_support('post-thumbnails');
 
-	add_image_size( 'tailkick-featured-image', 2000, 1200, true );
+  add_image_size('tailkick-featured-image', 2000, 1200, true);
 
-	add_image_size( 'tailkick-thumbnail-avatar', 100, 100, true );
+  add_image_size('tailkick-thumbnail-avatar', 100, 100, true);
 
-	// Set the default content width.
-	$GLOBALS['content_width'] = 525;
+  // Set the default content width.
+  $GLOBALS['content_width'] = 525;
 
-	// This theme uses wp_nav_menu() in two locations.
-	register_nav_menus(
-		array(
-      'primary' => __( 'Primary Menu', 'tailkick' ),
-			'top'    => __( 'Top Menu', 'tailkick' ),
-			'social' => __( 'Social Links Menu', 'tailkick' ),
-		)
-	);
+  // This theme uses wp_nav_menu() in two locations.
+  register_nav_menus(
+    array(
+      'primary' => __('Primary Menu', 'tailkick'),
+      'top'    => __('Top Menu', 'tailkick'),
+      'social' => __('Social Links Menu', 'tailkick'),
+    )
+  );
 
-	/*
+  /*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support(
-		'html5',
-		array(
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'script',
-			'style',
-			'navigation-widgets',
-		)
-	);
+  add_theme_support(
+    'html5',
+    array(
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption',
+      'script',
+      'style',
+      'navigation-widgets',
+    )
+  );
 
-	/*
+  /*
 	 * Enable support for Post Formats.
 	 *
 	 * See: https://wordpress.org/support/article/post-formats/
 	 */
-	add_theme_support(
-		'post-formats',
-		array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'audio',
-		)
-	);
+  add_theme_support(
+    'post-formats',
+    array(
+      'aside',
+      'image',
+      'video',
+      'quote',
+      'link',
+      'gallery',
+      'audio',
+    )
+  );
 
-	// Add theme support for Custom Logo.
-	add_theme_support(
-		'custom-logo',
-		array(
-			'width'      => 250,
-			'height'     => 250,
-			'flex-width' => true,
-		)
-	);
+  // Add theme support for Custom Logo.
+  add_theme_support(
+    'custom-logo',
+    array(
+      'width'      => 250,
+      'height'     => 250,
+      'flex-width' => true,
+    )
+  );
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+  // Add theme support for selective refresh for widgets.
+  add_theme_support('customize-selective-refresh-widgets');
 
-	/*
+  /*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, and column width.
 	  */
-	add_editor_style( array( 'assets/css/editor-style.css', tailkick_fonts_url() ) );
+  add_editor_style(array('assets/css/editor-style.css', tailkick_fonts_url()));
 
-	// Load regular editor styles into the new block-based editor.
-	add_theme_support( 'editor-styles' );
+  // Load regular editor styles into the new block-based editor.
+  add_theme_support('editor-styles');
 
-	// Load default block styles.
-	add_theme_support( 'wp-block-styles' );
+  // Load default block styles.
+  add_theme_support('wp-block-styles');
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
+  // Add support for responsive embeds.
+  add_theme_support('responsive-embeds');
 
-	// Define and register starter content to showcase the theme on new sites.
-	$starter_content = array(
-		'widgets'     => array(
-			// Place three core-defined widgets in the sidebar area.
-			'sidebar-1' => array(
-				'text_business_info',
-				'search',
-				'text_about',
-			),
+  // Define and register starter content to showcase the theme on new sites.
+  $starter_content = array(
+    'widgets'     => array(
+      // Place three core-defined widgets in the sidebar area.
+      'sidebar-1' => array(
+        'text_business_info',
+        'search',
+        'text_about',
+      ),
 
-			// Add the core-defined business info widget to the footer 1 area.
-			'sidebar-2' => array(
-				'text_business_info',
-			),
+      // Add the core-defined business info widget to the footer 1 area.
+      'sidebar-2' => array(
+        'text_business_info',
+      ),
 
-			// Put two core-defined widgets in the footer 2 area.
-			'sidebar-3' => array(
-				'text_about',
-				'search',
-			),
-		),
+      // Put two core-defined widgets in the footer 2 area.
+      'sidebar-3' => array(
+        'text_about',
+        'search',
+      ),
+    ),
 
-		// Specify the core-defined pages to create and add custom thumbnails to some of them.
-		'posts'       => array(
-			'home',
-			'about'            => array(
-				'thumbnail' => '{{image-sandwich}}',
-			),
-			'contact'          => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-			'blog'             => array(
-				'thumbnail' => '{{image-coffee}}',
-			),
-			'homepage-section' => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-		),
+    // Specify the core-defined pages to create and add custom thumbnails to some of them.
+    'posts'       => array(
+      'home',
+      'about'            => array(
+        'thumbnail' => '{{image-sandwich}}',
+      ),
+      'contact'          => array(
+        'thumbnail' => '{{image-espresso}}',
+      ),
+      'blog'             => array(
+        'thumbnail' => '{{image-coffee}}',
+      ),
+      'homepage-section' => array(
+        'thumbnail' => '{{image-espresso}}',
+      ),
+    ),
 
-		// Create the custom image attachments used as post thumbnails for pages.
-		'attachments' => array(
-			'image-espresso' => array(
-				'post_title' => _x( 'Espresso', 'Theme starter content', 'tailkick' ),
-				'file'       => 'assets/images/espresso.jpg', // URL relative to the template directory.
-			),
-			'image-sandwich' => array(
-				'post_title' => _x( 'Sandwich', 'Theme starter content', 'tailkick' ),
-				'file'       => 'assets/images/sandwich.jpg',
-			),
-			'image-coffee'   => array(
-				'post_title' => _x( 'Coffee', 'Theme starter content', 'tailkick' ),
-				'file'       => 'assets/images/coffee.jpg',
-			),
-		),
+    // Create the custom image attachments used as post thumbnails for pages.
+    'attachments' => array(
+      'image-espresso' => array(
+        'post_title' => _x('Espresso', 'Theme starter content', 'tailkick'),
+        'file'       => 'assets/images/espresso.jpg', // URL relative to the template directory.
+      ),
+      'image-sandwich' => array(
+        'post_title' => _x('Sandwich', 'Theme starter content', 'tailkick'),
+        'file'       => 'assets/images/sandwich.jpg',
+      ),
+      'image-coffee'   => array(
+        'post_title' => _x('Coffee', 'Theme starter content', 'tailkick'),
+        'file'       => 'assets/images/coffee.jpg',
+      ),
+    ),
 
-		// Default to a static front page and assign the front and posts pages.
-		'options'     => array(
-			'show_on_front'  => 'page',
-			'page_on_front'  => '{{home}}',
-			'page_for_posts' => '{{blog}}',
-		),
+    // Default to a static front page and assign the front and posts pages.
+    'options'     => array(
+      'show_on_front'  => 'page',
+      'page_on_front'  => '{{home}}',
+      'page_for_posts' => '{{blog}}',
+    ),
 
-		// Set the front page section theme mods to the IDs of the core-registered pages.
-		'theme_mods'  => array(
-			'panel_1' => '{{homepage-section}}',
-			'panel_2' => '{{about}}',
-			'panel_3' => '{{blog}}',
-			'panel_4' => '{{contact}}',
-		),
+    // Set the front page section theme mods to the IDs of the core-registered pages.
+    'theme_mods'  => array(
+      'panel_1' => '{{homepage-section}}',
+      'panel_2' => '{{about}}',
+      'panel_3' => '{{blog}}',
+      'panel_4' => '{{contact}}',
+    ),
 
-		// Set up nav menus for each of the two areas registered in the theme.
-		'nav_menus'   => array(
-			// Assign a menu to the "top" location.
-			'top'    => array(
-				'name'  => __( 'Top Menu', 'tailkick' ),
-				'items' => array(
-					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
-					'page_about',
-					'page_blog',
-					'page_contact',
-				),
-			),
+    // Set up nav menus for each of the two areas registered in the theme.
+    'nav_menus'   => array(
+      // Assign a menu to the "top" location.
+      'top'    => array(
+        'name'  => __('Top Menu', 'tailkick'),
+        'items' => array(
+          'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+          'page_about',
+          'page_blog',
+          'page_contact',
+        ),
+      ),
 
-			// Assign a menu to the "social" location.
-			'social' => array(
-				'name'  => __( 'Social Links Menu', 'tailkick' ),
-				'items' => array(
-					'link_yelp',
-					'link_facebook',
-					'link_twitter',
-					'link_instagram',
-					'link_email',
-				),
-			),
-		),
-	);
+      // Assign a menu to the "social" location.
+      'social' => array(
+        'name'  => __('Social Links Menu', 'tailkick'),
+        'items' => array(
+          'link_yelp',
+          'link_facebook',
+          'link_twitter',
+          'link_instagram',
+          'link_email',
+        ),
+      ),
+    ),
+  );
 
-	/**
-	 * Filters TailKick array of starter content.
-	 *
-	 * @since TailKick 0.1
-	 *
-	 * @param array $starter_content Array of starter content.
-	 */
-	$starter_content = apply_filters( 'tailkick_starter_content', $starter_content );
+  /**
+   * Filters TailKick array of starter content.
+   *
+   * @since TailKick 0.1
+   *
+   * @param array $starter_content Array of starter content.
+   */
+  $starter_content = apply_filters('tailkick_starter_content', $starter_content);
 
-	add_theme_support( 'starter-content', $starter_content );
+  add_theme_support('starter-content', $starter_content);
 }
-add_action( 'after_setup_theme', 'tailkick_setup' );
+add_action('after_setup_theme', 'tailkick_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -252,65 +254,67 @@ add_action( 'after_setup_theme', 'tailkick_setup' );
  *
  * @global int $content_width
  */
-function tailkick_content_width() {
+function tailkick_content_width()
+{
 
-	$content_width = $GLOBALS['content_width'];
+  $content_width = $GLOBALS['content_width'];
 
-	// Get layout.
-	$page_layout = get_theme_mod( 'page_layout' );
+  // Get layout.
+  $page_layout = get_theme_mod('page_layout');
 
-	// Check if layout is one column.
-	if ( 'one-column' === $page_layout ) {
-		if ( tailkick_is_frontpage() ) {
-			$content_width = 644;
-		} elseif ( is_page() ) {
-			$content_width = 740;
-		}
-	}
+  // Check if layout is one column.
+  if ('one-column' === $page_layout) {
+    if (tailkick_is_frontpage()) {
+      $content_width = 644;
+    } elseif (is_page()) {
+      $content_width = 740;
+    }
+  }
 
-	// Check if is single post and there is no sidebar.
-	if ( is_single() && ! is_active_sidebar( 'sidebar-1' ) ) {
-		$content_width = 740;
-	}
+  // Check if is single post and there is no sidebar.
+  if (is_single() && !is_active_sidebar('sidebar-1')) {
+    $content_width = 740;
+  }
 
-	/**
-	 * Filters TailKick content width of the theme.
-	 *
-	 * @since TailKick 0.1
-	 *
-	 * @param int $content_width Content width in pixels.
-	 */
-	$GLOBALS['content_width'] = apply_filters( 'tailkick_content_width', $content_width );
+  /**
+   * Filters TailKick content width of the theme.
+   *
+   * @since TailKick 0.1
+   *
+   * @param int $content_width Content width in pixels.
+   */
+  $GLOBALS['content_width'] = apply_filters('tailkick_content_width', $content_width);
 }
-add_action( 'template_redirect', 'tailkick_content_width', 0 );
+add_action('template_redirect', 'tailkick_content_width', 0);
 
 /**
  * Register custom fonts.
  */
-function tailkick_fonts_url() {
-	$fonts_url = '';
+function tailkick_fonts_url()
+{
+  $fonts_url = '';
 
-	/*
+  /*
 	 * translators: If there are characters in your language that are not supported
 	 * by Libre Franklin, translate this to 'off'. Do not translate into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Libre Franklin font: on or off', 'tailkick' );
+  $libre_franklin = _x('on', 'Libre Franklin font: on or off', 'tailkick');
 
-	if ( 'off' !== $libre_franklin ) {
-		$font_families = array();
+  if ('off' !== $libre_franklin) {
+    $font_families = array();
 
-		$font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
+    $font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
 
-		$query_args = array(
-			'family'  => urlencode( implode( '|', $font_families ) ),
-			'subset'  => urlencode( 'latin,latin-ext' ),
-			'display' => urlencode( 'fallback' ),
-		);
+    $query_args = array(
+      'family'  => urlencode(implode('|', $font_families)),
+      'subset'  => urlencode('latin,latin-ext'),
+      'display' => urlencode('fallback'),
+    );
 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
+    $fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
+  }
 
-	return esc_url_raw( $fonts_url );
+  return esc_url_raw($fonts_url);
 }
 
 /**
@@ -322,61 +326,63 @@ function tailkick_fonts_url() {
  * @param string $relation_type The relation type the URLs are printed.
  * @return array URLs to print for resource hints.
  */
-function tailkick_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'tailkick-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.gstatic.com',
-			'crossorigin',
-		);
-	}
+function tailkick_resource_hints($urls, $relation_type)
+{
+  if (wp_style_is('tailkick-fonts', 'queue') && 'preconnect' === $relation_type) {
+    $urls[] = array(
+      'href' => 'https://fonts.gstatic.com',
+      'crossorigin',
+    );
+  }
 
-	return $urls;
+  return $urls;
 }
-add_filter( 'wp_resource_hints', 'tailkick_resource_hints', 10, 2 );
+add_filter('wp_resource_hints', 'tailkick_resource_hints', 10, 2);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function tailkick_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => __( 'Blog Sidebar', 'tailkick' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'tailkick' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+function tailkick_widgets_init()
+{
+  register_sidebar(
+    array(
+      'name'          => __('Blog Sidebar', 'tailkick'),
+      'id'            => 'sidebar-1',
+      'description'   => __('Add widgets here to appear in your sidebar on blog posts and archive pages.', 'tailkick'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer 1', 'tailkick' ),
-			'id'            => 'sidebar-2',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'tailkick' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+  register_sidebar(
+    array(
+      'name'          => __('Footer 1', 'tailkick'),
+      'id'            => 'sidebar-2',
+      'description'   => __('Add widgets here to appear in your footer.', 'tailkick'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer 2', 'tailkick' ),
-			'id'            => 'sidebar-3',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'tailkick' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+  register_sidebar(
+    array(
+      'name'          => __('Footer 2', 'tailkick'),
+      'id'            => 'sidebar-3',
+      'description'   => __('Add widgets here to appear in your footer.', 'tailkick'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
 }
-add_action( 'widgets_init', 'tailkick_widgets_init' );
+add_action('widgets_init', 'tailkick_widgets_init');
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
@@ -387,20 +393,21 @@ add_action( 'widgets_init', 'tailkick_widgets_init' );
  * @param string $link Link to single post/page.
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function tailkick_excerpt_more( $link ) {
-	if ( is_admin() ) {
-		return $link;
-	}
+function tailkick_excerpt_more($link)
+{
+  if (is_admin()) {
+    return $link;
+  }
 
-	$link = sprintf(
-		'<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Post title. Only visible to screen readers. */
-		sprintf( __( 'Continue reading<span class="' . sr_only_classes( array('screen-reader-text') ) . '"> "%s"</span>', 'tailkick' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
+  $link = sprintf(
+    '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+    esc_url(get_permalink(get_the_ID())),
+    /* translators: %s: Post title. Only visible to screen readers. */
+    sprintf(__('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'), get_the_title(get_the_ID()))
+  );
+  return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', 'tailkick_excerpt_more' );
+add_filter('excerpt_more', 'tailkick_excerpt_more');
 
 /**
  * Handles JavaScript detection.
@@ -409,126 +416,131 @@ add_filter( 'excerpt_more', 'tailkick_excerpt_more' );
  *
  * @since TailKick 0.1
  */
-function tailkick_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+function tailkick_javascript_detection()
+{
+  echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'tailkick_javascript_detection', 0 );
+add_action('wp_head', 'tailkick_javascript_detection', 0);
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function tailkick_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
+function tailkick_pingback_header()
+{
+  if (is_singular() && pings_open()) {
+    printf('<link rel="pingback" href="%s">' . "\n", esc_url(get_bloginfo('pingback_url')));
+  }
 }
-add_action( 'wp_head', 'tailkick_pingback_header' );
+add_action('wp_head', 'tailkick_pingback_header');
 
 /**
  * Display custom color CSS.
  */
-function tailkick_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
-		return;
-	}
+function tailkick_colors_css_wrap()
+{
+  if ('custom' !== get_theme_mod('colorscheme') && !is_customize_preview()) {
+    return;
+  }
 
-	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+  require_once get_parent_theme_file_path('/inc/color-patterns.php');
+  $hue = absint(get_theme_mod('colorscheme_hue', 250));
 
-	$customize_preview_data_hue = '';
-	if ( is_customize_preview() ) {
-		$customize_preview_data_hue = 'data-hue="' . $hue . '"';
-	}
-	?>
-	<style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_hue; ?>>
-		<?php echo tailkick_custom_colors_css(); ?>
-	</style>
-	<?php
+  $customize_preview_data_hue = '';
+  if (is_customize_preview()) {
+    $customize_preview_data_hue = 'data-hue="' . $hue . '"';
+  }
+?>
+  <style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_hue; ?>>
+    <?php echo tailkick_custom_colors_css(); ?>
+  </style>
+<?php
 }
-add_action( 'wp_head', 'tailkick_colors_css_wrap' );
+add_action('wp_head', 'tailkick_colors_css_wrap');
 
 /**
  * Enqueues scripts and styles.
  *
  * See * https://developer.wordpress.org/themes/basics/including-css-javascript/
  */
-function tailkick_scripts() {
+function tailkick_scripts()
+{
   // Add main CSS file, compiled with Tailwind CSS
-	wp_enqueue_style( 'tailkick', get_template_directory_uri() . '/assets/css/tailkick.css', array(), '1.1', 'all' );
+  wp_enqueue_style('tailkick', get_template_directory_uri() . '/assets/css/tailkick.css', array(), '1.1', 'all');
 
   // Add global JS
-	wp_enqueue_script( 'tailkick', get_template_directory_uri() . '/assets/js/tailkick.js', array(), 1.1, true );
+  wp_enqueue_script('tailkick', get_template_directory_uri() . '/assets/js/tailkick.js', array(), 1.1, true);
 
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'tailkick-fonts', tailkick_fonts_url(), array(), null );
+  // Add custom fonts, used in the main stylesheet.
+  wp_enqueue_style('tailkick-fonts', tailkick_fonts_url(), array(), null);
 
-	// Theme stylesheet.
-	wp_enqueue_style( 'tailkick-style', get_stylesheet_uri(), array(), '20221101' );
+  // Theme stylesheet.
+  wp_enqueue_style('tailkick-style', get_stylesheet_uri(), array(), '20221101');
 
-	// Theme block stylesheet.
-	wp_enqueue_style( 'tailkick-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'tailkick-style' ), '20220912' );
+  // Theme block stylesheet.
+  wp_enqueue_style('tailkick-block-style', get_theme_file_uri('/assets/css/blocks.css'), array('tailkick-style'), '20220912');
 
-	// Load the dark colorscheme.
-	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'tailkick-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'tailkick-style' ), '20191025' );
-	}
+  // Load the dark colorscheme.
+  if ('dark' === get_theme_mod('colorscheme', 'light') || is_customize_preview()) {
+    wp_enqueue_style('tailkick-colors-dark', get_theme_file_uri('/assets/css/colors-dark.css'), array('tailkick-style'), '20191025');
+  }
 
-	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'tailkick-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'tailkick-style' ), '20161202' );
-		wp_style_add_data( 'tailkick-ie9', 'conditional', 'IE 9' );
-	}
+  // Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
+  if (is_customize_preview()) {
+    wp_enqueue_style('tailkick-ie9', get_theme_file_uri('/assets/css/ie9.css'), array('tailkick-style'), '20161202');
+    wp_style_add_data('tailkick-ie9', 'conditional', 'IE 9');
+  }
 
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'tailkick-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'tailkick-style' ), '20161202' );
-	wp_style_add_data( 'tailkick-ie8', 'conditional', 'lt IE 9' );
+  // Load the Internet Explorer 8 specific stylesheet.
+  wp_enqueue_style('tailkick-ie8', get_theme_file_uri('/assets/css/ie8.css'), array('tailkick-style'), '20161202');
+  wp_style_add_data('tailkick-ie8', 'conditional', 'lt IE 9');
 
-	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '20161020' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+  // Load the html5 shiv.
+  wp_enqueue_script('html5', get_theme_file_uri('/assets/js/html5.js'), array(), '20161020');
+  wp_script_add_data('html5', 'conditional', 'lt IE 9');
 
-	wp_enqueue_script( 'tailkick-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '20161114', true );
+  wp_enqueue_script('tailkick-skip-link-focus-fix', get_theme_file_uri('/assets/js/skip-link-focus-fix.js'), array(), '20161114', true);
 
-	$tailkick_l10n = array(
-		'quote' => tailkick_get_svg( array( 'icon' => 'quote-right' ) ),
-	);
+  $tailkick_l10n = array(
+    'quote' => tailkick_get_svg(array('icon' => 'quote-right')),
+  );
 
-	if ( has_nav_menu( 'top' ) ) {
-		wp_enqueue_script( 'tailkick-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '20210122', true );
-		$tailkick_l10n['expand']   = __( 'Expand child menu', 'tailkick' );
-		$tailkick_l10n['collapse'] = __( 'Collapse child menu', 'tailkick' );
-		$tailkick_l10n['icon']     = tailkick_get_svg(
-			array(
-				'icon'     => 'angle-down',
-				'fallback' => true,
-			)
-		);
-	}
+  if (has_nav_menu('top')) {
+    wp_enqueue_script('tailkick-navigation', get_theme_file_uri('/assets/js/navigation.js'), array('jquery'), '20210122', true);
+    $tailkick_l10n['expand']   = __('Expand child menu', 'tailkick');
+    $tailkick_l10n['collapse'] = __('Collapse child menu', 'tailkick');
+    $tailkick_l10n['icon']     = tailkick_get_svg(
+      array(
+        'icon'     => 'angle-down',
+        'fallback' => true,
+      )
+    );
+  }
 
-	wp_enqueue_script( 'tailkick-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20211130', true );
+  wp_enqueue_script('tailkick-global', get_theme_file_uri('/assets/js/global.js'), array('jquery'), '20211130', true);
 
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.3', true );
+  wp_enqueue_script('jquery-scrollto', get_theme_file_uri('/assets/js/jquery.scrollTo.js'), array('jquery'), '2.1.3', true);
 
-	wp_localize_script( 'tailkick-skip-link-focus-fix', 'tailkickScreenReaderText', $tailkick_l10n );
+  wp_localize_script('tailkick-skip-link-focus-fix', 'tailkickScreenReaderText', $tailkick_l10n);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+  if (is_singular() && comments_open() && get_option('thread_comments')) {
+    wp_enqueue_script('comment-reply');
+  }
 }
-add_action( 'wp_enqueue_scripts', 'tailkick_scripts' );
+add_action('wp_enqueue_scripts', 'tailkick_scripts');
 
 /**
  * Enqueues styles for the block-based editor.
  *
  * @since TailKick 0.1
  */
-function tailkick_block_editor_styles() {
-	// Block styles.
-	wp_enqueue_style( 'tailkick-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ), array(), '20220912' );
-	// Add custom fonts.
-	wp_enqueue_style( 'tailkick-fonts', tailkick_fonts_url(), array(), null );
+function tailkick_block_editor_styles()
+{
+  // Block styles.
+  wp_enqueue_style('tailkick-block-editor-style', get_theme_file_uri('/assets/css/editor-blocks.css'), array(), '20220912');
+  // Add custom fonts.
+  wp_enqueue_style('tailkick-fonts', tailkick_fonts_url(), array(), null);
 }
-add_action( 'enqueue_block_editor_assets', 'tailkick_block_editor_styles' );
+add_action('enqueue_block_editor_assets', 'tailkick_block_editor_styles');
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -541,22 +553,23 @@ add_action( 'enqueue_block_editor_assets', 'tailkick_block_editor_styles' );
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function tailkick_content_image_sizes_attr( $sizes, $size ) {
-	$width = $size[0];
+function tailkick_content_image_sizes_attr($sizes, $size)
+{
+  $width = $size[0];
 
-	if ( 740 <= $width ) {
-		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
-	}
+  if (740 <= $width) {
+    $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
+  }
 
-	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
-		if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
-			$sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-		}
-	}
+  if (is_active_sidebar('sidebar-1') || is_archive() || is_search() || is_home() || is_page()) {
+    if (!(is_page() && 'one-column' === get_theme_mod('page_options')) && 767 <= $width) {
+      $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+    }
+  }
 
-	return $sizes;
+  return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'tailkick_content_image_sizes_attr', 10, 2 );
+add_filter('wp_calculate_image_sizes', 'tailkick_content_image_sizes_attr', 10, 2);
 
 /**
  * Filters the `sizes` value in the header image markup.
@@ -568,13 +581,14 @@ add_filter( 'wp_calculate_image_sizes', 'tailkick_content_image_sizes_attr', 10,
  * @param array  $attr   Array of the attributes for the image tag.
  * @return string The filtered header image HTML.
  */
-function tailkick_header_image_tag( $html, $header, $attr ) {
-	if ( isset( $attr['sizes'] ) ) {
-		$html = str_replace( $attr['sizes'], '100vw', $html );
-	}
-	return $html;
+function tailkick_header_image_tag($html, $header, $attr)
+{
+  if (isset($attr['sizes'])) {
+    $html = str_replace($attr['sizes'], '100vw', $html);
+  }
+  return $html;
 }
-add_filter( 'get_header_image_tag', 'tailkick_header_image_tag', 10, 3 );
+add_filter('get_header_image_tag', 'tailkick_header_image_tag', 10, 3);
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -589,16 +603,17 @@ add_filter( 'get_header_image_tag', 'tailkick_header_image_tag', 10, 3 );
  *                                 an array of width and height values in pixels (in that order).
  * @return string[] The filtered attributes for the image markup.
  */
-function tailkick_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
-	if ( is_archive() || is_search() || is_home() ) {
-		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-	} else {
-		$attr['sizes'] = '100vw';
-	}
+function tailkick_post_thumbnail_sizes_attr($attr, $attachment, $size)
+{
+  if (is_archive() || is_search() || is_home()) {
+    $attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+  } else {
+    $attr['sizes'] = '100vw';
+  }
 
-	return $attr;
+  return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'tailkick_post_thumbnail_sizes_attr', 10, 3 );
+add_filter('wp_get_attachment_image_attributes', 'tailkick_post_thumbnail_sizes_attr', 10, 3);
 
 /**
  * Use front-page.php when Front page displays is set to a static page.
@@ -609,10 +624,11 @@ add_filter( 'wp_get_attachment_image_attributes', 'tailkick_post_thumbnail_sizes
  * @return string The template to be used: blank if is_home() is true (defaults to index.php),
  *                otherwise $template.
  */
-function tailkick_front_page_template( $template ) {
-	return is_home() ? '' : $template;
+function tailkick_front_page_template($template)
+{
+  return is_home() ? '' : $template;
 }
-add_filter( 'frontpage_template', 'tailkick_front_page_template' );
+add_filter('frontpage_template', 'tailkick_front_page_template');
 
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
@@ -623,15 +639,16 @@ add_filter( 'frontpage_template', 'tailkick_front_page_template' );
  * @param array $args Arguments for tag cloud widget.
  * @return array The filtered arguments for tag cloud widget.
  */
-function tailkick_widget_tag_cloud_args( $args ) {
-	$args['largest']  = 1;
-	$args['smallest'] = 1;
-	$args['unit']     = 'em';
-	$args['format']   = 'list';
+function tailkick_widget_tag_cloud_args($args)
+{
+  $args['largest']  = 1;
+  $args['smallest'] = 1;
+  $args['unit']     = 'em';
+  $args['format']   = 'list';
 
-	return $args;
+  return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'tailkick_widget_tag_cloud_args' );
+add_filter('widget_tag_cloud_args', 'tailkick_widget_tag_cloud_args');
 
 /**
  * Gets unique ID.
@@ -648,52 +665,54 @@ add_filter( 'widget_tag_cloud_args', 'tailkick_widget_tag_cloud_args' );
  * @param string $prefix Prefix for the returned ID.
  * @return string Unique ID.
  */
-function tailkick_unique_id( $prefix = '' ) {
-	static $id_counter = 0;
-	if ( function_exists( 'wp_unique_id' ) ) {
-		return wp_unique_id( $prefix );
-	}
-	return $prefix . (string) ++$id_counter;
+function tailkick_unique_id($prefix = '')
+{
+  static $id_counter = 0;
+  if (function_exists('wp_unique_id')) {
+    return wp_unique_id($prefix);
+  }
+  return $prefix . (string) ++$id_counter;
 }
 
-if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
-	/**
-	 * Retrieves the list item separator based on the locale.
-	 *
-	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
-	 *
-	 * @since 6.0.0
-	 */
-	function wp_get_list_item_separator() {
-		/* translators: Used between list items, there is a space after the comma. */
-		return __( ', ', 'tailkick' );
-	}
+if (!function_exists('wp_get_list_item_separator')) :
+  /**
+   * Retrieves the list item separator based on the locale.
+   *
+   * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+   *
+   * @since 6.0.0
+   */
+  function wp_get_list_item_separator()
+  {
+    /* translators: Used between list items, there is a space after the comma. */
+    return __(', ', 'tailkick');
+  }
 endif;
 
 /**
  * Implement the Custom Header feature.
  */
-require get_parent_theme_file_path( '/inc/custom-header.php' );
+require get_parent_theme_file_path('/inc/custom-header.php');
 
 /**
  * Custom template tags for this theme.
  */
-require get_parent_theme_file_path( '/inc/template-tags.php' );
+require get_parent_theme_file_path('/inc/template-tags.php');
 
 /**
  * Additional features to allow styling of the templates.
  */
-require get_parent_theme_file_path( '/inc/template-functions.php' );
+require get_parent_theme_file_path('/inc/template-functions.php');
 
 /**
  * Customizer additions.
  */
-require get_parent_theme_file_path( '/inc/customizer.php' );
+require get_parent_theme_file_path('/inc/customizer.php');
 
 /**
  * SVG icons functions and filters.
  */
-require get_parent_theme_file_path( '/inc/icon-functions.php' );
+require get_parent_theme_file_path('/inc/icon-functions.php');
 
 /**
  * Block Patterns.
@@ -711,11 +730,13 @@ require get_template_directory() . '/inc/tk_customize.php';
 /** 
  * Custom button styles for TailKick
  */
-function get_tailwind_btn() {
+function get_tailwind_btn()
+{
   return 'class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]"';
 }
 
-function get_custom_styles_btn() {
+function get_custom_styles_btn()
+{
   //  see tk_customize
   $bg = get_theme_mod('global_color_primary');
   $fg = get_theme_mod('global_foreground');
@@ -739,7 +760,8 @@ function get_custom_styles_btn() {
  *
  * @return string
  */
-function sr_only_classes( array $append ): string {
+function sr_only_classes(array $append): string
+{
   $default = array(
     'sr-only',
     'focus:not-sr-only',
@@ -757,15 +779,15 @@ function sr_only_classes( array $append ): string {
     'focus:top-1.5',
     'focus:z-[100000]',
   );
-  
-  if ( $append !== null ) {
+
+  if ($append !== null) {
     $default = array_merge(
       $default,
       $append,
     );
   }
 
-  return implode( ' ', $default );
+  return implode(' ', $default);
 }
 
 /**
@@ -776,12 +798,13 @@ function sr_only_classes( array $append ): string {
  *
  * @return string
  */
-function tailkick_navigation_markup_template_filter( $template, $class ){
+function tailkick_navigation_markup_template_filter($template, $class)
+{
   $stage_1 = str_replace('navigation', 'mt-6 navigation', $template);
   $stage_2 = str_replace('nav-links', 'flex items-center justify-between nav-links', $stage_1);
   return $stage_2;
 }
-add_filter( 'navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2 );
+add_filter('navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2);
 
 /**
  * Function for `next_post_link` filter-hook.
@@ -794,12 +817,13 @@ add_filter( 'navigation_markup_template', 'tailkick_navigation_markup_template_f
  *
  * @return string
  */
-function tailkick_next_post_link_filter( $output, $format, $link, $post, $adjacent ){
+function tailkick_next_post_link_filter($output, $format, $link, $post, $adjacent)
+{
 
-	$stage_1 = str_replace('nav-next', 'ml-auto mr-0 nav-next', $output);
-	return $stage_1;
+  $stage_1 = str_replace('nav-next', 'ml-auto mr-0 nav-next', $output);
+  return $stage_1;
 }
-add_filter( 'next_post_link', 'tailkick_next_post_link_filter', 10, 5 );
+add_filter('next_post_link', 'tailkick_next_post_link_filter', 10, 5);
 
 /**
  * Function for `comment_form_field_cookies` filter-hook.
@@ -808,10 +832,11 @@ add_filter( 'next_post_link', 'tailkick_next_post_link_filter', 10, 5 );
  *
  * @return string
  */
-function tailkick_comment_form_field_cookies_filter( $field ){
+function tailkick_comment_form_field_cookies_filter($field)
+{
   $stage_1 = str_replace('comment-form-cookies-consent', 'flex items-center comment-form-cookies-consent', $field);
   $stage_2 = str_replace('label', 'label class="m-0 p-0"', $stage_1);
 
-	return $stage_2;
+  return $stage_2;
 }
-add_filter( 'comment_form_field_cookies', 'tailkick_comment_form_field_cookies_filter' );
+add_filter('comment_form_field_cookies', 'tailkick_comment_form_field_cookies_filter');
