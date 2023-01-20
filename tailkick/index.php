@@ -51,7 +51,7 @@
     ?>
 
     <div class="site-content-contain">
-      <div id="content" class="<?php echo (has_post_thumbnail()) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
+      <div id="content" class="<?php echo (has_post_thumbnail(get_queried_object_id())) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <?php if (is_home() && !is_front_page()) : ?>
             <header class="w-full max-w-6xl mx-auto page-header">

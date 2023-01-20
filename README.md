@@ -106,7 +106,15 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [ ] Social Icons
     - [ ] Handle post formats
         - [x] Aside post format
-        - [ ] Featured image for gallery post format
+        - [ ] Image
+        - [ ] Video
+        - [ ] Quote
+        - [ ] Link
+        - [ ] Status
+        - [x] Gallery
+            - [ ] Featured image for gallery post format?
+        - [ ] Audio
+        - [ ] Chat
 - [ ] Accommodate block theme development
     - [ ] Block Widget CSS Defaults
 - [ ] Test legacy widgets

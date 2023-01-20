@@ -105,7 +105,9 @@ function tailkick_setup()
       'quote',
       'link',
       'gallery',
+      'status',
       'audio',
+      'chat',
     )
   );
 
