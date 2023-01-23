@@ -842,3 +842,18 @@ function tailkick_comment_form_field_cookies_filter($field)
   return $stage_2;
 }
 add_filter('comment_form_field_cookies', 'tailkick_comment_form_field_cookies_filter');
+
+/**
+ * Function for checking if a post format has a special handling of the featured image.
+ */
+function feature_image_exception(string $post_format_type): bool
+{
+
+  $format_exceptions = array(
+    'aside',
+    'link',
+    'status',
+  );
+
+  return in_array($post_format_type, $format_exceptions);
+}
