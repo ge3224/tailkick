@@ -846,7 +846,7 @@ add_filter('comment_form_field_cookies', 'tailkick_comment_form_field_cookies_fi
 /**
  * Function for checking if a post format has a special handling of the featured image.
  */
-function feature_image_exception(string $post_format_type): bool
+function featured_image_exception(string $post_format_type): bool
 {
 
   $format_exceptions = array(
