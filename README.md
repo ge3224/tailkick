@@ -113,8 +113,8 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
             - [ ] Handle featured image
         - [ ] Quote
             - [ ] Handle featured image
-        - [ ] Link
-            - [ ] Handle featured image
+        - [x] Link
+            - [x] Handle featured image
         - [ ] Status
             - [ ] Handle featured image
         - [x] Gallery
