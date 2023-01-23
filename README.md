@@ -77,7 +77,7 @@ Tailwind CSS describes itself as a &ldquo;utility-first CSS framework.&rdquo; It
 - An end to sprawling additions in the CSS as a website grows with new features and designs
 - Dead code is eliminated; refactoring feels safer
 
-The Tailwind framework is a descendant of Atomic CSS, which achieved notarity with Thierry Koblentz's 2013 essay [*Challenging CSS Best Practices*](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/).
+The Tailwind framework is a descendant of Atomic CSS, which achieved notoriety with Thierry Koblentz's 2013 essay [*Challenging CSS Best Practices*](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/).
 Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-first) on its website. (See also [The Evolution of Scalable CSS](https://frontendmastery.com/posts/the-evolution-of-scalable-css/).)
 
 ## <a name="contributing"></a>Contributing to TailKick
@@ -106,15 +106,26 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [ ] Social Icons
     - [ ] Handle post formats
         - [x] Aside post format
+            - [ ] Handle featured image
         - [ ] Image
+            - [ ] Handle featured image
         - [ ] Video
+            - [ ] Handle featured image
         - [ ] Quote
+            - [ ] Handle featured image
         - [ ] Link
+            - [ ] Handle featured image
         - [ ] Status
+            - [ ] Handle featured image
         - [x] Gallery
-            - [ ] Featured image for gallery post format?
+            - [ ] Handle featured image
         - [ ] Audio
+            - [ ] Handle featured image
         - [ ] Chat
+            - [ ] Handle featured image
+        - [ ] Status
+            - [ ] Handle featured image
+- [ ] Format pagination
 - [ ] Accommodate block theme development
     - [ ] Block Widget CSS Defaults
 - [ ] Test legacy widgets
