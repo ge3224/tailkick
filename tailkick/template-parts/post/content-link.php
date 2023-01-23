@@ -13,11 +13,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
   <?php
   if (is_sticky() && is_home()) :
     echo tailkick_get_svg(array('icon' => 'thumb-tack'));
   endif;
   ?>
+
   <div class="border border-gray-g00 bg-none rounded-sm pt-2 px-4 pb-4 entry-content">
     <div class="w-full flex items-center mb-2">
       <div class="text-base my-0 py-0">
@@ -70,11 +72,9 @@
         )
       );
       ?>
+
     </div>
-
-
   </div>
-
 
   <?php
   if (is_single()) {

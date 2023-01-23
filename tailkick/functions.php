@@ -851,6 +851,7 @@ function featured_image_exception(string $post_format_type): bool
 
   $format_exceptions = array(
     'aside',
+    'audio',
     'image',
     'link',
     'status',

@@ -112,7 +112,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
         - [x] Link
         - [ ] Status
         - [x] Gallery
-        - [ ] Audio
+        - [x] Audio
         - [ ] Chat
         - [x] Status
 - [ ] Format pagination

@@ -548,6 +548,12 @@ video {
 .left-4 {
   left: 1rem;
 }
+.bottom-0 {
+  bottom: 0px;
+}
+.right-0 {
+  right: 0px;
+}
 .-z-10 {
   z-index: -10;
 }
@@ -685,6 +691,9 @@ video {
 }
 .h-10 {
   height: 2.5rem;
+}
+.h-72 {
+  height: 18rem;
 }
 .h-12 {
   height: 3rem;
@@ -869,6 +878,10 @@ video {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-hero-home {
   background-image: url('../images/tailkick-hero-home-wide.jpg');
@@ -1081,6 +1094,9 @@ video {
 }
 .no-underline {
   text-decoration-line: none;
+}
+.opacity-25 {
+  opacity: 0.25;
 }
 .opacity-10 {
   opacity: 0.1;
