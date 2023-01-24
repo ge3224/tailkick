@@ -29,7 +29,7 @@
       <div class="ml-auto mr-0"><?php tailkick_edit_link(); ?></div>
     </div>
 
-    <div class="flex space-x-2.5">
+    <div class="flex space-x-3">
       <div class="post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
           <a href="<?php the_permalink(); ?>">
@@ -116,16 +116,18 @@
         <?php endif; ?>
       </div>
 
-      <div class="text-sm text-gray-600 font-mono max-w-2xl">
-        <?php
-        the_content(
-          sprintf(
-            /* translators: %s: Post title. Only visible to screen readers. */
-            __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">"%s"</span>', 'tailkick'),
-            get_the_title()
-          )
-        );
-        ?>
+      <div class="pr-8">
+        <div class="px-6 py-2 border border-gray-400 bg-gray-100 rounded -indent-3">
+          <?php
+          the_content(
+            sprintf(
+              /* translators: %s: Post title. Only visible to screen readers. */
+              __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">"%s"</span>', 'tailkick'),
+              get_the_title()
+            )
+          );
+          ?>
+        </div>
       </div>
 
       <?php
