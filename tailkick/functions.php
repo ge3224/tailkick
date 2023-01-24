@@ -882,6 +882,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/group' === $block['blockName']) {
+    $block_content = str_replace('is-layout-flow wp-block-group', $link_style . ' mt-3 mb-0 is-layout-flow wp-block-group', $block_content);
     $block_content = str_replace('wp-block-latest-posts__post-title', $link_style . ' wp-block-latest-posts__post-title', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment"', 'mb-2 leading-5 wp-block-latest-comments__comment"', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment-link', $link_style . ' wp-block-latest-comments__comment-link', $block_content);
@@ -897,7 +898,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/heading' === $block['blockName']) {
-    $block_content = str_replace('<h2>', '<h2 class="mt-3 mb-2 font-bold text-gray-800">', $block_content);
+    $block_content = str_replace('<h2>', '<h2 class="font-bold text-gray-900">', $block_content);
   }
 
   if ('core/button' === $block['blockName']) {
@@ -906,4 +907,5 @@ function tailkick_render_block_filter($block_content, $block)
 
   return $block_content;
 }
+
 add_filter('render_block', 'tailkick_render_block_filter', 10, 3);

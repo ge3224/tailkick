@@ -32,7 +32,7 @@
     </div>
 
     <div class="flex space-x-3">
-      <div class="mr-2 post-thumbnail">
+      <div class="pt-4 <?php echo (get_the_post_thumbnail() !== '') ? 'mr-1.5' : '' ?> post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
           <a href="<?php the_permalink(); ?>">
           <?php endif; ?>
