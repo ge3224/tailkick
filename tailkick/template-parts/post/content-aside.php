@@ -23,7 +23,7 @@
   <div class="border border-gray-g00 bg-none rounded p-2.5 entry-content">
 
     <?php if (get_the_post_thumbnail() !== '') : ?>
-      <div class="mb-3 w-full max-h-96 overflow-hidden post-thumbnail">
+      <div class="mb-3 w-full max-h-96 rounded-sm overflow-hidden post-thumbnail">
         <a href="<?php the_permalink(); ?>">
           <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover object-center')); ?>
         </a>
