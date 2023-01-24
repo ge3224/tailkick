@@ -116,7 +116,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="text-sm text-gray-600 font-mono max-w-xl">
+      <div class="text-sm text-gray-600 font-mono max-w-2xl">
         <?php
         the_content(
           sprintf(

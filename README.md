@@ -105,15 +105,15 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [x] Single Prev/Next links
     - [ ] Social Icons
     - [ ] Handle post formats
-        - [x] Aside post format
+        - [x] Aside
         - [ ] Image
         - [ ] Video
-        - [ ] Quote
+        - [x] Quote
         - [x] Link
-        - [ ] Status
+        - [x] Status
         - [x] Gallery
         - [x] Audio
-        - [ ] Chat
+        - [x] Chat
         - [x] Status
 - [ ] Format pagination
 - [ ] Accommodate block theme development

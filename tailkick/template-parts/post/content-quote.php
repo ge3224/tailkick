@@ -46,7 +46,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="max-w-lg">
+      <div class="max-w-xl">
         <?php
         the_content(
           sprintf(
