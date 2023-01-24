@@ -106,8 +106,8 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [ ] Social Icons
     - [ ] Handle post formats
         - [x] Aside
-        - [ ] Image
-        - [ ] Video
+        - [x] Image
+        - [x] Video
         - [x] Quote
         - [x] Link
         - [x] Status
