@@ -936,6 +936,12 @@ video {
 .p-3 {
   padding: 0.75rem;
 }
+.p-2\.5 {
+  padding: 0.625rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1105,6 +1111,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1112,6 +1122,9 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration-line: underline;
 }
 .no-underline {
   text-decoration-line: none;
@@ -1996,6 +2009,9 @@ button.secondary:hover,
 .first\:border-0:first-child {
   border-width: 0px;
 }
+.visited\:text-teal-600:visited {
+  color: rgb(13 148 136 );
+}
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
@@ -2008,6 +2024,10 @@ button.secondary:hover,
 }
 .hover\:bg-white\/80:hover {
   background-color: rgb(255 255 255 / 0.8);
+}
+.hover\:text-teal-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
 }
 .hover\:text-gray-600\/75:hover {
   color: rgb(75 85 99 / 0.75);
@@ -2077,6 +2097,10 @@ button.secondary:hover,
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.active\:text-teal-400:active {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
 }
 .active\:text-gray-600\/50:active {
   color: rgb(75 85 99 / 0.5);

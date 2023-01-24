@@ -405,7 +405,7 @@ function tailkick_excerpt_more($link)
     '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
     esc_url(get_permalink(get_the_ID())),
     /* translators: %s: Post title. Only visible to screen readers. */
-    sprintf(__('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'), get_the_title(get_the_ID()))
+    sprintf(__('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'), get_the_title(get_the_ID()))
   );
   return ' &hellip; ' . $link;
 }
@@ -864,3 +864,19 @@ function featured_image_exception(string $post_format_type): bool
 
   return in_array($post_format_type, $format_exceptions);
 }
+
+/**
+ * Function for `the_content` filter-hook.
+ * 
+ * @param string $content Content of the current post.
+ *
+ * @return string
+ */
+function tailkick_the_content_filter($content)
+{
+
+  $stage1 = str_replace('<a ', '<a class="text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 underline"', $content);
+  $stage2 = str_replace('wp-image-', 'rounded wp-image-', $stage1);
+  return $stage2;
+}
+add_filter('the_content', 'tailkick_the_content_filter');

@@ -20,7 +20,7 @@
   endif;
   ?>
 
-  <div class="border border-gray-g00 bg-none rounded p-3 entry-content">
+  <div class="border border-gray-g00 bg-none rounded p-2.5 entry-content">
 
     <?php if (get_the_post_thumbnail() !== '') : ?>
       <div class="mb-3 w-full max-h-96 overflow-hidden post-thumbnail">
@@ -57,7 +57,7 @@
       the_content(
         sprintf(
           /* translators: %s: Post title. Only visible to screen readers. */
-          __('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '">"%s"</span>', 'tailkick'),
+          __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">"%s"</span>', 'tailkick'),
           get_the_title()
         )
       );
