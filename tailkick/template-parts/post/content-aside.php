@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for displaying posts
+ * Template part for displaying aside posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,7 +20,7 @@
   endif;
   ?>
 
-  <div class="border border-gray-g00 bg-none rounded pt-4 px-4 pb-0.5 entry-content">
+  <div class="border border-gray-g00 bg-none rounded p-3 entry-content">
 
     <?php if (get_the_post_thumbnail() !== '') : ?>
       <div class="mb-3 w-full max-h-96 overflow-hidden post-thumbnail">

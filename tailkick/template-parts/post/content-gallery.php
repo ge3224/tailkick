@@ -47,6 +47,8 @@
     ?>
   </header>
 
+  <div class="mb-4 border-b pb-4 entry-content">
+
   <?php if ('' !== get_the_post_thumbnail() && !is_single() && !get_post_gallery()) : ?>
     <div class="post-thumbnail">
       <a href="<?php the_permalink(); ?>">
@@ -54,8 +56,6 @@
       </a>
     </div>
   <?php endif; ?>
-
-  <div class="entry-content">
 
     <?php
     if (!is_single()) {
