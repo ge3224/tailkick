@@ -120,3 +120,4 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [ ] Block Widget CSS Defaults
 - [ ] Test legacy widgets
 - [ ] Check accessibility
+- [ ] [Testing JS block filtering](https://css-tricks.com/a-crash-course-in-wordpress-block-filters/)

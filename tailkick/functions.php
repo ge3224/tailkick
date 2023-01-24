@@ -730,9 +730,9 @@ require_once('tk_walker_comment.php');
 /** 
  * Custom button styles for TailKick
  */
-function get_tailwind_btn()
+function get_tailkick_btn_classes()
 {
-  return 'class="mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]"';
+  return 'mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]';
 }
 
 function get_custom_styles_btn()
@@ -864,17 +864,46 @@ function featured_image_exception(string $post_format_type): bool
 }
 
 /**
- * Function for `the_content` filter-hook.
+ * Function for `render_block` filter-hook.
  * 
- * @param string $content Content of the current post.
+ * @param string   $block_content The block content.
+ * @param array    $block         The full block, including name and attributes.
+ * @param WP_Block $instance      The block instance.
  *
  * @return string
  */
-function tailkick_the_content_filter($content)
+function tailkick_render_block_filter($block_content, $block)
 {
 
-  $stage1 = str_replace('<a ', '<a class="text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 underline"', $content);
-  $stage2 = str_replace('wp-image-', 'rounded wp-image-', $stage1);
-  return $stage2;
+  $link_style = 'text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400';
+
+  if ('core/quote' === $block['blockName']) {
+    $block_content = str_replace('<p>', '<p class="text-2xl">', $block_content);
+  }
+
+  if ('core/group' === $block['blockName']) {
+    $block_content = str_replace('wp-block-latest-posts__post-title', $link_style . ' wp-block-latest-posts__post-title', $block_content);
+    $block_content = str_replace('wp-block-latest-comments__comment"', 'mb-2 leading-5 wp-block-latest-comments__comment"', $block_content);
+    $block_content = str_replace('wp-block-latest-comments__comment-link', $link_style . ' wp-block-latest-comments__comment-link', $block_content);
+    $block_content = str_replace('<a href', '<a class="' . $link_style . '" href', $block_content);
+  }
+
+  if ('core/image' === $block['blockName']) {
+    $block_content = str_replace('wp-image', 'rounded wp-image', $block_content);
+  }
+
+  if ('core/gallery' === $block['blockName']) {
+    $block_content = str_replace('wp-element-caption', 'rounded-b wp-element-caption', $block_content);
+  }
+
+  if ('core/heading' === $block['blockName']) {
+    $block_content = str_replace('<h2>', '<h2 class="mt-3 mb-2 font-bold text-gray-800">', $block_content);
+  }
+
+  if ('core/button' === $block['blockName']) {
+    $block_content = str_replace('wp-block-button__link', get_tailkick_btn_classes() . ' text-black wp-block-button__link', $block_content);
+  }
+
+  return $block_content;
 }
-/* add_filter('the_content', 'tailkick_the_content_filter'); */
+add_filter('render_block', 'tailkick_render_block_filter', 10, 3);

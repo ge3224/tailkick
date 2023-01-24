@@ -73,7 +73,7 @@ function get_hero_bg_image_mods() {
         <div class="w-1/5 ml-auto mr-0">
           <h1 class="text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
           <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
-          <a <?php echo get_tailwind_btn(); ?> href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Download</a>
+          <a class="<?php echo get_tailkick_btn_classes(); ?>" href="https://github.com/ge3224/tailkick" target="_blank" type="button"<?php echo get_custom_styles_btn(); ?>>Download</a>
         </div>
       </div>
     </section>
