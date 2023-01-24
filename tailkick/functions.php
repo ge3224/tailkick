@@ -856,11 +856,10 @@ function featured_image_exception(string $post_format_type): bool
     'audio',
     'image',
     'link',
+    'quote',
     'status',
     'video',
   );
 
   return in_array($post_format_type, $format_exceptions);
 }
-
-
