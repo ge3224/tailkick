@@ -22,15 +22,20 @@
   <header class="entry-header">
     <?php
     if ('post' === get_post_type()) {
-      echo '<div class="entry-meta">';
+      echo '<div class="flex items-center entry-meta">';
       if (is_single()) {
         tailkick_posted_on();
       } else {
+        echo '<div>';
         echo tailkick_time_link();
+        echo '</div>';
+        echo '<div class="ml-auto mr-0">';
         tailkick_edit_link();
+        echo '</div>';
       }
       echo '</div>';
     }
+
 
     if (is_single()) {
       the_title('<h1 class="entry-title">', '</h1>');
