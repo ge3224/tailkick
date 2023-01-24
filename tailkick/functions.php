@@ -727,8 +727,6 @@ require get_template_directory() . '/inc/block-patterns.php';
 require_once('tk_walker_nav.php');
 require_once('tk_walker_comment.php');
 
-require get_template_directory() . '/inc/tk_customize.php';
-
 /** 
  * Custom button styles for TailKick
  */
@@ -879,4 +877,4 @@ function tailkick_the_content_filter($content)
   $stage2 = str_replace('wp-image-', 'rounded wp-image-', $stage1);
   return $stage2;
 }
-add_filter('the_content', 'tailkick_the_content_filter');
+/* add_filter('the_content', 'tailkick_the_content_filter'); */
