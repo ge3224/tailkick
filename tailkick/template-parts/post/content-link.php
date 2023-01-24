@@ -31,7 +31,7 @@
       <div class="ml-auto mr-0"><?php tailkick_edit_link(); ?></div>
     </div>
 
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-2">
       <div class="post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
           <a href="<?php the_permalink(); ?>">
@@ -41,8 +41,8 @@
               <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover object-center w-full h-full')); ?>
             </figure>
           <?php else : ?>
-            <div class="w-8 h-8 rounded-sm bg-gray-100">
-              <svg class="w-full h-auto opacity-10" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+            <div class="w-8 h-8">
+              <svg class="w-full h-auto opacity-30" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
                 <g transform="translate(0, 60)">
                   <path d="m505.84 324.43 115.87-115.87c11.051-11.051 11.051-29.004 0-40.055l-160.37-160.22c-11.051-11.051-29.004-11.051-40.055 0l-115.71 115.87 40.055 40.055 95.762-95.762 120.16 120.16-95.762 95.762zm-65.684-174.64-220.38 220.38 40.055 40.055 220.38-220.38zm-85.789 246.01-95.762 95.762-120.16-120.16 95.762-95.762-40.055-40.055-115.87 115.71c-11.051 11.051-11.051 29.004 0 40.055l160.22 160.37c11.051 11.051 29.004 11.051 40.055 0l115.87-115.87z" />
                 </g>
