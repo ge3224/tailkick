@@ -42,63 +42,66 @@
     ?>
   </header>
 
-  <?php
-  $content = apply_filters('the_content', get_the_content());
-  $audio   = false;
+  <div class="mb-4 border-b pb-4">
 
-  // Only get audio from the content if a playlist isn't present.
-  if (false === strpos($content, 'wp-playlist-script')) {
-    $audio = get_media_embedded_in_content($content, array('audio'));
-  }
+    <?php
+    $content = apply_filters('the_content', get_the_content());
+    $audio   = false;
 
-  ?>
+    // Only get audio from the content if a playlist isn't present.
+    if (false === strpos($content, 'wp-playlist-script')) {
+      $audio = get_media_embedded_in_content($content, array('audio'));
+    }
 
-  <?php if (get_the_post_thumbnail() !== '') : ?>
-    <div class="bg-gray-400 relative w-full h-72 rounded-sm flex flex-col justify-center items-center entry-content">
+    ?>
 
-      <div class="absolute opacity-25 top-0 left-0 bottom-0 right-0 post-thumbnail">
-        <a href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover w-full h-full object-center')); ?>
-        </a>
-      </div>
-    <?php else : ?>
-      <div class="entry-content">
-      <?php endif; ?>
+    <?php if (get_the_post_thumbnail() !== '') : ?>
+      <div class="bg-gray-400 relative w-full h-72 rounded-sm flex flex-col justify-center items-center entry-content">
 
-      <?php
-      if (!is_single()) {
+        <div class="absolute opacity-25 top-0 left-0 bottom-0 right-0 post-thumbnail">
+          <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover w-full h-full object-center')); ?>
+          </a>
+        </div>
+      <?php else : ?>
+        <div class="entry-content">
+        <?php endif; ?>
 
-        // If not a single post, highlight the audio file.
-        if (!empty($audio)) {
-          foreach ($audio as $audio_html) {
-            echo '<div class="entry-audio">';
-            echo $audio_html;
-            echo '</div>';
+        <?php
+        if (!is_single()) {
+
+          // If not a single post, highlight the audio file.
+          if (!empty($audio)) {
+            foreach ($audio as $audio_html) {
+              echo '<div class="entry-audio">';
+              echo $audio_html;
+              echo '</div>';
+            }
           }
         }
-      }
 
-      if (is_single() || empty($audio)) {
+        if (is_single() || empty($audio)) {
 
-        the_content(
-          sprintf(
-            /* translators: %s: Post title. Only visible to screen readers. */
-            __('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
-            get_the_title()
-          )
-        );
+          the_content(
+            sprintf(
+              /* translators: %s: Post title. Only visible to screen readers. */
+              __('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
+              get_the_title()
+            )
+          );
 
-        wp_link_pages(
-          array(
-            'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
-            'after'       => '</div>',
-            'link_before' => '<span class="page-number">',
-            'link_after'  => '</span>',
-          )
-        );
-      }
-      ?>
+          wp_link_pages(
+            array(
+              'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
+              'after'       => '</div>',
+              'link_before' => '<span class="page-number">',
+              'link_after'  => '</span>',
+            )
+          );
+        }
+        ?>
 
+        </div>
       </div>
 
       <?php

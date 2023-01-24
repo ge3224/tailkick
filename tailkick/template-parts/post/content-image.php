@@ -22,65 +22,71 @@
   <header class="entry-header">
     <?php
     if ('post' === get_post_type()) {
-      echo '<div class="entry-meta">';
+      echo '<div class="flex items-center entry-meta">';
       if (is_single()) {
         tailkick_posted_on();
       } else {
+        echo '<div>';
         echo tailkick_time_link();
+        echo '</div>';
+        echo '<div class="ml-auto mr-0">';
         tailkick_edit_link();
+        echo '</div>';
       }
       echo '</div>';
     }
 
     if (is_single()) {
-      the_title('<h1 class="entry-title">', '</h1>');
+      the_title('<h1 class="m-0 p-0 entry-title">', '</h1>');
     } elseif (is_front_page() && is_home()) {
-      the_title('<h3 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>');
+      the_title('<h3 class="m-0 p-0 entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>');
     } else {
-      the_title('<h2 class="pt-3 pb-0 font-bold text-black text-2xl entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+      the_title('<h2 class="pt-1 pb-0 font-bold text-black text-2xl entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
     }
     ?>
   </header>
 
+
   <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-    <div class="post-thumbnail">
-      <a href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail('tailkick-featured-image'); ?>
-      </a>
-    </div>
-  <?php endif; ?>
+    <div class="mb-4 border-b pb-4 entry-content">
+      <div class="post-thumbnail">
+        <a href="<?php the_permalink(); ?>">
+          <?php the_post_thumbnail('tailkick-featured-image'); ?>
+        </a>
+      </div>
+    <?php else : ?>
+      <div class="mb-3 border-b pb-0 entry-content">
+      <?php endif; ?>
 
-  <div class="entry-content">
+      <?php
+      if (is_single() || '' === get_the_post_thumbnail()) {
 
-    <?php
-    if (is_single() || '' === get_the_post_thumbnail()) {
+        // Only show content if is a single post, or if there's no featured image.
+        the_content(
+          sprintf(
+            /* translators: %s: Post title. Only visible to screen readers. */
+            __('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
+            get_the_title()
+          )
+        );
 
-      // Only show content if is a single post, or if there's no featured image.
-      the_content(
-        sprintf(
-          /* translators: %s: Post title. Only visible to screen readers. */
-          __('Continue reading<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
-          get_the_title()
-        )
-      );
+        wp_link_pages(
+          array(
+            'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
+            'after'       => '</div>',
+            'link_before' => '<span class="page-number">',
+            'link_after'  => '</span>',
+          )
+        );
+      }
+      ?>
 
-      wp_link_pages(
-        array(
-          'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
-          'after'       => '</div>',
-          'link_before' => '<span class="page-number">',
-          'link_after'  => '</span>',
-        )
-      );
-    }
-    ?>
+      </div>
 
-  </div>
-
-  <?php
-  if (is_single()) {
-    tailkick_entry_footer();
-  }
-  ?>
+      <?php
+      if (is_single()) {
+        tailkick_entry_footer();
+      }
+      ?>
 
 </article>

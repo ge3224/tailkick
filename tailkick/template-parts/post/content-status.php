@@ -18,7 +18,7 @@
     echo tailkick_get_svg(array('icon' => 'thumb-tack'));
   endif;
   ?>
-  <div class="border border-gray-g00 bg-none rounded-sm pt-2 px-4 pb-4 entry-content">
+  <div class="border-b pb-3 mb-3 entry-content">
     <div class="w-full flex items-center mt-0 mb-2">
       <div class="text-base my-0 py-0">
         <a class="font-bold text-black text-sm hover:text-gray-600 active:text-gray-500" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -35,11 +35,11 @@
           <a href="<?php the_permalink(); ?>">
           <?php endif; ?>
           <?php if (get_the_post_thumbnail() !== '') : ?>
-            <figure class="w-12 h-12 overflow-hidden rounded-sm">
+            <figure class="w-8 h-8 overflow-hidden rounded-sm">
               <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover object-center w-full h-full')); ?>
             </figure>
           <?php else : ?>
-            <div class="w-12 h-12 rounded-sm bg-gray-100">
+            <div class="w-8 h-8 rounded-sm bg-gray-100">
               <svg class="w-full h-auto opacity-10" version="1.1" viewBox="0 0 700 700" id="svg5888" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <defs id="defs5804">
                   <symbol id="h" overflow="visible">

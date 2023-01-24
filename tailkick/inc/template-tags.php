@@ -73,7 +73,7 @@ if ( ! function_exists( 'tailkick_entry_footer' ) ) :
 		// We don't want to output .entry-footer if it will be empty, so make sure its not.
 		if ( ( ( tailkick_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
 
-			echo '<footer class="my-6 border-y border-gray-300 py-4 entry-footer">';
+			echo '<footer class="my-6 entry-footer">';
 
 			if ( 'post' === get_post_type() ) {
 				if ( ( $categories_list && tailkick_categorized_blog() ) || $tags_list ) {
