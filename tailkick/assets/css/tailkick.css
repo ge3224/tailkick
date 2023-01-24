@@ -814,6 +814,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -1775,7 +1778,7 @@ input[type="text"],
   textarea {
   display: block;
   width: 100%;
-  border-radius: 0.125rem;
+  border-radius: 0.25rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1841,7 +1844,6 @@ button,
   input[type="submit"] {
   display: inline-block;
   cursor: pointer;
-  border-radius: 0.125rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));

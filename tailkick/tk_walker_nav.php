@@ -248,7 +248,7 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
       if (isset($args->parent_after)) {
         $item_output .= $args->parent_after;
       } else {
-        $item_output .= '<span class="px-2 py-1 hover:cursor-pointer hover:bg-purple-300 rounded-sm" data-ui="nav-dropdown">&or;</span>';
+        $item_output .= '<span class="px-2 py-1 hover:cursor-pointer hover:bg-purple-300 rounded" data-ui="nav-dropdown">&or;</span>';
       }
     } else {
       $item_output .= $args->after;

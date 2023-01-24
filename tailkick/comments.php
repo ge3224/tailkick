@@ -93,7 +93,7 @@ if ( post_password_required() ) {
         'title_reply_before'  => '<div class="font-bold text-xl text-gray-900 mb-1">',
         'title_reply'         => 'Write a Reply or Comment',
         'title_reply_after'   => '</div>',
-        'class_container'     => 'border border-gray-200 rounded-sm pt-4 px-4 pb-5',
+        'class_container'     => 'border border-gray-200 rounded pt-4 px-4 pb-5',
         'class_form'          => 'text-sm',
         'comment_notes_after' => '',
         'comment_field'        => '<p class="comment-form-comment">

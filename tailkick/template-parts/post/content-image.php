@@ -37,9 +37,9 @@
     }
 
     if (is_single()) {
-      the_title('<h1 class="m-0 p-0 entry-title">', '</h1>');
+      the_title('<h1 class="pt-1 pb-0 entry-title">', '</h1>');
     } elseif (is_front_page() && is_home()) {
-      the_title('<h3 class="m-0 p-0 entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>');
+      the_title('<h3 class="pt-1 pb-0 entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>');
     } else {
       the_title('<h2 class="pt-1 pb-0 font-bold text-black text-2xl entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
     }

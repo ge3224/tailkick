@@ -422,7 +422,7 @@ class Tailkick_Walker_Comment extends Walker {
     global $comment_depth;
 		?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( array( $this->has_children ? 'parent' : '', ( $comment_depth > 1 && $comment_depth < 3 ) ? 'pl-[45px]' : '' ), $comment ); ?>>
-    <article id="div-comment-<?php comment_ID(); ?>" class="<?php echo ( $comment_depth > 1 ) ? 'border border-gray-200 pl-3 py-2 pr-0 rounded-sm' : ''; ?> mb-3 flex comment-body">
+    <article id="div-comment-<?php comment_ID(); ?>" class="<?php echo ( $comment_depth > 1 ) ? 'border border-gray-200 pl-3 py-2 pr-0 rounded' : ''; ?> mb-3 flex comment-body">
       <div class="<?php echo ( $comment_depth > 1 ) ? '' : 'mr-2'; ?>">
           <?php
             if ( 0 != $args['avatar_size'] ) {
@@ -430,7 +430,7 @@ class Tailkick_Walker_Comment extends Walker {
             }
           ?>
         </div>
-        <div class="w-full <?php echo ( $comment_depth > 1 ) ? '' : 'border rounded-sm'; ?>">
+        <div class="w-full <?php echo ( $comment_depth > 1 ) ? '' : 'border rounded'; ?>">
         <div class="py-1 px-3 <?php echo ( $comment_depth > 1 ) ? 'pt-0 pb-1 border-none' : 'border-b bg-gray-100 '; ?>comment-meta">
             <div class="flex items-center text-sm vcard">
               <div class="comment-author">
