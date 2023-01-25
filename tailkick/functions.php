@@ -800,11 +800,12 @@ function sr_only_classes(array $append): string
  */
 function tailkick_navigation_markup_template_filter($template, $class)
 {
-  $stage_1 = str_replace('navigation', 'mt-6 navigation', $template);
-  $stage_2 = str_replace('nav-links', 'flex items-center justify-between nav-links', $stage_1);
-  return $stage_2;
+  $template = str_replace('navigation', 'mt-6 navigation', $template);
+  $template = str_replace('nav-links', 'flex items-center justify-between nav-links', $template);
+  /* $template = str_replace('page-numbers', 'testing page-numbers', $template); */
+  return $template;
 }
-add_filter('navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2);
+/* add_filter('navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2); */
 
 /**
  * Function for `next_post_link` filter-hook.

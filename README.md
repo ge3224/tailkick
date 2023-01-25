@@ -104,20 +104,15 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [x] Single Categories
     - [x] Single Prev/Next links
     - [ ] Social Icons
-    - [ ] Handle post formats
-        - [x] Aside
-        - [x] Image
-        - [x] Video
-        - [x] Quote
-        - [x] Link
-        - [x] Status
-        - [x] Gallery
-        - [x] Audio
-        - [x] Chat
-        - [x] Status
-- [ ] Format pagination
-- [ ] Accommodate block theme development
+    - [x] Handle post formats
+    - [ ] Featured image for video post format
+    - [ ] Featured image for image priority
+    - [ ] Format pagination
     - [ ] Block Widget CSS Defaults
+    - [x] Pagination formatting
 - [ ] Test legacy widgets
+- [ ] Test responsive layouts
 - [ ] Check accessibility
+- [ ] Complete nav menu JS dev
+- [ ] Accommodate block theme development
 - [ ] [Testing JS block filtering](https://css-tricks.com/a-crash-course-in-wordpress-block-filters/)

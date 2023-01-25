@@ -85,13 +85,7 @@
 
                       endwhile;
 
-                      the_posts_pagination(
-                        array(
-                          'prev_text'          => tailkick_get_svg(array('icon' => 'arrow-left')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous page', 'tailkick') . '</span>',
-                          'next_text'          => '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Next page', 'tailkick') . '</span>' . tailkick_get_svg(array('icon' => 'arrow-right')),
-                          'before_page_number' => '<span class="' . sr_only_classes(array('meta-nav', 'screen-reader-text')) . '">' . __('Page', 'tailkick') . ' </span>',
-                        )
-                      );
+                      tailkick_posts_pagination();
 
                     else :
 
