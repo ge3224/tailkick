@@ -98,15 +98,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 
 - [x] Add a favicon 
 - [x] Use PostCSS minifier
-- [ ] Rebuild theme from WordPress's Twenty_Seventeen
-    - [x] Single Comments
-    - [x] Single Tags
-    - [x] Single Categories
-    - [x] Single Prev/Next links
-    - [ ] Social Icons
-    - [x] Handle post formats
-    - [x] Block Widget CSS Defaults
-    - [x] Pagination formatting
+- [x] Rebuild theme from WordPress's Twenty_Seventeen
 - [ ] Test legacy widgets
 - [ ] Test responsive layouts
 - [ ] Check accessibility
