@@ -885,6 +885,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(94 234 212 / var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 .bg-gray-50\/0 {
   background-color: rgb(249 250 251 / 0);
 }
@@ -1158,6 +1162,11 @@ video {
 }
 .shadow-\[5px_5px_0_0_\#00000033\] {
   --tw-shadow: 5px 5px 0 0 #00000033;
+  --tw-shadow-colored: 5px 5px 0 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-\[5px_5px_0_0_\#00000022\] {
+  --tw-shadow: 5px 5px 0 0 #00000022;
   --tw-shadow-colored: 5px 5px 0 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -2047,6 +2056,13 @@ button.secondary:hover,
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.hover\:bg-teal-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 246 228 / var(--tw-bg-opacity));
+}
+.hover\:bg-orange-300\/75:hover {
+  background-color: rgb(253 186 116 / 0.75);
+}
 .hover\:bg-white\/80:hover {
   background-color: rgb(255 255 255 / 0.8);
 }
@@ -2125,6 +2141,12 @@ button.secondary:hover,
 }
 .active\:bg-gray-100\/75:active {
   background-color: rgb(243 244 246 / 0.75);
+}
+.active\:bg-teal-200\/75:active {
+  background-color: rgb(153 246 228 / 0.75);
+}
+.active\:bg-orange-300\/50:active {
+  background-color: rgb(253 186 116 / 0.5);
 }
 .active\:text-teal-400:active {
   --tw-text-opacity: 1;

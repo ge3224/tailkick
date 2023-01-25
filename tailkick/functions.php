@@ -727,14 +727,6 @@ require get_template_directory() . '/inc/block-patterns.php';
 require_once('tk_walker_nav.php');
 require_once('tk_walker_comment.php');
 
-/** 
- * Custom button styles for TailKick
- */
-function get_tailkick_btn_classes()
-{
-  return 'mt-3 px-4 py-2 font-bold bg-teal-300 border border-black shadow-[5px_5px_0_0_#00000033]';
-}
-
 function get_custom_styles_btn()
 {
   //  see tk_customize
@@ -890,7 +882,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/button' === $block['blockName']) {
-    $block_content = str_replace('wp-block-button__link', get_tailkick_btn_classes() . ' text-black wp-block-button__link', $block_content);
+    $block_content = str_replace('wp-block-button__link', tailkick_button_classes_primary() . ' text-black wp-block-button__link', $block_content);
   }
 
   return $block_content;

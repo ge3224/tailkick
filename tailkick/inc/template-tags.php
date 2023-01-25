@@ -334,3 +334,53 @@ if (!function_exists('wp_body_open')) :
     do_action('wp_body_open');
   }
 endif;
+
+if (!function_exists('tailkick_button_classes_primary')) :
+
+  /**
+   * Utility classes by Tailwind used for primary buttons
+   */
+  function tailkick_button_classes_primary(): string
+  {
+    $classes = array(
+      'mt-3',
+      'px-4',
+      'py-2',
+      'bg-teal-300',
+      'hover:bg-teal-200',
+      'active:bg-teal-200/75',
+      'border',
+      'border-black',
+      'shadow-[5px_5px_0_0_#00000033]',
+      'text-base',
+      'font-bold',
+    );
+
+    return implode(' ', $classes);
+  }
+endif;
+
+if (!function_exists('tailkick_button_classes_secondary')) :
+
+  /**
+   * Utility classes by Tailwind used for secondary buttons
+   */
+  function tailkick_button_classes_secondary(): string
+  {
+    $classes = array(
+      'mt-3',
+      'px-4',
+      'py-2',
+      'bg-white',
+      'hover:bg-orange-300/75',
+      'active:bg-orange-300/50',
+      'border',
+      'border-black',
+      'shadow-[5px_5px_0_0_#00000022]',
+      'text-base',
+      'font-bold',
+    );
+
+    return implode(' ', $classes);
+  }
+endif;
