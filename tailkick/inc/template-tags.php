@@ -25,7 +25,7 @@ if (!function_exists('tailkick_posted_on')) :
     );
 
     // Finally, let's write all of this to the page.
-    echo '<span class="posted-on">' . tailkick_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+    echo '<span class="posted-on">' . tailkick_time_link() . '</span><span class="ml-2 text-sm byline"> ' . $byline . '</span>';
   }
 endif;
 

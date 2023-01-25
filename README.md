@@ -105,7 +105,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
     - [x] Single Prev/Next links
     - [ ] Social Icons
     - [x] Handle post formats
-    - [ ] Block Widget CSS Defaults
+    - [x] Block Widget CSS Defaults
     - [x] Pagination formatting
 - [ ] Test legacy widgets
 - [ ] Test responsive layouts
