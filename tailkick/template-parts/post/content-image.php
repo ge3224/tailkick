@@ -46,47 +46,37 @@
     ?>
   </header>
 
+  <div class="mb-3 border-b pb-0 entry-content">
 
-  <?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
-    <div class="mb-4 border-b pb-4 entry-content">
-      <div class="post-thumbnail">
-        <a href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail('tailkick-featured-image'); ?>
-        </a>
-      </div>
-    <?php else : ?>
-      <div class="mb-3 border-b pb-0 entry-content">
-      <?php endif; ?>
+    <?php
+    if (is_single() || '' === get_the_post_thumbnail()) {
 
-      <?php
-      if (is_single() || '' === get_the_post_thumbnail()) {
+      // Only show content if is a single post, or if there's no featured image.
+      the_content(
+        sprintf(
+          /* translators: %s: Post title. Only visible to screen readers. */
+          __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
+          get_the_title()
+        )
+      );
 
-        // Only show content if is a single post, or if there's no featured image.
-        the_content(
-          sprintf(
-            /* translators: %s: Post title. Only visible to screen readers. */
-            __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
-            get_the_title()
-          )
-        );
+      wp_link_pages(
+        array(
+          'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
+          'after'       => '</div>',
+          'link_before' => '<span class="page-number">',
+          'link_after'  => '</span>',
+        )
+      );
+    }
+    ?>
 
-        wp_link_pages(
-          array(
-            'before'      => '<div class="page-links">' . __('Pages:', 'tailkick'),
-            'after'       => '</div>',
-            'link_before' => '<span class="page-number">',
-            'link_after'  => '</span>',
-          )
-        );
-      }
-      ?>
+  </div>
 
-      </div>
-
-      <?php
-      if (is_single()) {
-        tailkick_entry_footer();
-      }
-      ?>
+  <?php
+  if (is_single()) {
+    tailkick_entry_footer();
+  }
+  ?>
 
 </article>
