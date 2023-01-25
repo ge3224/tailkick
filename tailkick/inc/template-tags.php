@@ -214,6 +214,57 @@ function tailkick_category_transient_flusher()
 add_action('edit_category', 'tailkick_category_transient_flusher');
 add_action('save_post', 'tailkick_category_transient_flusher');
 
+if (!function_exists('tailkick_posts_navigation')) :
+  /**
+   * Display navigation for posts
+   *
+   * @since TailKick 0.1
+   */
+  function tailkick_posts_navigation()
+  {
+
+    $prev = get_previous_post_link(
+      implode('', array(
+        '<div class="flex items-center font-bold">',
+        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous Post', 'tailkick') . '</span>',
+        '</span class="nav-title-icon-wrapper">',
+        tailkick_get_svg(array('icon' => 'arrow-left')),
+        '&nbsp;%link',
+        '</span>',
+        '</div>',
+      ))
+    );
+
+    $next = get_next_post_link(
+      implode('', array(
+        '<div class="flex items-center font-bold">',
+        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous Post', 'tailkick') . '</span>',
+        '</span class="nav-title-icon-wrapper">',
+        '%link&nbsp;',
+        tailkick_get_svg(array('icon' => 'arrow-right')),
+        '</span>',
+        '</div>',
+      ))
+    );
+
+    echo '<div class="navigation post-navigation" aria-label="Posts">';
+    echo '<div class="w-full flex space-x-2 justify-between items-center nav-links">';
+
+    if ($prev) {
+      echo $prev;
+    } else {
+      echo '<div></div>'; // insert an empty div to push the next post link to the right
+    }
+
+    if ($next) {
+      echo $next;
+    }
+
+    echo '</div>';
+    echo '</div>';
+  }
+endif;
+
 if (!function_exists('tailkick_posts_pagination')) :
 
   /**
@@ -224,37 +275,42 @@ if (!function_exists('tailkick_posts_pagination')) :
   function tailkick_posts_pagination()
   {
 
-    // Tailwind styling for pagination links
-    $classes = array(
-      'table',
-      'rounded-sm',
-      'hover:bg-gray-100',
-      'active:bg-gray-100/75',
-      'border',
-    );
-
-    // different padding requirements for numbers and arrow icons
-    $padding_svg = 'py-[0.550rem] px-1.5';
-    $padding_number = 'py-0.5 px-2';
-
     if (wp_count_posts()->publish > 1) {
 
+      // Tailwind styling for pagination links
+      $pagination_link_classes = array(
+        'table',
+        'rounded-sm',
+        'hover:bg-gray-100',
+        'active:bg-gray-100/75',
+        'border',
+      );
 
-      print('<nav class="navigation comment-navigation">');
-      print('<div class="flex space-x-2 items-center justify-center nav-links">');
+      // different padding requirements for numbers and arrow icons
+      $padding_svg = 'py-[0.550rem] px-1.5';
+      $padding_num = 'py-0.5 px-2';
 
-      // using `paginate_links` instead of `the_posts_pagination` so that I can manually wrap `nav` and `div` elements.
+      // spans
+      $open_span_svg = '<span class="' . implode(' ', $pagination_link_classes) . ' ' . $padding_svg . '">';
+      $open_span_sr = '<span class="' . sr_only_classes(array('screen-reader-text')) . '">';
+      $open_span_num = '<span class="' . $padding_num . ' ' . implode(' ', $pagination_link_classes) . '">';
+
+      echo '<nav class="navigation pagination" aria-label="Posts">';
+      echo '<div class="flex space-x-2 items-center justify-center nav-links">';
+      echo '<h2 class"' . sr_only_classes(array('hidden', 'screen-reader-text')) . '">' . __('Posts Navigation', 'tailkick') . '</h2>';
+
+      // using `paginate_links` instead of `the_posts_pagination` in order to  manually wrap `nav` and `div` elements.
       echo paginate_links(
         array(
-          'prev_text'          => '<span class="' . $padding_svg . ' ' . implode(' ', $classes) . '">' . tailkick_get_svg(array('icon' => 'arrow-left')) . '</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous page', 'tailkick') . '</span>',
-          'next_text'          => '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Next page', 'tailkick') . '</span><span class="' . $padding_svg . ' ' . implode(' ', $classes) . '">' . tailkick_get_svg(array('icon' => 'arrow-right')) . '</span>',
-          'before_page_number' => '<span class="' . $padding_number . ' ' . implode(' ', $classes) . '"><span class="' . sr_only_classes(array('meta-nav', 'screen-reader-text')) . '">' . __('Page', 'tailkick') . ' </span>',
+          'prev_text'          => $open_span_svg . tailkick_get_svg(array('icon' => 'arrow-left')) . '</span>' . $open_span_sr . __('Previous page', 'tailkick') . '</span>',
+          'next_text'          => $open_span_sr . __('Next page', 'tailkick') . '</span>' . $open_span_svg . tailkick_get_svg(array('icon' => 'arrow-right')) . '</span>',
+          'before_page_number' => $open_span_num . $open_span_sr . __('Page', 'tailkick') . ' </span>',
           'after_page_number' => '</span>',
         )
       );
 
-      print('</div>');
-      print('</nav>');
+      echo '</div>';
+      echo '</nav>';
     }
   }
 

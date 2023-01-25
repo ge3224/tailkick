@@ -53,6 +53,7 @@
                   <?php
                   // Start the Loop.
                   while (have_posts()) :
+
                     the_post();
 
                     get_template_part('template-parts/post/content', get_post_format());
@@ -62,53 +63,7 @@
                       comments_template();
                     endif;
 
-                    $nav_subtitle_classes = array(
-                      'inline-block',
-                      'w-full',
-                      'uppercase',
-                      'font-bold',
-                      'text-xs',
-                      'text-gray-500',
-                      'nav-subtitle'
-                    );
-
-                    $nav_title_classes = array(
-                      'flex',
-                      'items-center',
-                      'gap-x-1',
-                      'font-bold',
-                      'text-base',
-                      'nav-title',
-                    );
-
-                    $nav_title_icon_wrapper_classes = array(
-                      'nav-title-icon-wrapper'
-                    );
-
-                    the_post_navigation(
-                      array(
-                        'prev_text' => implode(
-                          '',
-                          array(
-                            '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous Post', 'tailkick') . '</span>',
-                            '<span aria-hidden="true" class="' . implode(' ', $nav_subtitle_classes) . ' pl-4">' . __('Previous', 'tailkick') . '</span>',
-                            '<span class="' . implode(' ', $nav_title_classes) . '">',
-                            '<span class="' . implode(' ', $nav_title_icon_wrapper_classes) . '">' . tailkick_get_svg(array('icon' => 'arrow-left')) . '</span>' . '%title',
-                            '</span>',
-                          )
-                        ),
-                        'next_text' => implode(
-                          '',
-                          array(
-                            '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Next Post', 'tailkick') . '</span>',
-                            '<span aria-hidden="true" class="' . implode(' ', $nav_subtitle_classes) . ' pr-4 text-right">' . __('Next', 'tailkick') . '</span>',
-                            '<span class="' . implode(' ', $nav_title_classes) . '">',
-                            '%title' . '<span class="' . implode(' ', $nav_title_icon_wrapper_classes) . '">' . tailkick_get_svg(array('icon' => 'arrow-right')) . '</span>',
-                            '</span>',
-                          )
-                        ),
-                      )
-                    );
+                    tailkick_posts_navigation();
 
                   endwhile; // End the loop.
                   ?>

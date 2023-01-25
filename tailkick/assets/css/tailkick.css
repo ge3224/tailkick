@@ -665,9 +665,6 @@ video {
 .block {
   display: block;
 }
-.inline-block {
-  display: inline-block;
-}
 .inline {
   display: inline;
 }
@@ -799,10 +796,6 @@ video {
 }
 .justify-items-center {
   justify-items: center;
-}
-.gap-x-1 {
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
 }
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1039,12 +1032,6 @@ video {
 .pb-5 {
   padding-bottom: 1.25rem;
 }
-.pl-4 {
-  padding-left: 1rem;
-}
-.pr-4 {
-  padding-right: 1rem;
-}
 .pl-\[45px\] {
   padding-left: 45px;
 }
@@ -1089,9 +1076,6 @@ video {
 }
 .text-center {
   text-align: center;
-}
-.text-right {
-  text-align: right;
 }
 .-indent-3 {
   text-indent: -0.75rem;
