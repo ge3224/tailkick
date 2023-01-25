@@ -791,23 +791,6 @@ function sr_only_classes(array $append): string
 }
 
 /**
- * Function for `navigation_markup_template` filter-hook.
- * 
- * @param string $template The default template.
- * @param string $class    The class passed by the calling function.
- *
- * @return string
- */
-function tailkick_navigation_markup_template_filter($template, $class)
-{
-  $template = str_replace('navigation', 'mt-6 navigation', $template);
-  $template = str_replace('nav-links', 'flex items-center justify-between nav-links', $template);
-  /* $template = str_replace('page-numbers', 'testing page-numbers', $template); */
-  return $template;
-}
-/* add_filter('navigation_markup_template', 'tailkick_navigation_markup_template_filter', 10, 2); */
-
-/**
  * Function for `next_post_link` filter-hook.
  * 
  * @param string  $output   The adjacent post link.
@@ -891,7 +874,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/group' === $block['blockName']) {
-    $block_content = str_replace('is-layout-flow wp-block-group', $link_style . ' mt-3 mb-0 is-layout-flow wp-block-group', $block_content);
+    $block_content = str_replace('is-layout-flow wp-block-group', 'mt-3 mb-0 is-layout-flow wp-block-group', $block_content);
     $block_content = str_replace('wp-block-latest-posts__post-title', $link_style . ' wp-block-latest-posts__post-title', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment"', 'mb-2 leading-5 wp-block-latest-comments__comment"', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment-link', $link_style . ' wp-block-latest-comments__comment-link', $block_content);
