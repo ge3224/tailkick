@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="mx-auto max-w-6xl w-full flex flex-col md:flex-row justify-between px-4 xl:px-0 py-14 space-y-6 md:space-y-0 md:space-x-16" id="showcase_panel">
+<section class="mx-auto max-w-6xl w-full flex flex-col md:flex-row justify-between px-4 xl:px-0 py-6 md:py-14 space-y-6 md:space-y-0 md:space-x-16" id="showcase_panel">
   <div class="flex md:flex-col justify-center items-center md:items-start align-middle">
     <div class="flex-shrink-0 w-24 md:w-28 mx-auto">
       <img class="w-full h-auto" src="<?php echo get_theme_mod('showcase_box1_img', get_bloginfo('template_url') . '/assets/images/tk-heart-ico.png'); ?>">

@@ -80,7 +80,7 @@ function get_hero_bg_image_mods()
         </div>
       </section>
     </header>
-    <div class="py-6 max-w-6xl mx-auto site-content-contain">
+    <div class="pb-6 max-w-6xl mx-auto site-content-contain">
       <div id="content" class="site-content">
         <div id="primary" class="content-area">
           <main id="main" class="site-main">
