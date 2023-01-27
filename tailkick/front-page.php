@@ -72,7 +72,7 @@ function get_hero_bg_image_mods()
       <?php endif; ?>
       <section id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center bg-no-repeat lg:bg-[center_top_35%] w-full lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>]" <?php echo get_hero_bg_image_mods(); ?>>
         <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-end md:justify-center items-start p-5 xl:p-0">
-          <div class="md:w-1/5 lg:m:1/4 md:ml-auto md:mr-6 lg:mr-12 xl:mr-0">
+          <div class="bg-white xs:bg-transparent p-3 xs:p-0 md:w-1/5 lg:m:1/4 md:ml-auto md:mr-6 lg:mr-12 xl:mr-0">
             <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
             <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
             <a class="<?php echo tailkick_button_classes_primary(); ?>" href="https://github.com/ge3224/tailkick" target="_blank" type="button" <?php echo get_custom_styles_btn(); ?>>Download</a>
