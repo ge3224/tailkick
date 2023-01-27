@@ -31,7 +31,7 @@
       <div class="ml-auto mr-0"><?php tailkick_edit_link(); ?></div>
     </div>
 
-    <div class="flex space-x-3">
+    <div class="flex flex-col items-center sm:items-start sm:flex-row space-x-3">
       <div class="pt-4 <?php echo (get_the_post_thumbnail() !== '') ? 'mr-1.5' : '' ?> post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
           <a href="<?php the_permalink(); ?>">

@@ -2191,6 +2191,14 @@ button.secondary:hover,
   .sm\:max-w-6xl {
     max-width: 72rem;
   }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:items-start {
+    align-items: flex-start;
+  }
 }
 @media (min-width: 768px) {
 
