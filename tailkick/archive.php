@@ -61,7 +61,7 @@
             <main id="main" class="site-main">
               <div class="w-full max-w-6xl mx-auto">
                 <div class="grid grid-cols-6">
-                  <div class="col-span-5 pr-24">
+                  <div class="md:col-span-4 lg:col-span-5 md:pr-24">
                     <?php
                     if (have_posts()) :
                     ?>
@@ -95,7 +95,9 @@
                     endif;
                     ?>
                   </div>
-                  <div><?php get_sidebar(); ?></div>
+                  <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+                    <?php get_sidebar(); ?>
+                  </div>
                 </div>
               </div>
             </main>

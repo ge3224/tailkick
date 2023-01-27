@@ -854,7 +854,7 @@ function tailkick_render_block_filter($block_content, $block)
   $link_style = 'text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400';
 
   if ('core/heading' === $block['blockName']) {
-    $block_content = str_replace('<h2>', '<h2 class="font-bold text-gray-900">', $block_content);
+    $block_content = str_replace('<h2>', '<h2 class="my-2 font-bold text-gray-900">', $block_content);
   }
 
   if ('core/paragraph' === $block['blockName']) {

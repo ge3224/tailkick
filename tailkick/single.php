@@ -37,19 +37,19 @@
      * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
      */
     if ((is_single() || (is_page() && !tailkick_is_frontpage())) && has_post_thumbnail(get_queried_object_id()) &&  !featured_image_exception(get_post_format())) :
-      echo '<div class="mt-28 w-full max-w-6xl mx-auto single-featured-image-header">';
+      echo '<div class="px-4 xl:px-0 mt-28 w-full max-w-6xl mx-auto single-featured-image-header">';
       echo get_the_post_thumbnail(get_queried_object_id(), 'tailkick-featured-image', array('class' => 'rounded-sm'));
       echo '</div>';
     endif;
     ?>
 
     <div class="w-full max-w-6xl mx-auto px-4 xl:px-0 site-content-contain">
-      <div id="content" class="<?php echo (has_post_thumbnail() &&  !featured_image_exception(get_post_format())) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
+      <div id="content" class="<?php echo (has_post_thumbnail() &&  !featured_image_exception(get_post_format())) ? 'py-8' : 'pt-24 md:pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <div class="grid grid-cols-6">
-                <div class="col-span-5 pr-24">
+              <div class="sm:grid md:grid-cols-6">
+                <div class="md:col-span-4 lg:col-span-5 md:pr-24">
                   <?php
                   // Start the Loop.
                   while (have_posts()) :
@@ -68,11 +68,15 @@
                   endwhile; // End the loop.
                   ?>
                 </div>
-                <div><?php get_sidebar(); ?></div>
+                <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+                  <?php get_sidebar(); ?>
+                </div>
               </div>
             </main>
           </div>
-          <?php get_sidebar(); ?>
+          <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+            <?php get_sidebar(); ?>
+          </div>
         </div>
       </div>
     </div>

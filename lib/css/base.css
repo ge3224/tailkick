@@ -96,7 +96,7 @@
   h4,
   h5,
   h6 {
-    @apply clear-both leading-snug mb-3 pt-6 px-0 pb-0;
+    @apply clear-both leading-snug mb-3 pt-4 px-0 pb-0;
   }
 
   h1:first-child,
@@ -134,11 +134,7 @@
   }
 
   p {
-    @apply m-0 p-0;
-  }
-
-  p~p {
-    @apply mt-3;
+    @apply mt-0 mb-3 p-0;
   }
 
   dfn,
