@@ -99,9 +99,9 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Add a favicon 
 - [x] Use PostCSS minifier
 - [x] Rebuild theme from WordPress's Twenty_Seventeen
-- [ ] Test legacy widgets
 - [ ] Test responsive layouts
-- [ ] Check accessibility
 - [ ] Complete nav menu JS dev
+- [ ] Test legacy widgets
+- [ ] Check accessibility
 - [ ] Accommodate block theme development
 - [ ] [Testing JS block filtering](https://css-tricks.com/a-crash-course-in-wordpress-block-filters/)

@@ -297,7 +297,7 @@ if (!function_exists('tailkick_posts_pagination')) :
 
       echo '<nav class="navigation pagination" aria-label="Posts">';
       echo '<div class="flex space-x-2 items-center justify-center nav-links">';
-      echo '<h2 class"' . sr_only_classes(array('hidden', 'screen-reader-text')) . '">' . __('Posts Navigation', 'tailkick') . '</h2>';
+      echo '<h2 class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Posts Navigation', 'tailkick') . '</h2>';
 
       // using `paginate_links` instead of `the_posts_pagination` in order to  manually wrap `nav` and `div` elements.
       echo paginate_links(
