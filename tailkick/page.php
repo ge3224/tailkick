@@ -59,8 +59,8 @@
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
               <?php the_title('<h1 class="font-bold text-4xl">', '</h2>'); ?>
-              <div class="sm:grid md:grid-cols-6">
-                <div class="md:col-span-4 lg:col-span-5 md:pr-24">
+              <div class="lg:grid lg:grid-cols-6">
+                <div class="lg:col-span-5 lg:pr-24">
                   <?php
 
                   while (have_posts()) :
@@ -77,7 +77,7 @@
 
                   ?>
                 </div>
-                <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+                <div class="mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
                   <?php get_sidebar(); ?>
                 </div>
               </div>

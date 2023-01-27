@@ -54,8 +54,8 @@
       <div id="content" class="<?php echo (has_post_thumbnail(get_queried_object_id())) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <?php if (is_home() && !is_front_page()) : ?>
-            <header class="w-full max-w-6xl mx-auto page-header">
-              <h1 class="page-title"><?php single_post_title(); ?></h1>
+            <header class="px-4 xl:px-0 w-full max-w-6xl mx-auto page-header">
+              <h1 class="font-bold text-3xl page-title"><?php single_post_title(); ?></h1>
             </header>
           <?php else : ?>
             <header class="w-full max-w-6xl mx-auto page-header">
@@ -64,9 +64,9 @@
           <?php endif; ?>
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <div class="w-full max-w-6xl mx-auto">
-                <div class="grid grid-cols-6">
-                  <div class="md:col-span-4 lg:col-span-5 md:pr-24">
+              <div class="px-4 xl:px-0 w-full max-w-6xl mx-auto">
+              <div class="lg:grid lg:grid-cols-6">
+                  <div class="lg:col-span-5 lg:pr-24">
                     <?php
 
                     if (have_posts()) :
@@ -95,7 +95,7 @@
 
                     ?>
                   </div>
-                  <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+                  <div class="mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
                     <?php get_sidebar(); ?>
                   </div>
                 </div>

@@ -669,9 +669,6 @@ video {
 .table {
   display: table;
 }
-.grid {
-  display: grid;
-}
 .hidden {
   display: none;
 }
@@ -749,9 +746,6 @@ video {
 }
 .resize {
   resize: both;
-}
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -1054,6 +1048,10 @@ video {
 .align-middle {
   vertical-align: middle;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1066,9 +1064,9 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-xs {
   font-size: 0.75rem;
@@ -1077,10 +1075,6 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -2182,10 +2176,6 @@ button.secondary:hover,
 }
 @media (min-width: 640px) {
 
-  .sm\:grid {
-    display: grid;
-  }
-
   .sm\:h-48 {
     height: 12rem;
   }
@@ -2218,10 +2208,6 @@ button.secondary:hover,
 
   .md\:left-0 {
     left: 0px;
-  }
-
-  .md\:col-span-4 {
-    grid-column: span 4 / span 4;
   }
 
   .md\:col-span-2 {
@@ -2283,10 +2269,6 @@ button.secondary:hover,
 
   .md\:max-w-6xl {
     max-width: 72rem;
-  }
-
-  .md\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2355,10 +2337,6 @@ button.secondary:hover,
     padding-bottom: 3.5rem;
   }
 
-  .md\:pr-24 {
-    padding-right: 6rem;
-  }
-
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2391,8 +2369,16 @@ button.secondary:hover,
     margin-right: 3rem;
   }
 
+  .lg\:grid {
+    display: grid;
+  }
+
   .lg\:h-2\/3 {
     height: 66.666667%;
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
@@ -2417,6 +2403,10 @@ button.secondary:hover,
   .lg\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .lg\:pr-24 {
+    padding-right: 6rem;
   }
 
   .lg\:text-5xl {

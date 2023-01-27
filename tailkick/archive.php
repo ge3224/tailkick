@@ -49,9 +49,9 @@
       <div id="content" class="<?php echo (has_post_thumbnail()) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <?php if (have_posts()) : ?>
-            <header class="w-full max-w-6xl mx-auto page-header">
+            <header class="px-4 xl:px-0 w-full max-w-6xl mx-auto page-header">
               <?php
-              the_archive_title('<h1 class="page-title">', '</h1>');
+              the_archive_title('<h1 class="font-bold text-2xl page-title">', '</h1>');
               the_archive_description('<div class="taxonomy-description">', '</div>');
               ?>
             </header>
@@ -59,9 +59,9 @@
 
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <div class="w-full max-w-6xl mx-auto">
-                <div class="grid grid-cols-6">
-                  <div class="md:col-span-4 lg:col-span-5 md:pr-24">
+              <div class="px-4 xl:px-0 w-full max-w-6xl mx-auto">
+              <div class="lg:grid lg:grid-cols-6">
+                  <div class="lg:col-span-5 lg:pr-24">
                     <?php
                     if (have_posts()) :
                     ?>
@@ -95,7 +95,7 @@
                     endif;
                     ?>
                   </div>
-                  <div class="md:col-span-2 lg:col-span-1 mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
+                  <div class="mt-3 md:mt-0 border-t md:border-none pt-3 md:pt-0">
                     <?php get_sidebar(); ?>
                   </div>
                 </div>
