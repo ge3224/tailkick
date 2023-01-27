@@ -5,7 +5,7 @@ module.exports = {
   safelist: [],
   theme: {
     screens: {
-      "xs": "326px", // narrow phones and other small screens
+      "xs": "347px", // narrow phones and other small screens
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',

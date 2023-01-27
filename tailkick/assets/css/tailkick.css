@@ -471,10 +471,10 @@ video {
 .container {
   width: 100%;
 }
-@media (min-width: 326px) {
+@media (min-width: 347px) {
 
   .container {
-    max-width: 326px;
+    max-width: 347px;
   }
 }
 @media (min-width: 640px) {
@@ -716,9 +716,6 @@ video {
 .w-full {
   width: 100%;
 }
-.w-1\/2 {
-  width: 50%;
-}
 .w-28 {
   width: 7rem;
 }
@@ -789,11 +786,6 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -2138,13 +2130,17 @@ button.secondary:hover,
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
-@media (min-width: 326px) {
+@media (min-width: 347px) {
 
   .xs\:ml-6 {
     margin-left: 1.5rem;
   }
 
-  @media (min-width: 326px) {
+  .xs\:w-1\/2 {
+    width: 50%;
+  }
+
+  @media (min-width: 347px) {
 
     .xs\:xs\:flex-shrink-0 {
       flex-shrink: 0;
@@ -2157,6 +2153,12 @@ button.secondary:hover,
 
   .xs\:flex-row {
     flex-direction: row;
+  }
+
+  .xs\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .xs\:bg-transparent {
