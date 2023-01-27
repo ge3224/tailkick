@@ -168,7 +168,7 @@
   kbd,
   tt,
   var {
-    @apply font-mono text-base;
+    @apply font-mono text-sm w-full;
   }
 
   abbr,
