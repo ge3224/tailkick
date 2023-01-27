@@ -866,7 +866,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/group' === $block['blockName']) {
-    $block_content = str_replace('is-layout-flow wp-block-group', 'mt-3 mb-0 is-layout-flow wp-block-group', $block_content);
+    $block_content = str_replace('is-layout-flow wp-block-group', 'mb-0 is-layout-flow wp-block-group', $block_content);
     $block_content = str_replace('wp-block-latest-posts__post-title', $link_style . ' wp-block-latest-posts__post-title', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment"', 'mb-2 leading-5 wp-block-latest-comments__comment"', $block_content);
     $block_content = str_replace('wp-block-latest-comments__comment-link', $link_style . ' wp-block-latest-comments__comment-link', $block_content);

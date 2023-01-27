@@ -43,7 +43,7 @@
     endif;
     ?>
 
-    <div class="w-full max-w-6xl mx-auto site-content-contain">
+    <div class="w-full max-w-6xl mx-auto px-4 xl:px-0 site-content-contain">
       <div id="content" class="<?php echo (has_post_thumbnail() &&  !featured_image_exception(get_post_format())) ? 'py-8' : 'pt-32 pb-8'; ?> site-content">
         <div class="wrap">
           <div id="primary" class="content-area">

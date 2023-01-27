@@ -557,9 +557,6 @@ video {
 .-z-10 {
   z-index: -10;
 }
-.z-10 {
-  z-index: 10;
-}
 .z-\[1000\] {
   z-index: 1000;
 }
@@ -682,9 +679,6 @@ video {
 }
 .h-\[767px\] {
   height: 767px;
-}
-.h-64 {
-  height: 16rem;
 }
 .h-auto {
   height: auto;
@@ -826,11 +820,11 @@ video {
 .border {
   border-width: 1px;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
 .border-t {
   border-top-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
 }
 .border-l-2 {
   border-left-width: 2px;
@@ -1014,6 +1008,12 @@ video {
 .pb-6 {
   padding-bottom: 1.5rem;
 }
+.pt-24 {
+  padding-top: 6rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
+}
 .pl-\[45px\] {
   padding-left: 45px;
 }
@@ -1034,9 +1034,6 @@ video {
 }
 .pb-4 {
   padding-bottom: 1rem;
-}
-.pt-3 {
-  padding-top: 0.75rem;
 }
 .pb-0 {
   padding-bottom: 0px;
@@ -1075,10 +1072,6 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1086,6 +1079,10 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -2136,6 +2133,14 @@ button.secondary:hover,
     margin-left: 1.5rem;
   }
 
+  .xs\:block {
+    display: block;
+  }
+
+  .xs\:h-32 {
+    height: 8rem;
+  }
+
   .xs\:w-1\/2 {
     width: 50%;
   }
@@ -2180,12 +2185,24 @@ button.secondary:hover,
 }
 @media (min-width: 640px) {
 
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:h-48 {
+    height: 12rem;
+  }
+
   .sm\:w-5\/12 {
     width: 41.666667%;
   }
 
   .sm\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .sm\:max-w-6xl {
+    max-width: 72rem;
   }
 }
 @media (min-width: 768px) {
@@ -2206,6 +2223,10 @@ button.secondary:hover,
     left: 0px;
   }
 
+  .md\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
   .md\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2219,16 +2240,16 @@ button.secondary:hover,
     margin-right: 1.5rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:ml-7 {
     margin-left: 1.75rem;
   }
 
   .md\:mr-0 {
     margin-right: 0px;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:ml-0 {
@@ -2241,6 +2262,10 @@ button.secondary:hover,
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-64 {
+    height: 16rem;
   }
 
   .md\:w-1\/5 {
@@ -2257,6 +2282,10 @@ button.secondary:hover,
 
   .md\:max-w-6xl {
     max-width: 72rem;
+  }
+
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2323,6 +2352,18 @@ button.secondary:hover,
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
+  }
+
+  .md\:pt-32 {
+    padding-top: 8rem;
+  }
+
+  .md\:pr-24 {
+    padding-right: 6rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-center {
