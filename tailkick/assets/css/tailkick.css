@@ -650,6 +650,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -734,14 +737,14 @@ video {
 .w-6 {
   width: 1.5rem;
 }
+.w-24 {
+  width: 6rem;
+}
 .w-10 {
   width: 2.5rem;
 }
 .w-8 {
   width: 2rem;
-}
-.w-24 {
-  width: 6rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -811,10 +814,10 @@ video {
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-x-16 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(4rem * var(--tw-space-x-reverse));
-  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1079,9 +1082,6 @@ video {
 }
 .pt-1 {
   padding-top: 0.25rem;
-}
-.text-center {
-  text-align: center;
 }
 .-indent-3 {
   text-indent: -0.75rem;
@@ -2203,6 +2203,10 @@ button.secondary:hover,
     margin-top: 0px;
   }
 
+  .md\:ml-0 {
+    margin-left: 0px;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2219,8 +2223,24 @@ button.secondary:hover,
     width: 100%;
   }
 
+  .md\:w-28 {
+    width: 7rem;
+  }
+
   .md\:max-w-6xl {
     max-width: 72rem;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
   }
 
   .md\:justify-start {
@@ -2237,6 +2257,18 @@ button.secondary:hover,
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .md\:space-x-16 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(4rem * var(--tw-space-x-reverse));
+    margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:border-0 {
@@ -2262,6 +2294,10 @@ button.secondary:hover,
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:text-center {
+    text-align: center;
   }
 
   .md\:shadow-none {
