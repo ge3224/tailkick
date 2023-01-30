@@ -54,8 +54,7 @@ For folks interested in working with *TailKick*'s codebase, those who may create
 
 #### <a name="gs-site-owners"></a>Use the Default TailKick Theme on a WordPress Site
 
-- Download [tailkick.zip](https://github.com/ge3224/tailkick/files/10539820/tailkick.zip)
-- Verify SHA256 Checksum of the `tailkick.zip` file: 2bcde80a386c31144e593e48d3a8b1dfd762916ae4802d7c1a691380e7a1fefc
+- Download a `tailkick.zip` file found on the [Releases](https://github.com/ge3224/tailkick/releases/) page.
 - Upload the `tailkick.zip` file through your WordPress dashboard. (See [WP help docs](https://wordpress.org/support/article/appearance-themes-screen/#using-the-upload-method).)
 - The theme will appear in the dashboard. Click the **Activate** link to make TailKick the Current Theme.
 
