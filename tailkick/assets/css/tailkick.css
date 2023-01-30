@@ -1018,14 +1018,17 @@ video {
 .pt-0 {
   padding-top: 0px;
 }
-.pb-1 {
-  padding-bottom: 0.25rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
-.pr-1 {
-  padding-right: 0.25rem;
+.pr-3 {
+  padding-right: 0.75rem;
 }
-.pr-24 {
-  padding-right: 6rem;
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pr-6 {
+  padding-right: 1.5rem;
 }
 .pb-4 {
   padding-bottom: 1rem;
@@ -2251,6 +2254,10 @@ button.secondary:hover,
     margin-left: 0px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2291,6 +2298,10 @@ button.secondary:hover,
     align-items: flex-start;
   }
 
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:justify-start {
     justify-content: flex-start;
   }
@@ -2305,6 +2316,12 @@ button.secondary:hover,
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:space-x-1 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -2351,6 +2368,10 @@ button.secondary:hover,
 
   .md\:pt-32 {
     padding-top: 8rem;
+  }
+
+  .md\:pr-0 {
+    padding-right: 0px;
   }
 
   .md\:text-center {
