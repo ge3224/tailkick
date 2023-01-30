@@ -50,7 +50,6 @@
       echo '</div>';
       echo '</div>';
     endif;
-    /*    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?> */
     ?>
 
     <div class="w-full sm:max-w-6xl mx-auto px-4 xl:px-0 site-content-contain">
@@ -58,7 +57,7 @@
         <div class="wrap">
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <?php the_title('<h1 class="font-bold text-4xl">', '</h2>'); ?>
+              <?php the_title('<h1 class="font-bold text-3xl md:text-4xl">', '</h1>'); ?>
               <div class="lg:grid lg:grid-cols-6">
                 <div class="lg:col-span-5 lg:pr-24">
                   <?php
