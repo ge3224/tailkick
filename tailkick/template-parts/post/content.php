@@ -55,7 +55,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="mt-4 entry-content">
+  <div class="mb-3 border-b pb-3 entry-content">
     <?php
     $read_more = sprintf(
       /* translators: %s: Post title. Only visible to screen readers. */

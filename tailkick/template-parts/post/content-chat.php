@@ -116,8 +116,8 @@
         <?php endif; ?>
       </div>
 
-      <div class="pr-8">
-        <div class="px-6 py-2 border border-gray-400 bg-gray-100 rounded -indent-3">
+      <div class="pb-2">
+        <div class="px-6 py-2 border border-gray-200 bg-gray-100/50 rounded -indent-3 text-gray-700">
           <?php
           the_content(
             sprintf(
