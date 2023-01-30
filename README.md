@@ -100,8 +100,8 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Use PostCSS minifier
 - [x] Rebuild theme from WordPress's Twenty_Seventeen
 - [x] Test responsive layouts
-- [ ] Complete nav menu JS dev
+- [x] Complete nav menu JS dev
 - [ ] Test legacy widgets
 - [ ] Check accessibility
+- [ ] Build more customizer options for home hero (text placement)
 - [ ] Accommodate block theme development
-- [ ] [Testing JS block filtering](https://css-tricks.com/a-crash-course-in-wordpress-block-filters/)

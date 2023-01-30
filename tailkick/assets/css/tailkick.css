@@ -1418,6 +1418,7 @@ pre {
   margin-bottom: 1.75rem;
   max-width: 100%;
   overflow: auto;
+  border-width: 4px;
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   padding: 1.75rem;

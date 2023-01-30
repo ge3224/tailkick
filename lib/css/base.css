@@ -160,7 +160,7 @@
   }
 
   pre {
-    @apply bg-gray-100 font-mono text-base leading-relaxed mb-7 max-w-full overflow-auto p-7;
+    @apply border-4 bg-gray-100 font-mono text-base leading-relaxed mb-7 max-w-full overflow-auto p-7;
   }
 
   code,
