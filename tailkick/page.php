@@ -57,9 +57,9 @@
         <div class="wrap">
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <?php the_title('<h1 class="font-bold text-3xl md:text-4xl">', '</h1>'); ?>
               <div class="lg:grid lg:grid-cols-6">
                 <div class="lg:col-span-5 lg:pr-24">
+                  <?php the_title('<h1 class="font-bold text-3xl md:text-4xl">', '</h1>'); ?>
                   <?php
 
                   while (have_posts()) :

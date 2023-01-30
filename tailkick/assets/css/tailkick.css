@@ -1304,8 +1304,17 @@ body,
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
-h1,
-  h2,
+h1 {
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 1.5rem;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 1.375;
+}
+h2,
   h3,
   h4,
   h5,
