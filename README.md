@@ -14,6 +14,7 @@
   
 ![TailKick Views](https://komarev.com/ghpvc/?username=ge3224&label=Views&color=blue&style=flat)
 [![TailKick License](https://img.shields.io/github/license/ge3224/tailkick)](https://github.com/ge3224/tailkick/blob/main/LICENSE.md)
+[![Latest TailKick Release](https://img.shields.io/github/v/release/ge3224/tailkick?include_prereleases)](https://github.com/ge3224/tailkick/releases)
   
 </div>
 
