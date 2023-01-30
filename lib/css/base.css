@@ -201,6 +201,10 @@
     @apply outline-none;
   }
 
+  figcaption {
+    @apply break-words xs:break-normal;
+  }
+
   /* Typography for Arabic Font */
 
   html[lang="ar"] body,

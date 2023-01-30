@@ -563,6 +563,9 @@ video {
 .z-20 {
   z-index: 20;
 }
+.-z-50 {
+  z-index: -50;
+}
 .m-0 {
   margin: 0px;
 }
@@ -835,6 +838,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
 }
@@ -863,8 +870,8 @@ video {
 .bg-gray-50\/95 {
   background-color: rgb(249 250 251 / 0.95);
 }
-.bg-slate-700\/95 {
-  background-color: rgb(51 65 85 / 0.95);
+.bg-gray-100\/95 {
+  background-color: rgb(243 244 246 / 0.95);
 }
 .bg-gray-300 {
   --tw-bg-opacity: 1;
@@ -898,8 +905,8 @@ video {
 .fill-gray-800 {
   fill: #1f2937;
 }
-.stroke-white\/90 {
-  stroke: rgb(255 255 255 / 0.9);
+.stroke-gray-400\/90 {
+  stroke: rgb(156 163 175 / 0.9);
 }
 .object-cover {
   -o-object-fit: cover;
@@ -1463,6 +1470,16 @@ blockquote:before,
 :focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+figcaption {
+  overflow-wrap: break-word;
+}
+@media (min-width: 347px) {
+
+  figcaption {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
 }
 /* Typography for Arabic Font */
 html[lang="ar"] body,
@@ -2353,8 +2370,8 @@ button.secondary:hover,
     border-style: none;
   }
 
-  .md\:bg-slate-700\/0 {
-    background-color: rgb(51 65 85 / 0);
+  .md\:bg-gray-100\/0 {
+    background-color: rgb(243 244 246 / 0);
   }
 
   .md\:bg-white\/80 {
