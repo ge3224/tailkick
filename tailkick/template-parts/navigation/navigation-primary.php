@@ -24,7 +24,7 @@
       <?php wp_nav_menu(array(
         'theme_location' => 'primary',
         'container' => 'nav',
-        'container_class' => 'absolute md:static top-[63px] border-t border-gray-300 left-0 w-full bg-gray-100/95 md:bg-gray-100/0 shadow shadow-zinc-900/20 md:shadow-none -z-50 nav',
+        'container_class' => 'absolute md:static top-[63px] border-t border-gray-300 md:border-none left-0 w-full bg-gray-100/95 md:bg-gray-100/0 shadow shadow-zinc-900/20 md:shadow-none -z-50 nav',
         'walker' => new Tailkick_Menu_Navwalker(), // The following custom arguments will be recognized by Tailkick_Menu_Navwalker
         'menu_class' => 'm-0 md:flex md:justify-end px-0 nav-menu',
         'item_class' => 'relative flex-shrink-0 flex items-center py-6 md:py-0 mx-4 md:ml-7 md:mr-0 md:my-0 border-t md:border-0 border-gray-300 first:border-0',

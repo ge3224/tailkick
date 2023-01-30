@@ -99,7 +99,7 @@ Read more about [Tailwind's philosophy](https://tailwindcss.com/docs/utility-fir
 - [x] Add a favicon 
 - [x] Use PostCSS minifier
 - [x] Rebuild theme from WordPress's Twenty_Seventeen
-- [ ] Test responsive layouts
+- [x] Test responsive layouts
 - [ ] Complete nav menu JS dev
 - [ ] Test legacy widgets
 - [ ] Check accessibility
