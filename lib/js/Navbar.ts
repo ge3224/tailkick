@@ -27,8 +27,9 @@ const BG_SHOW = [
 
 const BTN_ACTIVE = [
   "outline",
-  "outline-offset-2",
-  "outline-4",
+  "outline-offset-1",
+  "outline-2",
+  "outline-teal-400",
 ]
 
 const CHILD_MENU_HIDE = ["hidden"]

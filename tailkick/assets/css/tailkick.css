@@ -708,9 +708,6 @@ video {
 .w-full {
   width: 100%;
 }
-.w-28 {
-  width: 7rem;
-}
 .w-auto {
   width: auto;
 }
@@ -749,6 +746,9 @@ video {
 }
 .flex-col {
   flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .items-start {
   align-items: flex-start;
@@ -799,6 +799,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.whitespace-nowrap {
+  white-space: nowrap;
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -821,8 +824,8 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
-.border-l-2 {
-  border-left-width: 2px;
+.border-l-4 {
+  border-left-width: 4px;
 }
 .border-none {
   border-style: none;
@@ -839,11 +842,8 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
-.border-white\/30 {
-  border-color: rgb(255 255 255 / 0.3);
-}
-.border-gray-700\/0 {
-  border-color: rgb(55 65 81 / 0);
+.border-gray-300\/0 {
+  border-color: rgb(209 213 219 / 0);
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -1153,11 +1153,14 @@ video {
 .outline {
   outline-style: solid;
 }
-.outline-4 {
-  outline-width: 4px;
+.outline-2 {
+  outline-width: 2px;
 }
-.outline-offset-2 {
-  outline-offset: 2px;
+.outline-offset-1 {
+  outline-offset: 1px;
+}
+.outline-teal-400 {
+  outline-color: #2dd4bf;
 }
 .blur {
   --tw-blur: blur(8px);
@@ -2026,8 +2029,9 @@ button.secondary:hover,
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
-.hover\:border-gray-700\/50:hover {
-  border-color: rgb(55 65 81 / 0.5);
+.hover\:border-gray-300:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .hover\:bg-purple-300:hover {
   --tw-bg-opacity: 1;
@@ -2232,12 +2236,8 @@ button.secondary:hover,
     position: absolute;
   }
 
-  .md\:top-8 {
-    top: 2rem;
-  }
-
-  .md\:left-0 {
-    left: 0px;
+  .md\:top-6 {
+    top: 1.5rem;
   }
 
   .md\:col-span-2 {
@@ -2295,6 +2295,11 @@ button.secondary:hover,
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .md\:w-28 {
@@ -2355,6 +2360,10 @@ button.secondary:hover,
     margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:rounded-sm {
+    border-radius: 0.125rem;
+  }
+
   .md\:border-0 {
     border-width: 0px;
   }
@@ -2367,8 +2376,8 @@ button.secondary:hover,
     background-color: rgb(243 244 246 / 0);
   }
 
-  .md\:bg-white\/80 {
-    background-color: rgb(255 255 255 / 0.8);
+  .md\:bg-white\/90 {
+    background-color: rgb(255 255 255 / 0.9);
   }
 
   .md\:py-0 {
@@ -2406,6 +2415,17 @@ button.secondary:hover,
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .md\:shadow {
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .md\:shadow-zinc-900\/20 {
+    --tw-shadow-color: rgb(24 24 27 / 0.2);
+    --tw-shadow: var(--tw-shadow-colored);
   }
 }
 @media (min-width: 1024px) {
