@@ -539,8 +539,8 @@ video {
 .left-0 {
   left: 0px;
 }
-.top-14 {
-  top: 3.5rem;
+.top-\[63px\] {
+  top: 63px;
 }
 .top-4 {
   top: 1rem;
@@ -1151,10 +1151,6 @@ video {
 }
 .shadow-zinc-900\/20 {
   --tw-shadow-color: rgb(24 24 27 / 0.2);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-.shadow-zinc-900\/10 {
-  --tw-shadow-color: rgb(24 24 27 / 0.1);
   --tw-shadow: var(--tw-shadow-colored);
 }
 .outline {
