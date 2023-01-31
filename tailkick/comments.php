@@ -73,8 +73,8 @@ if (post_password_required()) {
 
     the_comments_pagination(
       array(
-        'prev_text' => tailkick_get_svg(array('icon' => 'arrow-left')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous', 'tailkick') . '</span>',
-        'next_text' => '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Next', 'tailkick') . '</span>' . tailkick_get_svg(array('icon' => 'arrow-right')),
+        'prev_text' => tailkick_get_svg(array('icon' => 'arrow-left')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Previous', 'tailkick') . '</span>',
+        'next_text' => '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Next', 'tailkick') . '</span>' . tailkick_get_svg(array('icon' => 'arrow-right')),
       )
     );
 
@@ -98,7 +98,7 @@ if (post_password_required()) {
     'class_form'          => 'text-sm',
     'comment_notes_after' => '',
     'comment_field'        => '<p class="comment-form-comment">
-           <label for="comment">' . _x('Comment', 'noun') . '</label>
+           <label for="comment">' . _x('Comment', 'noun', 'tailkick') . '</label>
            <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true" required="required"></textarea>
          </p>'
   );

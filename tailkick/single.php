@@ -19,7 +19,7 @@
 <body <?php body_class('min-h-full flex flex-col'); ?>>
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-    <a class="<?php echo sr_only_classes(array('skip-link', 'screen-reader-text')); ?>" href="#content"><?php _e('Skip to content', 'tailkick'); ?></a>
+    <a class="<?php echo sr_only_classes(array('skip-link', 'screen-reader-text')); ?>" href="#content"><?php esc_html_e('Skip to content', 'tailkick'); ?></a>
     <header id="masthead" class="site-header">
       <?php if (has_nav_menu('primary')) : ?>
         <div class="navigation-top">

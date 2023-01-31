@@ -401,11 +401,13 @@ function tailkick_excerpt_more($link)
     return $link;
   }
 
+  $before = '<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">';
+
   $link = sprintf(
     '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
     esc_url(get_permalink(get_the_ID())),
     /* translators: %s: Post title. Only visible to screen readers. */
-    sprintf(__('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'), get_the_title(get_the_ID()))
+    sprintf($before . esc_html__('Continue Reading', 'tailkick') . '</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('%s', 'tailkick') . '</span>', get_the_title(get_the_ID()))
   );
   return ' &hellip; ' . $link;
 }

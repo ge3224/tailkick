@@ -69,9 +69,9 @@ function tailkick_get_svg($args = array(), $size = '0.75rem')
 	 *
 	 * However, child themes can use the title and description to add information to non-decorative SVG icons to improve accessibility.
 	 *
-	 * Example 1 with title: <?php echo tailkick_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
+	 * Example 1 with title: <?php echo tailkick_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'tailkick' ) ) ); ?>
 	 *
-	 * Example 2 with title and description: <?php echo tailkick_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
+	 * Example 2 with title and description: <?php echo tailkick_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'tailkick' ), 'desc' => __( 'This is the description', 'tailkick' ) ) ); ?>
 	 *
 	 * See https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/.
 	 */

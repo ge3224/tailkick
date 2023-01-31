@@ -28,6 +28,6 @@
 	?>
 
 	<?php if ( ( tailkick_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo tailkick_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="<?php echo sr_only_classes( array('screen-reader-text') ); ?>"><?php _e( 'Scroll down to content', 'tailkick' ); ?></span></a>
+		<a href="#content" class="menu-scroll-down"><?php echo tailkick_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="<?php echo sr_only_classes( array('screen-reader-text') ); ?>"><?php esc_html_e( 'Scroll down to content', 'tailkick' ); ?></span></a>
 	<?php endif; ?>
 </nav><!-- #site-navigation -->

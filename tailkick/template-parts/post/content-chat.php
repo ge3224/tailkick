@@ -119,10 +119,13 @@
       <div class="pb-2">
         <div class="px-6 py-2 border border-gray-200 bg-gray-100/50 rounded -indent-3 text-gray-700">
           <?php
+
+          $before = '<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">';
+
           the_content(
             sprintf(
               /* translators: %s: Post title. Only visible to screen readers. */
-              __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">"%s"</span>', 'tailkick'),
+              $before . esc_html__('Continue Reading', 'tailkick') . '</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__("%s", 'tailkick') . '</span>',
               get_the_title()
             )
           );

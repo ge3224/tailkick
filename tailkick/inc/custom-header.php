@@ -124,8 +124,8 @@ endif; // End of tailkick_header_style().
  * @return array The filtered video settings.
  */
 function tailkick_video_controls( $settings ) {
-	$settings['l10n']['play']  = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Play background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'play' ) );
-	$settings['l10n']['pause'] = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . __( 'Pause background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'pause' ) );
+	$settings['l10n']['play']  = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . esc_html__( 'Play background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'play' ) );
+	$settings['l10n']['pause'] = '<span class="' . sr_only_classes( array('screen-reader-text') ) . '">' . esc_html__( 'Pause background video', 'tailkick' ) . '</span>' . tailkick_get_svg( array( 'icon' => 'pause' ) );
 	return $settings;
 }
 add_filter( 'header_video_settings', 'tailkick_video_controls' );

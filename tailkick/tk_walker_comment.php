@@ -265,7 +265,7 @@ class Tailkick_Walker_Comment extends Walker
 ?>
     <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class('', $comment); ?>>
       <div class="comment-body">
-        <?php _e('Pingback:'); ?> <?php comment_author_link($comment); ?> <?php edit_comment_link(__('Edit'), '<span class="edit-link">', '</span>'); ?>
+        <?php _e('Pingback:', 'tailkick'); ?> <?php comment_author_link($comment); ?> <?php edit_comment_link(_e('Edit', 'tailkick'), '<span class="edit-link">', '</span>'); ?>
       </div>
     <?php
   }
@@ -319,9 +319,9 @@ class Tailkick_Walker_Comment extends Walker
     $show_pending_links = isset($commenter['comment_author']) && $commenter['comment_author'];
 
     if ($commenter['comment_author_email']) {
-      $moderation_note = __('Your comment is awaiting moderation.');
+      $moderation_note = __('Your comment is awaiting moderation.', 'tailkick');
     } else {
-      $moderation_note = __('Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.');
+      $moderation_note = __('Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'tailkick');
     }
     ?>
       <<?php echo $tag; ?> <?php comment_class($this->has_children ? 'parent' : '', $comment); ?> id="comment-<?php comment_ID(); ?>">
@@ -343,7 +343,7 @@ class Tailkick_Walker_Comment extends Walker
 
             printf(
               /* translators: %s: Comment author link. */
-              __('%s <span class="says">says:</span>'),
+              __('%s <span class="says">says:</span>', 'tailkick'),
               sprintf('<cite class="fn">%s</cite>', $comment_author)
             );
             ?>
@@ -360,13 +360,13 @@ class Tailkick_Walker_Comment extends Walker
               esc_url(get_comment_link($comment, $args)),
               sprintf(
                 /* translators: 1: Comment date, 2: Comment time. */
-                __('%1$s at %2$s'),
+                _e('%1$s at %2$s', 'tailkick'),
                 get_comment_date('', $comment),
                 get_comment_time()
               )
             );
 
-            edit_comment_link(__('(Edit)'), ' &nbsp;&nbsp;', '');
+            edit_comment_link(_e('(Edit)', 'tailkick'), ' &nbsp;&nbsp;', '');
             ?>
           </div>
 
@@ -424,9 +424,9 @@ class Tailkick_Walker_Comment extends Walker
       $show_pending_links = !empty($commenter['comment_author']);
 
       if ($commenter['comment_author_email']) {
-        $moderation_note = __('Your comment is awaiting moderation.');
+        $moderation_note = __('Your comment is awaiting moderation.', 'tailkick');
       } else {
-        $moderation_note = __('Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.');
+        $moderation_note = __('Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'tailkick');
       }
 
       global $comment_depth;
@@ -454,7 +454,7 @@ class Tailkick_Walker_Comment extends Walker
 
                       printf(
                         /* translators: %s: Comment author link. */
-                        __('%s <span class="says">commented</span>'),
+                        __('%s <span class="says">commented</span>', 'tailkick'),
                         sprintf('<strong class="fn">%s</strong>', $comment_author)
                       );
                       ?>
@@ -468,12 +468,12 @@ class Tailkick_Walker_Comment extends Walker
                         get_comment_time('c'),
                         sprintf(
                           /* translators: 1: Comment date, 2: Comment time. */
-                          __('%1$s at %2$s'),
+                          _e('%1$s at %2$s', 'tailkick'),
                           get_comment_date('', $comment),
                           get_comment_time()
                         )
                       );
-                      edit_comment_link(__('Edit'), ' <span class="edit-link">', '</span>');
+                      edit_comment_link(_e('Edit', 'tailkick'), ' <span class="edit-link">', '</span>');
                       ?>
                     </div>
                   </div>
@@ -507,8 +507,8 @@ class Tailkick_Walker_Comment extends Walker
                   <?php
                   comment_text();
                   ?>
-                </div>
               </div>
+            </div>
             </div>
           </article>
       <?php

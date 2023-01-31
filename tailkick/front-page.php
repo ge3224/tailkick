@@ -25,9 +25,9 @@
 function get_hero_bg_image_mods()
 {
   // See ./inc/tk_customize.php
-  $img = get_theme_mod('hero_home_image');
-  $x = get_theme_mod('hero_home_image_position_x');
-  $y = get_theme_mod('hero_home_image_position_y');
+  $img = esc_url(get_theme_mod('hero_home_image'));
+  $x = esc_attr(get_theme_mod('hero_home_image_position_x'));
+  $y = esc_attr(get_theme_mod('hero_home_image_position_y'));
 
   $output = '';
   if ($img != "") {
@@ -61,7 +61,7 @@ function get_hero_bg_image_mods()
 <body <?php body_class('min-h-full flex flex-col'); ?>>
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-    <a class="<?php echo sr_only_classes(array('skip-link', 'screen-reader-text')); ?>" href="#content"><?php _e('Skip to content', 'tailkick'); ?></a>
+    <a class="<?php echo sr_only_classes(array('skip-link', 'screen-reader-text')); ?>" href="#content"><?php esc_html_e('Skip to content', 'tailkick'); ?></a>
     <header id="masthead" class="site-header">
       <?php if (has_nav_menu('primary')) : ?>
         <div class="navigation-top">
@@ -70,11 +70,11 @@ function get_hero_bg_image_mods()
           </div>
         </div>
       <?php endif; ?>
-      <section id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center bg-no-repeat lg:bg-[center_top_35%] w-full lg:h-2/3 xl:h-[<?php echo get_theme_mod('home_hero_height', '48.5rem'); ?>]" <?php echo get_hero_bg_image_mods(); ?>>
+      <section id="hero" class="bg-gray-200 bg-hero-home bg-cover bg-center bg-no-repeat lg:bg-[center_top_35%] w-full lg:h-2/3 xl:h-[<?php echo esc_attr(get_theme_mod('home_hero_height', '48.5rem')); ?>]" <?php echo get_hero_bg_image_mods(); ?>>
         <div class="w-full h-[767px] max-w-6xl mx-auto flex flex-col justify-end md:justify-center items-start p-5 xl:p-0">
           <div class="bg-white xs:bg-transparent p-3 xs:p-0 md:w-1/5 lg:m:1/4 md:ml-auto md:mr-6 lg:mr-12 xl:mr-0">
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold"><?php echo get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.'); ?></h1>
-            <p class="mt-3"><?php echo get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.'); ?></p>
+            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold"><?php echo esc_html(get_theme_mod('hero_home_heading', 'Buy. Sell. Discover.')); ?></h1>
+            <p class="mt-3"><?php echo esc_html(get_theme_mod('hero_home_text', 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.')); ?></p>
             <a class="<?php echo tailkick_button_classes_primary(); ?>" href="https://github.com/ge3224/tailkick" target="_blank" type="button" <?php echo get_custom_styles_btn(); ?>>Download</a>
           </div>
         </div>
@@ -88,7 +88,7 @@ function get_hero_bg_image_mods()
             <?php
 
             // Display the showcase panel unless disabled in the Customize API
-            if (get_theme_mod('showcase_panel_include') == "true") :
+            if (esc_textarea(get_theme_mod('showcase_panel_include') == "true")) :
               get_template_part('template-parts/page/content', 'front-page-showcase');
             endif;
 

@@ -52,7 +52,7 @@ if (!function_exists('tailkick_time_link')) :
     // Wrap the time string in a link, and preface it with 'Posted on'.
     return sprintf(
       /* translators: %s: Post date. */
-      __('<span class="' . sr_only_classes(array('screen-reader-text')) . '">Posted on</span> %s', 'tailkick'),
+      '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Posted on', 'tailkick') . '</span>' . esc_html__('%s', 'tailkick'),
       '<a class="text-xs text-gray-600" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
     );
   }
@@ -85,11 +85,11 @@ if (!function_exists('tailkick_entry_footer')) :
 
           // Make sure there's more than one category before displaying.
           if ($categories_list && tailkick_categorized_blog()) {
-            echo '<span class="flex items-center space-x-2 text-xs uppercase font-bold cat-links">' . tailkick_get_svg(array('icon' => 'folder-open')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Categories', 'tailkick') . '</span>' . $categories_list . '</span>';
+            echo '<span class="flex items-center space-x-2 text-xs uppercase font-bold cat-links">' . tailkick_get_svg(array('icon' => 'folder-open')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Categories', 'tailkick') . '</span>' . $categories_list . '</span>';
           }
 
           if ($tags_list && !is_wp_error($tags_list)) {
-            echo '<span class="mt-3 flex items-center space-x-2 text-xs uppercase font-bold tags-links">' . tailkick_get_svg(array('icon' => 'hashtag')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Tags', 'tailkick') . '</span>' . $tags_list . '</span>';
+            echo '<span class="mt-3 flex items-center space-x-2 text-xs uppercase font-bold tags-links">' . tailkick_get_svg(array('icon' => 'hashtag')) . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Tags', 'tailkick') . '</span>' . $tags_list . '</span>';
           }
 
           echo '</span>';
@@ -118,7 +118,7 @@ if (!function_exists('tailkick_edit_link')) :
     edit_post_link(
       sprintf(
         /* translators: %s: Post title. Only visible to screen readers. */
-        __('Edit<span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
+        esc_html__('Edit', 'tailkick') . '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('%s', 'tailkick') . '</span>',
         get_the_title()
       ),
       '<span class="text-xs text-gray-600 hover:text-gray-600/75 active:text-gray-600/50 edit-link">',
@@ -226,7 +226,7 @@ if (!function_exists('tailkick_posts_navigation')) :
     $prev = get_previous_post_link(
       implode('', array(
         '<div class="flex items-center font-bold">',
-        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous Post', 'tailkick') . '</span>',
+        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Previous Post', 'tailkick') . '</span>',
         '</span class="nav-title-icon-wrapper">',
         tailkick_get_svg(array('icon' => 'arrow-left')),
         '&nbsp;%link',
@@ -238,7 +238,7 @@ if (!function_exists('tailkick_posts_navigation')) :
     $next = get_next_post_link(
       implode('', array(
         '<div class="flex items-center font-bold">',
-        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . __('Previous Post', 'tailkick') . '</span>',
+        '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Previous Post', 'tailkick') . '</span>',
         '</span class="nav-title-icon-wrapper">',
         '%link&nbsp;',
         tailkick_get_svg(array('icon' => 'arrow-right')),

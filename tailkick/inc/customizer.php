@@ -55,62 +55,62 @@ function tailkick_customize_register($wp_customize)
    * Customizer defaults are `null`, since color defaults are defined using a precompiled palletwhich allows Tailwind 
    */
   $wp_customize->add_section('global_colors', array(
-    'title'       => esc_html__('Global Colors', 'tailkick'),
-    'description' => sprintf(esc_html__('Options for global colors', 'tailkick')),
+    'title'       => _e('Global Colors', 'tailkick'),
+    'description' => sprintf(_e('Options for global colors', 'tailkick')),
     'priority'    => 130 // before additional CSS
   ));
 
   $wp_customize->add_setting('global_background', array(
-    'default' => esc_attr__(null, 'tailkick'),
+    'default' => null,
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_background', array(
-    'label' => esc_html__('Background', 'tailkick'),
+    'label' => _e('Background', 'tailkick'),
     'section' => 'global_colors',
     'priority' => 1
   )));
 
   $wp_customize->add_setting('global_foreground', array(
-    'default' => esc_attr__(null, 'tailkick'),
+    'default' => null,
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_foreground', array(
-    'label' => esc_html__('Foreground (Text)', 'tailkick'),
+    'label' => _e('Foreground (Text)', 'tailkick'),
     'section' => 'global_colors',
     'priority' => 1
   )));
 
   $wp_customize->add_setting('global_color_primary', array(
-    'default' => esc_attr__(null, 'tailkick'),
+    'default' => null,
     'type'    => 'theme_mod',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_color_primary', array(
-    'label' => esc_html__('Primary', 'tailkick'),
+    'label' => _e('Primary', 'tailkick'),
     'section' => 'global_colors',
     'priority' => 1
   )));
 
   $wp_customize->add_setting('global_colors_secondary', array(
-    'default' => esc_attr__(null, 'tailkick'),
+    'default' => null,
     'type'    => 'theme_mod',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_secondary', array(
-    'label' => esc_html__('Secondary', 'tailkick'),
+    'label' => _e('Secondary', 'tailkick'),
     'section' => 'global_colors',
     'priority' => 2
   )));
 
   $wp_customize->add_setting('global_colors_tertiary', array(
-    'default' => esc_attr__(null, 'tailkick'),
+    'default' => null,
     'type'    => 'theme_mod',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_tertiary', array(
-    'label' => esc_html__('Tertiary', 'tailkick'),
+    'label' => _e('Tertiary', 'tailkick'),
     'section' => 'global_colors',
     'priority' => 3
   )));
@@ -119,8 +119,8 @@ function tailkick_customize_register($wp_customize)
    * Customize the homepage hero section
    */
   $wp_customize->add_section('hero_home', array(
-    'title'       => esc_html__('Homepage Hero', 'tailkick'),
-    'description' => sprintf(esc_html__('Options for the hero section of the homepage', 'tailkick')),
+    'title'       => _e('Homepage Hero', 'tailkick'),
+    'description' => sprintf(_e('Options for the hero section of the homepage', 'tailkick')),
     'priority'    => 130 // before additional CSS
   ));
 
@@ -128,12 +128,12 @@ function tailkick_customize_register($wp_customize)
    * Custom homepage hero heading
    */
   $wp_customize->add_setting('hero_home_heading', array(
-    'default'   => _x('Buy. Sell. Discover.', 'tailkick'),
+    'default'   => __('Buy. Sell. Discover.', 'tailkick'),
     'type'      => 'theme_mod'
   ));
 
   $wp_customize->add_control('hero_home_heading', array(
-    'label'     => esc_html__('Hero Heading', 'tailkick'),
+    'label'     => _e('Hero Heading', 'tailkick'),
     'section'   => 'hero_home',
     'priority'  => 1
   ));
@@ -142,23 +142,23 @@ function tailkick_customize_register($wp_customize)
    * Custom homepage hero nutgraf
    */
   $wp_customize->add_setting('hero_home_text', array(
-    'default'   => _x('Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.', 'tailkick'),
+    'default'   => __('Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.', 'tailkick'),
     'type'      => 'theme_mod'
   ));
 
   $wp_customize->add_control('hero_home_text', array(
-    'label'     => esc_html__('Text', 'tailkick'),
+    'label'     => _e('Text', 'tailkick'),
     'section'   => 'hero_home',
     'priority'  => 2
   ));
 
   $wp_customize->add_setting('btn_text', array(
-    'default'   => _x('Download', 'tailkick'),
+    'default'   => __('Download', 'tailkick'),
     'type'      => 'theme_mod'
   ));
 
   $wp_customize->add_control('btn_text', array(
-    'label'     => esc_html__('Button Text', 'tailkick'),
+    'label'     => _e('Button Text', 'tailkick'),
     'section'   => 'hero_home',
     'priority'  => 3
   ));
@@ -167,12 +167,12 @@ function tailkick_customize_register($wp_customize)
    * Custom hompage hero button actions
    */
   $wp_customize->add_setting('btn_url', array(
-    'default'   => _x('https://github.com/ge3224/tailkick', 'tailkick'),
+    'default'   => 'https://github.com/ge3224/tailkick',
     'type'      => 'theme_mod'
   ));
 
   $wp_customize->add_control('btn_url', array(
-    'label'     => esc_html__('Button URL', 'tailkick'),
+    'label'     => _e('Button URL', 'tailkick'),
     'section'   => 'hero_home',
     'priority'  => 4
   ));
@@ -181,12 +181,12 @@ function tailkick_customize_register($wp_customize)
    * Custom background image for the homepage hero section
    */
   $wp_customize->add_setting('hero_home_image', array(
-    'default'   => get_bloginfo('template_directory') . '/assets/images/tailkick-hero-home-wide.jpg',
+    'default'   => get_template_directory_uri('template_directory') . '/assets/images/tailkick-hero-home-wide.jpg',
     'type'      => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_home_image', array(
-    'label'     => esc_html__('Hero Image', 'tailkick'),
+    'label'     => _e('Hero Image', 'tailkick'),
     'section'   => 'hero_home',
     'settings'  => 'hero_home_image',
     'priority'  => 5
@@ -196,12 +196,12 @@ function tailkick_customize_register($wp_customize)
    * Custom background-position x value
    */
   $wp_customize->add_setting('hero_home_image_position_x', array(
-    'default' => _x('center', 'tailkick'),
+    'default' => __('center', 'tailkick'),
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control('hero_home_image_position_x', array(
-    'label'    => esc_html__('Image Position: X', 'tailkick'),
+    'label'    => _e('Image Position: X', 'tailkick'),
     'description' => 'Options for the horizontal position of the homepage hero section\'s background image',
     'section'  => 'hero_home',
     'priority' => 6
@@ -211,12 +211,12 @@ function tailkick_customize_register($wp_customize)
    * Custom background-position y value
    */
   $wp_customize->add_setting('hero_home_image_position_y', array(
-    'default' => _x('35%', 'tailkick'),
+    'default' => '35%',
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control('hero_home_image_position_y', array(
-    'label'    => esc_html__('Image Position: Y', 'tailkick'),
+    'label'    => _e('Image Position: Y', 'tailkick'),
     'description' => 'The vertical position of the homepage hero section\'s background image',
     'section'  => 'hero_home',
     'priority' => 7
@@ -226,12 +226,12 @@ function tailkick_customize_register($wp_customize)
    * Custom homepage hero height
    */
   $wp_customize->add_setting('home_hero_height', array(
-    'default' => esc_html__('48.5rem', 'tailkick'),
+    'default' => '48.5rem',
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control('home_hero_height', array(
-    'label' => esc_html__('Hero Height', 'tailkick'),
+    'label' => _e('Hero Height', 'tailkick'),
     'section' => 'hero_home',
     'priority' => 8
   ));
@@ -240,7 +240,7 @@ function tailkick_customize_register($wp_customize)
    * Showcase Panel section
    */
   $wp_customize->add_section('showcase_panel', array(
-    'title'       => esc_html__('Showcase Panel', 'tailkick'),
+    'title'       => _e('Showcase Panel', 'tailkick'),
     'description' => sprintf(esc_html('Options for the showcase panel', 'tailkick')),
     'priority'    => 130
   ));
@@ -249,12 +249,12 @@ function tailkick_customize_register($wp_customize)
    * Option for including the showcase panel or not
    */
   $wp_customize->add_setting('showcase_panel_include', array(
-    'default' => _x('true', 'tailkick'),
-    'type'    => 'theme_mod'
+    'default' => 'true',
+    'type'    => 'theme_mod',
   ));
 
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'showcase_panel_include', array(
-    'label' => esc_html__('Include Showcase Panel', 'tailkick'),
+    'label' => _e('Include Showcase Panel', 'tailkick'),
     'section' => 'showcase_panel',
     'type' => 'checkbox',
     'priority' => 1
@@ -264,12 +264,12 @@ function tailkick_customize_register($wp_customize)
    * Custom feature image in showcase box one
    */
   $wp_customize->add_setting('showcase_box1_img', array(
-    'default' => get_bloginfo('template_directory') . '/assets/images/tk-heart-ico.png',
+    'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-heart-ico.png',
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box1_img', array(
-    'label'    => esc_html__('Showcase Box1: Image', 'tailkick'),
+    'label'    => _e('Showcase Box1: Image', 'tailkick'),
     'section'  => 'showcase_panel',
     'settings' => 'showcase_box1_img',
     'priority' => 2
@@ -279,12 +279,12 @@ function tailkick_customize_register($wp_customize)
    * Custom headline for showcase box one
    */
   $wp_customize->add_setting('showcase_box1_heading', array(
-    'default'     => esc_html__('Show It', 'tailkick'),
+    'default'     => _e('Show It', 'tailkick'),
     'type'  => 'theme_mod'
   ));
 
   $wp_customize->add_control('showcase_box1_heading', array(
-    'label' => esc_html__('Showcase Box: heading', 'tailkick'),
+    'label' => _e('Showcase Box: heading', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 3
   ));
@@ -293,12 +293,12 @@ function tailkick_customize_register($wp_customize)
    * Custom text for showcase box one
    */
   $wp_customize->add_setting('showcase_box1_text', array(
-    'default'     => esc_html__('Duis nec ante lorem. Ut vestibulum nibh id auctor semper. Etiam consectetur accumsan dui sed malesuada.', 'tailkick'),
+    'default'     => _e('Duis nec ante lorem. Ut vestibulum nibh id auctor semper. Etiam consectetur accumsan dui sed malesuada.', 'tailkick'),
     'type'   => 'theme_mod',
   ));
 
   $wp_customize->add_control('showcase_box1_text', array(
-    'label' => esc_html__('Showcase Box 1: text', 'tailkick'),
+    'label' => _e('Showcase Box 1: text', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 4
   ));
@@ -307,12 +307,12 @@ function tailkick_customize_register($wp_customize)
    * Custom feature image in showcase box two
    */
   $wp_customize->add_setting('showcase_box2_img', array(
-    'default' => get_bloginfo('template_directory') . '/assets/images/tk-boombox-ico.png',
+    'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-boombox-ico.png',
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box2_img', array(
-    'label'    => esc_html__('Showcase Box2: Image', 'tailkick'),
+    'label'    => _e('Showcase Box2: Image', 'tailkick'),
     'section'  => 'showcase_panel',
     'settings' => 'showcase_box2_img',
     'priority' => 5
@@ -322,12 +322,12 @@ function tailkick_customize_register($wp_customize)
    * Custom headline for showcase box two
    */
   $wp_customize->add_setting('showcase_box2_heading', array(
-    'default'     => esc_html__('Sing It', 'tailkick'),
+    'default'     => _e('Sing It', 'tailkick'),
     'type'   => 'theme_mod',
   ));
 
   $wp_customize->add_control('showcase_box2_heading', array(
-    'label' => esc_html__('Showcase Box 2: heading', 'tailkick'),
+    'label' => _e('Showcase Box 2: heading', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 6
   ));
@@ -336,12 +336,12 @@ function tailkick_customize_register($wp_customize)
    * Custom text for showcase box two
    */
   $wp_customize->add_setting('showcase_box2_text', array(
-    'default'     => esc_html__('Curabitur ut ligula at turpis efficitur auctor elementum sed risus. Morbi egestas consectetur suscipit. Sed vitae lobortis purus.', 'tailkick'),
+    'default'     => _e('Curabitur ut ligula at turpis efficitur auctor elementum sed risus. Morbi egestas consectetur suscipit. Sed vitae lobortis purus.', 'tailkick'),
     'type'   => 'theme_mod',
   ));
 
   $wp_customize->add_control('showcase_box2_text', array(
-    'label' => esc_html__('Showcase Box 2: text', 'tailkick'),
+    'label' => _e('Showcase Box 2: text', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 7
   ));
@@ -350,12 +350,12 @@ function tailkick_customize_register($wp_customize)
    * Custom feature image in showcase box three
    */
   $wp_customize->add_setting('showcase_box3_img', array(
-    'default' => get_bloginfo('template_directory') . '/assets/images/tk-check-ico.png',
+    'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-check-ico.png',
     'type'    => 'theme_mod'
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box3_img', array(
-    'label'    => esc_html__('Showcase Box3: Image', 'tailkick'),
+    'label'    => _e('Showcase Box3: Image', 'tailkick'),
     'section'  => 'showcase_panel',
     'settings' => 'showcase_box3_img',
     'priority' => 8
@@ -365,12 +365,12 @@ function tailkick_customize_register($wp_customize)
    * Custom headline for showcase box three
    */
   $wp_customize->add_setting('showcase_box3_heading', array(
-    'default'     => esc_html__('Share It', 'tailkick'),
+    'default'     => _e('Share It', 'tailkick'),
     'type'   => 'theme_mod',
   ));
 
   $wp_customize->add_control('showcase_box3_heading', array(
-    'label' => esc_html__('Showcase Box 3: heading', 'tailkick'),
+    'label' => _e('Showcase Box 3: heading', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 9
   ));
@@ -379,12 +379,12 @@ function tailkick_customize_register($wp_customize)
    * Custom text for showcase box three
    */
   $wp_customize->add_setting('showcase_box3_text', array(
-    'default'     => esc_html__('Quisque efficitur finibus nibh sit amet varius. Etiam ante purus, ullamcorper vitae massa vel, ornare euismod sapien.', 'tailkick'),
+    'default'     => _e('Quisque efficitur finibus nibh sit amet varius. Etiam ante purus, ullamcorper vitae massa vel, ornare euismod sapien.', 'tailkick'),
     'type'   => 'theme_mod',
   ));
 
   $wp_customize->add_control('showcase_box3_text', array(
-    'label' => esc_html__('Showcase Box 3: text', 'tailkick'),
+    'label' => _e('Showcase Box 3: text', 'tailkick'),
     'section' => 'showcase_panel',
     'priority' => 10
   ));
@@ -414,11 +414,11 @@ function tailkick_customize_register($wp_customize)
     'colorscheme',
     array(
       'type'     => 'radio',
-      'label'    => __('Color Scheme', 'tailkick'),
+      'label'    => _e('Color Scheme', 'tailkick'),
       'choices'  => array(
-        'light'  => __('Light', 'tailkick'),
-        'dark'   => __('Dark', 'tailkick'),
-        'custom' => __('Custom', 'tailkick'),
+        'light'  => _e('Light', 'tailkick'),
+        'dark'   => _e('Dark', 'tailkick'),
+        'custom' => _e('Custom', 'tailkick'),
       ),
       'section'  => 'colors',
       'priority' => 5,
@@ -443,7 +443,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_section(
     'theme_options',
     array(
-      'title'    => __('Theme Options', 'tailkick'),
+      'title'    => _e('Theme Options', 'tailkick'),
       'priority' => 130, // Before Additional CSS.
     )
   );
@@ -460,13 +460,13 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_control(
     'page_layout',
     array(
-      'label'           => __('Page Layout', 'tailkick'),
+      'label'           => _e('Page Layout', 'tailkick'),
       'section'         => 'theme_options',
       'type'            => 'radio',
-      'description'     => __('When the two-column layout is assigned, the page title is in one column and content is in the other.', 'tailkick'),
+      'description'     => _e('When the two-column layout is assigned, the page title is in one column and content is in the other.', 'tailkick'),
       'choices'         => array(
-        'one-column' => __('One Column', 'tailkick'),
-        'two-column' => __('Two Column', 'tailkick'),
+        'one-column' => _e('One Column', 'tailkick'),
+        'two-column' => _e('Two Column', 'tailkick'),
       ),
       'active_callback' => 'tailkick_is_view_with_layout_option',
     )
@@ -496,8 +496,8 @@ function tailkick_customize_register($wp_customize)
       'panel_' . $i,
       array(
         /* translators: %d: The front page section number. */
-        'label'           => sprintf(__('Front Page Section %d Content', 'tailkick'), $i),
-        'description'     => (1 !== $i ? '' : __('Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'tailkick')),
+        'label'           => sprintf(_e('Front Page Section %d Content', 'tailkick'), $i),
+        'description'     => (1 !== $i ? '' : _e('Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'tailkick')),
         'section'         => 'theme_options',
         'type'            => 'dropdown-pages',
         'allow_addition'  => true,
@@ -525,8 +525,8 @@ add_action('customize_register', 'tailkick_customize_register');
 function tailkick_sanitize_page_layout($input)
 {
   $valid = array(
-    'one-column' => __('One Column', 'tailkick'),
-    'two-column' => __('Two Column', 'tailkick'),
+    'one-column' => _e('One Column', 'tailkick'),
+    'two-column' => _e('Two Column', 'tailkick'),
   );
 
   if (array_key_exists($input, $valid)) {

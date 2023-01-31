@@ -57,9 +57,10 @@
 
   <div class="mb-3 border-b pb-3 entry-content">
     <?php
+    $before = '<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">';
     $read_more = sprintf(
       /* translators: %s: Post title. Only visible to screen readers. */
-      __('<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">Continue Reading</span><span class="' . sr_only_classes(array('screen-reader-text')) . '"> "%s"</span>', 'tailkick'),
+      $before . esc_html__('Continue Reading', 'tailkick') . '</span><span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('%s', 'tailkick') . '</span>',
       get_the_title()
     );
 
