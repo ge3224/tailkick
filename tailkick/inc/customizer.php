@@ -50,6 +50,14 @@ function tailkick_customize_register($wp_customize)
   );
 
   /**
+   * Sanitize text area inputs by escaping 
+   */
+  function sanitize_text_inputs($input): string
+  {
+    return esc_textarea($input);
+  }
+
+  /**
    * Component colors 
    *
    * Customizer defaults are `null`, since color defaults are defined using a precompiled palletwhich allows Tailwind 
@@ -62,7 +70,8 @@ function tailkick_customize_register($wp_customize)
 
   $wp_customize->add_setting('global_background', array(
     'default' => null,
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_background', array(
@@ -73,7 +82,8 @@ function tailkick_customize_register($wp_customize)
 
   $wp_customize->add_setting('global_foreground', array(
     'default' => null,
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_foreground', array(
@@ -85,6 +95,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('global_color_primary', array(
     'default' => null,
     'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_callback',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_color_primary', array(
@@ -96,6 +107,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('global_colors_secondary', array(
     'default' => null,
     'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_secondary', array(
@@ -107,6 +119,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('global_colors_tertiary', array(
     'default' => null,
     'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_colors_tertiary', array(
@@ -129,7 +142,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('hero_home_heading', array(
     'default'   => __('Buy. Sell. Discover.', 'tailkick'),
-    'type'      => 'theme_mod'
+    'type'      => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('hero_home_heading', array(
@@ -143,7 +157,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('hero_home_text', array(
     'default'   => __('Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum luctus gravida neque, et fringilla erat aliquet id.', 'tailkick'),
-    'type'      => 'theme_mod'
+    'type'      => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('hero_home_text', array(
@@ -154,7 +169,8 @@ function tailkick_customize_register($wp_customize)
 
   $wp_customize->add_setting('btn_text', array(
     'default'   => __('Download', 'tailkick'),
-    'type'      => 'theme_mod'
+    'type'      => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('btn_text', array(
@@ -168,7 +184,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('btn_url', array(
     'default'   => 'https://github.com/ge3224/tailkick',
-    'type'      => 'theme_mod'
+    'type'      => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('btn_url', array(
@@ -182,7 +199,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('hero_home_image', array(
     'default'   => get_template_directory_uri('template_directory') . '/assets/images/tailkick-hero-home-wide.jpg',
-    'type'      => 'theme_mod'
+    'type'      => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_home_image', array(
@@ -197,7 +215,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('hero_home_image_position_x', array(
     'default' => __('center', 'tailkick'),
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('hero_home_image_position_x', array(
@@ -212,7 +231,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('hero_home_image_position_y', array(
     'default' => '35%',
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('hero_home_image_position_y', array(
@@ -227,7 +247,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('home_hero_height', array(
     'default' => '48.5rem',
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('home_hero_height', array(
@@ -251,6 +272,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_panel_include', array(
     'default' => 'true',
     'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'showcase_panel_include', array(
@@ -265,7 +287,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('showcase_box1_img', array(
     'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-heart-ico.png',
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box1_img', array(
@@ -280,7 +303,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('showcase_box1_heading', array(
     'default'     => _e('Show It', 'tailkick'),
-    'type'  => 'theme_mod'
+    'type'  => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box1_heading', array(
@@ -295,6 +319,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_box1_text', array(
     'default'     => _e('Duis nec ante lorem. Ut vestibulum nibh id auctor semper. Etiam consectetur accumsan dui sed malesuada.', 'tailkick'),
     'type'   => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box1_text', array(
@@ -308,7 +333,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('showcase_box2_img', array(
     'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-boombox-ico.png',
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box2_img', array(
@@ -324,6 +350,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_box2_heading', array(
     'default'     => _e('Sing It', 'tailkick'),
     'type'   => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box2_heading', array(
@@ -338,6 +365,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_box2_text', array(
     'default'     => _e('Curabitur ut ligula at turpis efficitur auctor elementum sed risus. Morbi egestas consectetur suscipit. Sed vitae lobortis purus.', 'tailkick'),
     'type'   => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box2_text', array(
@@ -351,7 +379,8 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_setting('showcase_box3_img', array(
     'default' => get_template_directory_uri('template_directory') . '/assets/images/tk-check-ico.png',
-    'type'    => 'theme_mod'
+    'type'    => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'showcase_box3_img', array(
@@ -367,6 +396,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_box3_heading', array(
     'default'     => _e('Share It', 'tailkick'),
     'type'   => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box3_heading', array(
@@ -381,6 +411,7 @@ function tailkick_customize_register($wp_customize)
   $wp_customize->add_setting('showcase_box3_text', array(
     'default'     => _e('Quisque efficitur finibus nibh sit amet varius. Etiam ante purus, ullamcorper vitae massa vel, ornare euismod sapien.', 'tailkick'),
     'type'   => 'theme_mod',
+    'sanitize_callback' => 'sanitize_text_inputs',
   ));
 
   $wp_customize->add_control('showcase_box3_text', array(
