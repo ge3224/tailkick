@@ -16,7 +16,7 @@
           <?php if (has_custom_logo()) : ?>
             <?php the_custom_logo(); ?>
           <?php else : ?>
-            <div><?php wp_title(); ?></div>
+            <div><?php add_theme_support( "title-tag" ); ?></div>
           <?php endif; ?>
         </a>
       </div>
