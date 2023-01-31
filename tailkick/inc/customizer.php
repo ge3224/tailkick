@@ -56,7 +56,7 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_section('global_colors', array(
     'title'       => esc_html__('Global Colors', 'tailkick'),
-    'description' => sprintf(__('Options for global colors', 'tailkick')),
+    'description' => sprintf(esc_html__('Options for global colors', 'tailkick')),
     'priority'    => 130 // before additional CSS
   ));
 
@@ -125,7 +125,7 @@ function tailkick_customize_register($wp_customize)
    */
   $wp_customize->add_section('hero_home', array(
     'title'       => esc_html__('Homepage Hero', 'tailkick'),
-    'description' => sprintf(__('Options for the hero section of the homepage', 'tailkick')),
+    'description' => sprintf(esc_html__('Options for the hero section of the homepage', 'tailkick')),
     'priority'    => 130 // before additional CSS
   ));
 
@@ -519,7 +519,7 @@ function tailkick_customize_register($wp_customize)
       'panel_' . $i,
       array(
         /* translators: %d: The front page section number. */
-        'label'           => sprintf(__('Front Page Section %d Content', 'tailkick'), $i),
+        'label'           => sprintf(esc_html__('Front Page Section %d Content', 'tailkick'), $i),
         'description'     => (1 !== $i ? '' : esc_html__('Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'tailkick')),
         'section'         => 'theme_options',
         'type'            => 'dropdown-pages',
