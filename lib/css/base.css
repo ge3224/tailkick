@@ -718,9 +718,13 @@
   }
 
   /**
-   * styling for pagination numbers.
+   * styling for post pagination
    */
   .current {
-    @apply font-extrabold text-black;
+    @apply font-bold text-black;
+  }
+
+  .current > span {
+    @apply outline outline-1 outline-gray-300;
   }
 }
