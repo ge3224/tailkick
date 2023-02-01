@@ -32,14 +32,14 @@
     <div class="flex space-x-3">
       <div class="post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
-          <a href="<?php the_permalink(); ?>" class="rtl:inline-block rtl:ml-3">
+          <a href="<?php the_permalink(); ?>">
           <?php endif; ?>
           <?php if (get_the_post_thumbnail() !== '') : ?>
             <figure class="w-8 h-8 overflow-hidden rounded-sm">
               <?php the_post_thumbnail('tailkick-featured-image', array('class' => 'object-cover object-center w-full h-full')); ?>
             </figure>
           <?php else : ?>
-            <div class="w-8 h-8">
+            <div class="w-8 h-8 rtl:inline-block rtl:ml-3">
               <svg class="w-full h-auto opacity-30" version="1.1" viewBox="0 0 700 700" id="svg369" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <defs id="defs281">
                   <symbol id="t" overflow="visible">
