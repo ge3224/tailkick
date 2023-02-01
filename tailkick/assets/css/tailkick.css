@@ -768,6 +768,20 @@ video {
 .gap-3 {
   gap: 0.75rem;
 }
+.gap-x-3 {
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
+.gap-y-3 {
+  row-gap: 0.75rem;
+}
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -2435,9 +2449,22 @@ button.secondary:hover,
     justify-content: space-between;
   }
 
+  .md\:gap-16 {
+    gap: 4rem;
+  }
+
   .md\:gap-x-2 {
     -moz-column-gap: 0.5rem;
          column-gap: 0.5rem;
+  }
+
+  .md\:gap-x-16 {
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+
+  .md\:gap-y-0 {
+    row-gap: 0px;
   }
 
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
