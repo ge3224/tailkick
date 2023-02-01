@@ -771,6 +771,14 @@ video {
 .justify-items-center {
   justify-items: center;
 }
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -795,6 +803,11 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.625rem * var(--tw-space-x-reverse));
   margin-left: calc(0.625rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-auto {
   overflow: auto;
@@ -2244,8 +2257,28 @@ button.secondary:hover,
   margin-right: auto;
 }
 
+[dir="rtl"] .rtl\:mr-24 {
+  margin-right: 6rem;
+}
+
 [dir="rtl"] .rtl\:inline-block {
   display: inline-block;
+}
+
+[dir="rtl"] .rtl\:gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+[dir="rtl"] .rtl\:gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+
+[dir="rtl"] .rtl\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 [dir="rtl"] .rtl\:px-2 {
@@ -2289,6 +2322,10 @@ button.secondary:hover,
 
 [dir="rtl"] .rtl\:pl-2 {
   padding-left: 0.5rem;
+}
+
+[dir="rtl"] .rtl\:pr-24 {
+  padding-right: 6rem;
 }
 
 @media (min-width: 347px) {
@@ -2608,6 +2645,21 @@ button.secondary:hover,
     flex-direction: row;
   }
 
+  .lg\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+
+  .lg\:gap-x-24 {
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
+  }
+
+  .lg\:gap-x-12 {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+
   .lg\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -2635,6 +2687,14 @@ button.secondary:hover,
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  [dir="rtl"] .rtl\:lg\:pr-0 {
+    padding-right: 0px;
+  }
+
+  [dir="rtl"] .rtl\:lg\:pl-24 {
+    padding-left: 6rem;
   }
 }
 

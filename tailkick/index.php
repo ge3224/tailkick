@@ -65,8 +65,8 @@
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
               <div class="px-4 xl:px-0 w-full max-w-6xl mx-auto">
-              <div class="lg:grid lg:grid-cols-6">
-                  <div class="lg:col-span-5 lg:pr-24">
+              <div class="lg:grid lg:grid-cols-6 lg:gap-x-8">
+                  <div class="lg:col-span-5">
                     <?php
 
                     if (have_posts()) :

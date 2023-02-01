@@ -57,8 +57,8 @@
         <div class="wrap">
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
-              <div class="lg:grid lg:grid-cols-6">
-                <div class="lg:col-span-5 lg:pr-24">
+              <div class="lg:grid lg:grid-cols-6 lg:gap-x-8">
+                  <div class="lg:col-span-5">
                   <?php the_title('<h1 class="font-bold text-3xl md:text-4xl">', '</h1>'); ?>
                   <?php
 
