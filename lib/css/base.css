@@ -136,10 +136,6 @@
     @apply text-gray-800 text-base font-bold;
   }
 
-  p {
-    @apply mt-0 mb-3 p-0;
-  }
-
   dfn,
   cite,
   em,
@@ -694,7 +690,7 @@
   }
 
   /**
-   * Primary navigation
+   * primary navigation
    */
 
   .nav {
@@ -726,5 +722,16 @@
 
   .current > span {
     @apply outline outline-1 outline-gray-300;
+  }
+
+  /**
+   * post/page content elements
+   */
+  .entry-content > p {
+    @apply mt-0 mb-3 p-0;
+  }
+
+  .entry-content > ul {
+    @apply list-disc px-4 mb-3;
   }
 }

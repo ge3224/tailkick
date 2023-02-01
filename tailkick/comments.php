@@ -97,7 +97,7 @@ if (post_password_required()) {
     'class_container'     => 'border border-gray-200 rounded pt-4 px-4 pb-5',
     'class_form'          => 'text-sm',
     'comment_notes_after' => '',
-    'comment_field'        => '<p class="comment-form-comment">
+    'comment_field'        => '<p class="mb-3 comment-form-comment">
            <label for="comment">' . _x('Comment', 'noun', 'tailkick') . '</label>
            <textarea id="comment" name="comment" cols="45" rows="6" aria-required="true" required="required"></textarea>
          </p>'

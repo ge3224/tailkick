@@ -21,7 +21,7 @@ if (!function_exists('tailkick_posted_on')) :
     $byline = sprintf(
       /* translators: %s: Post author. */
       __('by %s', 'tailkick'),
-      '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author() . '</a></span>'
+      '<span class="rtl:px-1 author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author() . '</a></span>'
     );
 
     // Finally, let's write all of this to the page.
@@ -223,17 +223,33 @@ if (!function_exists('tailkick_posts_navigation')) :
   function tailkick_posts_navigation()
   {
 
+    $prev_arrow = '«';
+
+    if (is_rtl()) {
+      $prev_arrow = tailkick_get_svg(array('icon' => 'arrow-right'));
+    } else {
+      $prev_arrow = tailkick_get_svg(array('icon' => 'arrow-left'));
+    }
+
     $prev = get_previous_post_link(
       implode('', array(
         '<div class="flex items-center font-bold">',
         '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Previous Post', 'tailkick') . '</span>',
         '</span class="nav-title-icon-wrapper">',
-        tailkick_get_svg(array('icon' => 'arrow-left')),
+        $prev_arrow,
         '&nbsp;%link',
         '</span>',
         '</div>',
       ))
     );
+
+    $next_arrow = '»';
+
+    if (is_rtl()) {
+      $next_arrow = tailkick_get_svg(array('icon' => 'arrow-left'));
+    } else {
+      $next_arrow = tailkick_get_svg(array('icon' => 'arrow-right'));
+    }
 
     $next = get_next_post_link(
       implode('', array(
@@ -241,7 +257,7 @@ if (!function_exists('tailkick_posts_navigation')) :
         '<span class="' . sr_only_classes(array('screen-reader-text')) . '">' . esc_html__('Previous Post', 'tailkick') . '</span>',
         '</span class="nav-title-icon-wrapper">',
         '%link&nbsp;',
-        tailkick_get_svg(array('icon' => 'arrow-right')),
+        $next_arrow,
         '</span>',
         '</div>',
       ))
