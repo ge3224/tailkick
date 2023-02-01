@@ -5,7 +5,7 @@ module.exports = {
   safelist: [],
   theme: {
     screens: {
-      "xs": "347px", // narrow phones and other small screens
+      "xs": "347px", // custom breakpoint for narrow phones and other small screens
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "hero-home" : "url('../images/tailkick-hero-home-wide.jpg')"
+        "hero-home" : "url('./assets/images/tailkick-hero-home-wide.jpg')"
       }
     }
   },
