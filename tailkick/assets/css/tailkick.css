@@ -2021,6 +2021,14 @@ button.secondary:hover,
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+/**
+   * styling for pagination numbers.
+   */
+.current {
+  font-weight: 800;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .first\:border-0:first-child {
   border-width: 0px;
 }
