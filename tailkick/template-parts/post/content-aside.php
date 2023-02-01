@@ -33,7 +33,7 @@
     <div>
 
       <div class="w-full flex items-center mb-2">
-        <div class="mr-2 w-10 h-10 rounded-full overflow-hidden bg-gray-300">
+        <div class="mr-2 w-10 h-10 rounded-full overflow-hidden bg-gray-300 rtl:mr-0 rtl:ml-2">
           <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
             <?php echo get_avatar(get_the_author_meta('ID'), 40, 'mm', 'Author Avatar'); ?>
           </a>
@@ -44,11 +44,11 @@
               <?php the_author(); ?>
             </a>
           </div>
-          <div class="text-xs text-gray-500 mr-2 my-0 py-0">
+          <div class="text-xs text-gray-500 mr-2 rtl:mr-0 my-0 py-0">
             <span><?php echo tailkick_time_link(); ?></span>
           </div>
         </div>
-        <div class="ml-auto mr-0"><?php tailkick_edit_link(); ?></div>
+        <div class="ml-auto mr-0 rtl:ml-0 rtl:mr-auto"><?php tailkick_edit_link(); ?></div>
       </div>
 
       <?php

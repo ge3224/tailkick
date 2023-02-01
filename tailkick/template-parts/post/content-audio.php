@@ -23,13 +23,14 @@
     <?php
     if ('post' === get_post_type()) {
       echo '<div class="flex items-center entry-meta">';
+
       if (is_single()) {
         tailkick_posted_on();
       } else {
-        echo '<div>';
+        echo '<div class="rtl:px-1">';
         echo tailkick_time_link();
         echo '</div>';
-        echo '<div class="ml-auto mr-0">';
+        echo '<div class="ml-auto mr-0 rtl:ml-0 rtl:mr-auto">';
         tailkick_edit_link();
         echo '</div>';
       }

@@ -21,18 +21,18 @@
   ?>
 
   <div class="border-b pb-3 mb-3 entry-content">
-    <div class="w-full flex items-center mb-4">
+    <div class="w-full flex items-center mb-2">
       <div class="text-base my-0 py-0">
-        <a class="font-bold text-black hover:text-gray-600 active:text-gray-500" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+        <a class="font-bold text-black hover:text-gray-600 active:text-gray-500 rtl:px-1" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
           <?php the_author(); ?>
         </a>
         <span><?php echo tailkick_time_link(); ?></span>
       </div>
-      <div class="ml-auto mr-0"><?php tailkick_edit_link(); ?></div>
+      <div class="ml-auto mr-0 rtl:ml-0 rtl:mr-auto"><?php tailkick_edit_link(); ?></div>
     </div>
 
     <div class="flex flex-col items-center sm:items-start sm:flex-row space-x-3">
-      <div class="pt-4 <?php echo (get_the_post_thumbnail() !== '') ? 'mr-1.5' : '' ?> post-thumbnail">
+      <div class="pt-4 <?php echo (get_the_post_thumbnail() !== '') ? 'mr-1.5 rtl:mr-0 rtl:ml-4' : '' ?> post-thumbnail">
         <?php if (!is_single() && !is_front_page()) : ?>
           <a href="<?php the_permalink(); ?>">
           <?php endif; ?>
