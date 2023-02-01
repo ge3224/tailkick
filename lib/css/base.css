@@ -200,11 +200,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 
   blockquote {
-    quotes: "" ""; /* You got me. Currently there is no Tailwind CSS class handling `quotes` */
+    quotes: "" ""; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
   }
 
   q {
-    quotes: "“" "”" "‘" "’"; /* You got me. Currently there is no Tailwind CSS class handling `quotes` */
+    quotes: "“" "”" "‘" "’"; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
   }
 
   blockquote:before,
@@ -778,4 +778,5 @@ Use it to make something cool, have fun, and share what you've learned with othe
   .wp-block-image > figure > figcaption > a {
     @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;
   }
+
 }
