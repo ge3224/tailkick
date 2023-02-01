@@ -468,12 +468,11 @@ class Tailkick_Walker_Comment extends Walker
                         get_comment_time('c'),
                         sprintf(
                           /* translators: 1: Comment date, 2: Comment time. */
-                          _e('%1$s at %2$s', 'tailkick'),
+                          esc_html__('%1$s at %2$s', 'tailkick'),
                           get_comment_date('', $comment),
                           get_comment_time()
                         )
                       );
-                      edit_comment_link(_e('Edit', 'tailkick'), ' <span class="edit-link">', '</span>');
                       ?>
                     </div>
                   </div>
