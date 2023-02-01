@@ -432,8 +432,8 @@ class Tailkick_Walker_Comment extends Walker
       global $comment_depth;
       ?>
         <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(array($this->has_children ? 'parent' : '', ($comment_depth > 1 && $comment_depth < 3) ? 'pl-[45px]' : ''), $comment); ?>>
-          <article id="div-comment-<?php comment_ID(); ?>" class="<?php echo ($comment_depth > 1) ? 'border border-gray-200 pl-3 py-2 pr-0 rounded' : ''; ?> mb-3 flex comment-body">
-            <div class="<?php echo ($comment_depth > 1) ? '' : 'mr-2'; ?>">
+          <article id="div-comment-<?php comment_ID(); ?>" class="<?php echo ($comment_depth > 1) ? 'border border-gray-200 pl-3 rtl:pl-0 rtl:pr-3 py-2 pr-0 rounded' : ''; ?> mb-3 flex comment-body">
+            <div class="<?php echo ($comment_depth > 1) ? '' : 'mr-2 rtl:mr-0 rtl:ml-2'; ?>">
               <?php
               if (0 != $args['avatar_size']) {
                 echo get_avatar($comment, $args['avatar_size'], '', get_comment_author() . '\'s avatar', array('class' => 'mt-1 rounded-full'));
@@ -443,7 +443,7 @@ class Tailkick_Walker_Comment extends Walker
             <div class="w-full <?php echo ($comment_depth > 1) ? '' : 'border rounded'; ?>">
               <div class="py-1 px-3 <?php echo ($comment_depth > 1) ? 'pt-0 pb-2 border-none' : 'border-b bg-gray-100 '; ?>comment-meta">
                 <div class="w-full flex items-center justify-between space-x-2 vcard">
-                  <div class="md:flex md:items-center md:space-x-1 text-sm">
+                  <div class="md:flex md:items-center md:gap-x-2 text-sm">
                     <div class="pr-3 md:pr-0 comment-author">
                       <?php
                       $comment_author = get_comment_author_link($comment);
@@ -454,7 +454,7 @@ class Tailkick_Walker_Comment extends Walker
 
                       printf(
                         /* translators: %s: Comment author link. */
-                        __('%s <span class="says">commented</span>', 'tailkick'),
+                        __('%s <span class="rtl:px-1 says">commented</span>', 'tailkick'),
                         sprintf('<strong class="fn">%s</strong>', $comment_author)
                       );
                       ?>

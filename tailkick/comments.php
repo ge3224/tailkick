@@ -61,7 +61,7 @@ if (post_password_required()) {
           'avatar_size' => 40,
           'style'       => 'div',
           'short_ping'  => true,
-          'reply_text'  => '<div class="flex items-center">' . tailkick_get_svg(array('icon' => 'mail-reply')) . '<span class="ml-1.5">' . esc_html__('Reply', 'tailkick') . '</span></div>',
+          'reply_text'  => '<div class="flex items-center">' . tailkick_get_svg(array('icon' => 'mail-reply')) . '&nbsp;<span class="ml-1.5 rtl:ml-0 rtl:mr-1.5">' . esc_html__('Reply', 'tailkick') . '</span></div>',
           'format'      => 'html5',
           'echo'        => true,
         )
