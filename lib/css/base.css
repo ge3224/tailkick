@@ -727,11 +727,28 @@
   /**
    * post/page content elements
    */
+
+  .entry-content {
+    @apply overflow-auto;
+  }
+
   .entry-content > p {
     @apply mt-0 mb-3 p-0;
   }
 
   .entry-content > ul {
     @apply list-disc px-4 mb-3;
+  }
+
+  .wp-block-image > .alignleft {
+    @apply float-left my-2 ml-4 rtl:ml-0 rtl:mr-4;
+  }
+
+  .wp-block-image > .alignright {
+    @apply float-right my-2 mr-4 rtl:mr-0 rtl:ml-4;
+  }
+
+  .wp-block-image > figure > figcaption > a {
+    @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;
   }
 }

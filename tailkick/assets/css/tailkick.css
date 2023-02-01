@@ -2031,6 +2031,9 @@ button.secondary:hover,
 /**
    * post/page content elements
    */
+.entry-content {
+  overflow: auto;
+}
 .entry-content > p {
   margin-top: 0px;
   margin-bottom: 0.75rem;
@@ -2041,6 +2044,42 @@ button.secondary:hover,
   list-style-type: disc;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.wp-block-image > .alignleft {
+  float: left;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+[dir="rtl"] .wp-block-image > .alignleft {
+  margin-left: 0px;
+  margin-right: 1rem;
+}
+.wp-block-image > .alignright {
+  float: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+[dir="rtl"] .wp-block-image > .alignright {
+  margin-right: 0px;
+  margin-left: 1rem;
+}
+.wp-block-image > figure > figcaption > a {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+  text-decoration-line: none;
+}
+.wp-block-image > figure > figcaption > a:visited {
+  color: rgb(13 148 136 );
+}
+.wp-block-image > figure > figcaption > a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
+}
+.wp-block-image > figure > figcaption > a:active {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
 }
 .first\:border-0:first-child {
   border-width: 0px;
