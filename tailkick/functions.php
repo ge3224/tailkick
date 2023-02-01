@@ -876,6 +876,7 @@ function tailkick_render_block_filter($block_content, $block)
   }
 
   if ('core/image' === $block['blockName']) {
+    $block_content = str_replace('wp-block-image', 'overflow-auto wp-block-image', $block_content);
     $block_content = str_replace('wp-image', 'rounded wp-image', $block_content);
   }
 
