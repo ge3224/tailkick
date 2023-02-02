@@ -370,6 +370,10 @@ if (!function_exists('tailkick_button_classes_primary')) :
       'shadow-[5px_5px_0_0_#00000033]',
       'text-base',
       'font-bold',
+      'text-black',
+      'visited:text-black',
+      'hover:text-black',
+      'active:text-black',
     );
 
     return implode(' ', $classes);
