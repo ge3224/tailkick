@@ -44,7 +44,7 @@
   }
 
   .current > span {
-    @apply outline outline-1 outline-gray-300;
+    @apply border-gray-400;
   }
 
 
