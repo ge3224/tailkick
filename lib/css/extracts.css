@@ -1,0 +1,762 @@
+/*!
+ * Accessing and modifying some HTML Elements rendered internally by
+ * WordPress, e.g. block widgets, can be more trouble than it's likely worth.
+ * In such cases, we can make use of the WP generated class names but
+ * incorporate Tailwind using `@apply`. 
+ *
+ * @link https://tailwindcss.com/docs/reusing-styles
+ */
+
+@layer components {
+
+  /*--------------------------------------------------------------
+  Alignments
+  --------------------------------------------------------------*/
+
+  .alignleft {
+    @apply inline float-left mr-6;
+  }
+
+  .alignright {
+    @apply inline float-right ml-6;
+  }
+
+  .aligncenter {
+    @apply clear-both block mx-auto;
+  }
+
+  /*--------------------------------------------------------------
+  Clearings
+  --------------------------------------------------------------*/
+
+  .clear:before,
+  .clear:after,
+  .entry-content:before,
+  .entry-content:after,
+  .entry-footer:before,
+  .entry-footer:after,
+  .comment-content:before,
+  .comment-content:after,
+  .site-header:before,
+  .site-header:after,
+  .site-content:before,
+  .site-content:after,
+  .site-footer:before,
+  .site-footer:after,
+  .nav-links:before,
+  .nav-links:after,
+  .pagination:before,
+  .pagination:after,
+  .comment-author:before,
+  .comment-author:after,
+  .widget-area:before,
+  .widget-area:after,
+  .widget:before,
+  .widget:after,
+  .comment-meta:before,
+  .comment-meta:after {
+    @apply before:content-[''] before:table after:content-[''] after:table before:table-fixed after:table-fixed;
+  }
+
+  .clear:after,
+  .entry-content:after,
+  .entry-footer:after,
+  .comment-content:after,
+  .site-header:after,
+  .site-content:after,
+  .site-footer:after,
+  .nav-links:after,
+  .pagination:after,
+  .comment-author:after,
+  .widget-area:after,
+  .widget:after,
+  .comment-meta:after {
+    @apply clear-both;
+  }
+
+  /*--------------------------------------------------------------
+  Typography
+  --------------------------------------------------------------*/
+
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    @apply text-gray-800 font-sans text-base leading-relaxed;
+  }
+
+  h1 {
+    @apply clear-both leading-snug mt-0 mb-6 px-0 py-0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply clear-both leading-snug mb-3 pt-4 px-0 pb-0;
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    @apply pt-0;
+  }
+
+  h1 {
+    @apply text-2xl font-normal;
+  }
+
+  h2,
+  .home.blog .entry-title {
+    @apply text-gray-600 text-xl font-normal;
+  }
+
+  h3 {
+    @apply text-gray-800 text-lg font-normal;
+  }
+
+  h4 {
+    @apply text-gray-800 text-base font-bold;
+  }
+
+  h5 {
+    @apply text-gray-500 text-sm font-bold tracking-widest uppercase;
+  }
+
+  h6 {
+    @apply text-gray-800 text-base font-bold;
+  }
+
+  dfn,
+  cite,
+  em,
+  i {
+    @apply italic;
+  }
+
+  blockquote {
+    @apply text-gray-600 text-base italic leading-relaxed m-0 overflow-hidden p-0;
+  }
+
+  blockquote cite {
+    @apply block font-medium mt-2;
+  }
+
+  address {
+    @apply mt-0 mx-0 mb-6;
+  }
+
+  pre {
+    @apply border-4 bg-gray-100 font-mono text-base leading-relaxed mb-7 max-w-full overflow-auto p-7;
+  }
+
+  code,
+  kbd,
+  tt,
+  var {
+    @apply font-mono text-sm w-full;
+  }
+
+  abbr,
+  acronym {
+    @apply border-b border-dotted border-gray-600 cursor-help;
+  }
+
+  mark,
+  ins {
+    @apply bg-gray-50 no-underline;
+  }
+
+  big {
+    @apply text-[125%];
+  }
+
+  blockquote {
+    quotes: "" ""; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
+  }
+
+  q {
+    quotes: "“" "”" "‘" "’"; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
+  }
+
+  blockquote:before,
+  blockquote:after {
+    @apply content-[''];
+  }
+
+  :focus {
+    @apply outline-none;
+  }
+
+  figcaption {
+    @apply break-words xs:break-normal;
+  }
+
+  /* Typography for Arabic Font */
+
+  html[lang="ar"] body,
+  html[lang="ar"] button,
+  html[lang="ar"] input,
+  html[lang="ar"] select,
+  html[lang="ar"] textarea,
+  html[lang="ary"] body,
+  html[lang="ary"] button,
+  html[lang="ary"] input,
+  html[lang="ary"] select,
+  html[lang="ary"] textarea,
+  html[lang="azb"] body,
+  html[lang="azb"] button,
+  html[lang="azb"] input,
+  html[lang="azb"] select,
+  html[lang="azb"] textarea,
+  html[lang="fa-IR"] body,
+  html[lang="fa-IR"] button,
+  html[lang="fa-IR"] input,
+  html[lang="fa-IR"] select,
+  html[lang="fa-IR"] textarea,
+  html[lang="haz"] body,
+  html[lang="haz"] button,
+  html[lang="haz"] input,
+  html[lang="haz"] select,
+  html[lang="haz"] textarea,
+  html[lang="ps"] body,
+  html[lang="ps"] button,
+  html[lang="ps"] input,
+  html[lang="ps"] select,
+  html[lang="ps"] textarea,
+  html[lang="ur"] body,
+  html[lang="ur"] button,
+  html[lang="ur"] input,
+  html[lang="ur"] select,
+  html[lang="ur"] textarea {
+    /* font-family: Tahoma, Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="ar"] h1,
+  html[lang="ar"] h2,
+  html[lang="ar"] h3,
+  html[lang="ar"] h4,
+  html[lang="ar"] h5,
+  html[lang="ar"] h6,
+  html[lang="ary"] h1,
+  html[lang="ary"] h2,
+  html[lang="ary"] h3,
+  html[lang="ary"] h4,
+  html[lang="ary"] h5,
+  html[lang="ary"] h6,
+  html[lang="azb"] h1,
+  html[lang="azb"] h2,
+  html[lang="azb"] h3,
+  html[lang="azb"] h4,
+  html[lang="azb"] h5,
+  html[lang="azb"] h6,
+  html[lang="fa-IR"] h1,
+  html[lang="fa-IR"] h2,
+  html[lang="fa-IR"] h3,
+  html[lang="fa-IR"] h4,
+  html[lang="fa-IR"] h5,
+  html[lang="fa-IR"] h6,
+  html[lang="haz"] h1,
+  html[lang="haz"] h2,
+  html[lang="haz"] h3,
+  html[lang="haz"] h4,
+  html[lang="haz"] h5,
+  html[lang="haz"] h6,
+  html[lang="ps"] h1,
+  html[lang="ps"] h2,
+  html[lang="ps"] h3,
+  html[lang="ps"] h4,
+  html[lang="ps"] h5,
+  html[lang="ps"] h6,
+  html[lang="ur"] h1,
+  html[lang="ur"] h2,
+  html[lang="ur"] h3,
+  html[lang="ur"] h4,
+  html[lang="ur"] h5,
+  html[lang="ur"] h6 {
+    @apply font-bold;
+  }
+
+  /* Typography for Chinese Font */
+
+  html[lang^="zh-"] body,
+  html[lang^="zh-"] button,
+  html[lang^="zh-"] input,
+  html[lang^="zh-"] select,
+  html[lang^="zh-"] textarea {
+    /* font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="zh-CN"] body,
+  html[lang="zh-CN"] button,
+  html[lang="zh-CN"] input,
+  html[lang="zh-CN"] select,
+  html[lang="zh-CN"] textarea {
+    /* font-family: "PingFang SC", "Helvetica Neue", Helvetica, STHeitiSC-Light, Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang^="zh-"] h1,
+  html[lang^="zh-"] h2,
+  html[lang^="zh-"] h3,
+  html[lang^="zh-"] h4,
+  html[lang^="zh-"] h5,
+  html[lang^="zh-"] h6 {
+    font-weight: 700;
+  }
+
+  /* Typography for Cyrillic Font */
+
+  html[lang="bg-BG"] body,
+  html[lang="bg-BG"] button,
+  html[lang="bg-BG"] input,
+  html[lang="bg-BG"] select,
+  html[lang="bg-BG"] textarea,
+  html[lang="ru-RU"] body,
+  html[lang="ru-RU"] button,
+  html[lang="ru-RU"] input,
+  html[lang="ru-RU"] select,
+  html[lang="ru-RU"] textarea,
+  html[lang="uk"] body,
+  html[lang="uk"] button,
+  html[lang="uk"] input,
+  html[lang="uk"] select,
+  html[lang="uk"] textarea {
+    /* font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="bg-BG"] h1,
+  html[lang="bg-BG"] h2,
+  html[lang="bg-BG"] h3,
+  html[lang="bg-BG"] h4,
+  html[lang="bg-BG"] h5,
+  html[lang="bg-BG"] h6,
+  html[lang="ru-RU"] h1,
+  html[lang="ru-RU"] h2,
+  html[lang="ru-RU"] h3,
+  html[lang="ru-RU"] h4,
+  html[lang="ru-RU"] h5,
+  html[lang="ru-RU"] h6,
+  html[lang="uk"] h1,
+  html[lang="uk"] h2,
+  html[lang="uk"] h3,
+  html[lang="uk"] h4,
+  html[lang="uk"] h5,
+  html[lang="uk"] h6 {
+    @apply font-bold leading-tight;
+  }
+
+  /* Typography for Devanagari Font */
+
+  html[lang="bn-BD"] body,
+  html[lang="bn-BD"] button,
+  html[lang="bn-BD"] input,
+  html[lang="bn-BD"] select,
+  html[lang="bn-BD"] textarea,
+  html[lang="hi-IN"] body,
+  html[lang="hi-IN"] button,
+  html[lang="hi-IN"] input,
+  html[lang="hi-IN"] select,
+  html[lang="hi-IN"] textarea,
+  html[lang="mr-IN"] body,
+  html[lang="mr-IN"] button,
+  html[lang="mr-IN"] input,
+  html[lang="mr-IN"] select,
+  html[lang="mr-IN"] textarea {
+    /* font-family: Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="bn-BD"] h1,
+  html[lang="bn-BD"] h2,
+  html[lang="bn-BD"] h3,
+  html[lang="bn-BD"] h4,
+  html[lang="bn-BD"] h5,
+  html[lang="bn-BD"] h6,
+  html[lang="hi-IN"] h1,
+  html[lang="hi-IN"] h2,
+  html[lang="hi-IN"] h3,
+  html[lang="hi-IN"] h4,
+  html[lang="hi-IN"] h5,
+  html[lang="hi-IN"] h6,
+  html[lang="mr-IN"] h1,
+  html[lang="mr-IN"] h2,
+  html[lang="mr-IN"] h3,
+  html[lang="mr-IN"] h4,
+  html[lang="mr-IN"] h5,
+  html[lang="mr-IN"] h6 {
+    @apply font-bold;
+  }
+
+  /* Typography for Greek Font */
+
+  html[lang="el"] body,
+  html[lang="el"] button,
+  html[lang="el"] input,
+  html[lang="el"] select,
+  html[lang="el"] textarea {
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="el"] h1,
+  html[lang="el"] h2,
+  html[lang="el"] h3,
+  html[lang="el"] h4,
+  html[lang="el"] h5,
+  html[lang="el"] h6 {
+    @apply font-bold leading-tight;
+  }
+
+  /* Typography for Gujarati Font */
+
+  html[lang="gu-IN"] body,
+  html[lang="gu-IN"] button,
+  html[lang="gu-IN"] input,
+  html[lang="gu-IN"] select,
+  html[lang="gu-IN"] textarea {
+    /* font-family: Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="gu-IN"] h1,
+  html[lang="gu-IN"] h2,
+  html[lang="gu-IN"] h3,
+  html[lang="gu-IN"] h4,
+  html[lang="gu-IN"] h5,
+  html[lang="gu-IN"] h6 {
+    @apply font-bold;
+  }
+
+  /* Typography for Hebrew Font */
+
+  html[lang="he-IL"] body,
+  html[lang="he-IL"] button,
+  html[lang="he-IL"] input,
+  html[lang="he-IL"] select,
+  html[lang="he-IL"] textarea {
+    /* font-family: "Arial Hebrew", Arial, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="he-IL"] h1,
+  html[lang="he-IL"] h2,
+  html[lang="he-IL"] h3,
+  html[lang="he-IL"] h4,
+  html[lang="he-IL"] h5,
+  html[lang="he-IL"] h6 {
+    @apply font-bold;
+  }
+
+  /* Typography for Japanese Font */
+
+  html[lang="ja"] body,
+  html[lang="ja"] button,
+  html[lang="ja"] input,
+  html[lang="ja"] select,
+  html[lang="ja"] textarea {
+    /* font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="ja"] h1,
+  html[lang="ja"] h2,
+  html[lang="ja"] h3,
+  html[lang="ja"] h4,
+  html[lang="ja"] h5,
+  html[lang="ja"] h6 {
+    @apply font-bold;
+  }
+
+  /* Typography for Korean font */
+
+  html[lang="ko-KR"] body,
+  html[lang="ko-KR"] button,
+  html[lang="ko-KR"] input,
+  html[lang="ko-KR"] select,
+  html[lang="ko-KR"] textarea {
+    /* font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif; */
+
+    @apply font-sans;
+  }
+
+  html[lang="ko-KR"] h1,
+  html[lang="ko-KR"] h2,
+  html[lang="ko-KR"] h3,
+  html[lang="ko-KR"] h4,
+  html[lang="ko-KR"] h5,
+  html[lang="ko-KR"] h6 {
+    @apply font-semibold;
+  }
+
+  /* Typography for Thai Font */
+
+  html[lang="th"] h1,
+  html[lang="th"] h2,
+  html[lang="th"] h3,
+  html[lang="th"] h4,
+  html[lang="th"] h5,
+  html[lang="th"] h6 {
+    /* font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+
+    @apply leading-relaxed font-sans;
+  }
+
+  html[lang="th"] body,
+  html[lang="th"] button,
+  html[lang="th"] input,
+  html[lang="th"] select,
+  html[lang="th"] textarea {
+    /* font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+
+    @apply leading-7 font-sans;
+  }
+
+  /* Remove letter-spacing for all non-latin alphabets */
+
+  html[lang="ar"] *,
+  html[lang="ary"] *,
+  html[lang="azb"] *,
+  html[lang="haz"] *,
+  html[lang="ps"] *,
+  html[lang^="zh-"] *,
+  html[lang="bg-BG"] *,
+  html[lang="ru-RU"] *,
+  html[lang="uk"] *,
+  html[lang="bn-BD"] *,
+  html[lang="hi-IN"] *,
+  html[lang="mr-IN"] *,
+  html[lang="el"] *,
+  html[lang="gu-IN"] *,
+  html[lang="he-IL"] *,
+  html[lang="ja"] *,
+  html[lang="ko-KR"] *,
+  html[lang="th"] * {
+    @apply tracking-normal;
+  }
+
+  /*--------------------------------------------------------------
+  6.0 Forms
+  --------------------------------------------------------------*/
+
+  label {
+    @apply text-gray-800 block font-bold mb-2;
+  }
+
+  fieldset {
+    @apply mb-4;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea {
+    @apply text-gray-600 bg-gray-50 bg-gradient-to-b from-gray-50 to-gray-50/75 border border-gray-300 rounded block py-1 px-2 w-full;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="color"]:focus,
+  textarea:focus {
+    @apply text-gray-900 border border-gray-800;
+  }
+
+  select {
+    @apply border border-gray-500 rounded h-12 max-w-full;
+  }
+
+  input[type="radio"]:focus,
+  input[type="checkbox"]:focus {
+    @apply outline-dotted outline-gray-800;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    @apply mr-2;
+  }
+
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    @apply font-normal;
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    @apply cursor-pointer bg-gray-200 border border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.20)] text-black inline-block text-sm font-extrabold leading-4 py-3 px-8 transition duration-1000;
+  }
+
+  input + button,
+  input + input[type="button"],
+  input + input[type="submit"] {
+    @apply py-3 px-8;
+  }
+
+  button.secondary,
+  input[type="reset"],
+  input[type="button"].secondary,
+  input[type="reset"].secondary,
+  input[type="submit"].secondary {
+    @apply bg-gray-300 text-gray-900;
+  }
+
+  :not( .mejs-button ) > button:hover,
+  :not( .mejs-button ) > button:focus,
+  input[type="button"]:hover,
+  input[type="button"]:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    @apply bg-gray-500 text-white;
+  }
+
+  button.secondary:hover,
+  button.secondary:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:focus,
+  input[type="button"].secondary:hover,
+  input[type="button"].secondary:focus,
+  input[type="reset"].secondary:hover,
+  input[type="reset"].secondary:focus,
+  input[type="submit"].secondary:hover,
+  input[type="submit"].secondary:focus {
+    @apply bg-gray-200;
+  }
+
+  /* Placeholder text color -- selectors need to be separate to work. */
+  ::-webkit-input-placeholder {
+    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
+    @apply text-gray-800 font-sans;
+  }
+
+  :-moz-placeholder {
+    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
+    @apply text-gray-800 font-sans;
+  }
+
+  ::-moz-placeholder {
+    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
+    /* Since FF19 lowers the opacity of the placeholder by default */
+    @apply text-gray-800 font-sans opacity-100;
+  }
+
+  :-ms-input-placeholder {
+    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
+    @apply text-gray-800 font-sans;
+  }
+
+  /**
+   * primary navigation
+   */
+
+  .nav {
+    @apply scale-y-0 origin-top transition-transform duration-500 ease-in-out md:transform-none md:duration-[0ms];
+  }
+
+  .nav-bg {
+    @apply opacity-0;
+  }
+
+  .nav-menu {
+    @apply opacity-0 transition-opacity duration-150 ease-in-out md:opacity-100;
+  }
+
+  .nav-checkbox:checked ~ .nav {
+    @apply scale-y-100;
+  }
+
+  .nav-checkbox:checked ~ .nav .nav-menu {
+    @apply opacity-100 transition-opacity duration-300 ease-in-out;
+  }
+
+  /**
+   * styling for post pagination
+   */
+  .current {
+    @apply font-bold text-black;
+  }
+
+  .current > span {
+    @apply outline outline-1 outline-gray-300;
+  }
+
+  /**
+   * post/page content elements
+   */
+
+  .entry-content {
+    @apply overflow-auto;
+  }
+
+  .entry-content > p {
+    @apply mt-0 mb-3 p-0;
+  }
+
+  .entry-content > ul {
+    @apply list-disc px-4 mb-3;
+  }
+
+  /**
+   * Block styling
+   */
+
+  .wp-block-image > figure > img {
+    @apply rounded-sm;
+  }
+
+  .wp-block-image > .alignleft {
+    @apply float-left my-2 ml-4 rtl:ml-0 rtl:mr-4;
+  }
+
+  .wp-block-image > .alignright {
+    @apply float-right my-2 mr-4 rtl:mr-0 rtl:ml-4;
+  }
+
+  .wp-block-image > figure > figcaption > a {
+    @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;
+  }
+
+  .testing-2 {
+    @apply text-red-500;
+  }
+}
