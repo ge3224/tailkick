@@ -558,7 +558,10 @@
   button,
   input[type="button"],
   input[type="submit"] {
-    @apply cursor-pointer bg-gray-200 border border-black shadow-[5px_5px_0_0_rgba(0,0,0,0.20)] text-black inline-block text-sm font-extrabold leading-4 py-3 px-8 transition duration-1000;
+    @apply inline-block cursor-pointer mb-3 bg-gray-200 hover:bg-gray-800 py-3 px-6;
+    @apply rounded-none border border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.16)];
+    @apply text-black visited:text-black hover:text-white active:text-white text-base font-bold leading-4;
+    @apply transition duration-1000;
   }
 
   input + button,
