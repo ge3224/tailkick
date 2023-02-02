@@ -60,15 +60,15 @@
   }
 
   h1 {
-    @apply mt-4 text-2xl font-normal;
+    @apply mt-4 text-2xl font-bold;
   }
 
   h2 {
-    @apply mt-3 text-xl font-normal;
+    @apply mt-3 text-xl font-bold;
   }
 
   h3 {
-    @apply mt-2 text-lg font-normal;
+    @apply mt-2 text-lg font-bold;
   }
 
   h4 {

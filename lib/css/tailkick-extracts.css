@@ -89,7 +89,8 @@
     @apply mr-2;
   }
 
-  .wp-block-button__link {
+  .wp-block-button__link,
+  a.wp-block-button__link.wp-element-button {
     @apply inline-block cursor-pointer mb-3 bg-gray-200 hover:bg-gray-800 py-3 px-6;
     @apply rounded-none border border-black shadow-[4px_4px_0_0_rgba(0,0,0,0.16)];
     @apply text-black visited:text-black hover:text-white active:text-white text-base font-bold leading-4;
