@@ -53,7 +53,7 @@
 
       <?php
 
-      echo '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">';
+      echo '<a class="text-gray-800 visited:text-gray-800 hover:text-gray-800/75 active:text-gray-800/50" href="' . esc_url(get_permalink()) . '" rel="bookmark">';
 
       $before = '<span class="underline text-sm text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400">';
 

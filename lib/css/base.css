@@ -1,8 +1,8 @@
 /*!
 Theme Name: TailKick
-Theme URI: https://wordpress.org/themes/tailkick/
-Author: the WordPress team
-Author URI: https://wordpress.org/
+Theme URI: https://github.com/ge3224/tailkick
+Author: Jacob Benison
+Author URI: https://jacobbenison.com/
 Description: TailKick brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
 Version: 0.1
 Tested up to: 6.1
@@ -17,5 +17,10 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "./default.css";
-@import "./extracts.css";
+@import "./tailwind-preflight.css";
+@import "./tailkick-defaults.css";
+
+@import "./tailwind-components.css";
+@import "./tailkick-extracts.css";
+
+@import "./tailwind-utilities.css";

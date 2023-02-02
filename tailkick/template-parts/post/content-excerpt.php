@@ -23,11 +23,11 @@
 				echo tailkick_time_link();
 				tailkick_edit_link();
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php elseif ( 'page' === get_post_type() && get_edit_post_link() ) : ?>
 			<div class="entry-meta">
 				<?php tailkick_edit_link(); ?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
 
 		<?php
@@ -39,10 +39,10 @@
 			the_title( '<h2 class="pt-3 pb-0 font-bold text-black text-2xl entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 		?>
-	</header><!-- .entry-header -->
+	</header>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	</div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

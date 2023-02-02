@@ -3,6 +3,7 @@
 module.exports = {
   content: ["./tailkick/**/*.{html,js,php}"],
   safelist: [],
+  important: true, // https://tailwindcss.com/docs/configuration#important
   theme: {
     screens: {
       "xs": "347px", // custom breakpoint for narrow phones and other small screens

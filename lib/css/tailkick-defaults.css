@@ -1,4 +1,4 @@
-/*!
+/**
  * Accessing and modifying some HTML Elements rendered internally by
  * WordPress, e.g. block widgets, can be more trouble than it's likely worth.
  * In such cases, we can make use of the WP generated class names but
@@ -7,95 +7,80 @@
  * @link https://tailwindcss.com/docs/reusing-styles
  */
 
-@layer components {
+@layer base {
 
-  /*--------------------------------------------------------------
-  Alignments
-  --------------------------------------------------------------*/
-
-  .alignleft {
-    @apply inline float-left mr-6;
-  }
-
-  .alignright {
-    @apply inline float-right ml-6;
-  }
-
-  .aligncenter {
-    @apply clear-both block mx-auto;
-  }
-
-  /*--------------------------------------------------------------
-  Clearings
-  --------------------------------------------------------------*/
-
-  .clear:before,
-  .clear:after,
-  .entry-content:before,
-  .entry-content:after,
-  .entry-footer:before,
-  .entry-footer:after,
-  .comment-content:before,
-  .comment-content:after,
-  .site-header:before,
-  .site-header:after,
-  .site-content:before,
-  .site-content:after,
-  .site-footer:before,
-  .site-footer:after,
-  .nav-links:before,
-  .nav-links:after,
-  .pagination:before,
-  .pagination:after,
-  .comment-author:before,
-  .comment-author:after,
-  .widget-area:before,
-  .widget-area:after,
-  .widget:before,
-  .widget:after,
-  .comment-meta:before,
-  .comment-meta:after {
-    @apply before:content-[''] before:table after:content-[''] after:table before:table-fixed after:table-fixed;
-  }
-
-  .clear:after,
-  .entry-content:after,
-  .entry-footer:after,
-  .comment-content:after,
-  .site-header:after,
-  .site-content:after,
-  .site-footer:after,
-  .nav-links:after,
-  .pagination:after,
-  .comment-author:after,
-  .widget-area:after,
-  .widget:after,
-  .comment-meta:after {
-    @apply clear-both;
-  }
-
-  /*--------------------------------------------------------------
-  Typography
-  --------------------------------------------------------------*/
+  /* typography */
 
   body,
   button,
   input,
   select,
   textarea {
-    @apply text-gray-800 font-sans text-base leading-relaxed;
+    @apply font-sans text-base leading-relaxed text-gray-800;
   }
 
-  h1 {
-    @apply clear-both leading-snug mt-0 mb-6 px-0 py-0;
+  a,
+  a:visited {
+    @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;  
   }
 
+  /* bottom margins */
+  p,
+  h1,
   h2,
   h3,
   h4,
   h5,
+  h6,
+  img, 
+  figure,
+  form,
+  pre {
+    @apply mb-3;
+  }
+
+  /* headings */
+
+  h1,
+  h2,
+  h3, 
+  h4, 
+  h5, 
   h6 {
-    @apply clear-both leading-snug mb-3 pt-4 px-0 pb-0;
+    @apply clear-both leading-snug mx-0 p-0 text-gray-800;
+  }
+
+  h1 > a,
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a, 
+  h6 > a {
+    @apply text-gray-800 visited:text-gray-800 hover:text-gray-800/75 active:text-gray-800/50 !important;
+  }
+
+  h1 {
+    @apply mt-4 text-2xl font-normal;
+  }
+
+  h2 {
+    @apply mt-3 text-xl font-normal;
+  }
+
+  h3 {
+    @apply mt-2 text-lg font-normal;
+  }
+
+  h4 {
+    @apply mt-2 text-base font-bold;
+  }
+
+  h5 {
+    @apply mt-2 text-sm font-bold tracking-widest uppercase;
+  }
+
+  h6 {
+    @apply mt-2 text-base font-bold;
   }
 
   h1:first-child,
@@ -104,32 +89,7 @@
   h4:first-child,
   h5:first-child,
   h6:first-child {
-    @apply pt-0;
-  }
-
-  h1 {
-    @apply text-2xl font-normal;
-  }
-
-  h2,
-  .home.blog .entry-title {
-    @apply text-gray-600 text-xl font-normal;
-  }
-
-  h3 {
-    @apply text-gray-800 text-lg font-normal;
-  }
-
-  h4 {
-    @apply text-gray-800 text-base font-bold;
-  }
-
-  h5 {
-    @apply text-gray-500 text-sm font-bold tracking-widest uppercase;
-  }
-
-  h6 {
-    @apply text-gray-800 text-base font-bold;
+    @apply mt-0;
   }
 
   dfn,
@@ -234,8 +194,6 @@
   html[lang="ur"] input,
   html[lang="ur"] select,
   html[lang="ur"] textarea {
-    /* font-family: Tahoma, Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -291,8 +249,6 @@
   html[lang^="zh-"] input,
   html[lang^="zh-"] select,
   html[lang^="zh-"] textarea {
-    /* font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -301,8 +257,6 @@
   html[lang="zh-CN"] input,
   html[lang="zh-CN"] select,
   html[lang="zh-CN"] textarea {
-    /* font-family: "PingFang SC", "Helvetica Neue", Helvetica, STHeitiSC-Light, Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -332,8 +286,6 @@
   html[lang="uk"] input,
   html[lang="uk"] select,
   html[lang="uk"] textarea {
-    /* font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -375,8 +327,6 @@
   html[lang="mr-IN"] input,
   html[lang="mr-IN"] select,
   html[lang="mr-IN"] textarea {
-    /* font-family: Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -408,8 +358,6 @@
   html[lang="el"] input,
   html[lang="el"] select,
   html[lang="el"] textarea {
-    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -429,8 +377,6 @@
   html[lang="gu-IN"] input,
   html[lang="gu-IN"] select,
   html[lang="gu-IN"] textarea {
-    /* font-family: Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -450,8 +396,6 @@
   html[lang="he-IL"] input,
   html[lang="he-IL"] select,
   html[lang="he-IL"] textarea {
-    /* font-family: "Arial Hebrew", Arial, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -471,8 +415,6 @@
   html[lang="ja"] input,
   html[lang="ja"] select,
   html[lang="ja"] textarea {
-    /* font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -492,8 +434,6 @@
   html[lang="ko-KR"] input,
   html[lang="ko-KR"] select,
   html[lang="ko-KR"] textarea {
-    /* font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif; */
-
     @apply font-sans;
   }
 
@@ -514,8 +454,6 @@
   html[lang="th"] h4,
   html[lang="th"] h5,
   html[lang="th"] h6 {
-    /* font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-
     @apply leading-relaxed font-sans;
   }
 
@@ -524,8 +462,6 @@
   html[lang="th"] input,
   html[lang="th"] select,
   html[lang="th"] textarea {
-    /* font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-
     @apply leading-7 font-sans;
   }
 
@@ -552,9 +488,7 @@
     @apply tracking-normal;
   }
 
-  /*--------------------------------------------------------------
-  6.0 Forms
-  --------------------------------------------------------------*/
+  /* forms */
 
   label {
     @apply text-gray-800 block font-bold mb-2;
@@ -664,99 +598,21 @@
   }
 
   /* Placeholder text color -- selectors need to be separate to work. */
+
   ::-webkit-input-placeholder {
-    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
     @apply text-gray-800 font-sans;
   }
 
   :-moz-placeholder {
-    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
     @apply text-gray-800 font-sans;
   }
 
   ::-moz-placeholder {
-    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
     /* Since FF19 lowers the opacity of the placeholder by default */
     @apply text-gray-800 font-sans opacity-100;
   }
 
   :-ms-input-placeholder {
-    /* font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif; */
     @apply text-gray-800 font-sans;
-  }
-
-  /**
-   * primary navigation
-   */
-
-  .nav {
-    @apply scale-y-0 origin-top transition-transform duration-500 ease-in-out md:transform-none md:duration-[0ms];
-  }
-
-  .nav-bg {
-    @apply opacity-0;
-  }
-
-  .nav-menu {
-    @apply opacity-0 transition-opacity duration-150 ease-in-out md:opacity-100;
-  }
-
-  .nav-checkbox:checked ~ .nav {
-    @apply scale-y-100;
-  }
-
-  .nav-checkbox:checked ~ .nav .nav-menu {
-    @apply opacity-100 transition-opacity duration-300 ease-in-out;
-  }
-
-  /**
-   * styling for post pagination
-   */
-  .current {
-    @apply font-bold text-black;
-  }
-
-  .current > span {
-    @apply outline outline-1 outline-gray-300;
-  }
-
-  /**
-   * post/page content elements
-   */
-
-  .entry-content {
-    @apply overflow-auto;
-  }
-
-  .entry-content > p {
-    @apply mt-0 mb-3 p-0;
-  }
-
-  .entry-content > ul {
-    @apply list-disc px-4 mb-3;
-  }
-
-  /**
-   * Block styling
-   */
-
-  .wp-block-image > figure > img {
-    @apply rounded-sm;
-  }
-
-  .wp-block-image > .alignleft {
-    @apply float-left my-2 ml-4 rtl:ml-0 rtl:mr-4;
-  }
-
-  .wp-block-image > .alignright {
-    @apply float-right my-2 mr-4 rtl:mr-0 rtl:ml-4;
-  }
-
-  .wp-block-image > figure > figcaption > a {
-    @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;
-  }
-
-  .testing-2 {
-    @apply text-red-500;
   }
 }

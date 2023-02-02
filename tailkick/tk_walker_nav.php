@@ -240,6 +240,13 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
      */
     $title = apply_filters('nav_menu_item_title', $title, $menu_item, $args, $depth);
 
+    $a_classes = isset($args->link_class) ? (array) $args->link_class : array();
+    if (strpos($attributes, 'class="') !== false) {
+      $attributes = str_replace('class="', 'class="' . implode(' ', $a_classes), $attributes);
+    } else {
+      $attributes .= ' class="' . implode(' ', $a_classes) . '"';
+    }
+
     $item_output  = $args->before;
     $item_output .= '<a' . $attributes . '>';
     $item_output .= $args->link_before . $title . '&nbsp;' . $args->link_after;
@@ -248,7 +255,7 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
       if (isset($args->parent_after)) {
         $item_output .= $args->parent_after;
       } else {
-        $item_output .= '<span class="px-2 py-1 hover:cursor-pointer hover:bg-purple-300 rounded" data-ui="nav-dropdown">&or;</span>';
+        $item_output .= '<span class="px-2 py-1 hover:cursor-pointer hover:bg-gray-300 rounded" data-ui="nav-dropdown">&or;</span>';
       }
     } else {
       $item_output .= $args->after;
