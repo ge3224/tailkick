@@ -351,54 +351,34 @@ if (!function_exists('wp_body_open')) :
   }
 endif;
 
-if (!function_exists('tailkick_button_classes_primary')) :
+if (!function_exists('tailkick_button_special_style')) :
 
   /**
    * Utility classes by Tailwind used for primary buttons
    */
-  function tailkick_button_classes_primary(): string
+  function tailkick_button_special_style(): string
   {
     $classes = array(
-      'mt-3',
-      'px-4',
-      'py-2',
+      'inline-block',
+      'cursor-pointer',
+      'mb-3',
       'bg-teal-300',
-      'hover:bg-teal-200',
-      'active:bg-teal-200/75',
+      'hover:bg-gray-800',
+      'py-3',
+      'px-4',
+      'rounded-none',
       'border',
       'border-black',
-      'shadow-[5px_5px_0_0_#00000033]',
-      'text-base',
-      'font-bold',
+      'shadow-[4px_4px_0_0_rgba(0,0,0,0.16)]',
       'text-black',
       'visited:text-black',
-      'hover:text-black',
-      'active:text-black',
-    );
-
-    return implode(' ', $classes);
-  }
-endif;
-
-if (!function_exists('tailkick_button_classes_secondary')) :
-
-  /**
-   * Utility classes by Tailwind used for secondary buttons
-   */
-  function tailkick_button_classes_secondary(): string
-  {
-    $classes = array(
-      'mt-3',
-      'px-4',
-      'py-2',
-      'bg-white',
-      'hover:bg-orange-300/75',
-      'active:bg-orange-300/50',
-      'border',
-      'border-black',
-      'shadow-[5px_5px_0_0_#00000022]',
+      'hover:text-white',
+      'active:text-white',
       'text-base',
       'font-bold',
+      'leading-4',
+      'transition',
+      'duration-500',
     );
 
     return implode(' ', $classes);

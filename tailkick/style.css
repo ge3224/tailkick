@@ -1425,18 +1425,6 @@ button.secondary:hover,
   display: block !important;
 }
 
-[data-ui="nav-parent"] > input[type="checkbox"] ~ label>span.dropdown-up {
-  display: none !important;
-}
-
-[data-ui="nav-parent"] > input[type="checkbox"]:checked ~ label > span.dropdown-up {
-  display: block !important;
-}
-
-[data-ui="nav-parent"] > input[type="checkbox"]:checked ~ label > span.dropdown-down {
-  display: none !important;
-}
-
 /* Post navigation */
 
 div.nav-links a,
@@ -1782,6 +1770,11 @@ pre.wp-block-code,
   margin-right: 0px !important;
 }
 
+.mx-1 {
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
+}
+
 .my-6 {
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
@@ -1795,21 +1788,6 @@ pre.wp-block-code,
 .my-0 {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-}
-
-.mx-1 {
-  margin-left: 0.25rem !important;
-  margin-right: 0.25rem !important;
-}
-
-.mx-0\.5 {
-  margin-left: 0.125rem !important;
-  margin-right: 0.125rem !important;
-}
-
-.my-auto {
-  margin-top: auto !important;
-  margin-bottom: auto !important;
 }
 
 .mt-3 {
@@ -1860,6 +1838,10 @@ pre.wp-block-code,
   margin-top: 0.25rem !important;
 }
 
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
 .ml-2 {
   margin-left: 0.5rem !important;
 }
@@ -1884,10 +1866,6 @@ pre.wp-block-code,
   margin-right: 0.25rem !important;
 }
 
-.mb-0 {
-  margin-bottom: 0px !important;
-}
-
 .block {
   display: block !important;
 }
@@ -1906,18 +1884,6 @@ pre.wp-block-code,
 
 .table {
   display: table !important;
-}
-
-.grid {
-  display: grid !important;
-}
-
-.inline-grid {
-  display: inline-grid !important;
-}
-
-.contents {
-  display: contents !important;
 }
 
 .hidden {
@@ -2010,14 +1976,6 @@ pre.wp-block-code,
 
 .flex-shrink-0 {
   flex-shrink: 0 !important;
-}
-
-.shrink {
-  flex-shrink: 1 !important;
-}
-
-.grow {
-  flex-grow: 1 !important;
 }
 
 .transform {
@@ -2125,6 +2083,10 @@ pre.wp-block-code,
   border-radius: 9999px !important;
 }
 
+.rounded-none {
+  border-radius: 0px !important;
+}
+
 .border {
   border-width: 1px !important;
 }
@@ -2150,6 +2112,10 @@ pre.wp-block-code,
   border-color: rgb(229 231 235 / var(--tw-border-opacity)) !important;
 }
 
+.border-gray-500\/0 {
+  border-color: rgb(107 114 128 / 0) !important;
+}
+
 .border-black {
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
@@ -2162,22 +2128,6 @@ pre.wp-block-code,
 
 .border-gray-300\/0 {
   border-color: rgb(209 213 219 / 0) !important;
-}
-
-.border-black\/0 {
-  border-color: rgb(0 0 0 / 0) !important;
-}
-
-.border-gray-800\/0 {
-  border-color: rgb(31 41 55 / 0) !important;
-}
-
-.border-gray-600\/0 {
-  border-color: rgb(75 85 99 / 0) !important;
-}
-
-.border-gray-500\/0 {
-  border-color: rgb(107 114 128 / 0) !important;
 }
 
 .bg-gray-100 {
@@ -2193,6 +2143,10 @@ pre.wp-block-code,
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
 }
 
 .bg-teal-300 {
@@ -2226,10 +2180,6 @@ pre.wp-block-code,
   background-color: rgb(243 244 246 / 0.5) !important;
 }
 
-.bg-transparent {
-  background-color: transparent !important;
-}
-
 .bg-hero-home {
   background-image: url('./assets/images/tailkick-hero-home-wide.jpg') !important;
 }
@@ -2258,12 +2208,12 @@ pre.wp-block-code,
   fill: #1f2937 !important;
 }
 
-.stroke-gray-400\/90 {
-  stroke: rgb(156 163 175 / 0.9) !important;
-}
-
 .stroke-gray-800 {
   stroke: #1f2937 !important;
+}
+
+.stroke-gray-400\/90 {
+  stroke: rgb(156 163 175 / 0.9) !important;
 }
 
 .object-cover {
@@ -2296,10 +2246,6 @@ pre.wp-block-code,
   padding: 0.5rem !important;
 }
 
-.p-1 {
-  padding: 0.25rem !important;
-}
-
 .py-8 {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
@@ -2330,6 +2276,11 @@ pre.wp-block-code,
   padding-right: 0.75rem !important;
 }
 
+.px-1 {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
 .py-\[0\.550rem\] {
   padding-top: 0.550rem !important;
   padding-bottom: 0.550rem !important;
@@ -2338,11 +2289,6 @@ pre.wp-block-code,
 .px-1\.5 {
   padding-left: 0.375rem !important;
   padding-right: 0.375rem !important;
-}
-
-.px-1 {
-  padding-left: 0.25rem !important;
-  padding-right: 0.25rem !important;
 }
 
 .py-0\.5 {
@@ -2373,6 +2319,11 @@ pre.wp-block-code,
 .px-6 {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
+}
+
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
 }
 
 .pt-32 {
@@ -2435,6 +2386,18 @@ pre.wp-block-code,
   padding-right: 1.5rem !important;
 }
 
+.pt-0\.5 {
+  padding-top: 0.125rem !important;
+}
+
+.pb-1\.5 {
+  padding-bottom: 0.375rem !important;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem !important;
+}
+
 .pb-4 {
   padding-bottom: 1rem !important;
 }
@@ -2447,20 +2410,12 @@ pre.wp-block-code,
   padding-bottom: 0.75rem !important;
 }
 
+.pt-1\.5 {
+  padding-top: 0.375rem !important;
+}
+
 .pt-1 {
   padding-top: 0.25rem !important;
-}
-
-.pb-1\.5 {
-  padding-bottom: 0.375rem !important;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem !important;
-}
-
-.pt-0\.5 {
-  padding-top: 0.125rem !important;
 }
 
 .-indent-3 {
@@ -2518,6 +2473,10 @@ pre.wp-block-code,
   line-height: .75rem !important;
 }
 
+.leading-4 {
+  line-height: 1rem !important;
+}
+
 .text-gray-900 {
   --tw-text-opacity: 1 !important;
   color: rgb(17 24 39 / var(--tw-text-opacity)) !important;
@@ -2569,9 +2528,15 @@ pre.wp-block-code,
   opacity: 0.3 !important;
 }
 
-.shadow-\[5px_5px_0_0_\#00000033\] {
-  --tw-shadow: 5px 5px 0 0 #00000033 !important;
-  --tw-shadow-colored: 5px 5px 0 0 var(--tw-shadow-color) !important;
+.shadow-none {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.shadow-\[4px_4px_0_0_rgba\(0\2c 0\2c 0\2c 0\.16\)\] {
+  --tw-shadow: 4px 4px 0 0 rgba(0,0,0,0.16) !important;
+  --tw-shadow-colored: 4px 4px 0 0 var(--tw-shadow-color) !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
@@ -2584,12 +2549,6 @@ pre.wp-block-code,
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
-.shadow-none {
-  --tw-shadow: 0 0 #0000 !important;
-  --tw-shadow-colored: 0 0 #0000 !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
@@ -2615,31 +2574,12 @@ pre.wp-block-code,
   outline-offset: 1px !important;
 }
 
-.outline-teal-400 {
-  outline-color: #2dd4bf !important;
-}
-
 .outline-black {
   outline-color: #000 !important;
 }
 
 .blur {
   --tw-blur: blur(8px) !important;
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
-}
-
-.drop-shadow {
-  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)) !important;
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
-}
-
-.grayscale {
-  --tw-grayscale: grayscale(100%) !important;
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
-}
-
-.invert {
-  --tw-invert: invert(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
@@ -2687,12 +2627,9 @@ pre.wp-block-code,
   cursor: pointer !important;
 }
 
-.hover\:rounded-sm:hover {
-  border-radius: 0.125rem !important;
-}
-
-.hover\:border:hover {
-  border-width: 1px !important;
+.hover\:border-gray-500:hover {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity)) !important;
 }
 
 .hover\:border-gray-300:hover {
@@ -2700,32 +2637,9 @@ pre.wp-block-code,
   border-color: rgb(209 213 219 / var(--tw-border-opacity)) !important;
 }
 
-.hover\:border-black:hover {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
-}
-
-.hover\:border-black\/100:hover {
-  border-color: rgb(0 0 0 / 1) !important;
-}
-
-.hover\:border-gray-800:hover {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity)) !important;
-}
-
-.hover\:border-gray-600:hover {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity)) !important;
-}
-
-.hover\:border-gray-500:hover {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity)) !important;
-}
-
-.hover\:border-gray-500\/80:hover {
-  border-color: rgb(107 114 128 / 0.8) !important;
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:bg-gray-100:hover {
@@ -2733,9 +2647,9 @@ pre.wp-block-code,
   background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
 }
 
-.hover\:bg-teal-200:hover {
+.hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(153 246 228 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:bg-orange-300\/75:hover {
@@ -2744,15 +2658,6 @@ pre.wp-block-code,
 
 .hover\:bg-white\/80:hover {
   background-color: rgb(255 255 255 / 0.8) !important;
-}
-
-.hover\:bg-white\/50:hover {
-  background-color: rgb(255 255 255 / 0.5) !important;
-}
-
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:text-teal-500:hover {
@@ -2764,9 +2669,9 @@ pre.wp-block-code,
   color: rgb(75 85 99 / 0.75) !important;
 }
 
-.hover\:text-black:hover {
+.hover\:text-white:hover {
   --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:text-gray-800\/75:hover {
@@ -2776,22 +2681,6 @@ pre.wp-block-code,
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
-}
-
-.hover\:outline:hover {
-  outline-style: solid !important;
-}
-
-.hover\:outline-2:hover {
-  outline-width: 2px !important;
-}
-
-.hover\:outline-teal-400:hover {
-  outline-color: #2dd4bf !important;
-}
-
-.hover\:outline-black:hover {
-  outline-color: #000 !important;
 }
 
 .focus\:not-sr-only:focus {
@@ -2872,40 +2761,8 @@ pre.wp-block-code,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
-.focus\:outline-none:focus {
-  outline: 2px solid transparent !important;
-  outline-offset: 2px !important;
-}
-
-.focus\:outline:focus {
-  outline-style: solid !important;
-}
-
-.focus\:outline-2:focus {
-  outline-width: 2px !important;
-}
-
-.focus\:outline-black:focus {
-  outline-color: #000 !important;
-}
-
-.focus\:ring:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color) !important;
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important;
-}
-
-.focus\:ring-black:focus {
-  --tw-ring-opacity: 1 !important;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity)) !important;
-}
-
 .active\:bg-gray-100\/75:active {
   background-color: rgb(243 244 246 / 0.75) !important;
-}
-
-.active\:bg-teal-200\/75:active {
-  background-color: rgb(153 246 228 / 0.75) !important;
 }
 
 .active\:bg-orange-300\/50:active {
@@ -2921,9 +2778,9 @@ pre.wp-block-code,
   color: rgb(75 85 99 / 0.5) !important;
 }
 
-.active\:text-black:active {
+.active\:text-white:active {
   --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .active\:text-gray-800\/50:active {
@@ -2933,22 +2790,6 @@ pre.wp-block-code,
 .active\:text-gray-500:active {
   --tw-text-opacity: 1 !important;
   color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
-}
-
-.active\:outline-none:active {
-  outline: 2px solid transparent !important;
-  outline-offset: 2px !important;
-}
-
-.active\:ring:active {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color) !important;
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important;
-}
-
-.active\:ring-black:active {
-  --tw-ring-opacity: 1 !important;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity)) !important;
 }
 
 [dir="rtl"] .rtl\:ml-0 {

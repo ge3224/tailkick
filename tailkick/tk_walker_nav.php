@@ -105,7 +105,6 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
       'hover:bg-white',
       'border-gray-500/0',
       'hover:border-gray-500',
-      'rounded-sm',
       'pt-0.5',
       'pb-1.5',
       'px-1',
