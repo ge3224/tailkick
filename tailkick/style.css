@@ -1807,6 +1807,11 @@ pre.wp-block-code,
   margin-right: 0.125rem !important;
 }
 
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
 .mt-3 {
   margin-top: 0.75rem !important;
 }
@@ -1879,6 +1884,10 @@ pre.wp-block-code,
   margin-right: 0.25rem !important;
 }
 
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
 .block {
   display: block !important;
 }
@@ -1897,6 +1906,18 @@ pre.wp-block-code,
 
 .table {
   display: table !important;
+}
+
+.grid {
+  display: grid !important;
+}
+
+.inline-grid {
+  display: inline-grid !important;
+}
+
+.contents {
+  display: contents !important;
 }
 
 .hidden {
@@ -1989,6 +2010,14 @@ pre.wp-block-code,
 
 .flex-shrink-0 {
   flex-shrink: 0 !important;
+}
+
+.shrink {
+  flex-shrink: 1 !important;
+}
+
+.grow {
+  flex-grow: 1 !important;
 }
 
 .transform {
@@ -2197,6 +2226,10 @@ pre.wp-block-code,
   background-color: rgb(243 244 246 / 0.5) !important;
 }
 
+.bg-transparent {
+  background-color: transparent !important;
+}
+
 .bg-hero-home {
   background-image: url('./assets/images/tailkick-hero-home-wide.jpg') !important;
 }
@@ -2229,6 +2262,10 @@ pre.wp-block-code,
   stroke: rgb(156 163 175 / 0.9) !important;
 }
 
+.stroke-gray-800 {
+  stroke: #1f2937 !important;
+}
+
 .object-cover {
   -o-object-fit: cover !important;
      object-fit: cover !important;
@@ -2257,6 +2294,10 @@ pre.wp-block-code,
 
 .p-2 {
   padding: 0.5rem !important;
+}
+
+.p-1 {
+  padding: 0.25rem !important;
 }
 
 .py-8 {
@@ -2406,6 +2447,22 @@ pre.wp-block-code,
   padding-bottom: 0.75rem !important;
 }
 
+.pt-1 {
+  padding-top: 0.25rem !important;
+}
+
+.pb-1\.5 {
+  padding-bottom: 0.375rem !important;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem !important;
+}
+
+.pt-0\.5 {
+  padding-top: 0.125rem !important;
+}
+
 .-indent-3 {
   text-indent: -0.75rem !important;
 }
@@ -2530,6 +2587,12 @@ pre.wp-block-code,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
+.shadow-none {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
 .shadow-zinc-900\/0 {
   --tw-shadow-color: rgb(24 24 27 / 0) !important;
   --tw-shadow: var(--tw-shadow-colored) !important;
@@ -2558,6 +2621,21 @@ pre.wp-block-code,
 
 .blur {
   --tw-blur: blur(8px) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.grayscale {
+  --tw-grayscale: grayscale(100%) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.invert {
+  --tw-invert: invert(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 

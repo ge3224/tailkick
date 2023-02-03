@@ -70,7 +70,6 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
     $class_names = implode(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
-    $output .= '<input class="hidden" id="nav-dropdown" type="checkbox">';
     $output .= "{$n}{$indent}<ul$class_names data-ui=\"submenu-list\">{$n}";
   }
 
@@ -96,22 +95,30 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
     }
     $indent  = str_repeat($t, $depth);
 
-    $label_style = implode(' ', array(
-      'cursor-pointer',
-      'mx-0.5',
-      'my-0',
-      'border',
-      'border-gray-500/0',
-      'rounded-sm',
-      'px-1.5',
-      'text-black',
+    // nav dropdown button
+
+    $button_classes = implode(' ', array(
+      'mb-0',
+      'shadow-none',
+      'bg-transparent',
       'hover:bg-white',
-      'hover:border',
-      'hover:border-gray-500/80',
+      'border-gray-500/0',
+      'hover:border-gray-500',
+      'rounded-sm',
+      'pt-0.5',
+      'pb-1.5',
+      'px-1',
     ));
 
     $output .= "$indent</ul>{$n}";
-    $output .= '<label for="nav-dropdown" class="' . $label_style . '" role="button" aria-pressed="false"><span class="dropdown-down">&#9662;</span><span class="dropdown-up">&#9652</span></label>';
+    $output .= '<button for="nav-dropdown" class="' . $button_classes . '" aria-expanded="false" data-ui="nav-dropdown">';
+    $output .= '<svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" data-ui="arrow-up">';
+    $output .= '<path class="stroke-gray-800" d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path>';
+    $output .= '</svg>';
+    $output .= '<svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" data-ui="arrow-down">';
+    $output .= '<g transform="scale(1 -1) translate(0, -14)"><path class="stroke-gray-800" d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></g></path>';
+    $output .= '</svg>';
+    $output .= '</button>';
   }
 
   /**

@@ -1,10 +1,11 @@
+import { typeOf } from "../../wp_docker/wp-includes/js/dist/components"
 import { isElement, isEvent } from "./util/typeGuards"
 
 // Navbar defines the state and behavior of site's site-wide menu bar.
 export const Navbar = () => {
-  // initNavParentItems()
-  // initChildItems()
-  // initNavCheckbox()
+  initNavParentItems()
+  initNavCheckbox()
+  initChildItems()
   pageScrollWatcher()
 }
 
@@ -40,6 +41,8 @@ const NAV_CHECKBOX_ID = "nav-checkbox"
 const DATASET_PARENT = "data-ui='nav-parent'"
 const DATASET_DROPDOWN = "data-ui='nav-dropdown'"
 const DATASET_CHILD = "data-ui='nav-child'"
+const DATASET_ARROW_UP = "data-ui='arrow-up'"
+const DATASET_ARROW_DOWN = "data-ui='arrow-down'"
 
 const PAGE_Y_OFFSET = 100
 
@@ -97,21 +100,43 @@ function navChildClickHandler(e: PointerEvent) {
 }
 
 function dropdownClickHandler(e: PointerEvent) {
-  if (!isEvent(e)) {
-    throw (`Type Error: Argument is not an Event: ${e}`)
+  const attr = "aria-expanded"
+  const el = e.currentTarget as HTMLButtonElement
+  const expand = el.getAttribute(attr)
+  if (expand === null || expand === undefined || expand === void 0) {
+    throw (`Missing attribute: ${el.tagName} has no '${attr}' attribute.`)
   }
 
-  e.stopPropagation()
-  e.preventDefault()
+  // toggle svg symbols
+  //
+  const arrowDown = el.querySelector(`[${DATASET_ARROW_UP}]`)
+  if (arrowDown === null || arrowDown === undefined || arrowDown === void 0) {
+    throw (`Missing element: ${el.tagName} has no child containing the ${DATASET_ARROW_UP} dataset.`)
+  }
+  const arrowUp = el.querySelector(`[${DATASET_ARROW_DOWN}]`)
+  if (arrowUp === null || arrowUp === undefined || arrowUp === void 0) {
+    throw (`Missing element: ${el.tagName} has no child containing the ${DATASET_ARROW_DOWN} dataset.`)
+  }
 
-  const el = e.currentTarget as HTMLSpanElement
+  if (expand === "false") {
+    el.setAttribute(attr, "true")
+    hideElement(arrowDown as HTMLElement)
+    showElement(arrowUp as HTMLElement)
+
+  } else {
+    el.setAttribute(attr, "false")
+    hideElement(arrowUp as HTMLElement)
+    showElement(arrowDown as HTMLElement)
+  }
+
   const parent = el.parentElement as HTMLLIElement
 
-  if (childMenuIsVisible(parent)) {
+  if (childElementIsVisible(parent)) {
     hideChildMenu(parent)
   } else {
-    showChildMenu(parent)
+    showChildElement(parent)
   }
+
 }
 
 function navbarBGToggle(e: Event) {
@@ -176,7 +201,7 @@ function checkboxIsChecked(): boolean {
   return box.checked
 }
 
-function childMenuIsVisible(parent: HTMLLIElement): boolean {
+function childElementIsVisible(parent: HTMLLIElement): boolean {
   if (!isElement(parent)) {
     throw (`Type Error: Argument is not an Element: "${parent}"`)
   }
@@ -184,7 +209,14 @@ function childMenuIsVisible(parent: HTMLLIElement): boolean {
   const cm = getChildMenu(parent)
   if (!cm) return false
 
-  if (cm.classList.contains("hidden")) {
+  return elementIsVisible(cm)
+}
+
+function elementIsVisible(el: HTMLElement): boolean {
+  if (!isElement(el)) {
+    throw (`Type Error: Argument is not an Element: "${el}"`)
+  }
+  if (el.classList.contains("hidden")) {
     return false
   }
 
@@ -240,18 +272,34 @@ function hideChildMenu(parent: HTMLLIElement) {
   const cm = getChildMenu(parent)
   if (!cm) return
 
-  if (!childMenuIsVisible(parent)) return
+  if (!childElementIsVisible(parent)) return
 
   for (let i = 0; i < CHILD_MENU_HIDE.length; i++) {
     cm.classList.add(CHILD_MENU_HIDE[i])
   }
 
   const dd = getDropdownBtn(parent)
-  if(!dd) return
+  if (!dd) return
 
   for (let i = 0; i < BTN_ACTIVE.length; i++) {
     dd.classList.remove(BTN_ACTIVE[i])
   }
+}
+
+function hideElement(el: HTMLElement) {
+  if (!isElement(el)) {
+    throw (`Type Error: Argument is not an Element: "${parent}"`)
+  }
+
+  el.classList.add("hidden")
+}
+
+function showElement(el: HTMLElement) {
+  if (!isElement(el)) {
+    throw (`Type Error: Argument is not an Element: "${parent}"`)
+  }
+
+  el.classList.remove("hidden")
 }
 
 function hideNavbarBg() {
@@ -273,7 +321,7 @@ function pageIsScrolled(): boolean {
   }
 }
 
-function showChildMenu(parent: HTMLLIElement) {
+function showChildElement(parent: HTMLLIElement) {
   if (!isElement(parent)) {
     throw (`Type Error: Argument is not an Element: "${parent}"`)
   }
@@ -281,14 +329,14 @@ function showChildMenu(parent: HTMLLIElement) {
   const cm = getChildMenu(parent)
   if (!cm) return
 
-  if (childMenuIsVisible(parent)) return
+  if (childElementIsVisible(parent)) return
 
   for (let i = 0; i < CHILD_MENU_HIDE.length; i++) {
     cm.classList.remove(CHILD_MENU_HIDE[i])
   }
 
   const dd = getDropdownBtn(parent)
-  if(!dd) return
+  if (!dd) return
 
   for (let i = 0; i < BTN_ACTIVE.length; i++) {
     dd.classList.add(BTN_ACTIVE[i])
