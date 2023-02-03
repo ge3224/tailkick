@@ -2,9 +2,9 @@ import { isElement, isEvent } from "./util/typeGuards"
 
 // Navbar defines the state and behavior of site's site-wide menu bar.
 export const Navbar = () => {
-  initNavParentItems()
-  initChildItems()
-  initNavCheckbox()
+  // initNavParentItems()
+  // initChildItems()
+  // initNavCheckbox()
   pageScrollWatcher()
 }
 

@@ -1,9 +1,10 @@
 /**
  * Accessing and modifying some HTML Elements rendered internally by
- * WordPress, e.g. block widgets, can be more trouble than it's likely worth.
+ * WordPress, e.g. block style defaults, can be more trouble than it's likely worth.
  * In such cases, we can make use of the WP generated class names but
  * incorporate Tailwind using `@apply`. 
  *
+ * @link https://github.com/WordPress/gutenberg/issues/38890
  * @link https://tailwindcss.com/docs/reusing-styles
  */
 
@@ -25,6 +26,22 @@
 
   .nav-checkbox:checked ~ .nav .nav-menu {
     @apply opacity-100 transition-opacity duration-300 ease-in-out;
+  }
+
+  [data-ui="nav-parent"] > input[type="checkbox"]:checked ~ ul {
+    @apply block !important;
+  }
+
+  [data-ui="nav-parent"] > input[type="checkbox"] ~ label>span.dropdown-up {
+    @apply hidden !important;
+  }
+
+  [data-ui="nav-parent"] > input[type="checkbox"]:checked ~ label > span.dropdown-up {
+    @apply block !important;
+  }
+
+  [data-ui="nav-parent"] > input[type="checkbox"]:checked ~ label > span.dropdown-down {
+    @apply hidden !important;
   }
 
   /* Post navigation */

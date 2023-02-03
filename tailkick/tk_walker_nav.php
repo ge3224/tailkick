@@ -70,7 +70,8 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
     $class_names = implode(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
-    $output .= "{$n}{$indent}<ul$class_names>{$n}";
+    $output .= '<input class="hidden" id="nav-dropdown" type="checkbox">';
+    $output .= "{$n}{$indent}<ul$class_names data-ui=\"submenu-list\">{$n}";
   }
 
   /**
@@ -94,7 +95,23 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
       $n = "\n";
     }
     $indent  = str_repeat($t, $depth);
+
+    $label_style = implode(' ', array(
+      'cursor-pointer',
+      'mx-0.5',
+      'my-0',
+      'border',
+      'border-gray-500/0',
+      'rounded-sm',
+      'px-1.5',
+      'text-black',
+      'hover:bg-white',
+      'hover:border',
+      'hover:border-gray-500/80',
+    ));
+
     $output .= "$indent</ul>{$n}";
+    $output .= '<label for="nav-dropdown" class="' . $label_style . '" role="button" aria-pressed="false"><span class="dropdown-down">&#9662;</span><span class="dropdown-up">&#9652</span></label>';
   }
 
   /**
@@ -255,7 +272,7 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
       if (isset($args->parent_after)) {
         $item_output .= $args->parent_after;
       } else {
-        $item_output .= '<button aria-label="'. $title . ' Menu" class="px-2 py-1 hover:cursor-pointer hover:bg-gray-300 rounded" data-ui="nav-dropdown">&or;</button>';
+        $item_output .= '';
       }
     } else {
       $item_output .= $args->after;

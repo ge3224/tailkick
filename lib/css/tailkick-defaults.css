@@ -1,9 +1,10 @@
 /**
  * Accessing and modifying some HTML Elements rendered internally by
- * WordPress, e.g. block widgets, can be more trouble than it's likely worth.
+ * WordPress, e.g. block style defaults, can be more trouble than it's likely worth.
  * In such cases, we can make use of the WP generated class names but
  * incorporate Tailwind using `@apply`. 
  *
+ * @link https://github.com/WordPress/gutenberg/issues/38890
  * @link https://tailwindcss.com/docs/reusing-styles
  */
 
