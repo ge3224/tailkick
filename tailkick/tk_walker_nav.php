@@ -113,7 +113,7 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
 
     $output .= "$indent</ul>{$n}";
     $output .= '<button for="nav-dropdown" class="' . $button_classes . '" aria-expanded="false" data-ui="nav-dropdown">';
-    $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" data-ui="arrow-up">';
+    $output .= '<svg xmlns="http://www.w3.trg/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" data-ui="arrow-up">';
     $output .= '<g transform="translate(0 2)"><path class="stroke-gray-800" d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></g></path>';
     $output .= '</svg>';
     $output .= '<svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false" data-ui="arrow-down">';
@@ -276,15 +276,6 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
     $item_output .= '<a' . $attributes . '>';
     $item_output .= $args->link_before . $title . '&nbsp;' . $args->link_after;
     $item_output .= '</a>';
-    if ($this->has_children) {
-      if (isset($args->parent_after)) {
-        $item_output .= $args->parent_after;
-      } else {
-        $item_output .= '';
-      }
-    } else {
-      $item_output .= $args->after;
-    }
 
     /**
      * Filters a menu item's starting output.
