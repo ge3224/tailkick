@@ -2619,6 +2619,10 @@ pre.wp-block-code,
   outline-color: #2dd4bf !important;
 }
 
+.outline-black {
+  outline-color: #000 !important;
+}
+
 .blur {
   --tw-blur: blur(8px) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;

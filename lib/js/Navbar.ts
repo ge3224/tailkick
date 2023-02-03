@@ -30,7 +30,7 @@ const BTN_ACTIVE = [
   "outline",
   "outline-offset-1",
   "outline-2",
-  "outline-teal-400",
+  "outline-black",
 ]
 
 const CHILD_MENU_HIDE = ["hidden"]

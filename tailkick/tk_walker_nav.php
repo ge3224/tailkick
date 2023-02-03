@@ -99,6 +99,7 @@ class Tailkick_Menu_Navwalker extends Walker_Nav_Menu
 
     $button_classes = implode(' ', array(
       'mb-0',
+      'mx-1',
       'shadow-none',
       'bg-transparent',
       'hover:bg-white',
