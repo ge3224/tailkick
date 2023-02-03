@@ -16,7 +16,7 @@ do
       echo -e "\033[0;33mCopying updated theme to WordPress."
       eval rm -rdf ./wp_docker/wp-content/themes/tailkick 
       eval cp -rdf ./tailkick/ ./wp_docker/wp-content/themes/tailkick
-      echo -e "\033[0m\nWaiting for changes...\n"
+      echo -e "\033[0m\nWaiting for changes..."
     fi
 
     chsum1=$chsum2
