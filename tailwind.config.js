@@ -2,7 +2,7 @@
 
 module.exports = {
   content: ["./tailkick/**/*.{html,js,php}"],
-  safelist: [],
+  safelist: wpSafeList(),
   important: true, // https://tailwindcss.com/docs/configuration#important
   theme: {
     screens: {
@@ -19,4 +19,10 @@ module.exports = {
     }
   },
   plugins: [],
+}
+
+function wpSafeList() {
+  return [
+    "blocks-gallery-item__caption",
+  ]
 }
