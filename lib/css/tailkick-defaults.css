@@ -60,19 +60,19 @@
   }
 
   h1 {
-    @apply mt-4 text-2xl font-bold;
+    @apply mt-4 text-3xl font-bold;
   }
 
   h2 {
-    @apply mt-3 text-xl font-bold;
+    @apply mt-3 text-2xl font-bold;
   }
 
   h3 {
-    @apply mt-2 text-lg font-bold;
+    @apply mt-2 text-xl font-bold;
   }
 
   h4 {
-    @apply mt-2 text-base font-bold;
+    @apply mt-2 text-lg font-bold;
   }
 
   h5 {

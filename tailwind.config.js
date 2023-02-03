@@ -24,6 +24,11 @@ module.exports = {
 function wpSafeList() {
   return [
     "blocks-gallery-item__caption",
-    "wp-block-column"
+    "tag-cloud-link",
+    "wp-block-code",
+    "wp-block-column",
+    "wp-block-preformatted",
+    "wp-block-search__button",
+    "wp-block-verse",
   ]
 }
