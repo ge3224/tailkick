@@ -150,7 +150,7 @@
   }
 
   :focus {
-    @apply outline-none;
+    @apply outline outline-gray-800;
   }
 
   figcaption {
