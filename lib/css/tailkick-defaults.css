@@ -19,8 +19,7 @@
     @apply font-sans text-base leading-relaxed text-gray-800;
   }
 
-  a,
-  a:visited {
+  a {
     @apply text-teal-600 visited:text-teal-600 hover:text-teal-500 active:text-teal-400 no-underline;  
   }
 
@@ -137,20 +136,16 @@
   }
 
   blockquote {
-    quotes: "" ""; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
+    quotes: "" ""; /* Currently, there is no Tailwind CSS class handling `quotes` */
   }
 
   q {
-    quotes: "“" "”" "‘" "’"; /* You got me. Currently, there is no Tailwind CSS class handling `quotes` */
+    quotes: "“" "”" "‘" "’"; 
   }
 
   blockquote:before,
   blockquote:after {
     @apply content-[''];
-  }
-
-  :focus {
-    @apply outline outline-gray-800;
   }
 
   figcaption {
