@@ -24,5 +24,6 @@ module.exports = {
 function wpSafeList() {
   return [
     "blocks-gallery-item__caption",
+    "wp-block-column"
   ]
 }

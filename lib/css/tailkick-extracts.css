@@ -57,6 +57,11 @@
     @apply list-disc px-5 mb-3;
   }
 
+  .entry-content > ol,
+  div.wp-block-column > ol {
+    @apply list-decimal px-5 mb-3 !important;
+  }
+
   /* Block defaults */
 
   div.alignleft,
